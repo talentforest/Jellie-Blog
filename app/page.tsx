@@ -1,12 +1,22 @@
-import { Nanum_Gothic } from 'next/font/google';
+import FeaturedPosts from '@/components/home/featured-posts';
+import CategorizedPosts from '@/components/home/categorized-posts';
+import Introduction from '@/components/home/introduction';
+import { getAllPosts } from '@/service/posts';
 
-const noto_sans_kr = Nanum_Gothic({
-  weight: ['400', '700', '800'],
-  subsets: ['latin'],
-});
+export default async function Home() {
+  const allPosts = await getAllPosts();
 
-export default function Home() {
   return (
-    <div className={noto_sans_kr.className}>this is main page 안녕하세요</div>
+    <main className='px-4 md:px-20'>
+      <Introduction />
+      <section className='pt-4 pb-12'>
+        <h2>Featured Post</h2>
+        <FeaturedPosts allPosts={allPosts} />
+      </section>
+      <section className='pt-4 pb-12'>
+        <h2>Categorized Posts</h2>
+        <CategorizedPosts allPosts={allPosts} />
+      </section>
+    </main>
   );
 }

@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* react-multi-carousel custom css */
+.carousel-item {
+  display: flex;
+  align-items: center;
+}
+
+.react-multi-carousel-item > a {
+  height: 150px;
+  transition: all ease-in-out 0.6s;
+}
+
+.react-multi-carousel-item--active > a {
+  height: 200px;
+}
