@@ -1,5 +1,4 @@
 import PostBox from '@/components/common/post-box';
-import TableOfContents from '@/components/posts/table-of-contents';
 import Image from 'next/image';
 import MarkdownViewer from '@/components/posts/markdown-viewer';
 import { getPost } from '@/service/posts';
@@ -33,7 +32,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           </h3>
           <h1 className='text-2xl font-bold'>{title}</h1>
         </header>
-        <pre>{content}</pre>
+        <MarkdownViewer content={content} />
       </article>
       <button className='py-2 text-sm w-fit self-end mt-10 text-gray-500 hover:text-blue-500 hover:font-extrabold'>
         맨위로 가기
