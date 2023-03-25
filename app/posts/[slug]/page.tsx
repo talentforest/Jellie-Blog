@@ -37,6 +37,13 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       <button className='py-2 text-sm w-fit self-end mt-10 text-gray-500 hover:text-blue-500 hover:font-extrabold'>
         맨위로 가기
       </button>
+      <section className='text-lg'>
+        <h4 className='mb-3'>다른 포스트 보기</h4>
+        <div className='flex h-40 space-x-2'>
+          {prev && <PostBox post={prev} />}
+          {next && <PostBox post={next} />}
+        </div>
+      </section>
     </main>
   );
 }
