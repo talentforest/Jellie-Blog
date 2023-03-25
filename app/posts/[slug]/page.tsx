@@ -2,6 +2,7 @@ import Image from 'next/image';
 import PostBox from '@/components/common/post-box';
 import PostContents from '@/components/posts/post-contents';
 import { getPost } from '@/service/posts';
+import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 
 interface Props {
   params: {
@@ -14,7 +15,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
   const { title, date, category, content, path, next, prev } = post;
 
   return (
-    <main className='pb-12 flex flex-col'>
+    <main className='pb-4 flex flex-col'>
       <article className='flex flex-col relative'>
         <Image
           src={`/posts/images/${path}.png`}
@@ -26,12 +27,13 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         />
         <PostContents contents={{ title, date, category, content }} />
       </article>
-      <section className='text-lg px-4 bg-slate-100 py-14'>
-        <h4 className='mb-3'>다른 포스트 보기</h4>
+      <section className='flex flex-col space-y-3 text-lg px-4 bg-slate-100 pt-14'>
+        <h4>다른 포스트 보기</h4>
         <div className='flex h-40 space-x-2'>
           {prev && <PostBox post={prev} />}
           {next && <PostBox post={next} />}
         </div>
+        <ScrollToTopBtn />
       </section>
     </main>
   );
