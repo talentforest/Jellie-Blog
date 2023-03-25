@@ -1,6 +1,6 @@
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
-import { Nanum_Gothic } from 'next/font/google';
+import { Noto_Sans_KR } from 'next/font/google';
 import './globals.css';
 
 export const metadata = {
@@ -8,8 +8,8 @@ export const metadata = {
   description: 'Jellie의 기술 블로그입니다.',
 };
 
-const noto_sans_kr = Nanum_Gothic({
-  weight: ['400', '700', '800'],
+const noto_sans_kr = Noto_Sans_KR({
+  weight: ['300', '400', '500', '700'],
   subsets: ['latin'],
 });
 

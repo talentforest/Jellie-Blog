@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { Post } from '@/service/posts';
-import { convertChar, cutLetter } from '@/util';
-import Link from 'next/link';
+import PostBox from '../common/post-box';
 
 export type Categories =
   | 'All'
@@ -28,11 +27,15 @@ const categories: Categories[] = [
   'side-projects',
 ];
 
-export default function CategorizedPosts({ allPosts }: { allPosts: Post[] }) {
+interface Props {
+  allPosts: Post[];
+}
+
+export default function CategorizedPosts({ allPosts }: Props) {
   const [category, setCategory] = useState('All' as Categories);
   const onCategoryClick = (category: Categories) => setCategory(category);
 
-  const postsbyCategory = allPosts.filter((post) => {
+  const filteredPosts = allPosts.filter((post) => {
     if (category === 'All') return post;
     return post.category === category;
   });
@@ -56,21 +59,11 @@ export default function CategorizedPosts({ allPosts }: { allPosts: Post[] }) {
           </li>
         ))}
       </ul>
-      <ul className='mt-3 flex flex-col space-y-2'>
-        {!!postsbyCategory.length ? (
-          postsbyCategory?.map(({ id, title, category, contents }) => (
-            <li key={id}>
-              <Link href={`/posts/${convertChar(title, ' ', '-')}`}>
-                <article className='cursor-pointer min-h-[200px] md:min-h-[180px] flex flex-col bg-white border p-3 rounded-md'>
-                  <h1 className='text-base md:text-lg mb-2 font-bold'>
-                    {title}
-                  </h1>
-                  <h2 className='text-sm mb-2 text-blue-400'>{category}</h2>
-                  <p className='text-sm text-gray-500 flex-1'>
-                    {cutLetter(contents, 200)}
-                  </p>
-                </article>
-              </Link>
+      <ul className='mt-3 flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-3'>
+        {!!filteredPosts.length ? (
+          filteredPosts?.map((post) => (
+            <li key={post.path}>
+              <PostBox post={post} size='lg' />
             </li>
           ))
         ) : (
