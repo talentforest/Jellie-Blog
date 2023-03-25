@@ -9,7 +9,7 @@ export default async function Home() {
   const featuredPost = await getFeaturedPosts();
 
   return (
-    <main className='px-4 md:px-20'>
+    <main className='px-4 py-10 md:px-20'>
       <Introduction />
       <section className='pt-4 pb-12'>
         <h2>Featured Post</h2>

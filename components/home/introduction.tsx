@@ -3,7 +3,7 @@ import Notion from 'components/assets/notion.svg';
 
 export default function Introduction() {
   return (
-    <section className='w-full py-16 px-6 flex justify-between items-center space-x-4'>
+    <section className='w-full pb-16 px-6 flex justify-between items-center space-x-4'>
       <div className='bg-blue-500 w-28 h-28 rounded-full shadow-md flex justify-center items-center'></div>
       <div className='flex-1'>
         <h3 className='font-semibold mb-2'>🌼 Jellie 🌼</h3>
