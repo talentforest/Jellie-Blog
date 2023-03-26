@@ -4,6 +4,7 @@ import PostContents from '@/components/posts/post-contents';
 import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 import TableOfContents from '@/components/posts/toc';
 import { getPost } from '@/service/posts';
+import ProgressBar from '@/components/posts/progress-bar';
 
 interface Props {
   params: {
@@ -24,8 +25,9 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           width={500}
           height={500}
           priority
-          className='fixed -z-10 w-full border-2 border-red-300 h-60 object-cover md:w-auto self-center md:h-60'
+          className='sticky top-14 -z-10 w-full h-60 object-cover md:w-auto self-center md:h-60'
         />
+        <ProgressBar />
         <PostContents contents={{ title, date, category, content }} />
       </article>
       <section className='px-4 pt-14 pb-4 flex flex-col space-y-3 text-lg bg-slate-100'>
