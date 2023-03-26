@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className='border sticky top-0 z-10 bg-slate-100 w-full h-14 px-4 md:px-20 flex justify-between items-center'>
       <h1 className='font-bold text-blue-600'>
-        <Link href='/'>Dev Blog</Link>
+        <Link href='/'>Devlog</Link>
       </h1>
       <nav>
         <ul className='flex justify-between space-x-6 md:space-x-10'>
