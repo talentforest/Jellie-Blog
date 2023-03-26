@@ -54,7 +54,7 @@ export default function TableOfContents() {
       )}
       <button
         onClick={toggleModal}
-        className='transition hover:scale-105 md:hidden border-2 z-20 border-gray-300 bg-indigo-200 hover:bg-indigo-300 fixed flex items-center justify-center bottom-5 right-5 w-16 h-16 shadow-lg rounded-full'
+        className='transition hover:scale-105 md:hidden border-2 z-20 border-gray-300 bg-yellow-200 hover:bg-indigo-300 fixed flex items-center justify-center bottom-5 right-5 w-16 h-16 shadow-lg rounded-full'
       >
         {!modal ? (
           <HiQueueList className='w-7 h-7 text-indigo-800' />
