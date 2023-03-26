@@ -19,8 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={`${nanum_gothic.className} bg-slate-100`}>
+    <html lang='en' className='dark'>
+      <body
+        className={`${nanum_gothic.className} bg-slate-100 dark:bg-slate-900 dark:text-slate-100`}
+      >
         <Header />
         <main className='relative pb-20 md:px-20'>{children}</main>
         <Footer />
