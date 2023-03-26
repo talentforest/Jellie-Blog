@@ -20,7 +20,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
     <>
       <article className='flex flex-col relative'>
         <Image
-          src={`/posts/images/${path}.png`}
+          src={`/images/posts/${path}.png`}
           alt='Post Thumbnail'
           width={500}
           height={500}

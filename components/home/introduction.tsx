@@ -6,13 +6,13 @@ export default function Introduction() {
   return (
     <section className='w-full my-12 px-4 flex justify-between items-center space-x-4'>
       <Image
-        src='/images/avatar.png'
+        src='/images/about/avatar.png'
         alt='avatar'
         width={200}
         height={200}
         priority
         className='w-28 h-28 object-cover rounded-full shadow-md flex justify-center items-center'
-      ></Image>
+      />
       <div className='flex-1'>
         <h3 className='font-semibold mb-2'>🌼 Jellie 🌼</h3>
         <p className='text-sm mb-4'>
