@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import PostBox from '@/components/common/post-box';
 import PostContents from '@/components/posts/post-contents';
-import { getPost } from '@/service/posts';
 import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 import TableOfContents from '@/components/posts/toc';
+import { getPost } from '@/service/posts';
 
 interface Props {
   params: {
@@ -16,7 +16,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
   const { title, date, category, content, path, next, prev } = post;
 
   return (
-    <main className='pb-4 flex flex-col'>
+    <>
       <article className='flex flex-col relative'>
         <Image
           src={`/posts/images/${path}.png`}
@@ -24,7 +24,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           width={500}
           height={500}
           priority
-          className='fixed -z-10 w-full h-60 object-cover md:w-auto self-center md:h-60'
+          className='fixed -z-10 w-full border-2 border-red-300 h-60 object-cover md:w-auto self-center md:h-60'
         />
         <PostContents contents={{ title, date, category, content }} />
       </article>
@@ -34,9 +34,9 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           {prev && <PostBox post={prev} />}
           {next && <PostBox post={next} />}
         </div>
-        <ScrollToTopBtn />
       </section>
       <TableOfContents />
-    </main>
+      <ScrollToTopBtn />
+    </>
   );
 }

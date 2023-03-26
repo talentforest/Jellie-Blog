@@ -52,14 +52,14 @@ export default function CategorizedPosts({ allPosts }: Props) {
           >
             <button
               onClick={() => onCategoryClick(item)}
-              className='px-3 py-1 text-sm text-blue-700 hover:text-blue-50 transition'
+              className='px-3 text-sm text-blue-700 hover:text-blue-50 transition'
             >
               {item}
             </button>
           </li>
         ))}
       </ul>
-      <div className='flex m-2 py-2 rounded-md w-fit space-x-3'>
+      <div className='flex mx-2 mt-4 rounded-md w-fit space-x-3'>
         <span>{filteredPosts.length}개의 포스트</span>
       </div>
       <ul className='mt-3 flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-3'>

@@ -9,9 +9,9 @@ export default async function Home() {
   const featuredPost = await getFeaturedPosts();
 
   return (
-    <main className='px-4 py-10 md:px-20'>
+    <>
       <Introduction />
-      <section className='pt-4 pb-12'>
+      <section className='mb-12 mx-4'>
         <h2>Featured Post</h2>
         <CarouselBox config={{ centerMode: true, showDots: true }}>
           {featuredPost.map((post) => (
@@ -19,10 +19,10 @@ export default async function Home() {
           ))}
         </CarouselBox>
       </section>
-      <section className='pt-4 pb-12'>
+      <section className='mx-4'>
         <h2>Categorized Posts</h2>
         <CategorizedPosts allPosts={allPosts} />
       </section>
-    </main>
+    </>
   );
 }

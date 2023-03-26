@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${nanum_gothic.className} bg-slate-100`}>
         <Header />
-        <main className='mt-14 md:mt-16'>{children}</main>
+        <main className='relative pb-20 md:px-20'>{children}</main>
         <Footer />
       </body>
     </html>
