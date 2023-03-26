@@ -1,0 +1,26 @@
+[
+  {
+    "name": "한페이지 독서모임 기록장",
+    "path": "한페이지독서모임기록장.png",
+    "description": "독서모임 한페이지를 위한 전용 기록관리 페이지입니다.",
+    "stacks": ["react", "firebase", "styled-components", "recoil"],
+    "link": "https://talentforest.github.io/han-bookclub-app/",
+    "github": "https://github.com/talentforest/han-bookclub-app"
+  },
+  {
+    "name": "냉장고에 뭐가 있지?",
+    "path": "냉장고에뭐가있지.png",
+    "description": "냉장고 내부를 시각화하여 냉장고 관리에 도움을 주는 페이지입니다.",
+    "stacks": ["next.js", "tailwindcss", "redux-toolkit", "swr"],
+    "link": "https://what-is-in-the-fridge-fawn.vercel.app/",
+    "github": "https://github.com/talentforest/what-is-in-the-fridge"
+  },
+  {
+    "name": "Hacker News",
+    "path": "해커뉴스.png",
+    "description": "UXUI 디자이너와 함께 만든 해커뉴스 리디자인 페이지입니다.",
+    "stacks": ["react", "styled-components", "axios"],
+    "link": "https://hacker-news-mini-project.vercel.app/",
+    "github": "https://github.com/talentforest/hackernews-with-react"
+  }
+]
