@@ -6,7 +6,6 @@ import { CodeProps } from 'react-markdown/lib/ast-to-react';
 import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
-import React from 'react';
 
 interface Props {
   content: string;
@@ -17,6 +16,7 @@ export default function MarkdownViewer({ content }: Props) {
     <ReactMarkdown
       className='prose max-w-none'
       remarkPlugins={[remarkGfm]}
+      includeElementIndex={true}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
           const match = /language-(\w+)/.exec(className || '');
@@ -47,11 +47,26 @@ export default function MarkdownViewer({ content }: Props) {
             height={500}
           />
         ),
-        h2: ({ node, ...props }) => (
-          <h2 className='text-blue-600 mt-10 mb-2 text-xl' {...props} />
+        h2: ({ node, title, index, siblingCount, ...props }) => (
+          <h2
+            className='text-blue-600 mt-10 mb-2 text-xl'
+            {...props}
+            id={`${index}`}
+          />
         ),
-        h3: ({ node, ...props }) => (
-          <h3 className='text-blue-400 mt-5 mb-2 text-base' {...props} />
+        h3: ({ node, index, ...props }) => (
+          <h3
+            className='text-blue-400 mt-5 mb-2 text-base'
+            {...props}
+            id={`${index}`}
+          />
+        ),
+        h4: ({ node, index, ...props }) => (
+          <h4
+            className='text-teal-400 mt-5 mb-2 text-base'
+            {...props}
+            id={`${index}`}
+          />
         ),
         p: ({ node, className, ...props }) => (
           <p className={`${className} leading-7`} {...props} />

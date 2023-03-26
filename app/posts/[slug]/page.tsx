@@ -3,6 +3,7 @@ import PostBox from '@/components/common/post-box';
 import PostContents from '@/components/posts/post-contents';
 import { getPost } from '@/service/posts';
 import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
+import TableOfContents from '@/components/posts/toc';
 
 interface Props {
   params: {
@@ -35,6 +36,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         </div>
         <ScrollToTopBtn />
       </section>
+      <TableOfContents />
     </main>
   );
 }
