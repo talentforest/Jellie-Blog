@@ -3,7 +3,7 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { coldarkDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 
@@ -14,9 +14,8 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='prose max-w-none'
+      className='prose max-w-none dark:text-slate-200 text-slate-700'
       remarkPlugins={[remarkGfm]}
-      includeElementIndex={true}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
           const match = /language-(\w+)/.exec(className || '');
@@ -25,7 +24,8 @@ export default function MarkdownViewer({ content }: Props) {
               language={match[1]}
               PreTag='div'
               {...props}
-              style={coldarkDark}
+              style={oneDark}
+              className='rounded-md m-0'
             >
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
@@ -38,6 +38,12 @@ export default function MarkdownViewer({ content }: Props) {
             </code>
           );
         },
+        div: ({ ...props }) => <div style={{ padding: '0', margin: '0' }} />,
+        pre: ({ children, ...props }) => (
+          <pre className='p-0' {...props}>
+            {children}
+          </pre>
+        ),
         img: (image) => (
           <Image
             className='w-full max-h-60 object-cover'
@@ -47,26 +53,32 @@ export default function MarkdownViewer({ content }: Props) {
             height={500}
           />
         ),
-        h2: ({ node, title, index, siblingCount, ...props }) => (
+        h2: ({ node, children, title, ...props }) => (
           <h2
             className='text-blue-600 mt-10 mb-2 text-xl'
             {...props}
-            id={`${index}`}
-          />
+            id={String(children).replaceAll(' ', '-')}
+          >
+            {children}
+          </h2>
         ),
-        h3: ({ node, index, ...props }) => (
+        h3: ({ node, children, ...props }) => (
           <h3
             className='text-blue-400 mt-5 mb-2 text-base'
             {...props}
-            id={`${index}`}
-          />
+            id={String(children).replaceAll(' ', '-')}
+          >
+            {children}
+          </h3>
         ),
-        h4: ({ node, index, ...props }) => (
+        h4: ({ node, children, ...props }) => (
           <h4
             className='text-teal-400 mt-5 mb-2 text-base'
             {...props}
-            id={`${index}`}
-          />
+            id={String(children).replaceAll(' ', '-')}
+          >
+            {children}
+          </h4>
         ),
         p: ({ node, className, ...props }) => (
           <p className={`${className} leading-7`} {...props} />
@@ -74,19 +86,6 @@ export default function MarkdownViewer({ content }: Props) {
         blockquote: ({ node, className, ...props }) => (
           <blockquote
             className={`${className} text-indigo-500 my-2 border-l-[5px] border-indigo-400`}
-            {...props}
-          />
-        ),
-        ul: ({ node, className, ...props }) => (
-          <ul className={`${className} `} {...props} />
-        ),
-        li: ({ node, className, ...props }) => (
-          <li
-            className={`${className} mb-1  ${
-              className?.includes('task-list-item')
-                ? 'marker:text-yellow-500'
-                : 'marker:text-indigo-500'
-            }`}
             {...props}
           />
         ),

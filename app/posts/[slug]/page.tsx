@@ -30,7 +30,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         <ProgressBar />
         <PostContents contents={{ title, date, category, content }} />
       </article>
-      <section className='px-4 pt-14 pb-4 flex flex-col space-y-3 text-lg bg-slate-100'>
+      <section className='px-4 pt-14 pb-4 flex flex-col space-y-3 text-lg bg-slate-100 dark:bg-slate-900'>
         <h4>다른 포스트 보기</h4>
         {prev && <PostBox post={prev} />}
         {next && <PostBox post={next} />}
