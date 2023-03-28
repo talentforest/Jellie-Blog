@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
 
 export default function Header() {
@@ -15,6 +15,19 @@ export default function Header() {
       : document.documentElement.classList.add('dark');
     setDark((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      setDark(false);
+    }
+  }, []);
 
   return (
     <header className='bg-bg text-text border-b border-slate sticky top-0 z-10 w-full h-14 px-4 md:px-20 flex justify-between items-center'>
