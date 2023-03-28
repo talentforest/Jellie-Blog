@@ -19,7 +19,9 @@ export default async function MyOwnDocsPage({ params: { slug } }: Props) {
       <article className='relative'>
         <ProgressBar />
         <section className='px-4 my-3'>
-          <h1 className='text-2xl font-bold'>{myOwnDoc.title}</h1>
+          <h1 className='text-2xl font-bold -mb-8 border-b border-slate py-3'>
+            {myOwnDoc.title}
+          </h1>
           <MarkdownViewer content={myOwnDoc.content} />
         </section>
       </article>

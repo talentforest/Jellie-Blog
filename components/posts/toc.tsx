@@ -27,7 +27,7 @@ export default function TableOfContents() {
             onClick={toggleModal}
             className='overflow-hidden transition fixed bottom-0 top-0 z-20 left-0 right-0 mx-auto w-full h-screen bg-black opacity-50'
           />
-          <section className='transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-box rounded-xl'>
+          <section className='overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-box rounded-xl'>
             <h1 className='mb-2 text-lg'># Table of Contents</h1>
             <ul className='flex flex-col space-y-2'>
               {headingEls.map((el, index) => (
