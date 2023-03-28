@@ -23,7 +23,7 @@ export default function PostBox({ post, size = 'sm' }: PostBoxProps) {
         <h4 className='text-xs text-slate-600 mb-2 font-extralight border px-2 py-0.5 bg-blue-100 rounded-md w-fit'>
           {category}
         </h4>
-        <h1 className='mb-1 font-bold text-lg'>{title}</h1>
+        <h2 className='mb-1 font-bold text-lg'>{title}</h2>
         <p className='text-sm mb-2 dark:text-slate-200 text-slate-700'>
           {description}
         </p>

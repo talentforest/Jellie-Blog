@@ -1,7 +1,7 @@
-import CategorizedPosts from '@/components/home/categorized-posts';
 import Introduction from '@/components/home/introduction';
 import CarouselBox from '@/components/common/carousel-box';
 import PostBox from '@/components/common/post-box';
+import CategorizedPostsSection from '@/components/home/categorized-posts-section';
 import { getAllPosts, getFeaturedPosts } from '@/service/posts';
 
 export default async function Home() {
@@ -19,10 +19,7 @@ export default async function Home() {
           ))}
         </CarouselBox>
       </section>
-      <section className='mx-4'>
-        <h2>Categorized Posts</h2>
-        <CategorizedPosts allPosts={allPosts} />
-      </section>
+      <CategorizedPostsSection allPosts={allPosts} />
     </>
   );
 }

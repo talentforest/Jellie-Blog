@@ -1,0 +1,18 @@
+[
+  {
+    "category": "tailwindcss",
+    "title": "자주 꺼내보는 나만의 TailwindCss 문서"
+  },
+  {
+    "category": "next.js",
+    "title": "자주 꺼내보는 나만의 Next.js 문서"
+  },
+  {
+    "category": "react",
+    "title": "자주 꺼내보는 나만의 React 문서"
+  },
+  {
+    "category": "typescript",
+    "title": "자주 꺼내보는 나만의 Typescript 문서"
+  }
+]

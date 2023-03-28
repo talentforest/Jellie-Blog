@@ -1,9 +1,10 @@
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+import CategorizedPostsSection from '@/components/home/categorized-posts-section';
+import { getAllDocs } from '@/service/my-own-docs';
+import { getAllPosts } from '@/service/posts';
 
-export default function PostPage({ params: { slug } }: Props) {
-  return <>{slug} Post Page</>;
+export default async function PostPage() {
+  const allPosts = await getAllPosts();
+  const myOwnDocs = await getAllDocs();
+
+  return <CategorizedPostsSection allPosts={allPosts} myOwnDocs={myOwnDocs} />;
 }
