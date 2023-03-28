@@ -20,11 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='dark'>
-      <body
-        className={`${nanum_gothic.className} bg-slate-100 dark:bg-slate-900 dark:text-slate-100`}
-      >
+      <body className={`${nanum_gothic.className} bg-bg text-text`}>
         <Header />
-        <main className='relative pb-20 md:px-20'>{children}</main>
+        <main className='relative pb-20 md:px-20 border-slate'>{children}</main>
         <Footer />
       </body>
     </html>

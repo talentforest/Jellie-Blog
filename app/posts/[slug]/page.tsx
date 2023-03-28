@@ -3,8 +3,8 @@ import PostBox from '@/components/common/post-box';
 import PostContents from '@/components/posts/post-contents';
 import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 import TableOfContents from '@/components/posts/toc';
-import { getPost } from '@/service/posts';
 import ProgressBar from '@/components/posts/progress-bar';
+import { getPost } from '@/service/posts';
 
 interface Props {
   params: {
@@ -30,10 +30,10 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         <ProgressBar />
         <PostContents contents={{ title, date, category, content }} />
       </article>
-      <section className='px-4 pt-14 pb-4 flex flex-col space-y-3 text-lg bg-slate-100 dark:bg-slate-900'>
+      <section className='px-4 pt-14 pb-4 flex flex-col space-y-3 text-lg bg-box'>
         <h4>다른 포스트 보기</h4>
-        {prev && <PostBox post={prev} />}
-        {next && <PostBox post={next} />}
+        {prev && <PostBox post={prev} size='lg' />}
+        {next && <PostBox post={next} size='lg' />}
       </section>
       <TableOfContents />
       <ScrollToTopBtn />

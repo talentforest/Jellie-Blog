@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='prose max-w-none dark:text-slate-200 text-slate-700'
+      className='prose max-w-none text-text'
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
@@ -31,7 +31,7 @@ export default function MarkdownViewer({ content }: Props) {
             </SyntaxHighlighter>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden p-1 text-slate-500 rounded-md bg-gray-200`}
+              className={`${className} before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
               {...props}
             >
               {children}
@@ -55,7 +55,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ node, children, title, ...props }) => (
           <h2
-            className='text-blue-600 mt-10 mb-2 text-xl'
+            className='text-yellow mt-10 mb-2 text-xl'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -64,7 +64,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='text-blue-400 mt-5 mb-2 text-base'
+            className='text-blue mt-5 mb-2 text-base'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -73,7 +73,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='text-teal-400 mt-5 mb-2 text-base'
+            className='text-indigo mt-5 mb-2 text-base'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -85,7 +85,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         blockquote: ({ node, className, ...props }) => (
           <blockquote
-            className={`${className} text-indigo-500 my-2 border-l-[5px] border-indigo-400`}
+            className={`${className} text-indigo my-2 border-l-[5px] border-indigo`}
             {...props}
           />
         ),
@@ -93,10 +93,10 @@ export default function MarkdownViewer({ content }: Props) {
           <input className={`${className} my-0 mr-1 mt-1 w-4 h-4`} {...props} />
         ),
         a: ({ node, className, ...props }) => (
-          <a className={`${className} text-gray-500 font-medium`} {...props} />
+          <a className={`${className} text-blue font-medium`} {...props} />
         ),
         del: ({ node, className, ...props }) => (
-          <del className={`${className} text-gray-700`} {...props} />
+          <del className={`${className} text-slate`} {...props} />
         ),
       }}
     >

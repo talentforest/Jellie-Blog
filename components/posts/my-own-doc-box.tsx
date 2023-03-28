@@ -16,10 +16,10 @@ export default function MyOwnDocBox({ selectedCategory, myOwnDoc }: Props) {
         <Link
           key={myOwnDoc.category}
           href={`/my-own-docs/${myOwnDoc.category}`}
-          className='block border w-full dark:border-slate-500 dark:bg-slate-800 p-3 rounded-lg '
+          className='block w-full border border-slate p-3 rounded-lg bg-box'
         >
           <h2 className='flex items-center'>
-            <IoDocumentAttachOutline className='mr-1 w-5 h-5 text-yellow-500' />
+            <IoDocumentAttachOutline className='mr-1 w-5 h-5 text-yellow' />
             {myOwnDoc.title}
           </h2>
         </Link>

@@ -14,12 +14,14 @@ export default function CategoryBox({
   return (
     <li
       className={`${
-        category === selectedCategory ? 'bg-yellow-300' : 'bg-white'
-      } border bg-white rounded-full  hover:bg-blue-500 transition hover:animate-pulse`}
+        category === selectedCategory
+          ? 'bg-yellow text-blue font-bold'
+          : 'bg-box'
+      } border rounded-full hover:bg-yellow transition hover:animate-pulse`}
     >
       <button
         onClick={() => onCategoryClick(category)}
-        className='px-3 text-sm text-blue-700 hover:text-blue-50 transition'
+        className='px-3 text-sm hover:text-black transition'
       >
         {category}
       </button>

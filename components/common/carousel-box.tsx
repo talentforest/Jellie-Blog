@@ -31,8 +31,8 @@ const CustomDot = ({ onClick, active }: DotProps) => {
   return (
     <li
       className={`${
-        active ? 'bg-yellow-400' : 'bg-white'
-      } relative border border-slate-300 w-3 h-3 mx-0.5 rounded-full transition`}
+        active ? 'bg-yellow' : 'bg-white'
+      } relative border border-slate w-3 h-3 mx-1 rounded-full transition`}
     >
       <button className='w-3 h-3 absolute top-0 left-0' onClick={onClick} />
     </li>

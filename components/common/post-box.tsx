@@ -1,4 +1,5 @@
 import { Post } from '@/service/posts';
+import { HiArrowRight } from 'react-icons/hi';
 import Link from 'next/link';
 
 interface PostBoxProps {
@@ -14,20 +15,19 @@ export default function PostBox({ post, size = 'sm' }: PostBoxProps) {
       key={path}
       href={`/posts/${path}`}
       className={`${
-        size === 'sm'
-          ? 'bg-gradient-to-b dark:from-indigo-700 dark:via-indigo-900 dark:to-blue-600 from-indigo-200 via-purple-200 to-blue-200'
-          : 'bg-white'
-      } dark:bg-slate-700 hover:-translate-y-1 transition cursor-pointer flex flex-col bg-white w-full h-full rounded-xl p-2.5 shadow-sm hover:shadow-lg select-none`}
+        size === 'sm' ? '' : 'items-center'
+      } bg-box  group hover:-translate-y-0.5 border border-slate hover:border-2 hover:border-yellow transition cursor-pointer flex justify-between w-full h-full rounded-xl p-2.5 select-none`}
     >
       <article className='flex flex-col'>
-        <h4 className='text-xs text-slate-600 mb-2 font-extralight border px-2 py-0.5 bg-blue-100 rounded-md w-fit'>
+        <h4 className='text-xs text-white mb-2 font-extralight border border-slate px-2 py-0.5 bg-indigo rounded-md w-fit'>
           {category}
         </h4>
         <h2 className='mb-1 font-bold text-lg'>{title}</h2>
-        <p className='text-sm mb-2 dark:text-slate-200 text-slate-700'>
-          {description}
-        </p>
+        <p className='text-sm mb-2 text-slate'>{description}</p>
       </article>
+      {size !== 'sm' && (
+        <HiArrowRight className='w-8 h-8 hidden group-hover:block text-yellow' />
+      )}
     </Link>
   );
 }
