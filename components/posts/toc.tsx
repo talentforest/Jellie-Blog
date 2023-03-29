@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { HiQueueList, HiXMark } from 'react-icons/hi2';
 
 export default function TableOfContents() {
+  const [mobile, setMobile] = useState(true);
   const [modal, setModal] = useState(false);
   const [headingEls, setHeadingEls] = useState<Element[]>([]);
 
@@ -13,6 +14,11 @@ export default function TableOfContents() {
   });
 
   useEffect(() => {
+    if (isTablet) {
+      setMobile(false);
+    } else {
+      setMobile(true);
+    }
     const article = document.querySelector('article');
     if (article) {
       const headingElements = Array.from(
@@ -20,15 +26,15 @@ export default function TableOfContents() {
       );
       setHeadingEls(headingElements);
     }
-  }, []);
+  }, [isTablet]);
 
   const toggleModal = () => setModal((prev) => !prev);
 
   return (
     <>
-      {isTablet ? (
+      {!mobile ? (
         <section className='w-48 sticky top-14 right-0 transition py-6 px-4 h-fit'>
-          <h1 className='mb-2'># Table of Contents</h1>
+          <h1 className='mb-2'># TOC</h1>
           <ul className='flex flex-col space-y-2'>
             {headingEls.map((el, index) => (
               <li
