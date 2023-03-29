@@ -27,7 +27,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       </section>
       <section className='mt-14 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
         <h4>다른 포스트 보기</h4>
-        {prev && <PostBox post={prev} size='lg' />}
+        {prev && <PostBox post={prev} size='lg' prev />}
         {next && <PostBox post={next} size='lg' />}
       </section>
     </>
