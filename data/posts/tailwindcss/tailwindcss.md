@@ -28,131 +28,131 @@ Next.js는 TailwindCss를 간편하게 설치하고 사용할 수 있도록 지�
 
 1. 다음과 같은 npm 패키지를 설치한다.
 
-```bash
-# postcss.config.js 파일 같이 생성
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
+   ```bash
+   # postcss.config.js 파일 같이 생성
+   npm install -D tailwindcss postcss autoprefixer
+   npx tailwindcss init -p
+   ```
 
-아래는 선택사항으로 tailwind prettier 플러그인을 통해 클래스이름을 자동 정렬할 수도 있다.
+   아래는 선택사항으로 tailwind prettier 플러그인을 통해 클래스이름을 자동 정렬할 수도 있다.
 
-```bash
-npm install -D prettier prettier-plugin-tailwindcss
-```
+   ```bash
+   npm install -D prettier prettier-plugin-tailwindcss
+   ```
 
 2. `postcss.config.js` 파일
 
-```javascript
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    autoprefixer: {},
-  },
-};
-```
+   ```javascript
+   module.exports = {
+     plugins: {
+       tailwindcss: {},
+       autoprefixer: {},
+     },
+   };
+   ```
 
 3. `tailwind.config.js` 설정
 
-```javascript
-/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    './pages/**/*.{js,jsx,ts,tsx}',
-    './components/**/*.{js,jsx,ts,tsx}',
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-```
+   ```javascript
+   /** @type {import('tailwindcss').Config} */
+   module.exports = {
+     content: [
+       './pages/**/*.{js,jsx,ts,tsx}',
+       './components/**/*.{js,jsx,ts,tsx}',
+     ],
+     theme: {
+       extend: {},
+     },
+     plugins: [],
+   };
+   ```
 
 4. `globals.css` 에 tailwind를 적용한다.
 
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
+   ```css
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   ```
 
 5. `_app.js` 파일에 다음과 같이 스타일 시트를 추가한다.
 
-```javascript
-import '@/styles/globals.css';
-```
+   ```javascript
+   import '@/styles/globals.css';
+   ```
 
 6. 변경 사항을 적용하기 위해 프로젝트를 다시 시작한다.
 
-```bash
-npm run dev
-```
+   ```bash
+   npm run dev
+   ```
 
 ## 유용한 클래스네임
 
-1. `gap`과 `space-x`, `space-y`
-   둘 다 붙어있는 자식요소끼리 떨어지는 공간을 만들어준다.
+- `gap`과 `space-x`, `space-y`
+  둘 다 붙어있는 자식요소끼리 떨어지는 공간을 만들어준다.
 
-   - 하지만 `gap`은 그대로 `gap`속성
-   - `space`는 `tailwind`에서 제공하는 유틸리티로 붙어있는 요소 사이의 `margin`을 설정한다.
+  - 하지만 `gap`은 그대로 `gap`속성
+  - `space`는 `tailwind`에서 제공하는 유틸리티로 붙어있는 요소 사이의 `margin`을 설정한다.
 
-2. `divided`
-   요소 사이의 선을 컨트롤하고 싶을 때 사용
+- `divided`
+  요소 사이의 선을 컨트롤하고 싶을 때 사용
 
-```css
-.divide-x-0 {
-  border-right-width: 0px;
-  border-left-width: 0px;
-}
-.divide-x {
-  border-right-width: 0px;
-  border-left-width: 1px;
-}
-.divide-y-reverse {
-  --tw-divide-y-reverse: 1;
-}
-```
+  ```css
+  .divide-x-0 {
+    border-right-width: 0px;
+    border-left-width: 0px;
+  }
+  .divide-x {
+    border-right-width: 0px;
+    border-left-width: 1px;
+  }
+  .divide-y-reverse {
+    --tw-divide-y-reverse: 1;
+  }
+  ```
 
-3. `inset`
-   absolute나 fixed된 요소가 부모에 꽉 차게 만들고 싶을 때 사용할 수 있다.
+- `inset`
+  absolute나 fixed된 요소가 부모에 꽉 차게 만들고 싶을 때 사용할 수 있다.
 
-```css
-.inset-2 {
-  top: 0.5rem /* 8px */;
-  right: 0.5rem /* 8px */;
-  bottom: 0.5rem /* 8px */;
-  left: 0.5rem /* 8px */;
-}
-.inset-y-0 {
-  top: 0px;
-  bottom: 0px;
-}
-.inset-x-0 {
-  left: 0px;
-  right: 0px;
-}
-```
+  ```css
+  .inset-2 {
+    top: 0.5rem /* 8px */;
+    right: 0.5rem /* 8px */;
+    bottom: 0.5rem /* 8px */;
+    left: 0.5rem /* 8px */;
+  }
+  .inset-y-0 {
+    top: 0px;
+    bottom: 0px;
+  }
+  .inset-x-0 {
+    left: 0px;
+    right: 0px;
+  }
+  ```
 
-4. `aspect`
-   [https://tailwindcss.com/docs/aspect-ratio](https://tailwindcss.com/docs/aspect-ratio)
-   요소의 종횡비를 제어하기 위한 유틸리티. 대괄호를 사용하여 새로운 속성을 생성할 수도 있다.
+- `aspect`
+  [https://tailwindcss.com/docs/aspect-ratio](https://tailwindcss.com/docs/aspect-ratio)
+  요소의 종횡비를 제어하기 위한 유틸리티. 대괄호를 사용하여 새로운 속성을 생성할 수도 있다.
 
-```css
-.aspect-auto {
-  aspect-ratio: auto;
-}
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-.aspect-video {
-  /* 비디오를 쓸 때 좋음 */
-  aspect-ratio: 16 / 9;
-}
-```
+  ```css
+  .aspect-auto {
+    aspect-ratio: auto;
+  }
+  .aspect-square {
+    aspect-ratio: 1 / 1;
+  }
+  .aspect-video {
+    /* 비디오를 쓸 때 좋음 */
+    aspect-ratio: 16 / 9;
+  }
+  ```
 
-```javascript
-// 사용예시
-<iframe class="w-full aspect-[4/3]" src="https://www.youtube.com/...
-```
+  ```javascript
+  // 사용예시
+  <iframe class="w-full aspect-[4/3]" src="https://www.youtube.com/...
+  ```
 
 ## Transition + Ring
 
