@@ -1,12 +1,12 @@
 import { IoDocumentAttachOutline } from 'react-icons/io5';
 import { Categories } from '../home/categorized-posts-section';
-import { MyOwnDoc } from '@/service/my-own-docs';
 import EmptyBox from '../common/empty-box';
 import Link from 'next/link';
+import { Post } from '@/service/posts';
 
 interface Props {
   selectedCategory: Categories;
-  myOwnDoc: MyOwnDoc;
+  myOwnDoc: Post;
 }
 
 export default function MyOwnDocBox({ selectedCategory, myOwnDoc }: Props) {
@@ -15,8 +15,8 @@ export default function MyOwnDocBox({ selectedCategory, myOwnDoc }: Props) {
       {myOwnDoc ? (
         <Link
           key={myOwnDoc.category}
-          href={`/my-own-docs/${myOwnDoc.category}`}
-          className='block w-full border border-slate p-3 rounded-lg bg-box'
+          href={`/posts/${myOwnDoc.category}`}
+          className='transition hover:border-yellow hover:-translate-y-0.5 block w-full border border-slate p-3 rounded-lg bg-box'
         >
           <h2 className='flex items-center'>
             <IoDocumentAttachOutline className='mr-1 w-5 h-5 text-yellow' />

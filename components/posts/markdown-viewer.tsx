@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='prose max-w-none text-text'
+      className='prose max-w-none text-text relative p-4 bg-box md:rounded-b-xl flex flex-col'
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
@@ -52,18 +52,18 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         img: (image) => (
           <Image
-            className='w-full max-h-60 object-cover my-2'
+            className='max-h-60 object-cover my-2'
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
             height={500}
           />
         ),
-        h2: ({ node, children, title, ...props }) => (
+        h2: ({ node, children, siblingCount, ...props }) => (
           <h2
-            className='text-yellow mt-14 mb-2 text-[22px]'
-            {...props}
+            className='text-yellow mt-8 mb-2 text-[22px]'
             id={String(children).replaceAll(' ', '-')}
+            {...props}
           >
             {children}
           </h2>
@@ -86,7 +86,7 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </h4>
         ),
-        p: ({ node, className, ...props }) => <p {...props} className='mb-0' />,
+        p: ({ node, className, ...props }) => <p {...props} className='m-0' />,
         blockquote: ({ node, className, ...props }) => (
           <blockquote
             className={`${className} text-indigo my-2 border-l-[5px] border-indigo`}
@@ -106,6 +106,11 @@ export default function MarkdownViewer({ content }: Props) {
           <li className='marker:text-yellow marker:font-bold my-2'>
             {children}
           </li>
+        ),
+        ol: ({ children }) => (
+          <ol className='marker:text-yellow marker:font-bold my-2'>
+            {children}
+          </ol>
         ),
       }}
     >

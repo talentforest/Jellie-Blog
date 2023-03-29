@@ -30,7 +30,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className='bg-bg text-text border-b border-slate sticky top-0 z-10 w-full h-14 px-4 md:px-20 flex justify-between items-center'>
+    <header className='sticky top-0 z-10 w-full px-4 md:px-0 md:w-[85%] lg:w-4/5 mx-auto h-14 flex justify-between items-center bg-bg text-text border-b border-slate '>
       <h1 className='font-bold'>
         <Link href='/'>Devlog</Link>
       </h1>

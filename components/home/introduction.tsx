@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Introduction() {
   return (
-    <section className='w-full my-12 px-4 flex justify-between items-center space-x-4'>
+    <section className='w-full my-12 px-4 md:px-0 flex justify-between items-center space-x-4'>
       <Image
         src='/images/about/avatar.png'
         alt='avatar'

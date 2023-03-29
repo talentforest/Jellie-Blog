@@ -2,6 +2,7 @@ import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
 import { Nanum_Gothic } from 'next/font/google';
 import './globals.css';
+import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 
 export const metadata = {
   title: 'Home | Jellie Blog',
@@ -22,7 +23,10 @@ export default function RootLayout({
     <html lang='en' className='dark'>
       <body className={`${nanum_gothic.className} bg-bg text-text`}>
         <Header />
-        <main className='relative pb-20 md:px-20 border-slate'>{children}</main>
+        <main className='relative w-full md:w-[85%] lg:w-4/5 mx-auto pb-28'>
+          {children}
+          <ScrollToTopBtn />
+        </main>
         <Footer />
       </body>
     </html>

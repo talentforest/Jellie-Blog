@@ -22,10 +22,10 @@ export default function ProgressBar() {
   }, [handleScroll]);
 
   return (
-    <div className='sticky top-14 border h-4 rounded-md z-10 bg-slate border-slate'>
+    <div className='fixed w-full md:w-[85%] lg:w-4/5 top-14 border h-4 z-10 bg-slate border-slate'>
       <div
         style={{ width: width + '%' }}
-        className='transition-all h-full rounded-md px-1 bg-indigo text-[10px] text-white'
+        className='transition-all h-full rounded-r-md px-1 bg-indigo text-[10px] text-white'
       >
         {width.toFixed()}%
       </div>

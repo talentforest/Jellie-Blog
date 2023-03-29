@@ -50,7 +50,7 @@ export default function CarouselBox({ children, config }: Props) {
       showDots={showDots}
       centerMode={centerMode}
       customDot={<CustomDot />}
-      containerClass='flex items-center pt-1 pb-10 mt-3 -mx-4 md:-mx-0'
+      containerClass='flex items-center pt-1 pb-10 mt-3 '
       customTransition='transform 0.8s ease-in-out'
       itemClass='px-1 h-[180px]'
     >

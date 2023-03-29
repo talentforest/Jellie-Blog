@@ -15,8 +15,8 @@ export default function PostBox({ post, size = 'sm' }: PostBoxProps) {
       key={path}
       href={`/posts/${path}`}
       className={`${
-        size === 'sm' ? '' : 'items-center'
-      } bg-box  group hover:-translate-y-0.5 border border-slate hover:border-2 hover:border-yellow transition cursor-pointer flex justify-between w-full h-full rounded-xl p-2.5 select-none`}
+        size === 'sm' ? 'items-start' : 'items-center'
+      } bg-box group hover:-translate-y-0.5 border border-slate hover:border-2 hover:border-yellow transition cursor-pointer flex justify-between w-full h-full rounded-xl p-2.5 select-none`}
     >
       <article className='flex flex-col'>
         <h4 className='text-xs text-white mb-2 font-extralight border border-slate px-2 py-0.5 bg-indigo rounded-md w-fit'>

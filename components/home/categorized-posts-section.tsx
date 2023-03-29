@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Post } from '@/service/posts';
-import { MyOwnDoc } from '@/service/my-own-docs';
 import CategoryBox from '../common/category-box';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
 import MyOwnDocBox from '../posts/my-own-doc-box';
+import { usePathname } from 'next/navigation';
 
 export type Categories =
   | 'All'
@@ -33,30 +33,32 @@ const categories: Categories[] = [
 
 interface Props {
   allPosts: Post[];
-  myOwnDocs?: MyOwnDoc[];
 }
 
-export default function CategorizedPostsSection({
-  allPosts,
-  myOwnDocs,
-}: Props) {
+export default function CategorizedPostsSection({ allPosts }: Props) {
+  const pathname = usePathname();
   const [selectedCategory, setSelectedCategory] = useState('All' as Categories);
+
   const onCategoryClick = (category: Categories) =>
     setSelectedCategory(category);
 
-  const filteredPosts = allPosts.filter((post) => {
-    if (selectedCategory === 'All') return post;
-    return post.category === selectedCategory;
-  });
+  const categorizedPosts: Post[] = allPosts
+    .map((item) => {
+      const allPosts = Object.values(item)[0];
+      const filteredPost = allPosts.filter(
+        (post: Post) => post.category === selectedCategory
+      );
+      return selectedCategory === 'All' ? allPosts : filteredPost;
+    })
+    .flat();
 
-  const filteredDoc = myOwnDocs?.filter(
-    (doc) => doc.category === selectedCategory
-  )[0];
+  const myOwnDoc = categorizedPosts.filter((post) => post.myOwnDoc === true)[0];
+  const posts = categorizedPosts.filter((post) => post.myOwnDoc === false);
 
   return (
-    <section className='m-4'>
+    <section className='m-4 md:m-0'>
       <h2>Categorized Posts</h2>
-      <ul className='flex flex-wrap gap-1 mt-3'>
+      <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
         {categories.map((category) => (
           <CategoryBox
             key={category}
@@ -66,21 +68,23 @@ export default function CategorizedPostsSection({
           />
         ))}
       </ul>
-      {filteredDoc && (
-        <>
-          {selectedCategory !== 'All' && (
+      {pathname.includes('posts') &&
+        Object?.keys(myOwnDoc || {})?.length !== 0 &&
+        selectedCategory !== 'All' && (
+          <>
             <h2 className='mt-4 mb-2'>나만의 문서</h2>
-          )}
-          <MyOwnDocBox
-            selectedCategory={selectedCategory}
-            myOwnDoc={filteredDoc}
-          />
-        </>
-      )}
-      <span className='block mt-4 mb-2'>{filteredPosts.length}개의 포스트</span>
-      <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-3'>
-        {!!filteredPosts.length ? (
-          filteredPosts?.map((post) => (
+            <MyOwnDocBox
+              selectedCategory={selectedCategory}
+              myOwnDoc={myOwnDoc}
+            />
+          </>
+        )}
+      <span className='block mt-8 mb-2'>
+        {categorizedPosts.length}개의 포스트
+      </span>
+      <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3'>
+        {!!posts.length ? (
+          posts?.map((post) => (
             <li key={post.path}>
               <PostBox post={post} size='lg' />
             </li>
