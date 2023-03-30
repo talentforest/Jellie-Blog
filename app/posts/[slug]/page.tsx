@@ -3,7 +3,7 @@ import TableOfContents from '@/components/posts/toc';
 import ProgressBar from '@/components/posts/progress-bar';
 import PostHeader from '@/components/posts/post-header';
 import MarkdownViewer from '@/components/posts/markdown-viewer';
-import { getPost } from '@/service/posts';
+import { getFeaturedPosts, getPost } from '@/service/posts';
 import { Metadata } from 'next';
 
 interface Props {
@@ -43,4 +43,11 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       </section>
     </>
   );
+}
+
+export async function generateStaticParams() {
+  const posts = await getFeaturedPosts();
+  return posts.map((post) => ({
+    slug: post.path,
+  }));
 }

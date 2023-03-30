@@ -2,6 +2,7 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { Categories } from '@/components/template/categorized-posts-section';
 import { readFile } from 'fs/promises';
+import { cache } from 'react';
 
 export interface Post {
   title: string;
@@ -19,11 +20,11 @@ export interface PostData extends Post {
   prev?: Post | null;
 }
 
-export async function getAllPosts(): Promise<Post[]> {
+export const getAllPosts = cache(async (): Promise<Post[]> => {
   const filePath = path.join(process.cwd(), 'data', 'posts.json');
   const data = await fs.readFile(filePath, 'utf-8');
   return JSON.parse(data);
-}
+});
 
 async function flatAllPosts() {
   const allPosts = await getAllPosts();
