@@ -79,9 +79,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
             />
           </>
         )}
-      <span className='block mt-8 mb-2'>
-        {categorizedPosts.length}개의 포스트
-      </span>
+      <span className='block mt-8 mb-2'>{posts.length}개의 포스트</span>
       <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3'>
         {!!posts.length ? (
           posts?.map((post) => (
