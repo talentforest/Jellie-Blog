@@ -11,7 +11,7 @@ export default function Introduction() {
         width={200}
         height={200}
         priority
-        className='w-28 h-28 object-cover rounded-full shadow-md flex justify-center items-center'
+        className='w-32 h-32 object-cover rounded-full shadow-sm shadow-slate flex justify-center items-center'
       />
       <div className='flex-1'>
         <h3 className='font-semibold mb-2'>🌼 Jellie 🌼</h3>
