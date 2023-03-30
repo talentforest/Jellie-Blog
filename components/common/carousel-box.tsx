@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode } from 'react';
-import Carousel, { DotProps } from 'react-multi-carousel';
+import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
 interface Props {
@@ -27,32 +27,20 @@ const responsive = {
   },
 };
 
-const CustomDot = ({ onClick, active }: DotProps) => {
-  return (
-    <li
-      className={`${
-        active ? 'bg-yellow' : 'bg-white'
-      } relative border border-slate w-3 h-3 mx-1 rounded-full transition`}
-    >
-      <button className='w-3 h-3 absolute top-0 left-0' onClick={onClick} />
-    </li>
-  );
-};
-
 export default function CarouselBox({ children, config }: Props) {
   const { centerMode, showDots } = config;
+
   return (
     <Carousel
       responsive={responsive}
       infinite={true}
       swipeable={true}
-      draggable={true}
       showDots={showDots}
       centerMode={centerMode}
-      customDot={<CustomDot />}
       containerClass='flex items-center pt-1 pb-10 mt-3 '
       customTransition='transform 0.8s ease-in-out'
       itemClass='px-1 h-[180px]'
+      dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow '
     >
       {children}
     </Carousel>
