@@ -4,10 +4,21 @@ import ProgressBar from '@/components/posts/progress-bar';
 import PostHeader from '@/components/posts/post-header';
 import MarkdownViewer from '@/components/posts/markdown-viewer';
 import { getPost } from '@/service/posts';
+import { Metadata } from 'next';
 
 interface Props {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({
+  params: { slug },
+}: Props): Promise<Metadata> {
+  const { title, description } = await getPost(slug);
+  return {
+    title,
+    description,
   };
 }
 

@@ -5,8 +5,12 @@ import './globals.css';
 import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 
 export const metadata = {
-  title: 'Home | Jellie Blog',
+  title: {
+    default: 'Home | Jellie Blog',
+    template: '%s | Jellie Blog',
+  },
   description: 'Jellie의 기술 블로그입니다.',
+  icons: '/favicon.ico',
 };
 
 const nanum_gothic = Nanum_Gothic({

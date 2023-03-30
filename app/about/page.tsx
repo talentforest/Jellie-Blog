@@ -2,7 +2,7 @@ import ProjectItem from '@/components/about/project-item';
 import { getAllProjects, getContactData } from '@/service/about';
 
 export const metadata = {
-  title: 'About | Jellie Blog',
+  title: 'About',
   description: 'Jellie의 기술 블로그입니다.',
 };
 
