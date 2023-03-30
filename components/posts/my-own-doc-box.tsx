@@ -1,5 +1,5 @@
 import { IoDocumentAttachOutline } from 'react-icons/io5';
-import { Categories } from '../home/categorized-posts-section';
+import { Categories } from '../template/categorized-posts-section';
 import EmptyBox from '../common/empty-box';
 import Link from 'next/link';
 import { Post } from '@/service/posts';

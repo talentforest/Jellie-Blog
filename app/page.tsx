@@ -1,7 +1,7 @@
 import Introduction from '@/components/home/introduction';
 import CarouselBox from '@/components/common/carousel-box';
 import PostBox from '@/components/common/post-box';
-import CategorizedPostsSection from '@/components/home/categorized-posts-section';
+import CategorizedPostsSection from '@/components/template/categorized-posts-section';
 import { getAllPosts, getFeaturedPosts } from '@/service/posts';
 
 export default async function Home() {
@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <>
       <Introduction />
-      <section className='mb-12'>
+      <section className='mb-12 h-64'>
         <h2 className='px-4'>Featured Post</h2>
         <CarouselBox config={{ centerMode: true, showDots: true }}>
           {featuredPost.map((post) => (

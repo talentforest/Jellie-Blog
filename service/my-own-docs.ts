@@ -1,6 +1,6 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Categories } from '@/components/home/categorized-posts-section';
+import { Categories } from '@/components/template/categorized-posts-section';
 import { readFile } from 'fs/promises';
 
 export interface MyOwnDoc {

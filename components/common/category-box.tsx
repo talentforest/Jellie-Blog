@@ -1,4 +1,4 @@
-import { Categories } from '../home/categorized-posts-section';
+import { Categories } from '../template/categorized-posts-section';
 
 interface Props {
   category: Categories;

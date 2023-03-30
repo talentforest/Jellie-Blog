@@ -1,4 +1,4 @@
-import CategorizedPostsSection from '@/components/home/categorized-posts-section';
+import CategorizedPostsSection from '@/components/template/categorized-posts-section';
 import { getAllPosts } from '@/service/posts';
 
 export default async function PostPage() {
