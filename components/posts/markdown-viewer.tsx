@@ -31,7 +31,7 @@ export default function MarkdownViewer({ content }: Props) {
             </SyntaxHighlighter>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
+              className={`${className} break-all before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
               {...props}
             >
               {children}
