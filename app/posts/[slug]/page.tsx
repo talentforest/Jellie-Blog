@@ -29,8 +29,8 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
   return (
     <>
       <section className='flex justify-between'>
-        <ProgressBar />
         <article className='flex flex-col w-full md:w-[75%] lg:w-[78%]'>
+          <ProgressBar />
           <PostHeader contents={{ path, title, date, category, myOwnDoc }} />
           <MarkdownViewer content={content} />
         </article>
