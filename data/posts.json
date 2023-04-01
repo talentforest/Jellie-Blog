@@ -4,7 +4,7 @@
       {
         "category": "tailwindcss",
         "title": "자주 꺼내보는 나만의 TailwindCss 문서",
-        "date": "2022-05-08",
+        "date": "2023-03-21",
         "path": "tailwindcss",
         "featured": true,
         "myOwnDoc": true,
@@ -13,7 +13,17 @@
     ]
   },
   {
-    "next.js": []
+    "next.js": [
+      {
+        "category": "next.js",
+        "title": "Next.js 13버전은 어떻게 바뀌었을까?",
+        "date": "2023-04-01",
+        "path": "next.js",
+        "featured": true,
+        "myOwnDoc": true,
+        "description": " Next.js 13버전, Beta와 Stable 기능들을 살펴보자!"
+      }
+    ]
   },
   {
     "javascript": []
