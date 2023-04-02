@@ -7,7 +7,7 @@ export default function TocContent({ headingEls, activeId }: Props) {
   return (
     <>
       <h1 className='mb-2 text-lg'># TOC</h1>
-      <ul className='flex flex-col space-y-3'>
+      <ul className='flex flex-col space-y-2'>
         {headingEls.map((el, index) => (
           <li
             key={index}
@@ -15,14 +15,16 @@ export default function TocContent({ headingEls, activeId }: Props) {
               paddingLeft: `${(+el.attributes[1].value - 1) * 1.2}rem`,
             }}
             className={`${
-              el.nodeName === 'H2' ? 'text-yellow text-sm' : 'text-text text-xs'
+              el.nodeName === 'H2'
+                ? 'text-yellow text-xs'
+                : 'text-text text-[11px]'
             } hover:text-slate`}
           >
             <a
               href={`#${el.id}`}
               className={`${
                 el.id === activeId ? 'border-l-4 border-indigo px-4 bg-box' : ''
-              } block py-1 w-fit cursor-pointer`}
+              } block py-1 w-fit cursor-pointer transition-all duration-75`}
             >
               {el.innerHTML}
             </a>

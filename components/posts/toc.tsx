@@ -17,11 +17,7 @@ export default function TableOfContents() {
   });
 
   useEffect(() => {
-    if (isTablet) {
-      setMobile(false);
-    } else {
-      setMobile(true);
-    }
+    isTablet ? setMobile(false) : setMobile(true);
     const article = document.querySelector('article');
     if (article) {
       const headingElements = Array.from(
@@ -42,7 +38,7 @@ export default function TableOfContents() {
   return (
     <>
       {!mobile ? (
-        <section className='w-48 sticky top-14 right-0 transition py-6 px-4 h-fit'>
+        <section className='overflow-scroll h-[92vh] w-48 sticky top-14 right-0 transition py-6 px-4'>
           <TocContent headingEls={headingEls} activeId={activeId} />
         </section>
       ) : (
