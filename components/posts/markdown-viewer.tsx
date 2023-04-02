@@ -31,7 +31,7 @@ export default function MarkdownViewer({ content }: Props) {
             </SyntaxHighlighter>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
+              className={`${className} break-all before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
               {...props}
             >
               {children}
@@ -48,29 +48,28 @@ export default function MarkdownViewer({ content }: Props) {
           </pre>
         ),
         strong: ({ children }) => (
-          <strong className='text-indigo'>{children}</strong>
+          <strong className='text-teal'>{children}</strong>
         ),
         img: (image) => (
           <Image
-            className='max-h-60 object-cover my-2'
+            className='max-h-72 w-auto object-cover my-2'
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
             height={500}
           />
         ),
-        h2: ({ node, children, siblingCount, ...props }) => (
+        h2: ({ children }) => (
           <h2
-            className='text-yellow mt-8 mb-2 text-[22px]'
+            className='text-yellow mt-8 mb-2 text-[24px]'
             id={String(children).replaceAll(' ', '-')}
-            {...props}
           >
             {children}
           </h2>
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='text-blue mt-5 mb-2 text-lg'
+            className='text-blue mt-5 mb-2 text-xl'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -86,10 +85,10 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </h4>
         ),
-        p: ({ node, className, ...props }) => <p {...props} className='m-0' />,
+        p: ({ node, className, ...props }) => <p {...props} className='my-1' />,
         blockquote: ({ node, className, ...props }) => (
           <blockquote
-            className={`${className} text-indigo my-2 border-l-[5px] border-indigo`}
+            className='text-teal my-2 border-l-[5px] border-teal'
             {...props}
           />
         ),
@@ -103,15 +102,17 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-yellow marker:font-bold my-2'>
+          <li className='marker:text-yellow marker:font-bold my-3'>
             {children}
           </li>
         ),
-        ol: ({ children }) => (
-          <ol className='marker:text-yellow marker:font-bold my-2'>
+        ol: ({ children, ordered, ...props }) => (
+          <ol className='marker:text-yellow marker:font-bold my-2' {...props}>
             {children}
           </ol>
         ),
+        ul: ({ children }) => <ul className='my-0 pl-5'>{children}</ul>,
+        hr: ({ children }) => <hr className='my-3 border-slate'>{children}</hr>,
       }}
     >
       {content}

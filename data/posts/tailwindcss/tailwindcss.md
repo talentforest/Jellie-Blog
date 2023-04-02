@@ -166,7 +166,7 @@ Next.js는 TailwindCss를 간편하게 설치하고 사용할 수 있도록 지�
 ```
 
 결과
-![img](/images/my-own-docs/ring-button.png)
+![img](/images/tailwindcss/tailwindcss/ring-button.png)
 
 ## Modifier
 
