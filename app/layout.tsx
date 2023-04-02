@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang='en' className='dark'>
       <body className={`${nanum_gothic.className} bg-bg text-text`}>
         <Header />
-        <main className='relative md:px-20 lg:px-40 mx-auto pb-28'>
+        <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
           {children}
           <ScrollToTopBtn />
         </main>
