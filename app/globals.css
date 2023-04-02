@@ -7,6 +7,10 @@ html {
   scroll-padding-top: 80px;
 }
 
+body {
+  overscroll-behavior: none;
+}
+
 @layer base {
   :root {
     --bg: #f5f5f5;
