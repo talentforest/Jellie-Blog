@@ -3,7 +3,7 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 
@@ -24,7 +24,7 @@ export default function MarkdownViewer({ content }: Props) {
               language={match[1]}
               PreTag='div'
               {...props}
-              style={oneDark}
+              style={okaidia}
               className='rounded-md'
             >
               {String(children).replace(/\n$/, '')}
