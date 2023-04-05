@@ -31,7 +31,7 @@ export default function MarkdownViewer({ content }: Props) {
             </SyntaxHighlighter>
           ) : (
             <code
-              className={`${className} break-all before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
+              className={`${className} break-all before:hidden after:hidden p-1 border border-slate bg-bg text-text rounded-md`}
               {...props}
             >
               {children}
@@ -85,7 +85,9 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </h4>
         ),
-        p: ({ node, className, ...props }) => <p {...props} className='my-1' />,
+        p: ({ node, className, ...props }) => (
+          <p {...props} className='mt-1 mb-3' />
+        ),
         blockquote: ({ node, className, ...props }) => (
           <blockquote
             className='text-teal my-2 border-l-[5px] border-teal'
