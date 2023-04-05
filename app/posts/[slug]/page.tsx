@@ -33,6 +33,12 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         <article className='flex flex-col w-full md:w-[75%] lg:w-[78%]'>
           <ProgressBar />
           <PostHeader contents={{ path, title, date, category, myOwnDoc }} />
+          <div className='bg-box p-4 text-sm text-slate leading-7'>
+            저의 글을 읽어주셔서 감사합니다.
+            <br />
+            피드백은 언제나 감사합니다. 혹시 잘못된 부분을 발견하셨다면 언제든지
+            이야기해주세요 😊
+          </div>
           <MarkdownViewer content={content} />
         </article>
         <TableOfContents />
