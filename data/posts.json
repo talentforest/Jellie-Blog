@@ -20,7 +20,7 @@
         "category": "next.js",
         "title": "Next.js 13버전은 어떻게 바뀌었을까?",
         "date": "2023-04-01",
-        "path": "next.js",
+        "path": "nextjs-13",
         "featured": true,
         "myOwnDoc": false,
         "description": "Next.js 13버전, Beta와 Stable 기능들을 살펴보자!"

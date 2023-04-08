@@ -4,7 +4,7 @@
 >
 > 공식문서 사이트 : [https://nextjs.org/docs](https://nextjs.org/docs)
 
-![img](/images/next.js/next.js/beta-stable.png)
+![img](/images/next.js/nextjs-13/beta-stable.png)
 
 먼저 주의할 점은 Next.js 13으로 바뀌었지만 아직 어떤 기능들은 **Beta버전**이라는 것이다. 아래 표의 Beta 기능 참고
 
@@ -23,7 +23,7 @@
 npx create-next-app@latest --experimental-app --typescript
 ```
 
-![img](/images/next.js/next.js/terminal.png)
+![img](/images/next.js/nextjs-13/terminal.png)
 
 프로젝트 이름과 ESlint 설정한다.
 
@@ -34,7 +34,7 @@ npx create-next-app@latest --experimental-app --typescript
   절대경로와 모듈 path 명을 설정할 때 설정한다.
 
 - 설치한 next.js 13 폴더 구조
-  ![img](/images/next.js/next.js/initial-structure.png)
+  ![img](/images/next.js/nextjs-13/initial-structure.png)
   그럼 이런식으로 프로젝트 초기 구조가 나왔다. 13버전 더 초기에는 app이랑 pages가 같이 공존했는데 시간이 흐르면서 app 폴더만 존재하게 되었다. 그리고 기존 page폴더에 있던 api 폴더는 이제 app폴더 안으로 옮겨졌다.
 
 ## 새로운 디렉터리 구조 app폴더(Beta)
@@ -132,7 +132,7 @@ export function generateStaticParams() {
 
 - 그럼 `<div>{params.slug}</div>` 이 params도 미리 받아와서 정적 페이지로 만들어둔다.
 
-![img](/images/next.js/next.js/dynamic-route.png)
+![img](/images/next.js/nextjs-13/dynamic-route.png)
 
 - `[]` 안에 이름이 있는 폴더라면 라우팅에 영향을 주지 않아 url에 이름이 들어가지 않는다.
 
@@ -151,14 +151,14 @@ export const metadata = {
 > layout.tsx는 **\_document.tsx, \_app.tsx와 layout.tsx**을 하나로 합쳤다. `<html>`, `<head>`, `<body>` 가 들어가 있는 것이다.
 
 - 개별 라우팅 페이지별로 layout을 만들수도 있다.
-  ![img](/images/next.js/next.js/dynamic-route.png)
+  ![img](/images/next.js/nextjs-13/dynamic-route.png)
   - 라우팅 폴더 내에 layout 파일을 넣는다.
 
 ### app 폴더는 서버 컴포넌트가 디폴트
 
 > v12 페이지 단위로 렌더링 방식을 규정하는 것에 반해, v13 **컴포넌트 단위**로 렌더링 방식을 규정한다.
 
-![img](/images/next.js/next.js/server-component.png)
+![img](/images/next.js/nextjs-13/server-component.png)
 페이지에서 상태 변화해야하는 작은 부분만 선택해서 클라이언트 컴포넌트로 렌더링하는 모습이다.
 
 - app에서 클라이언트 컴포넌트로 만들고 싶다면 파일 맨 위에 `‘use client’`를 선언한다.
