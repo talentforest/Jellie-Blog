@@ -61,7 +61,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='text-yellow mt-8 mb-2 text-[24px]'
+            className='text-yellow mt-8 mb-2 text-[28px]'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -69,7 +69,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='text-blue mt-5 mb-2 text-xl'
+            className='text-blue mt-5 mb-2 text-[24px]'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -98,7 +98,11 @@ export default function MarkdownViewer({ content }: Props) {
           <input className={`${className} my-0 mr-1 mt-1 w-4 h-4`} {...props} />
         ),
         a: ({ node, className, ...props }) => (
-          <a className={`${className} text-slate font-medium`} {...props} />
+          <a
+            className={`${className} text-slate font-medium`}
+            {...props}
+            target='_blank'
+          />
         ),
         del: ({ node, className, ...props }) => (
           <del className={`${className} text-slate`} {...props} />
