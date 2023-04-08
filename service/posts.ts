@@ -5,6 +5,7 @@ import { readFile } from 'fs/promises';
 import { cache } from 'react';
 
 export interface Post {
+  id: number;
   title: string;
   date: string;
   description: string;
