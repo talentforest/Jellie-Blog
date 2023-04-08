@@ -1,8 +1,16 @@
 'use client';
 
 import Giscus from '@giscus/react';
+import { useEffect, useState } from 'react';
 
 export default function GiscusComments() {
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  useEffect(() => {
+    const darkMode = document.documentElement.classList.contains('dark');
+    darkMode ? setDarkTheme(true) : setDarkTheme(false);
+  }, []);
+
   return (
     <Giscus
       id='comments'
@@ -15,7 +23,7 @@ export default function GiscusComments() {
       reactionsEnabled='1'
       emitMetadata='0'
       inputPosition='top'
-      theme='dark'
+      theme={darkTheme ? 'dark' : 'light'}
       lang='ko'
     />
   );
