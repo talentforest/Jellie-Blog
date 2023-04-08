@@ -3,7 +3,7 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 
@@ -24,14 +24,14 @@ export default function MarkdownViewer({ content }: Props) {
               language={match[1]}
               PreTag='div'
               {...props}
-              style={oneDark}
+              style={okaidia}
               className='rounded-md'
             >
               {String(children).replace(/\n$/, '')}
             </SyntaxHighlighter>
           ) : (
             <code
-              className={`${className} break-all before:hidden after:hidden p-1 text-text border bg-box rounded-md`}
+              className={`${className} break-all before:hidden after:hidden p-1 border border-slate bg-bg text-text rounded-md`}
               {...props}
             >
               {children}
@@ -61,7 +61,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='text-yellow mt-8 mb-2 text-[24px]'
+            className='text-yellow mt-8 mb-2 text-[28px]'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -69,7 +69,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='text-blue mt-5 mb-2 text-xl'
+            className='text-blue mt-5 mb-2 text-[24px]'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -85,7 +85,9 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </h4>
         ),
-        p: ({ node, className, ...props }) => <p {...props} className='my-1' />,
+        p: ({ node, className, ...props }) => (
+          <p {...props} className='mt-1 mb-3' />
+        ),
         blockquote: ({ node, className, ...props }) => (
           <blockquote
             className='text-teal my-2 border-l-[5px] border-teal'
@@ -96,7 +98,11 @@ export default function MarkdownViewer({ content }: Props) {
           <input className={`${className} my-0 mr-1 mt-1 w-4 h-4`} {...props} />
         ),
         a: ({ node, className, ...props }) => (
-          <a className={`${className} text-slate font-medium`} {...props} />
+          <a
+            className={`${className} text-slate font-medium`}
+            {...props}
+            target='_blank'
+          />
         ),
         del: ({ node, className, ...props }) => (
           <del className={`${className} text-slate`} {...props} />

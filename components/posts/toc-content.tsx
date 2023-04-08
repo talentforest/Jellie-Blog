@@ -6,7 +6,7 @@ interface Props {
 export default function TocContent({ headingEls, activeId }: Props) {
   return (
     <>
-      <h1 className='mb-2 text-lg'># TOC</h1>
+      <h1 className='mb-2 text-sm'># TOC</h1>
       <ul className='flex flex-col space-y-2'>
         {headingEls.map((el, index) => (
           <li
@@ -15,9 +15,7 @@ export default function TocContent({ headingEls, activeId }: Props) {
               paddingLeft: `${(+el.attributes[1].value - 1) * 1.2}rem`,
             }}
             className={`${
-              el.nodeName === 'H2'
-                ? 'text-yellow text-xs'
-                : 'text-text text-[11px]'
+              el.nodeName === 'H2' ? 'text-yellow text-xs' : 'text-text text-xs'
             } hover:text-slate`}
           >
             <a

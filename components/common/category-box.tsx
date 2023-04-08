@@ -17,11 +17,11 @@ export default function CategoryBox({
         category === selectedCategory
           ? 'bg-yellow text-blue font-bold'
           : 'bg-box'
-      } border rounded-full hover:bg-yellow transition hover:animate-pulse`}
+      } border rounded-full hover:bg-yellow hover:text-blue transition hover:animate-pulse`}
     >
       <button
         onClick={() => onCategoryClick(category)}
-        className='px-3 text-sm hover:text-black transition'
+        className='px-3 text-sm transition'
       >
         {category}
       </button>

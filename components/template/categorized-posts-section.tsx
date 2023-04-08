@@ -84,7 +84,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         {!!posts.length ? (
           posts?.map((post) => (
             <li key={post.path}>
-              <PostBox post={post} size='lg' />
+              <PostBox post={post} />
             </li>
           ))
         ) : (

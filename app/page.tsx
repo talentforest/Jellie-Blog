@@ -15,7 +15,7 @@ export default async function Home() {
         <h2 className='px-4'>Featured Post</h2>
         <CarouselBox config={{ centerMode: true, showDots: true }}>
           {featuredPost.map((post) => (
-            <PostBox key={post.path} post={post} />
+            <PostBox key={post.path} post={post} sm />
           ))}
         </CarouselBox>
       </section>
