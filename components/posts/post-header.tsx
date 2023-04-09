@@ -2,22 +2,23 @@ import Image from 'next/image';
 
 interface Props {
   contents: {
-    path?: string;
-    date?: string;
-    myOwnDoc?: boolean;
+    path: string;
+    date: string;
+    myOwnDoc: boolean;
     category: string;
     title: string;
+    thumbnail?: string;
   };
 }
 
 export default function PostHeader({
-  contents: { path, category, date, title, myOwnDoc },
+  contents: { path, category, date, title, myOwnDoc, thumbnail },
 }: Props) {
   return (
     <header className='w-full border-b border-slate relative flex flex-col bg-box h-80'>
       {!myOwnDoc && path && (
         <Image
-          src={`/images/${category}/${path}.png`}
+          src={`/images/${category}/${thumbnail}`}
           alt='Post Thumbnail'
           width={500}
           height={500}
