@@ -48,7 +48,7 @@ export default function MarkdownViewer({ content }: Props) {
           </pre>
         ),
         strong: ({ children }) => (
-          <strong className='text-teal'>{children}</strong>
+          <strong className='text-teal font-bold'>{children}</strong>
         ),
         img: (image) => (
           <Image
@@ -108,12 +108,15 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-yellow marker:font-bold my-3'>
+          <li className='marker:text-yellow marker:font-bold mt-1 mb-3'>
             {children}
           </li>
         ),
         ol: ({ children, ordered, ...props }) => (
-          <ol className='marker:text-yellow marker:font-bold my-2' {...props}>
+          <ol
+            className='marker:text-yellow marker:font-bold mb-2 mt-0'
+            {...props}
+          >
             {children}
           </ol>
         ),

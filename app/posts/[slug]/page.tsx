@@ -25,14 +25,26 @@ export async function generateMetadata({
 
 export default async function PostDetailPage({ params: { slug } }: Props) {
   const post = await getPost(slug);
-  const { title, date, category, content, path, next, prev, myOwnDoc } = post;
+  const {
+    title,
+    date,
+    category,
+    content,
+    path,
+    next,
+    prev,
+    myOwnDoc,
+    thumbnail,
+  } = post;
 
   return (
     <>
       <section className='flex justify-between'>
         <article className='flex flex-col w-full md:w-[75%] lg:w-[78%]'>
           <ProgressBar />
-          <PostHeader contents={{ path, title, date, category, myOwnDoc }} />
+          <PostHeader
+            contents={{ path, title, date, category, myOwnDoc, thumbnail }}
+          />
           <div className='bg-box p-4 text-sm text-slate leading-7'>
             저의 글을 읽어주셔서 감사합니다.
             <br />

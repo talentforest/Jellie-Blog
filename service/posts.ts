@@ -13,6 +13,7 @@ export interface Post {
   path: string;
   featured: boolean;
   myOwnDoc: boolean;
+  thumbnail?: string;
 }
 
 export interface PostData extends Post {

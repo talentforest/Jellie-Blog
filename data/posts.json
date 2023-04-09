@@ -21,6 +21,7 @@
         "title": "Next.js 13버전은 어떻게 바뀌었을까?",
         "date": "2023-04-01",
         "path": "nextjs-13",
+        "thumbnail": "nextjs-13.png",
         "featured": true,
         "myOwnDoc": false,
         "description": "Next.js 13버전, Beta와 Stable 기능들을 살펴보자!"
@@ -52,9 +53,21 @@
         "title": "React 18의 새로운 기능 7가지",
         "date": "2023-04-03",
         "path": "react-18-new-features",
+        "thumbnail": "react-18.png",
         "featured": true,
         "myOwnDoc": false,
         "description": "완전히 새롭게 바뀐 React 18을 살펴보자!"
+      },
+      {
+        "id": 2,
+        "category": "react",
+        "title": "React 18의 새로운 Hook 3가지",
+        "date": "2023-04-03",
+        "path": "react-18-hooks",
+        "thumbnail": "react-18.png",
+        "featured": true,
+        "myOwnDoc": false,
+        "description": "useId, useTransition, useDeferredValue...?"
       }
     ]
   }
