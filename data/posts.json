@@ -57,6 +57,17 @@
         "featured": true,
         "myOwnDoc": false,
         "description": "완전히 새롭게 바뀐 React 18을 살펴보자!"
+      },
+      {
+        "id": 2,
+        "category": "react",
+        "title": "React 18의 새로운 Hook 3가지",
+        "date": "2023-04-03",
+        "path": "react-18-hooks",
+        "thumbnail": "react-18.png",
+        "featured": true,
+        "myOwnDoc": false,
+        "description": "useId, useTransition, useDeferredValue...?"
       }
     ]
   }
