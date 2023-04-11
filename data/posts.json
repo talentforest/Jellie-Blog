@@ -68,6 +68,17 @@
         "featured": true,
         "myOwnDoc": false,
         "description": "useId, useTransition, useDeferredValue...?"
+      },
+      {
+        "id": 3,
+        "category": "react",
+        "title": "UseEffect Deep Dive",
+        "date": "2023-04-08",
+        "path": "useEffect-deep-dive",
+        "thumbnail": "react-18.png",
+        "featured": true,
+        "myOwnDoc": false,
+        "description": "useEffect를 쓰지 말아야 되는 상황? 왜 되도록 useEffect를 쓰지 말아야 할까?"
       }
     ]
   },
