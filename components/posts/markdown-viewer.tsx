@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='prose max-w-none text-text relative p-4 bg-box md:rounded-b-xl flex flex-col'
+      className='prose max-w-none text-text relative px-4 pt-4 pb-20 bg-box md:rounded-b-xl flex flex-col'
       remarkPlugins={[remarkGfm]}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
@@ -38,6 +38,9 @@ export default function MarkdownViewer({ content }: Props) {
             </code>
           );
         },
+        table: ({ children }) => (
+          <table className='break-all mt-0'>{children}</table>
+        ),
         th: ({ children }) => <th className='text-indigo'>{children}</th>,
         div: ({ children, ...props }) => (
           <div {...props} style={{ padding: '0', margin: '0' }} />
@@ -90,7 +93,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         blockquote: ({ node, className, ...props }) => (
           <blockquote
-            className='text-teal my-2 border-l-[5px] border-teal'
+            className='text-indigo mt-1 border-l-[5px] border-teal [&>p::before]:hidden'
             {...props}
           />
         ),

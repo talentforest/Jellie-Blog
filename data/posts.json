@@ -62,12 +62,38 @@
         "id": 2,
         "category": "react",
         "title": "React 18의 새로운 Hook 3가지",
-        "date": "2023-04-03",
+        "date": "2023-04-06",
         "path": "react-18-hooks",
         "thumbnail": "react-18.png",
         "featured": true,
         "myOwnDoc": false,
         "description": "useId, useTransition, useDeferredValue...?"
+      },
+      {
+        "id": 3,
+        "category": "react",
+        "title": "UseEffect Deep Dive",
+        "date": "2023-04-08",
+        "path": "useEffect-deep-dive",
+        "thumbnail": "react-18.png",
+        "featured": true,
+        "myOwnDoc": false,
+        "description": "useEffect를 쓰지 말아야 되는 상황? 왜 되도록 useEffect를 쓰지 말아야 할까?"
+      }
+    ]
+  },
+  {
+    "library": [
+      {
+        "id": 1,
+        "category": "library",
+        "title": "서버에서 가져오는 데이터 관리를 도와주는 React Query!",
+        "date": "2023-04-10",
+        "path": "react-query-overview",
+        "thumbnail": "react-query.png",
+        "featured": true,
+        "myOwnDoc": false,
+        "description": "데이터를 캐싱하고, 무한 스크롤, 페이지네이션까지 할수 있다고?"
       }
     ]
   }
