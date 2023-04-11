@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Post } from '@/service/posts';
+import { usePathname } from 'next/navigation';
 import CategoryBox from '../common/category-box';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
 import MyOwnDocBox from '../posts/my-own-doc-box';
-import { usePathname } from 'next/navigation';
 
 export type Categories =
   | 'All'
@@ -17,7 +17,8 @@ export type Categories =
   | 'tailwindcss'
   | 'web'
   | 'developments'
-  | 'side-projects';
+  | 'side-projects'
+  | 'library';
 
 const categories: Categories[] = [
   'All',
@@ -29,6 +30,7 @@ const categories: Categories[] = [
   'web',
   'developments',
   'side-projects',
+  'library',
 ];
 
 interface Props {
