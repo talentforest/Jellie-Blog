@@ -65,6 +65,12 @@ function Todos() {
 
 ## Queries
 
+```typescript
+const queryData = useQuery(Query Keys, Query Function);
+```
+
+서버를 통해 클라이언트에서 데이터를 가져오는데에는 Query Keys와 Query Function이 필요하다. 아래에서 이 둘에 대해 알아보자!
+
 ### Query Keys
 
 React-Query는 **Query Keys를 기반으로 쿼리 캐싱을 관리**한다.
