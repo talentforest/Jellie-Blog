@@ -58,7 +58,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
   const posts = categorizedPosts.filter((post) => post.myOwnDoc === false);
 
   return (
-    <section className='m-4 md:my-4 md:mx-0'>
+    <section className='m-4 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
       <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
         {categories.map((category) => (

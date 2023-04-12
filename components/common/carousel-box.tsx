@@ -37,7 +37,7 @@ export default function CarouselBox({ children, config }: Props) {
       swipeable={true}
       showDots={showDots}
       centerMode={centerMode}
-      containerClass='flex items-center pt-1 pb-10 mt-3 '
+      containerClass='flex items-center pt-1 pb-10 mt-3 z-0'
       customTransition='transform 0.8s ease-in-out'
       itemClass='px-1 h-[180px]'
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow '
