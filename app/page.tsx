@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <>
       <Introduction />
-      <section className='mb-12 h-64'>
+      <section className='mb-12 h-68'>
         <h2 className='px-4'>Featured Post</h2>
         <CarouselBox config={{ centerMode: true, showDots: true }}>
           {featuredPost.map((post) => (

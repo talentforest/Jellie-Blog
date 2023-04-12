@@ -25,7 +25,7 @@ export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
           prev ? 'items-end' : 'items-start'
         } w-full flex flex-col h-full`}
       >
-        <h4 className='text-xs text-white mb-2 font-extralight border border-slate px-2 py-0.5 bg-indigo rounded-md w-fit'>
+        <h4 className='text-xs text-text mb-2 font-extralight border border-slate px-2 py-0.5 bg-box rounded-full w-fit'>
           {category}
         </h4>
         <h2 className='mb-1 font-bold text-lg'>{title}</h2>

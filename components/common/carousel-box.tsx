@@ -39,7 +39,7 @@ export default function CarouselBox({ children, config }: Props) {
       centerMode={centerMode}
       containerClass='flex items-center pt-1 pb-10 mt-3 z-0'
       customTransition='transform 0.8s ease-in-out'
-      itemClass='px-1 h-[180px]'
+      itemClass='px-1 '
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow '
     >
       {children}

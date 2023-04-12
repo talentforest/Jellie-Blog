@@ -4,7 +4,6 @@ interface Props {
   contents: {
     path: string;
     date: string;
-    myOwnDoc: boolean;
     category: string;
     title: string;
     thumbnail?: string;
@@ -12,11 +11,11 @@ interface Props {
 }
 
 export default function PostHeader({
-  contents: { path, category, date, title, myOwnDoc, thumbnail },
+  contents: { path, category, date, title, thumbnail },
 }: Props) {
   return (
     <header className='w-full border-b border-slate relative flex flex-col bg-box h-80'>
-      {!myOwnDoc && path && (
+      {path && (
         <Image
           src={`/images/${category}/${thumbnail}`}
           alt='Post Thumbnail'

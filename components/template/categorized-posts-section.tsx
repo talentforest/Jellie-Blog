@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import CategoryBox from '../common/category-box';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
-import MyOwnDocBox from '../posts/my-own-doc-box';
 
 export type Categories =
   | 'All'
@@ -54,9 +53,6 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
     })
     .flat();
 
-  const myOwnDoc = categorizedPosts.filter((post) => post.myOwnDoc === true)[0];
-  const posts = categorizedPosts.filter((post) => post.myOwnDoc === false);
-
   return (
     <section className='m-4 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
@@ -70,21 +66,12 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
           />
         ))}
       </ul>
-      {pathname.includes('posts') &&
-        Object?.keys(myOwnDoc || {})?.length !== 0 &&
-        selectedCategory !== 'All' && (
-          <>
-            <h2 className='mt-4 mb-2'>나만의 문서</h2>
-            <MyOwnDocBox
-              selectedCategory={selectedCategory}
-              myOwnDoc={myOwnDoc}
-            />
-          </>
-        )}
-      <span className='block mt-8 mb-2'>{posts.length}개의 포스트</span>
+      <span className='block mt-8 mb-2'>
+        {categorizedPosts.length}개의 포스트
+      </span>
       <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3'>
-        {!!posts.length ? (
-          posts?.map((post) => (
+        {!!categorizedPosts.length ? (
+          categorizedPosts?.map((post) => (
             <li key={post.path}>
               <PostBox post={post} />
             </li>

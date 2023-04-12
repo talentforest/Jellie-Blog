@@ -12,7 +12,6 @@ export interface Post {
   category: Categories;
   path: string;
   featured: boolean;
-  myOwnDoc: boolean;
   thumbnail?: string;
 }
 
