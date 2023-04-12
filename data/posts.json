@@ -8,7 +8,6 @@
         "date": "2023-03-21",
         "path": "tailwindcss",
         "featured": true,
-        "myOwnDoc": true,
         "description": "나만의 방식으로 정리한 문서"
       }
     ]
@@ -23,7 +22,6 @@
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
         "featured": true,
-        "myOwnDoc": false,
         "description": "Next.js 13버전, Beta와 Stable 기능들을 살펴보자!"
       }
     ]
@@ -40,7 +38,6 @@
         "date": "2023-04-02",
         "path": "typescript",
         "featured": true,
-        "myOwnDoc": true,
         "description": "이제 프로젝트에서 타입스크립트는 필수"
       }
     ]
@@ -55,7 +52,6 @@
         "path": "react-18-new-features",
         "thumbnail": "react-18.png",
         "featured": true,
-        "myOwnDoc": false,
         "description": "완전히 새롭게 바뀐 React 18을 살펴보자!"
       },
       {
@@ -66,7 +62,6 @@
         "path": "react-18-hooks",
         "thumbnail": "react-18.png",
         "featured": true,
-        "myOwnDoc": false,
         "description": "useId, useTransition, useDeferredValue...?"
       },
       {
@@ -77,8 +72,17 @@
         "path": "useEffect-deep-dive",
         "thumbnail": "react-18.png",
         "featured": true,
-        "myOwnDoc": false,
         "description": "useEffect를 쓰지 말아야 되는 상황? 왜 되도록 useEffect를 쓰지 말아야 할까?"
+      },
+      {
+        "id": 4,
+        "category": "react",
+        "title": "Profiler API로 React 프로젝트 최적화하기",
+        "date": "2023-04-09",
+        "path": "react-profiler-api",
+        "thumbnail": "react-18.png",
+        "featured": true,
+        "description": "React 프로젝트를 측정하고, 최적화하는 방법"
       }
     ]
   },
@@ -92,9 +96,11 @@
         "path": "react-query-overview",
         "thumbnail": "react-query.png",
         "featured": true,
-        "myOwnDoc": false,
         "description": "데이터를 캐싱하고, 무한 스크롤, 페이지네이션까지 할수 있다고?"
       }
     ]
+  },
+  {
+    "side-projects": []
   }
 ]
