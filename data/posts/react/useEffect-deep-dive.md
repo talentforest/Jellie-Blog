@@ -210,6 +210,40 @@ useEffect는 사실 특정 렌더링에서 특정 작업을 수행하는 것이�
    }
    ```
 
+   - 하지만 이벤트 핸들러를 사용할 때가 있다.
+
+     ```tsx
+     import React, { useState, useEffect } from 'react';
+
+     function MyComponent() {
+       const [scrollPosition, setScrollPosition] = useState(0);
+
+       const handleScroll = () => {
+         const position = window.scrollY;
+         setScrollPosition(position);
+       };
+
+       useEffect(() => {
+         window.addEventListener('scroll', handleScroll);
+
+         return () => {
+           window.removeEventListener('scroll', handleScroll);
+         };
+       }, []);
+
+       return (
+         <div>
+           <p>Current scroll position: {scrollPosition}px</p>
+           <div style={{ height: '1000px' }}>
+             Scroll down to update position
+           </div>
+         </div>
+       );
+     }
+     ```
+
+     위의 코드에서는 `useEffect`에 scroll 이벤트 핸들러를 등록하고 있다. 의존성 배열에는 빈배열을 전달하고 있는데, 이렇게 하여 컴포넌트가 마운트될 때에만 이벤트핸들러를 등록하도록 한다. 위의 코드에서 스크롤에 따라 `window.scrollY`의 값이 변화하는데, 이것은 `handleScroll`내 `useState`을 통해 상태로 관리하여 업데이트된다. 그러니까 의존성 배열에 handleScroll을 넣을 필요가 없는 것이다.
+
 최대한 useEffect를 사용하지 말기
 
 > useEffect를 사용하지 않으면 코드를 더 쉽게 실행할 수 있고 오류 발생률이 낮아진다고 한다. useEffect 는 실제로 컴포넌트가 외부 시스템과 동기화되기 위한 hook이므로 렌더링 자체로 인한 부작용에만 사용해야 한다. 또한 잘못하면 메모리 누수가 발생할 수 있으므로 이에 대한 처리도 중요하다.
@@ -220,3 +254,7 @@ useEffect는 사실 특정 렌더링에서 특정 작업을 수행하는 것이�
 [react.dev/useEffect](https://react.dev/reference/react/useEffect)
 [react.dev/you-might-not-need-an-effect](https://react.dev/learn/you-might-not-need-an-effect)
 [react.dev/lifecycle-of-reactive-effects](https://react.dev/learn/lifecycle-of-reactive-effects)
+
+```
+
+```
