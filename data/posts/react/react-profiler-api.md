@@ -52,15 +52,15 @@ function Page() {
 
 그럼 이런식으로 콘솔에서 확인할 수 있다.
 
-![img](/images/react/optimize-react-project/profiler-console.png)
+![img](/images/react/react-profiler-api/profiler-console.png)
 
 **사용시 주의할 점**
 기본적으로 **프로덕션 빌드에서는 사용하지 않도록** 설정되어 있다. 프로덕션에서 사용할 경우 개발자 도구의 React Developer Tools의 Profiler 탭에서 분석 결과를 볼 수 없다.
 
-![img](/images/react/optimize-react-project/profiling-not-supported.png)
+![img](/images/react/react-profiler-api/profiling-not-supported.png)
 
 아래와 같이 나와야 한다.
-![img](/images/react/optimize-react-project/profiling.png)
+![img](/images/react/react-profiler-api/profiling.png)
 
 개발모드에서 사용하기!
 
