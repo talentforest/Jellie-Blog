@@ -1,5 +1,13 @@
 [
   {
+    "name": "Jellie Blog",
+    "path": "jellie-blog.png",
+    "description": "개인 블로그로 만든 프로젝트입니다.",
+    "stacks": ["next.js", "tailwindcss", "typescript", "react-markdown"],
+    "link": "https://talentforest.github.io/han-bookclub-app/",
+    "github": "https://github.com/talentforest/han-bookclub-app"
+  },
+  {
     "name": "한페이지 독서모임 기록장",
     "path": "한페이지독서모임기록장.png",
     "description": "독서모임 한페이지를 위한 전용 기록관리 페이지입니다.",
@@ -14,6 +22,21 @@
     "stacks": ["next.js", "tailwindcss", "redux-toolkit", "swr"],
     "link": "https://what-is-in-the-fridge-fawn.vercel.app/",
     "github": "https://github.com/talentforest/what-is-in-the-fridge"
+  },
+  {
+    "name": "림플릭스 최적화 프로젝트",
+    "path": "rimflix.png",
+    "description": "영화 정보를 찾아보고 나만의 포토카드도 만들어보세요.",
+    "stacks": [
+      "react",
+      "typescript",
+      "recoil",
+      "react-query",
+      "styled-components",
+      "framer-motion"
+    ],
+    "link": "https://talentforest.github.io/rimflix/",
+    "github": "https://github.com/talentforest/rimflix"
   },
   {
     "name": "Hacker News",

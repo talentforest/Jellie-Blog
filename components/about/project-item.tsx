@@ -12,14 +12,14 @@ export default function ProjectItem({
 }: Props) {
   return (
     <li className='rounded-lg bg-box p-3 border border-slate flex flex-col shadow-md'>
-      <h5 className='font-bold mb-2 flex items-center'>{name}</h5>
+      <h5 className='font-bold mb-2 flex items-center text-xl'>{name}</h5>
       <Image
         src={`/images/about/${path}`}
         alt='프로젝트: 냉장고에 뭐가 있지 썸네일'
         width={400}
         height={400}
         className='w-full rounded-md border-2 h-40 object-cover'
-        priority
+        unoptimized
       />
       <p className='border-l-4 border-slate bg-bg mb-1 text-sm py-1 leading-6 mt-1 px-2'>
         <HiOutlineLightBulb className='inline w-5 h-5 mr-1 text-text' />
@@ -29,13 +29,13 @@ export default function ProjectItem({
         {stacks.map((stack) => (
           <li
             key={stack}
-            className='bg-bg px-2 border border-slate w-fit rounded-md text-sm'
+            className='bg-bg px-2 border border-slate w-fit rounded-md text-sm h-fit'
           >
             {stack}
           </li>
         ))}
       </ul>
-      <div className='flex gap-2'>
+      <div className='flex gap-2 flex-1 items-end'>
         <a
           href={link}
           target='_blank'
