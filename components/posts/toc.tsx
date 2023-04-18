@@ -1,23 +1,20 @@
 'use client';
 
-import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import { HiQueueList, HiXMark } from 'react-icons/hi2';
-import TocContent from './toc-content';
 import { getIntersectionObserver } from '@/util/getIntersectionObserver';
+import TocContent from './toc-content';
+import dynamic from 'next/dynamic';
+const ReactResponsive = dynamic(() => import('react-responsive'), {
+  ssr: false,
+});
 
 export default function TableOfContents() {
-  const [mobile, setMobile] = useState(true);
   const [modal, setModal] = useState(false);
   const [headingEls, setHeadingEls] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
-  const isTablet = useMediaQuery({
-    query: '(min-width: 768px)',
-  });
-
   useEffect(() => {
-    isTablet ? setMobile(false) : setMobile(true);
     const article = document.querySelector('article');
     if (article) {
       const headingElements = Array.from(
@@ -31,41 +28,40 @@ export default function TableOfContents() {
         observer.observe(element);
       });
     }
-  }, [isTablet]);
+  }, []);
 
   const toggleModal = () => setModal((prev) => !prev);
 
   return (
     <>
-      {!mobile ? (
+      <ReactResponsive minWidth={768}>
         <section className='overflow-scroll h-[92vh] w-48 sticky top-14 right-0 transition py-6 px-4'>
           <TocContent headingEls={headingEls} activeId={activeId} />
         </section>
-      ) : (
-        <>
-          <button
-            onClick={toggleModal}
-            className='transition hover:scale-105 bg-yellow border border-slate z-20 fixed flex items-center justify-center bottom-5 right-5 w-16 h-16 shadow-lg rounded-full'
-          >
-            {!modal ? (
-              <HiQueueList className='w-7 h-7' />
-            ) : (
-              <HiXMark className='w-7 h-7' />
-            )}
-          </button>
-          {modal && (
-            <>
-              <div
-                onClick={toggleModal}
-                className='overflow-hidden transition fixed bottom-0 top-0 z-20 left-0 right-0 mx-auto w-full h-screen bg-black opacity-50'
-              />
-              <section className='overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-bg rounded-xl'>
-                <TocContent headingEls={headingEls} activeId={activeId} />
-              </section>
-            </>
+      </ReactResponsive>
+      <ReactResponsive maxWidth={767}>
+        <button
+          onClick={toggleModal}
+          className='transition hover:scale-105 bg-yellow border border-slate z-20 fixed flex items-center justify-center bottom-5 right-5 w-16 h-16 shadow-lg rounded-full'
+        >
+          {!modal ? (
+            <HiQueueList className='w-7 h-7' />
+          ) : (
+            <HiXMark className='w-7 h-7' />
           )}
-        </>
-      )}
+        </button>
+        {modal && (
+          <>
+            <div
+              onClick={toggleModal}
+              className='overflow-hidden transition fixed bottom-0 top-0 z-20 left-0 right-0 mx-auto w-full h-screen bg-black opacity-50'
+            />
+            <section className='overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-bg rounded-xl'>
+              <TocContent headingEls={headingEls} activeId={activeId} />
+            </section>
+          </>
+        )}
+      </ReactResponsive>
     </>
   );
 }

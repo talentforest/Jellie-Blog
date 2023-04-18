@@ -1,16 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px;
-}
-
-body {
-  overscroll-behavior: none;
-}
-
 @layer base {
   :root {
     --bg: #f5f5f5;
@@ -24,7 +14,6 @@ body {
     --black: #000;
     --box: #fff;
   }
-
   :root[class='dark'] {
     --bg: #111;
     --text: #fff;
@@ -37,4 +26,9 @@ body {
     --black: #000;
     --box: #222;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }

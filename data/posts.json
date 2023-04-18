@@ -7,7 +7,8 @@
         "title": "자주 꺼내보는 나만의 TailwindCss 문서",
         "date": "2023-03-21",
         "path": "tailwindcss",
-        "featured": true,
+        "thumbnail": "tailwindcss.png",
+        "featured": false,
         "description": "나만의 방식으로 정리한 문서"
       }
     ]
@@ -37,6 +38,7 @@
         "title": "나만의 방식으로 정리한 타입스크립트 문서",
         "date": "2023-04-02",
         "path": "typescript",
+        "thumbnail": "typescript.png",
         "featured": true,
         "description": "이제 프로젝트에서 타입스크립트는 필수"
       }
@@ -47,7 +49,7 @@
       {
         "id": 1,
         "category": "react",
-        "title": "React 18의 새로운 기능 7가지",
+        "title": "React 18의 새로운 기능 5가지",
         "date": "2023-04-03",
         "path": "react-18-new-features",
         "thumbnail": "react-18.png",
@@ -61,7 +63,7 @@
         "date": "2023-04-06",
         "path": "react-18-hooks",
         "thumbnail": "react-18.png",
-        "featured": true,
+        "featured": false,
         "description": "useId, useTransition, useDeferredValue...?"
       },
       {
@@ -81,7 +83,7 @@
         "date": "2023-04-09",
         "path": "react-profiler-api",
         "thumbnail": "react-18.png",
-        "featured": true,
+        "featured": false,
         "description": "React 프로젝트를 측정하고, 최적화하는 방법"
       }
     ]
@@ -101,6 +103,37 @@
     ]
   },
   {
-    "side-projects": []
+    "side-projects": [
+      {
+        "id": 1,
+        "category": "side-projects",
+        "title": "Next.js 13으로 Jellie Blog 만들기",
+        "date": "2023-04-13",
+        "path": "create-jellie-blog",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": false,
+        "description": "개인 블로그 구축 과정에 대해 이야기해봅니다!"
+      },
+      {
+        "id": 2,
+        "category": "side-projects",
+        "title": "Jellie Blog 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기",
+        "date": "2023-04-14",
+        "path": "jellie-blog-features-1",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": false,
+        "description": "react-markdown 라이브러리와 스크롤 이벤트를 통한 스크롤 진행률 바를 살펴보자"
+      },
+      {
+        "id": 3,
+        "category": "side-projects",
+        "title": "Jellie Blog 기능 2: 목차(toc) 만들기",
+        "date": "2023-04-14",
+        "path": "jellie-blog-features-2",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": false,
+        "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기."
+      }
+    ]
   }
 ]
