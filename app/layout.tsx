@@ -1,8 +1,9 @@
 import Footer from '@/components/common/footer';
 import Header from '@/components/common/header';
+import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
 import { Nanum_Gothic } from 'next/font/google';
 import './globals.css';
-import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
+import Providers from '@/components/common/providers';
 
 export const metadata = {
   title: {
@@ -24,14 +25,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className='dark'>
-      <body className={`${nanum_gothic.className} bg-bg text-text`}>
-        <Header />
-        <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
-          {children}
-          <ScrollToTopBtn />
-        </main>
-        <Footer />
+    <html lang='en'>
+      <body
+        className={`${nanum_gothic.className} bg-bg text-text overscroll-none`}
+      >
+        <Providers>
+          <Header />
+          <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
+            {children}
+            <ScrollToTopBtn />
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

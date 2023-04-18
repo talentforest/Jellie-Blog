@@ -2,32 +2,10 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { RiMoonClearFill, RiSunFill } from 'react-icons/ri';
+import ThemeMode from './theme-mode';
 
 export default function Header() {
   const pathname = usePathname();
-  const [dark, setDark] = useState(true);
-
-  const toggleDarkMode = () => {
-    dark
-      ? document.documentElement.classList.remove('dark')
-      : document.documentElement.classList.add('dark');
-    setDark((prev) => !prev);
-  };
-
-  useEffect(() => {
-    if (
-      localStorage.theme === 'dark' ||
-      (!('theme' in localStorage) &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches)
-    ) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      setDark(false);
-    }
-  }, []);
 
   return (
     <header className='sticky top-0 z-20 w-full px-4 md:px-20 lg:px-40 mx-auto h-12 md:h-14 flex justify-between items-center bg-bg text-text border-b border-slate '>
@@ -51,13 +29,7 @@ export default function Header() {
             <Link href='/about'>About</Link>
           </li>
         </ul>
-        <button onClick={toggleDarkMode}>
-          {dark ? (
-            <RiSunFill className='w-5 h-5' />
-          ) : (
-            <RiMoonClearFill className='w-5 h-5' />
-          )}
-        </button>
+        <ThemeMode />
       </nav>
     </header>
   );
