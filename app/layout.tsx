@@ -1,9 +1,9 @@
-import Footer from '@/components/common/footer';
-import Header from '@/components/common/header';
-import ScrollToTopBtn from '@/components/common/scroll-to-top-btn';
+import Footer from '@/components/layout/footer';
+import Header from '@/components/layout/header';
+import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
 import { Nanum_Gothic } from 'next/font/google';
 import './globals.css';
-import Providers from '@/components/common/providers';
+import Providers from '@/components/layout/providers';
 
 export const metadata = {
   title: {
