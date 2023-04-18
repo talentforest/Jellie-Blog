@@ -42,7 +42,6 @@ export async function getPost(fileName: string): Promise<PostData> {
   const post = allPosts.find((post) => post.path === fileName);
   const filePath = path.join(
     process.cwd(),
-    'data',
     'posts',
     `${post.category}`,
     `${fileName}.md`
@@ -51,8 +50,8 @@ export async function getPost(fileName: string): Promise<PostData> {
   if (!post)
     throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없습니다.`);
   const index = allPosts.indexOf(post);
-  const next = index > 0 ? allPosts[index - 1] : null;
-  const prev = index < allPosts.length ? allPosts[index + 1] : null;
+  const prev = index > 0 ? allPosts[index - 1] : null;
+  const next = index < allPosts.length ? allPosts[index + 1] : null;
   const content = await readFile(filePath, 'utf-8');
 
   return { ...post, content, next, prev };
