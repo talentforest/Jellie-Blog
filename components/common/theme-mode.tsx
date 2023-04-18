@@ -55,7 +55,7 @@ export default function ThemeMode() {
         <></>
       )}
       {modified && (
-        <p className='absolute -bottom-6 right-2 text-xs text-slate'>
+        <p className='absolute -bottom-6 right-2 md:right-20 lg:right-40 text-xs text-slate'>
           {theme === 'system'
             ? '시스템'
             : theme === 'dark'
