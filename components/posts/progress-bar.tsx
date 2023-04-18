@@ -7,10 +7,11 @@ export default function ProgressBar() {
   const [width, setWidth] = useState(0);
 
   const handleScroll = throttle((): void => {
-    const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-    if (scrollTop === 0) return setWidth(0);
+    const scrollY = window.scrollY;
+    const { scrollHeight, clientHeight } = document.documentElement;
+    if (scrollY === 0) return setWidth(0);
     const windowHeight = scrollHeight - clientHeight;
-    const currentPercent = scrollTop / windowHeight;
+    const currentPercent = scrollY / windowHeight;
     setWidth(currentPercent * 100);
   }, 200);
 
