@@ -47,7 +47,7 @@
       {
         "id": 1,
         "category": "react",
-        "title": "React 18의 새로운 기능 7가지",
+        "title": "React 18의 새로운 기능 5가지",
         "date": "2023-04-03",
         "path": "react-18-new-features",
         "thumbnail": "react-18.png",
@@ -101,6 +101,37 @@
     ]
   },
   {
-    "side-projects": []
+    "side-projects": [
+      {
+        "id": 1,
+        "category": "side-projects",
+        "title": "Next.js 13으로 Jellie Blog 만들기",
+        "date": "2023-04-13",
+        "path": "create-jellie-blog",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": true,
+        "description": "개인 블로그 구축 과정에 대해 이야기해봅니다!"
+      },
+      {
+        "id": 2,
+        "category": "side-projects",
+        "title": "Jellie Blog 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기",
+        "date": "2023-04-14",
+        "path": "jellie-blog-features-1",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": true,
+        "description": "react-markdown 라이브러리와 스크롤 이벤트를 통한 스크롤 진행률 바를 살펴보자"
+      },
+      {
+        "id": 3,
+        "category": "side-projects",
+        "title": "Jellie Blog 기능 2: 목차(toc) 만들기",
+        "date": "2023-04-14",
+        "path": "jellie-blog-features-2",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": true,
+        "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기."
+      }
+    ]
   }
 ]
