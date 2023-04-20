@@ -1,5 +1,12 @@
 [
   { "name": "GITHUB", "item": "https://github.com/talentforest" },
-  { "name": "EMAIL", "item": "talentforest0501@gmail.com" },
-  { "name": "BLOG", "item": "https://jellie-blog.vercel.app/" }
+  {
+    "name": "BLOG(현재)",
+    "item": "https://jellieblog.dev/"
+  },
+  {
+    "name": "BLOG(이전)",
+    "item": "https://velog.io/@forest0501"
+  },
+  { "name": "EMAIL", "item": "talentforest0501@gmail.com" }
 ]

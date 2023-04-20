@@ -2,14 +2,16 @@ import Image from 'next/image';
 import { Project } from '@/service/about';
 import { GoMarkGithub } from 'react-icons/go';
 import { HiLink, HiOutlineLightBulb } from 'react-icons/hi';
+import { RiArticleFill } from 'react-icons/ri';
 
 interface Props {
   project: Project;
 }
 
 export default function ProjectItem({
-  project: { name, path, description, stacks, link, github },
+  project: { name, path, description, stacks, link, github, relatedPosts },
 }: Props) {
+  console.log(relatedPosts);
   return (
     <li className='rounded-lg bg-box p-3 border border-slate flex flex-col shadow-md'>
       <h5 className='font-bold mb-2 flex items-center text-xl'>{name}</h5>
@@ -35,25 +37,40 @@ export default function ProjectItem({
           </li>
         ))}
       </ul>
-      <div className='flex gap-2 flex-1 items-end'>
-        <a
-          href={link}
-          target='_blank'
-          title={`Jellie의 ${name} 페이지`}
-          className='underline flex items-center gap-0.5 w-fit text-sm text-text'
-        >
-          <HiLink className='w-4 h-4 text-text' />
-          <span>바로가기</span>
-        </a>
-        <a
-          href={github}
-          target='_blank'
-          title={`Jellie의 ${name} github 페이지`}
-          className='underline flex items-center gap-0.5 w-fit text-sm text-text'
-        >
-          <GoMarkGithub className='w-4 h-4 text-text' />
-          <span>GitHub</span>
-        </a>
+      <div className='flex gap-3 flex-1 items-end'>
+        {link.length !== 0 && (
+          <a
+            href={link}
+            target='_blank'
+            title={`Jellie의 ${name} 페이지`}
+            className='hover:text-slate underline flex items-center gap-0.5 w-fit text-sm text-text'
+          >
+            <HiLink className='w-4 h-4 text-slate mr-0.5' />
+            <span>바로가기</span>
+          </a>
+        )}
+        {github.length !== 0 && (
+          <a
+            href={github}
+            target='_blank'
+            title={`Jellie의 ${name} github 페이지`}
+            className='hover:text-slate underline flex items-center gap-0.5 w-fit text-sm text-text'
+          >
+            <GoMarkGithub className='w-4 h-4 text-text mr-0.5' />
+            <span>GitHub</span>
+          </a>
+        )}
+        {relatedPosts.length !== 0 && (
+          <a
+            href={relatedPosts}
+            target='_blank'
+            title={`프로젝트 관련 포스트`}
+            className='hover:text-slate underline flex items-center gap-0.5 w-fit text-sm text-text'
+          >
+            <RiArticleFill className='w-4 h-4 text-slate mr-0.5' />
+            <span>관련 포스트 보기</span>
+          </a>
+        )}
       </div>
     </li>
   );
