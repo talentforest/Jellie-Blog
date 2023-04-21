@@ -19,6 +19,7 @@ export interface PostData extends Post {
   content: string;
   next?: Post | null;
   prev?: Post | null;
+  readingTime?: number;
 }
 
 export const getAllPosts = cache(async (): Promise<Post[]> => {
@@ -53,6 +54,16 @@ export async function getPost(fileName: string): Promise<PostData> {
   const prev = index > 0 ? allPosts[index - 1] : null;
   const next = index < allPosts.length ? allPosts[index + 1] : null;
   const content = await readFile(filePath, 'utf-8');
-
-  return { ...post, content, next, prev };
+  const readingTime = calcReadingTime(content);
+  return { ...post, content, next, prev, readingTime };
 }
+
+const calcReadingTime = (content: string) => {
+  const contentWordsLength = content
+    .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '') //
+    .split(' ')
+    .filter((word) => word !== '').length;
+
+  const wordsPerMinute = 200;
+  return contentWordsLength / wordsPerMinute;
+};
