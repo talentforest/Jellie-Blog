@@ -11,7 +11,6 @@ interface Props {
 export default function ProjectItem({
   project: { name, path, description, stacks, link, github, relatedPosts },
 }: Props) {
-  console.log(relatedPosts);
   return (
     <li className='rounded-lg bg-box p-3 border border-slate flex flex-col shadow-md'>
       <h5 className='font-bold mb-2 flex items-center text-xl'>{name}</h5>
