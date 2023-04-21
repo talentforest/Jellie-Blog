@@ -1,9 +1,11 @@
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
-import { Nanum_Gothic } from 'next/font/google';
-import './globals.css';
 import Providers from '@/components/layout/providers';
+import GoogleAnalytics from '@/components/common/google-analytics';
+import CookieBanner from '@/components/common/cookie-banner';
+import './globals.css';
+import { Nanum_Gothic } from 'next/font/google';
 
 export const metadata = {
   title: {
@@ -24,8 +26,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const GA_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
+
   return (
     <html lang='en'>
+      {GA_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_ID} />}
       <body
         className={`${nanum_gothic.className} bg-bg text-text overscroll-none`}
       >
@@ -36,6 +41,7 @@ export default function RootLayout({
             <ScrollToTopBtn />
           </main>
           <Footer />
+          <CookieBanner />
         </Providers>
       </body>
     </html>

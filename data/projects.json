@@ -2,10 +2,11 @@
   {
     "name": "Jellie Blog",
     "path": "jellie-blog.png",
-    "description": "개인 블로그로 만든 프로젝트입니다.",
+    "description": "개인 블로그를 만들기 위해 시작한 프로젝트입니다.",
     "stacks": ["next.js", "tailwindcss", "typescript", "react-markdown"],
     "link": "https://talentforest.github.io/han-bookclub-app/",
-    "github": "https://github.com/talentforest/han-bookclub-app"
+    "github": "https://github.com/talentforest/han-bookclub-app",
+    "relatedPosts": "https://jellieblog.dev/posts/create-jellie-blog"
   },
   {
     "name": "한페이지 독서모임 기록장",
@@ -13,7 +14,8 @@
     "description": "독서모임 한페이지를 위한 전용 기록관리 페이지입니다.",
     "stacks": ["react", "firebase", "styled-components", "recoil"],
     "link": "https://talentforest.github.io/han-bookclub-app/",
-    "github": "https://github.com/talentforest/han-bookclub-app"
+    "github": "https://github.com/talentforest/han-bookclub-app",
+    "relatedPosts": ""
   },
   {
     "name": "냉장고에 뭐가 있지?",
@@ -21,10 +23,11 @@
     "description": "냉장고 내부를 시각화하여 냉장고 관리에 도움을 주는 페이지입니다.",
     "stacks": ["next.js", "tailwindcss", "redux-toolkit", "swr"],
     "link": "https://what-is-in-the-fridge-fawn.vercel.app/",
-    "github": "https://github.com/talentforest/what-is-in-the-fridge"
+    "github": "https://github.com/talentforest/what-is-in-the-fridge",
+    "relatedPosts": ""
   },
   {
-    "name": "림플릭스 최적화 프로젝트",
+    "name": "림플릭스 최적화",
     "path": "rimflix.png",
     "description": "영화 정보를 찾아보고 나만의 포토카드도 만들어보세요.",
     "stacks": [
@@ -36,7 +39,17 @@
       "framer-motion"
     ],
     "link": "https://talentforest.github.io/rimflix/",
-    "github": "https://github.com/talentforest/rimflix"
+    "github": "https://github.com/talentforest/rimflix",
+    "relatedPosts": ""
+  },
+  {
+    "name": "기업연계프로젝트: 마케팅 랜딩페이지",
+    "path": "savle.png",
+    "description": "UXUI 디자이너 2명과 프론트엔드 개발자 5명이 함께 만든 기업연계프로젝트입니다.",
+    "stacks": ["next.js", "Sass", "swr"],
+    "link": "https://with-savle.vercel.app/",
+    "github": "",
+    "relatedPosts": ""
   },
   {
     "name": "Hacker News",
@@ -44,6 +57,7 @@
     "description": "UXUI 디자이너와 함께 만든 해커뉴스 리디자인 페이지입니다.",
     "stacks": ["react", "styled-components", "axios"],
     "link": "https://hacker-news-mini-project.vercel.app/",
-    "github": "https://github.com/talentforest/hackernews-with-react"
+    "github": "https://github.com/talentforest/hackernews-with-react",
+    "relatedPosts": ""
   }
 ]

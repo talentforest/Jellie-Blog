@@ -8,6 +8,7 @@ export interface Project {
   stacks: string[];
   link: string;
   github: string;
+  relatedPosts: string;
 }
 
 interface Contact {
