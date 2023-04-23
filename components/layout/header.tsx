@@ -10,7 +10,7 @@ export default function Header() {
   return (
     <header
       className={`${
-        pathname.match('/posts/*')?.[0] === '/posts' ? 'static' : 'sticky'
+        pathname.match('/posts/*')?.[0] === '/posts/' ? 'static' : 'sticky'
       } top-0 z-10 text-text w-full px-4 md:px-20 lg:px-40 mx-auto h-12 md:h-14 flex justify-between items-center bg-bg border-b border-slate `}
     >
       <h1 className='font-bold'>
