@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 
 const option = {
-  rootMargin: '-80px 0px -80% 0px',
+  rootMargin: '-20px 0px -75% 0px',
   threshold: 1.0,
 };
 
