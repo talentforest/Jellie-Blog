@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 import { Post } from '@/service/posts';
-import { usePathname } from 'next/navigation';
 import CategoryBox from '../common/category-box';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
+import { AiFillTag } from 'react-icons/ai';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export type Categories =
   | 'All'
@@ -37,7 +38,6 @@ interface Props {
 }
 
 export default function CategorizedPostsSection({ allPosts }: Props) {
-  const pathname = usePathname();
   const [selectedCategory, setSelectedCategory] = useState('All' as Categories);
 
   const onCategoryClick = (category: Categories) =>
@@ -54,7 +54,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
     .flat();
 
   return (
-    <section className='m-4 md:my-4 md:mx-0 min-h-[50vh]'>
+    <section className='mx-4 my-8 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
       <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
         {categories.map((category) => (
@@ -66,9 +66,15 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
           />
         ))}
       </ul>
-      <span className='block mt-8 mb-2'>
-        {categorizedPosts.length}개의 포스트
-      </span>
+      <h3 className='mt-8 mb-2 flex items-center gap-1'>
+        <span className=' flex gap-1 items-center w-fit rounded-full'>
+          <AiFillTag className='text-yellow' />
+          {selectedCategory}
+        </span>
+        <MdKeyboardArrowRight className='h-4 w-4' />
+        {categorizedPosts.length}
+        개의 포스트
+      </h3>
       <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3'>
         {!!categorizedPosts.length ? (
           categorizedPosts?.map((post) => (

@@ -23,7 +23,7 @@ export default function ProgressBar() {
   }, []);
 
   return (
-    <div className='sticky w-full top-12 md:top-14 h-3 z-10 bg-slate border-slate'>
+    <div className='sticky w-full top-0 h-3 z-20 bg-slate border-slate'>
       <div
         style={{ width: width + '%' }}
         className='transition-all h-full rounded-r-md px-1 bg-indigo text-[10px] text-white'

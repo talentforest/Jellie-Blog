@@ -28,7 +28,14 @@
   }
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 30px;
+}
+
+@media (max-width: 767px) {
+  body::-webkit-scrollbar {
+    display: none;
+  }
 }
