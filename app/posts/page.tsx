@@ -2,7 +2,7 @@ import CategorizedPostsSection from '@/components/template/categorized-posts-sec
 import { getAllPosts } from '@/service/posts';
 
 export const metadata = {
-  title: 'All Posts',
+  title: 'Posts',
   description: 'Jellie의 기술 블로그입니다.',
 };
 
