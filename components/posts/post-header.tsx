@@ -41,7 +41,7 @@ export default function PostHeader({
         </li>
         <li className={infoClass}>
           <AiFillClockCircle className={iconClass} />
-          {readingTime?.toFixed(0)} min to read
+          {Math.ceil(readingTime || 0)} min to read
         </li>
       </ul>
       <h1 className='text-3xl font-bold ml-4'>{title}</h1>
