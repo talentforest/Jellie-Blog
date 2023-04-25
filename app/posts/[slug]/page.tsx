@@ -36,7 +36,6 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
     thumbnail,
     readingTime,
   } = post;
-
   return (
     <>
       <ProgressBar />

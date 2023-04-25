@@ -42,7 +42,7 @@ export default function TableOfContents() {
       <ReactResponsive maxWidth={767}>
         <button
           onClick={toggleModal}
-          className='transition hover:scale-105 bg-yellow border border-slate z-20 fixed flex items-center justify-center bottom-5 right-5 w-16 h-16 shadow-lg rounded-full'
+          className='transition hover:scale-105 bg-yellow border border-slate z-20 fixed flex items-center justify-center bottom-5 right-3 w-16 h-16 shadow-lg rounded-full'
         >
           {!modal ? (
             <HiQueueList className='w-7 h-7' />

@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { Post } from '@/service/posts';
+import { AiFillTag } from 'react-icons/ai';
+import { MdKeyboardArrowRight } from 'react-icons/md';
 import CategoryBox from '../common/category-box';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
-import { AiFillTag } from 'react-icons/ai';
-import { MdKeyboardArrowRight } from 'react-icons/md';
 
 export type Categories =
   | 'All'
@@ -43,15 +43,10 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
   const onCategoryClick = (category: Categories) =>
     setSelectedCategory(category);
 
-  const categorizedPosts: Post[] = allPosts
-    .map((item) => {
-      const allPosts = Object.values(item)[0];
-      const filteredPost = allPosts.filter(
-        (post: Post) => post.category === selectedCategory
-      );
-      return selectedCategory === 'All' ? allPosts : filteredPost;
-    })
-    .flat();
+  const categorizedPosts: Post[] = allPosts.filter((post) => {
+    const filteredPost = post.category === selectedCategory;
+    return selectedCategory === 'All' ? allPosts : filteredPost;
+  });
 
   return (
     <section className='mx-4 my-8 md:my-4 md:mx-0 min-h-[50vh]'>
