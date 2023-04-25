@@ -3,32 +3,52 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { MdContentPaste } from 'react-icons/md';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
+import rehypeCodeTitles from 'rehype-code-titles';
 
 interface Props {
   content: string;
 }
 
 export default function MarkdownViewer({ content }: Props) {
+  const copyCodeBlock = (code: string) => {
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(code).catch(() => {
+        alert('복사를 다시 시도해주세요.');
+      });
+    }
+  };
+
   return (
     <ReactMarkdown
       className='prose max-w-none text-text relative px-4 pt-4 pb-20 bg-box md:rounded-b-xl flex flex-col'
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeCodeTitles]}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
           const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
-            <SyntaxHighlighter
-              language={match[1]}
-              PreTag='div'
-              {...props}
-              style={okaidia}
-              className='rounded-md'
-            >
-              {String(children).replace(/\n$/, '')}
-            </SyntaxHighlighter>
+            <>
+              <button
+                onClick={() => {
+                  copyCodeBlock(String(children).replace(/\n$/, ''));
+                }}
+                className='absolute right-2 bottom-2 text-slate hover:text-white transition'
+              >
+                <MdContentPaste className='h-5 w-5' />
+              </button>
+              <SyntaxHighlighter
+                language={match[1]}
+                PreTag='div'
+                style={vscDarkPlus}
+                customStyle={{ margin: 0 }}
+              >
+                {String(children).replace(/\n$/, '')}
+              </SyntaxHighlighter>
+            </>
           ) : (
             <code
               className={`${className} break-all before:hidden after:hidden p-1 border border-slate bg-bg text-text rounded-md`}
@@ -42,11 +62,8 @@ export default function MarkdownViewer({ content }: Props) {
           <table className='break-all mt-0'>{children}</table>
         ),
         th: ({ children }) => <th className='text-indigo'>{children}</th>,
-        div: ({ children, ...props }) => (
-          <div {...props} style={{ padding: '0', margin: '0' }} />
-        ),
         pre: ({ children, ...props }) => (
-          <pre className='p-0 my-2' {...props}>
+          <pre className='relative p-0 border border-bg z-0' {...props}>
             {children}
           </pre>
         ),

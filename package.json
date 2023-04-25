@@ -16,7 +16,7 @@
     "client-only": "^0.0.1",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
-    "next": "13.2.4",
+    "next": "13.3.0",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -25,6 +25,7 @@
     "react-multi-carousel": "^2.8.2",
     "react-responsive": "^9.0.2",
     "react-syntax-highlighter": "^15.5.0",
+    "rehype-code-titles": "^1.2.0",
     "remark-gfm": "^3.0.1",
     "typescript": "5.0.2"
   },
