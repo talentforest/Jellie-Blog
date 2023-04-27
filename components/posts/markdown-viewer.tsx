@@ -36,7 +36,7 @@ export default function MarkdownViewer({ content }: Props) {
                 onClick={() => {
                   copyCodeBlock(String(children).replace(/\n$/, ''));
                 }}
-                className='absolute right-2 bottom-2 text-slate hover:text-white transition'
+                className='z-10 absolute right-2 bottom-2 text-slate hover:text-white transition'
               >
                 <MdContentPaste className='h-5 w-5' />
               </button>
@@ -44,7 +44,7 @@ export default function MarkdownViewer({ content }: Props) {
                 language={match[1]}
                 PreTag='div'
                 style={vscDarkPlus}
-                customStyle={{ margin: 0 }}
+                customStyle={{ margin: 0, paddingTop: 20, paddingBottom: 20 }}
               >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
@@ -63,7 +63,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         th: ({ children }) => <th className='text-indigo'>{children}</th>,
         pre: ({ children, ...props }) => (
-          <pre className='relative p-0 border border-bg z-0' {...props}>
+          <pre className='relative p-0 m-0 mb-2 z-0' {...props}>
             {children}
           </pre>
         ),
@@ -106,7 +106,7 @@ export default function MarkdownViewer({ content }: Props) {
           </h4>
         ),
         p: ({ node, className, ...props }) => (
-          <p {...props} className='mt-1 mb-3' />
+          <p {...props} className='mt-1 mb-5' />
         ),
         blockquote: ({ node, className, ...props }) => (
           <blockquote
@@ -128,20 +128,20 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-yellow marker:font-bold mt-1 mb-3'>
+          <li className='marker:text-indigo text-indigo marker:font-bold mt-2 mb-1'>
             {children}
           </li>
         ),
         ol: ({ children, ordered, ...props }) => (
           <ol
-            className='marker:text-yellow marker:font-bold mb-2 mt-0'
+            className='marker:text-indigo text-indigo marker:font-bold mt-2 mb-1'
             {...props}
           >
             {children}
           </ol>
         ),
         ul: ({ children }) => <ul className='my-0 pl-5'>{children}</ul>,
-        hr: ({ children }) => <hr className='my-3 border-slate'>{children}</hr>,
+        hr: ({ children }) => <hr className='my-3 border-gray'>{children}</hr>,
       }}
     >
       {content}
