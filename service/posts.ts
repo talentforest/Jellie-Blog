@@ -1,15 +1,15 @@
 import path from 'path';
 import { promises as fs } from 'fs';
-import { Categories } from '@/components/template/categorized-posts-section';
 import { readFile } from 'fs/promises';
 import { cache } from 'react';
+import { CategoryType } from '@/components/common/categories-box';
 
 export interface Post {
   id: number;
   title: string;
   date: string;
   description: string;
-  category: Categories;
+  category: CategoryType;
   path: string;
   featured: boolean;
   thumbnail?: string;
