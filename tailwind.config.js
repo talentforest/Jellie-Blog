@@ -11,6 +11,7 @@ module.exports = {
       teal: 'var(--teal)',
       slate: 'var(--slate)',
       white: 'var(--white)',
+      gray: 'var(--gray)',
       black: 'var(--black)',
       box: 'var(--box)',
       transparent: 'transparent',

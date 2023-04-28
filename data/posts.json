@@ -107,17 +107,17 @@
       {
         "id": 1,
         "category": "side-projects",
-        "title": "Next.js 13으로 Jellie Blog 만들기",
+        "title": "젤리 블로그 구축 과정(with Next.js 13)",
         "date": "2023-04-13",
-        "path": "create-jellie-blog",
+        "path": "jellie-blog-construction-process",
         "thumbnail": "jellie-blog-thumbnail.png",
-        "featured": false,
-        "description": "개인 블로그 구축 과정에 대해 이야기해봅니다!"
+        "featured": true,
+        "description": "젤리 블로그 구축 과정에 대해 이야기해봅니다!"
       },
       {
         "id": 2,
         "category": "side-projects",
-        "title": "Jellie Blog 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기",
+        "title": "젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기",
         "date": "2023-04-14",
         "path": "jellie-blog-features-1",
         "thumbnail": "jellie-blog-thumbnail.png",
@@ -127,7 +127,7 @@
       {
         "id": 3,
         "category": "side-projects",
-        "title": "Jellie Blog 기능 2: 목차(toc) 만들기",
+        "title": "젤리 블로그 기능 2: 목차(toc) 만들기",
         "date": "2023-04-14",
         "path": "jellie-blog-features-2",
         "thumbnail": "jellie-blog-thumbnail.png",
