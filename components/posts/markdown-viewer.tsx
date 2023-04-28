@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MdContentPaste } from 'react-icons/md';
+import { BsStars } from 'react-icons/bs';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
@@ -80,21 +81,27 @@ export default function MarkdownViewer({ content }: Props) {
           />
         ),
         h2: ({ children }) => (
-          <h2
-            className='text-yellow mt-8 mb-2 text-[28px]'
-            id={String(children).replaceAll(' ', '-')}
-          >
-            {children}
-          </h2>
+          <>
+            <BsStars className='w-5 h-5 mt-8 mb-1 text-yellow' />
+            <h2
+              className='text-yellow mt-0 mb-4 text-[28px]'
+              id={String(children).replaceAll(' ', '-')}
+            >
+              {children}
+            </h2>
+          </>
         ),
         h3: ({ node, children, ...props }) => (
-          <h3
-            className='text-blue mt-5 mb-2 text-[24px]'
-            {...props}
-            id={String(children).replaceAll(' ', '-')}
-          >
-            {children}
-          </h3>
+          <>
+            <BsStars className='w-4 h-4 mt-5 mb-1 text-blue' />
+            <h3
+              className='text-blue mt-0 mb-4 text-[24px]'
+              {...props}
+              id={String(children).replaceAll(' ', '-')}
+            >
+              {children}
+            </h3>
+          </>
         ),
         h4: ({ node, children, ...props }) => (
           <h4

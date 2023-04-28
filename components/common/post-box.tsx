@@ -36,8 +36,8 @@ export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
         <h4 className='text-xs text-text mb-2 font-extralight border border-slate px-2 py-0.5 bg-box rounded-full w-fit'>
           {category}
         </h4>
-        <h2 className='mb-1 font-bold text-lg'>{title}</h2>
-        <h3 className='text-sm mb-2 text-teal'>{description}</h3>
+        <h2 className='mb-2 font-bold text-lg'>{title}</h2>
+        <h3 className='text-sm mb-3 text-teal'>{description}</h3>
         {!sm && (
           <p className='flex-1 text-sm leading-6 mb-4 text-slate'>
             {content
