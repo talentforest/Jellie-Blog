@@ -1,3 +1,5 @@
+import { Post } from '@/service/posts';
+
 export type CategoryType =
   | 'All'
   | 'next.js'
@@ -26,10 +28,20 @@ const categoryList: CategoryType[] = [
 interface Props {
   category: CategoryType;
   setCategory: (category: CategoryType) => void;
+  allPosts: Post[];
 }
 
-export default function CategoriesBox({ category, setCategory }: Props) {
+export default function CategoriesBox({
+  category,
+  setCategory,
+  allPosts,
+}: Props) {
   const onCategoryClick = (category: CategoryType) => setCategory(category);
+
+  const numOfCategoryPosts = (category: CategoryType) => {
+    if (category === 'All') return allPosts.length;
+    return allPosts.filter((post) => post.category === category).length;
+  };
 
   return (
     <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
@@ -46,7 +58,10 @@ export default function CategoriesBox({ category, setCategory }: Props) {
             onClick={() => onCategoryClick(categoryItem)}
             className='px-3 text-sm transition'
           >
-            {categoryItem}
+            {categoryItem}{' '}
+            <span className='text-slate pl-1 text-xs'>
+              {numOfCategoryPosts(categoryItem)}
+            </span>
           </button>
         </li>
       ))}

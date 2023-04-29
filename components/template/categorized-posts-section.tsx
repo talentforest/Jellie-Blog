@@ -34,7 +34,11 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
   return (
     <section className='mx-4 my-8 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
-      <CategoriesBox category={category} setCategory={setCategory} />
+      <CategoriesBox
+        category={category}
+        setCategory={setCategory}
+        allPosts={allPosts}
+      />
       <div className='relative mt-10 mb-2 flex items-center justify-between gap-1'>
         <h3 className='flex items-center gap-1'>
           <AiFillTag className='text-yellow' />
