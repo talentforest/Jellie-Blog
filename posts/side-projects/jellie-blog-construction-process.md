@@ -10,7 +10,7 @@
 
 1. 나만의 커스텀: 커스텀이 너무 하고 싶다.
 
-사실 블로그를 만드시는 분들의 가장 큰 이유가 이게 아닐까요? 처음에 저는 관리하기 쉬우면 컨텐츠 내용에 더 신경쓸 수 있지 않을까 해서 많이들 사용하는 Velog를 사용했습니다. 그런데 오히려 사용하면 사용할수록 커스텀에 대한 아쉬움이 커져만 갔습니다.
+사실 블로그를 만드시는 분들의 가장 큰 이유가 이게 아닐까요? 처음에 저는 관리하기 쉬우면 컨텐츠 내용에 더 신경쓸 수 있지 않을까 해서 유명한 Velog를 사용했습니다. 그런데 오히려 사용하면 사용할수록 커스텀에 대한 아쉬움이 커졌습니다.
 
 단적인 예로 색을 자유롭게 쓸 수 없다는 점이 있었습니다.🤪 저는 포스트를 작성하면서 강조하거나 구분할때 **색**을 좀 많이 사용하는 편인데, 색을 사용하려면 아래와 같이 요소 안에 style 속성으로 작성해줘야 합니다.
 
@@ -19,15 +19,15 @@
 <!-- 마크다운으로 작성하다 갑자기 HTML 요소로?????🫠 -->
 ```
 
-이 점에서 조금 불편했지만, 다른 블로그 선택지와 비교했을 때 Velog가 가장 괜찮아서 사용하기 시작했는데요. 그런데 포스트를 작성하면 작성할수록 색상때문에 HTML 요소로 바꿔야 할 때 너무 귀찮아지기 시작했습니다.🫠 ~~(어떻게 색상 저장해서 쉽게 적용 못하나요...?)~~ 색을 사용해서 강조하고 싶은데 귀찮아서 적용을 안해버리고 말다보니 이건 아니라는 생각이 들었습니다. 그리고 **코드 블럭 스타일**도 조금 더 예뻤으면 좋겠다는 생각이었습니다.
+이 점에서 조금 불편했지만, 다른 블로그 선택지와 비교했을 때 Velog가 가장 괜찮아서 사용하기 시작했습니다. 그런데 포스트를 작성하면 작성할수록 색상때문에 HTML 요소로 바꿔야 할 때 너무 귀찮아지기 시작했습니다.🫠 ~~(어떻게 색상 저장해서 쉽게 적용 못하나요...?)~~ 색 문제가 가장 컸지만, 색 문제 뿐만 아니라 **코드 블럭 스타일**도 조금 더 예뻤으면 좋겠다는 생각이었습니다.
 
 ---
 
 2. 글에 대한 접근성: 그래도 다른 사람도 내 글을 볼 수 있어야지...
 
-그렇게 Velog에 한동안 색 없이 작성하다가 어느덧 **Notion**에다가 공부한 것을 정리하고 있었습니다. 워낙 편리하다보니 노션에다 정리하고 Velog에 다듬어서 정리하자는 생각이었는데, 어느 순간부터 노션만 쓰고 있었습니다. 노션이 단축키가 손에 익으면 정말 빠르게 작성할 수 있고 또 코드 블럭 스타일도 괜찮았습니다. 색도 여러가지로 쓸 수 있었고요. 그리고 페이지안의 페이지별로 작성해서 한눈에 보이는 카테고리를 만들 수 있는 것도 좋았습니다.
+그렇게 Velog에 한동안 색 없이 작성하다가 어느덧 **Notion**에다가 공부한 것을 정리하고 있었습니다. 노션이 단축키가 손에 익으면 마크다운식으로 정말 빠르게 작성할 수 있고 또 코드 블럭 스타일도 괜찮았습니다. 색도 여러가지로 쓸 수 있었고요. 그리고 페이지안의 페이지별로 작성해서 한눈에 보이는 카테고리를 만들 수 있는 것도 좋았습니다. 워낙 편리하다보니 처음에는 노션에다 정리하고 좀 더 다듬어서 Velog에 정리하자는 생각이었는데, 어느 순간부터 노션만 쓰고 있었습니다.😅
 
-그렇게 한동안 노션을 잘 사용했는데, 결국 개인 블로그를 만들어보겠다고 결심하게 된 것은 **접근성**이 굉장히 떨어지기 때문입니다. 일단 링크 공유를 통해서만 다른 사람들이 볼 수 있었고, 오랜 로딩 시간에 걸쳐 노션에 접속할 수 있으니 답답했습니다. 글이라는 것이 혼자 정리하는 용으로 적는 것도 괜찮지만, 일단 다른 사람들도 읽을 수 있는 글을 작성해야 되겠다는 생각이었습니다. 그래서 노션 요금제 업그레이드를 통해 도메인 사이트로 만들까 고민하기도 했습니다.
+그렇게 한동안 노션을 잘 사용했는데, 결국 개인 블로그를 만들어보겠다고 결심하게 된 것은 **접근성**이 굉장히 떨어지기 때문입니다. 글이라는 것이 혼자 정리하는 용으로 적는 것도 괜찮지만, 일단 다른 사람들도 읽을 수 있는 글을 작성해야 정보 공유도 되고 좀 더 좋은 글을 쓸 수 있다고 생각합니다. 그런데 노션은 요금제 업그레이드를 하지 않는 한 링크 공유를 통해서만 다른 사람들이 볼 수 있었고, 오랜 로딩 시간에 걸쳐 노션에 접속할 수 있으니 답답했습니다. 그래서 노션 요금제 업그레이드로 도메인 사이트로 만들어야 되나 생각하기 시작하면서, 이때부터 직접 나만의 블로그를 만들어보는 것을 진지하게 고민하기 시작했던 것 같습니다.
 
 ---
 
@@ -51,7 +51,7 @@ Next.js가 13버전으로 업그레이드 되었습니다! Next.js 13은 React 1
 | **progress bar** | 스크롤 위치에 따른 스크롤 진행률 바  |
 | **toc**          | 포스트의 목차                        |                   |
 
-최소한의 기능이지만 정말 꼭 구현해야겠다고 생각한 기능은 **목차**와 **스크롤 진행률바** 기능이었습니다. 인터넷에서 글을 읽을 때 독자가 현재 글의 어디쯤에 있는지 위치를 가늠할 수 있게 해주는 것이 중요하다고 생각하기 때문입니다.
+최소한의 기능을 적는 것이었지만, 초기에 꼭 구현해야겠다고 생각한 기능은 **목차**와 **스크롤 진행률바** 기능이었습니다. 인터넷에서 글을 읽을 때 독자가 현재 글의 어디쯤에 있는지 위치를 가늠할 수 있게 해주는 것이 중요하다고 생각하기 때문입니다.
 
 위의 MVP를 작성한 후 하나하나 구현해 나가기 시작했습니다.
 
@@ -83,11 +83,11 @@ export default function MarkdownViewer({ content }:Props) {
 
 역시 직접 커스텀하니까 마음에 쏙 드네요! 👍
 
-react-markdown를 적용한 더 자세한 이야기는 다음 포스트인 [젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기](https://jellieblog.dev/posts/jellie-blog-features-1) 여기에서 확인할 수 있습니다.
+react-markdown 라이브러리를 적용한 더 자세한 이야기는 다음 포스트인 [젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기](https://jellieblog.dev/posts/jellie-blog-features-1) 여기에서 확인할 수 있습니다.
 
 2. progress bar(=스크롤 진행률 바)
 
-스크롤 진행률 바도 개인적으로 좋아하는 기능입니다.😊 사실 화면 오른쪽 가로로 스크롤 바가 나타나기 때문에 꼭 필요한 기능은 아닙니다. 하지만 상단에 스크롤 위치에 따른 퍼센트로 나타내면 사용자가 스크롤하는 행위 없이도 남은 스크롤을 계속, 더 정확히 직관적으로 파악할 수 있습니다. 따라서 `useEffect` 내에서 throttle 함수를 적용한 스크롤 이벤트를 통해 구현했습니다. 똑같이 자세한 내용은 [젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기](https://jellieblog.dev/posts/jellie-blog-features-1)에서 보실 수 있습니다.
+스크롤 진행률 바는 페이지에서 스크롤 위치에 따라 가로선으로 퍼센트 비율을 나타내는 기능입니다. 사실 화면 오른쪽 가로로 스크롤바 위치가 나타나기 때문에 꼭 필요한 기능은 아닙니다. 하지만 상단 가로 너비에 스크롤 위치에 따른 퍼센트를 보여주면 사용자가 스크롤하는 행위 없이도 남은 스크롤을 계속 직관적으로 파악할 수 있어서 개인적으로 좋아합니다😊. 그래서 `useEffect` 내에서 throttle 함수를 적용한 스크롤 이벤트를 통해 구현해보았습니다. 똑같이 자세한 내용은 [젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기](https://jellieblog.dev/posts/jellie-blog-features-1)에서 보실 수 있습니다.
 
 3. toc(목차)
 
@@ -111,7 +111,7 @@ react-markdown를 적용한 더 자세한 이야기는 다음 포스트인 [젤�
 
 ## 블로그 구축 과정에서 마주한 에러
 
-Next.js 13의 가장 큰 특징으로는 컴포넌트를 서버와 클라이언트로 구분한 것이 있었는데요. 처음엔 신기했고 갈수록 효율적이라는 생각이 들었습니다. 하지만 완전히 새로워진 버전이기 때문에 마주한 에러들이 있었습니다. 저는 현재 13.2.4 버전을 사용했다가 **13.3.0**으로 업그레이드 한 상태입니다.
+Next.js 13의 가장 큰 변화로는 컴포넌트를 서버와 클라이언트로 구분하게 된 것이 있었는데요. 이 부분을 구분해 작성하면서 마주한 에러들이 있었습니다. 저는 현재 13.2.4 버전을 사용했다가 **13.3.0**으로 업그레이드 한 상태입니다.
 
 1. 클라이언트 컴포넌트 내에서는 async 서버 컴포넌트를 사용할 수 없습니다.
 
@@ -123,12 +123,16 @@ import { getAllPosts } from '@/service/posts';
 
 export default async function Home() {
   const allPosts = await getAllPosts();
+
   return (
     {/* */}
     <CarouselBox config={{ centerMode: true, showDots: true }}>
       {allPosts.map((post) => (
         // ❗️ async server component
-        <PostBox key={post.path} post={post} />
+        <>
+          {/* @ts-expect-error Async Server Component */}
+          <PostBox key={post.path} post={post} />
+        </>
       ))}
     </CarouselBox>
     {/* */}
@@ -149,9 +153,48 @@ export default async function PostBox({ post, prev }: PostBoxProps) {
 
 **❗️ Objects are not valid as a React child (found: [object Promise])**
 
-그냥 server component는 잘 작동하기 때문에 async server component를 적용해보았고, 그리고 해당 에러를 마주했습니다. 그리고 문제를 해결하기 위해 열심히 이것 저것 시도해보고 찾아봤는데요. 그러다 [스택오버플로우에 완전히 같은 상황의 글](https://stackoverflow.com/questions/75665733/how-to-import-async-server-components-into-client-components-in-nextjs-13)이 있는 것을 보고 async 서버 컴포넌트는 클라이언트 컴포넌트 안에 있으면 안된다는 것을 알았습니다. 클라이언트에 서버 컴포넌트는 되지만, 서버 전용 코드(데이터베이스나 파일 시스템 유틸리티)는 제한이 있기 때문에 async 서버 컴포넌트에 에러가 발생한다는 것입니다. 이 부분을 유념헤서 코드 구조를 짜야 할 것 같습니다.
+공식문서에서는 클라이언트 컴포넌트 안에 서버 컴포넌트를 하위 컴포넌트로 넣으려고 한다면 위와 같이 클라이언트 컴포넌트의 children props로 전달해줘야 한다고 말하고 있습니다[(공식문서)](https://beta.nextjs.org/docs/rendering/server-and-client-components#importing-server-components-into-client-components). 그래서 위의 코드와 같이 클라이언트 컴포넌트인 `<CarouselBox />`의 children으로 서버 컴포넌트인 `<PostBox/>`를 전달하려고 했는데요. 계속 해당 에러가 발생했습니다.
 
-2. `<Link />`로 다른 페이지 이동 시 이전 페이지의 스크롤 위치 그대로 이동되는 버그가 있었습니다.
+그러다 [스택오버플로우에 완전히 같은 상황의 글](https://stackoverflow.com/questions/75665733/how-to-import-async-server-components-into-client-components-in-nextjs-13)이 있는 것을 보고 async 서버 컴포넌트는 클라이언트 컴포넌트 안에서 사용할 수 없다는 것을 깨달았습니다. 어쨌든 간 클라이언트 컴포넌트의 하위 요소이기 때문에 서버 전용 코드(데이터베이스나 파일 시스템 유틸리티)는 제한이 있다는 것이었습니다. 이 부분을 유념헤서 코드 구조를 짜야 할 것 같습니다.
+
+2. 모든 클라이언트 컴포넌트에 `'use client'`를 작성하지 않아도 됩니다.
+
+이 부분 또한 서버 컴포넌트와 클라이언트 컴포넌트 사이에서 발생하는 경고인데요. 이 부분은 에러가 나지는 않지만 경고 표시가 나타납니다. 아래는 `<CategoriesBox />`에 `setCategory`라는 `useState`의 setter 함수를 넘겨주고 있습니다.
+
+```tsx:/template/categorized-posts-section
+'use client';
+
+import { useState } from 'react';
+import CategoriesBox from '../common/categories-box';
+
+export default function CategorizedPostsSection({ allPosts }: Props) {
+  const [category, setCategory] = useState('All' as CategoryType);
+
+  return <CategoriesBox category={category} setCategory={setCategory} />;
+}
+```
+
+```tsx:/component/posts/categories-box;
+'use client';
+
+// ❗️ setCategory에 Warning
+export default function CategoriesBox({ category, setCategory }) {
+  const [category, setCategory] = useState('All');
+  const onCategoryClick = (category) => setCategory(category);
+
+  return <button onClick={onCategoryClick}>{category}</button>;
+}
+```
+
+**❗️ props must be serializable for components in the "use client" entry file, "setCategory" is invalid.**
+
+위의 코드에서 `<CategoriesBox />`에 전달받는 `setCategory`에 위와 같은 경고 표시가 나타나게 되는데요. 이유는 이미 부모 컴포넌트에 `'use client'`가 선언되었기 때문입니다. `'use client'` 선언은 서버 컴포넌트와 클라이언트 컴포넌트 사이의 경계를 나타낼 때에만 작성하는 것이기 때문이라고 합니다.
+
+![img](/images/side-projects/jellie-blog-construction-process/use-client.png)
+![img](/images/side-projects/jellie-blog-construction-process/client-server-component.png)
+서버와 클라이언트가 구분되는 경계에서 한 번만 정의하면 해당 클라이언트 컴포넌트로 import한 모든 모듈이 클라이언트 구성요소로 간주된다고 합니다. 따라서 클라이언트 컴포넌트의 하위 컴포넌트인 `<CategoriesBox/>`에 또 `'use client'`를 작성할 필요가 없었습니다. 지워주니 경고도 사라졌네요. 서버와 클라이언트의 경계인지 잘 생각하면서 `'use client'`를 사용해야 할 것 같습니다.
+
+3. `<Link />`로 다른 페이지 이동 시 이전 페이지의 스크롤 위치 그대로 이동되는 버그가 있었습니다.
 
 Next.js에서는 `<Link />`로 이동할 때 페이지의 최상단에 위치하도록 작동합니다. 헤더의 네비게이션, 예를 들어 Home에서 About 페이지로 이동할 때는 페이지의 최상단에 잘 위치하는데, 이상하게 포스트 내용을 보는 상세 페이지로 들어가면, 이전 페이지의 스크롤 위치에 위치하고 있었습니다. `<Link />`에서 제공하는 props인 scroll는 페이지 이동시 최상단에 위치시킬 건지를 결정하는 속성인데, 디폴트값이 true이지만, 다시 한번 명시해줘봐도 마찬가지였습니다.
 

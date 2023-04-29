@@ -1,5 +1,9 @@
 import Image from 'next/image';
-import { AiFillTags, AiFillClockCircle, AiFillCalendar } from 'react-icons/ai';
+import {
+  AiOutlineTag,
+  AiOutlineCalendar,
+  AiOutlineClockCircle,
+} from 'react-icons/ai';
 
 interface Props {
   contents: {
@@ -32,15 +36,15 @@ export default function PostHeader({
       )}
       <ul className='flex space-x-3 m-4 mt-10'>
         <li className={infoClass}>
-          <AiFillTags className={iconClass} />
+          <AiOutlineTag className={iconClass} />
           {category}
         </li>
         <li className={infoClass}>
-          <AiFillCalendar className={iconClass} />
+          <AiOutlineCalendar className={iconClass} />
           {new Date(date).toLocaleDateString('ko')}
         </li>
         <li className={infoClass}>
-          <AiFillClockCircle className={iconClass} />
+          <AiOutlineClockCircle className={iconClass} />
           {Math.ceil(readingTime || 0)} min to read
         </li>
       </ul>
