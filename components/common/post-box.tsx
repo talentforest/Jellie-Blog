@@ -1,6 +1,6 @@
 import { Post } from '@/service/posts';
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
-import { AiFillCalendar, AiFillClockCircle } from 'react-icons/ai';
+import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
 import Link from 'next/link';
 
 interface PostBoxProps {
@@ -52,11 +52,11 @@ export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
           } flex gap-1`}
         >
           <span className='flex items-center gap-x-1 text-sm text-slate'>
-            <AiFillCalendar className='h-3.5 w-3.5' />
+            <AiOutlineCalendar className='h-3.5 w-3.5' />
             {new Date(date).toLocaleDateString('ko')}
           </span>
           <span className='flex items-center gap-x-1 text-sm text-slate'>
-            <AiFillClockCircle className='h-3.5 w-3.5' />
+            <AiOutlineClockCircle className='h-3.5 w-3.5' />
             {Math.ceil(readingTime)} min to read
           </span>
         </div>

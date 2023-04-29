@@ -73,7 +73,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         img: (image) => (
           <Image
-            className='max-h-72 w-auto object-cover my-2'
+            className='max-h-80 w-auto object-cover my-2'
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
