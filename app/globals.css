@@ -38,9 +38,7 @@ html {
 @media (max-width: 767px) {
   body::-webkit-scrollbar {
     display: none;
-  }
-  body {
-    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 }
 
