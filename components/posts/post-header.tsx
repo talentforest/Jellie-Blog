@@ -31,7 +31,7 @@ export default function PostHeader({
           width={500}
           height={500}
           priority
-          className='w-full h-60 lg:h-80 object-cover self-center'
+          className='w-full h-80 lg:h-80 object-cover self-center opacity-75'
         />
       )}
       <ul className='flex space-x-3 m-4 mt-10'>

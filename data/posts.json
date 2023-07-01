@@ -135,5 +135,19 @@
         "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기."
       }
     ]
+  },
+  {
+    "development": [
+      {
+        "id": 1,
+        "category": "developments",
+        "title": "아토믹 디자인을 어떻게 잘 도입할 수 있을까?",
+        "date": "2023-06-28",
+        "path": "how-to-use-atomic-design-system",
+        "thumbnail": "atomic-design-flow.png",
+        "featured": false,
+        "description": "컴포넌트를 어떻게 구분해야할까?"
+      }
+    ]
   }
 ]
