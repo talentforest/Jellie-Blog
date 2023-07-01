@@ -7,6 +7,7 @@ module.exports = {
       text: 'var(--text)',
       indigo: 'var(--indigo)',
       yellow: 'var(--yellow)',
+      'light-yellow': 'var(--light-yellow)',
       blue: 'var(--blue)',
       teal: 'var(--teal)',
       slate: 'var(--slate)',
@@ -19,5 +20,8 @@ module.exports = {
     extend: {},
   },
   darkMode: 'class',
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('tailwind-scrollbar-hide'),
+  ],
 };

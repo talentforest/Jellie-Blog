@@ -41,7 +41,7 @@ export default function RootLayout({
             <ScrollToTopBtn />
           </main>
           <Footer />
-          <CookieBanner />
+          {/* <CookieBanner /> */}
         </Providers>
       </body>
     </html>

@@ -1,8 +1,8 @@
-## Next.js 13 버전 변경사항
-
 > Beta 공식문서 사이트 : [https://beta.nextjs.org/docs/getting-started](https://beta.nextjs.org/docs/getting-started)
 >
 > 공식문서 사이트 : [https://nextjs.org/docs](https://nextjs.org/docs)
+
+## Next.js 13 버전 변경사항
 
 ![img](/images/next.js/nextjs-13/beta-stable.png)
 
@@ -148,7 +148,7 @@ export const metadata = {
 };
 ```
 
-> layout.tsx는 **\_document.tsx, \_app.tsx와 layout.tsx**을 하나로 합쳤다. `<html>`, `<head>`, `<body>` 가 들어가 있는 것이다.
+layout.tsx는 **\_document.tsx, \_app.tsx와 layout.tsx**을 하나로 합쳤다. `<html>`, `<head>`, `<body>` 가 들어가 있는 것이다.
 
 - 개별 라우팅 페이지별로 layout을 만들수도 있다.
   ![img](/images/next.js/nextjs-13/dynamic-route.png)
@@ -242,8 +242,6 @@ export default function HomePage({ recentPosts }) {
    ```
 
    - 두번째 인자로 `{ next: { revalidate: 10 } }` 유효시간을 적어준다.
-
-13버전 더 초기에 공식문서를 봤을 때는 `use()` API로 바뀌었던 것으로 기억하는데 다시 기본 `fetch()` API를 사용하고 두번째 인자로 data fetching 방법을 구분하는 것으로 변경되었나보다. ~~역시 안정적이진 않고만...~~
 
 ## Image 성능 향상(Stable)
 

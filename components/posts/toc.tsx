@@ -35,7 +35,7 @@ export default function TableOfContents() {
   return (
     <>
       <ReactResponsive minWidth={768}>
-        <section className='overflow-scroll h-[92vh] w-48 sticky top-14 right-0 transition py-6 px-4'>
+        <section className='overflow-scroll scrollbar-hide h-[92vh] w-48 sticky top-5 right-0 transition py-6 px-4'>
           <TocContent headingEls={headingEls} activeId={activeId} />
         </section>
       </ReactResponsive>
