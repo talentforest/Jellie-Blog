@@ -59,7 +59,11 @@ export default function CategoriesBox({
             className='px-3 text-sm transition'
           >
             {categoryItem}{' '}
-            <span className='text-slate pl-1 text-xs'>
+            <span
+              className={`${
+                category === categoryItem ? 'text-white' : 'text-slate'
+              } pl-1 text-xs`}
+            >
               {numOfCategoryPosts(categoryItem)}
             </span>
           </button>

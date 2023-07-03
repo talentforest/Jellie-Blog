@@ -6,7 +6,7 @@ interface Props {
 export default function TocContent({ headingEls, activeId }: Props) {
   return (
     <>
-      <h1 className='mb-2 text-sm'># TOC</h1>
+      <h1 className='mb-2 text-sm font-bold text-indigo'>TOC</h1>
       <ul className='flex flex-col space-y-2'>
         {headingEls.map((el, index) => (
           <li
