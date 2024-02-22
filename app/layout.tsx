@@ -1,11 +1,13 @@
+import './globals.css';
+import localFont from 'next/font/local';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
-import Providers from '@/components/layout/providers';
 import GoogleAnalytics from '@/components/common/google-analytics';
-import CookieBanner from '@/components/common/cookie-banner';
-import './globals.css';
-import { Nanum_Gothic } from 'next/font/google';
+import dynamic from 'next/dynamic';
+const ThemeProvider = dynamic(() => import('@/components/layout/providers'), {
+  ssr: false,
+});
 
 export const metadata = {
   title: {
@@ -16,9 +18,9 @@ export const metadata = {
   icons: '/favicon.ico',
 };
 
-const nanum_gothic = Nanum_Gothic({
-  weight: ['400', '700', '800'],
-  subsets: ['latin'],
+const locus_sangsang = localFont({
+  src: './font/locus_sangsang.ttf',
+  display: 'swap',
 });
 
 export default function RootLayout({
@@ -31,18 +33,18 @@ export default function RootLayout({
   return (
     <html lang='en'>
       {GA_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_ID} />}
+
       <body
-        className={`${nanum_gothic.className} bg-bg text-text overscroll-none`}
+        className={`${locus_sangsang.className} bg-bg text-text overscroll-none`}
       >
-        <Providers>
+        <ThemeProvider>
           <Header />
           <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
             {children}
             <ScrollToTopBtn />
           </main>
           <Footer />
-          {/* <CookieBanner /> */}
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );

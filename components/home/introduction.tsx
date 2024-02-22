@@ -1,5 +1,5 @@
 import { RxNotionLogo } from 'react-icons/rx';
-import { GoMarkGithub } from 'react-icons/go';
+import { FaGithub } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Introduction() {
@@ -24,7 +24,7 @@ export default function Introduction() {
             target='_blank'
             title='Jellie의 깃헙 페이지'
           >
-            <GoMarkGithub className='w-5 h-5 cursor-pointer' />
+            <FaGithub className='w-5 h-5 cursor-pointer' />
           </a>
           <a
             href='https://jellieplanet.notion.site/STUDY-RECORD-7d13d4a899db4226b2c1687425b8230c'

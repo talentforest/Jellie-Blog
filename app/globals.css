@@ -32,8 +32,14 @@
   }
 }
 
+@font-face {
+  font-family: 'locus_sangsang';
+  font-weight: 500;
+  src: url('/fonts/locus_sangsang.ttf') format('truetype');
+}
+
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   scroll-padding-top: 30px;
 }
 
@@ -41,6 +47,11 @@ html {
   body::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
+  }
+  body,
+  button,
+  input {
+    font-family: 'locus_sangsang';
   }
 }
 

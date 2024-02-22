@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Project } from '@/service/about';
-import { GoMarkGithub } from 'react-icons/go';
+import { FaGithub } from 'react-icons/fa';
 import { HiLink, HiOutlineLightBulb } from 'react-icons/hi';
 import { RiArticleFill } from 'react-icons/ri';
 
@@ -55,7 +55,7 @@ export default function ProjectItem({
             title={`Jellie의 ${name} github 페이지`}
             className='hover:text-slate underline flex items-center gap-0.5 w-fit text-sm text-text'
           >
-            <GoMarkGithub className='w-4 h-4 text-text mr-0.5' />
+            <FaGithub className='w-4 h-4 text-text mr-0.5' />
             <span>GitHub</span>
           </a>
         )}

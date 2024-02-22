@@ -1,6 +1,6 @@
 import { getAllProjects, getContactData } from '@/service/about';
-import { TiContacts } from 'react-icons/ti';
-import { AiFillProject } from 'react-icons/ai';
+import { MdPermContactCalendar } from 'react-icons/md';
+import { MdViewSidebar } from 'react-icons/md';
 import Image from 'next/image';
 import ProjectItem from '@/components/about/project-item';
 
@@ -26,9 +26,7 @@ export default async function AboutPage() {
           priority
           className='w-32 h-32 mb-4 rounded-full shadow-sm shadow-slate flex justify-center items-center'
         />
-        <span className='font-sans block text-xl font-bold'>
-          Yerim Jeon (Jellie)
-        </span>
+        <span className='block text-xl font-bold'>Jellie</span>
       </section>
       <section className='m-4 md:mx-0'>
         <h1 className='font-bold text-xl'>저는 이런 개발자입니다</h1>
@@ -40,7 +38,7 @@ export default async function AboutPage() {
       </section>
       <section className='mx-4 my-8 md:mx-0'>
         <h3 className={HEADING_STYLE}>
-          <TiContacts className='mr-1 h-6 w-6' />
+          <MdPermContactCalendar className='mr-1 h-6 w-6' />
           Contact
         </h3>
         <ul className='border border-slate bg-box divide-y-[1px] divide-slate rounded-lg flex flex-col justify-center text-sm'>
@@ -67,7 +65,7 @@ export default async function AboutPage() {
       </section>
       <section className='mx-4 my-8 md:mx-0'>
         <h3 className={HEADING_STYLE}>
-          <AiFillProject className='mr-1 h-6 w-6' /> Projects
+          <MdViewSidebar className='mr-1 h-6 w-6' /> Projects 프로젝트들
         </h3>
         <ul className='flex flex-col space-y-2 md:grid md:grid-cols-2 md:space-y-0 md:gap-3 lg:grid-cols-3'>
           {projectList.map((project) => (

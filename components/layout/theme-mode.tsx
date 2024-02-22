@@ -1,3 +1,5 @@
+'use client';
+
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import { MdSettingsBrightness, MdNightlight, MdSunny } from 'react-icons/md';
@@ -27,6 +29,8 @@ export default function ThemeMode() {
     setTheme(theme);
     setModified((prev) => !prev);
   };
+
+  console.log(theme);
 
   return (
     <>

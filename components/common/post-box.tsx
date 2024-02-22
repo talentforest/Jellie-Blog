@@ -1,6 +1,9 @@
+'use client';
+
 import { Post } from '@/service/posts';
 import { HiArrowLeft, HiArrowRight } from 'react-icons/hi';
 import { AiOutlineCalendar, AiOutlineClockCircle } from 'react-icons/ai';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
 interface PostBoxProps {
@@ -10,6 +13,8 @@ interface PostBoxProps {
 }
 
 export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
+  const [loading, setLoading] = useState(true);
+
   const {
     path,
     category,
@@ -20,7 +25,13 @@ export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
     readingTime, //
   } = post;
 
-  return (
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
+  return loading ? (
+    <span>loading...</span>
+  ) : (
     <Link
       href={`/posts/${path}`}
       className='flex justify-between items-center w-full h-full bg-box group hover:-translate-y-0.5 border border-slate hover:border-2 hover:border-yellow transition cursor-pointer rounded-xl p-2.5 select-none hover:bg-bg'
@@ -33,10 +44,10 @@ export default function PostBox({ post, prev, sm = false }: PostBoxProps) {
           prev ? 'items-end' : 'items-start'
         } w-full justify-between flex flex-col h-full`}
       >
+        <h2 className='mb-2 font-bold text-lg'>{title}</h2>
         <h4 className='text-xs text-text mb-2 font-extralight border border-slate px-2 py-0.5 bg-box rounded-full w-fit'>
           {category}
         </h4>
-        <h2 className='mb-2 font-bold text-lg'>{title}</h2>
         <h3 className='text-sm mb-3 text-teal'>{description}</h3>
         {!sm && (
           <p className='flex-1 text-sm leading-6 mb-4 text-slate'>

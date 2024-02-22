@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Post } from '@/service/posts';
 import { AiFillTag } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
