@@ -43,7 +43,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       <ProgressBar />
 
       <section className='flex justify-between'>
-        <article className='bg-box flex flex-col w-full md:w-[75%] lg:w-[78%]'>
+        <article className='flex flex-col w-full md:w-[75%] lg:w-[78%]'>
           <PostHeader
             contents={{ path, title, date, category, thumbnail, readingTime }}
           />

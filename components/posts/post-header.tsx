@@ -18,7 +18,7 @@ export default function PostHeader({ contents }: Props) {
   const { path, category, date, title, thumbnail, readingTime } = contents;
 
   return (
-    <header className='w-full mb-5 bg-box border-gray relative flex flex-col items-start'>
+    <header className='w-full bg-box rounded-b-3xl mb-3 pb-3 relative flex flex-col items-start'>
       {path && (
         <Image
           src={`/images/${category}/${thumbnail}`}
@@ -36,9 +36,9 @@ export default function PostHeader({ contents }: Props) {
         <TimeToReadBox readingTime={readingTime || 0} />
       </ul>
 
-      <h1 className='text-3xl font-king font-bold ml-4'>{title}</h1>
+      <h1 className='text-3xl font-king font-bold leading-10 mx-5'>{title}</h1>
 
-      <span className='p-4 text-sm text-slate leading-6 tracking-wide'>
+      <span className='p-5 text-sm text-slate leading-6 tracking-wide'>
         저의 글을 읽어주셔서 감사합니다.
         <br />
         피드백은 언제나 감사합니다. 혹시 잘못된 부분을 발견하셨다면 언제든지

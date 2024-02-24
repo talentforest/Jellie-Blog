@@ -248,10 +248,6 @@ function Example() {
 
 > useEffect를 사용하지 않으면 코드를 더 쉽게 실행할 수 있고 오류 발생률이 낮아진다고 한다. `useEffect` 는 실제로 컴포넌트가 외부 시스템과 동기화되기 위한 hook이므로 렌더링 자체로 인한 부작용에만 사용해야 한다. 또한 잘못하면 메모리 누수가 발생할 수 있으므로 이에 대한 처리도 중요하다.
 
-<br/>
-<br/>
-<br/>
-
 참고
 
 [react.dev/synchronizing-with-effects](https://react.dev/learn/synchronizing-with-effects)

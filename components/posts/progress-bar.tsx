@@ -24,10 +24,10 @@ export default function ProgressBar() {
   }, []);
 
   return (
-    <div className='sticky w-full top-0 h-3.5 z-20 bg-slate border-white border'>
+    <div className='sticky w-full top-0 h-3.5 z-20 bg-gray rounded-md'>
       <div
         style={{ width: width + '%' }}
-        className='transition-all h-full rounded-r-md px-1 bg-indigo text-[10px] text-white'
+        className='font-mono transition-all duration-300 h-full rounded-md px-1 bg-slate text-[10px] text-white'
       >
         {width.toFixed()}%
       </div>

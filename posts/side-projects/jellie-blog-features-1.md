@@ -44,7 +44,7 @@ export default function MarkdownViewer({ content }: Props) {
 
 클래스네임 `prose`는 tailwindcss에서 제공해주는 플러그인으로 텍스트의 가독성과 일관성을 높이기 위해 디자인된 클래스이다. 텍스트의 행간, 글꼴 크기, 여백 등 콘텐츠 요소들을 자동으로 지정해주어서 적용했다.
 
-코드 블럭 같은 경우 위와 같이 적용했고, 만약 다른 요소들도 좀 더 커스텀하고 싶은 경우 아래와 같이 components props에 추가하면 된다. 나는 tailwindcss로 클래스네임을 추가해 좀 더 커스텀헀다.
+코드 블럭 같은 경우 위와 같이 적용했고, 만약 다른 요소들도 좀 더 커스텀하고 싶은 경우 아래와 같이 components props에 추가하면 된다. 나는 tailwindcss로 클래스네임을 추가해 좀 더 커스텀했다.
 
 ```tsx
 <ReactMarkdown
