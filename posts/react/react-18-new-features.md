@@ -203,8 +203,8 @@ React 18은 Concurrency, 동시성을 통해 여러가지 렌더링 작업을 �
 
 #### 참고
 
-[React Blog: react-v18](https://react.dev/blog/2022/03/29/react-v18)  
-[카카오페이 | React 18: 리액트 서버 컴포넌트 준비하기](https://tech.kakaopay.com/post/react-server-components/)  
-[React Docs: react-dom-client](https://ko.reactjs.org/docs/react-dom-client.html)  
+[React Blog: react-v18](https://react.dev/blog/2022/03/29/react-v18)
+[카카오페이 | React 18: 리액트 서버 컴포넌트 준비하기](https://tech.kakaopay.com/post/react-server-components/)
+[React Docs: react-dom-client](https://ko.reactjs.org/docs/react-dom-client.html)
 [React Docs: concurrent mode intro](https://17.reactjs.org/docs/concurrent-mode-intro.html)
 [https://tech.osci.kr/2022/05/03/react-18v/](https://tech.osci.kr/2022/05/03/react-18v/)

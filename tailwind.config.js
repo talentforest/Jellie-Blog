@@ -15,9 +15,14 @@ module.exports = {
       gray: 'var(--gray)',
       black: 'var(--black)',
       box: 'var(--box)',
+      hoverbox: 'var(--hoverbox)',
       transparent: 'transparent',
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        king: ['var(--font-kingSejongs)'],
+      },
+    },
   },
   darkMode: 'class',
   plugins: [

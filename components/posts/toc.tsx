@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { HiQueueList, HiXMark } from 'react-icons/hi2';
+import { TbTable } from 'react-icons/tb';
 import { getIntersectionObserver } from '@/util/getIntersectionObserver';
 import TocContent from './toc-content';
 import dynamic from 'next/dynamic';
@@ -39,17 +39,15 @@ export default function TableOfContents() {
           <TocContent headingEls={headingEls} activeId={activeId} />
         </section>
       </ReactResponsive>
+
       <ReactResponsive maxWidth={767}>
         <button
           onClick={toggleModal}
-          className='transition hover:scale-105 bg-yellow border border-slate z-20 fixed flex items-center justify-center bottom-5 right-3 w-16 h-16 shadow-lg rounded-full'
+          className='transition hover:scale-105 bg-light-yellow z-20 fixed flex items-center justify-center bottom-5 right-3 w-16 h-16 shadow-3xl !shadow-[#333] rounded-full'
         >
-          {!modal ? (
-            <HiQueueList className='w-7 h-7' />
-          ) : (
-            <HiXMark className='w-7 h-7' />
-          )}
+          <TbTable className='w-7 h-7' />
         </button>
+
         {modal && (
           <>
             <div

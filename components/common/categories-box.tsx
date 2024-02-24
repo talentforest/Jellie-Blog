@@ -44,25 +44,23 @@ export default function CategoriesBox({
   };
 
   return (
-    <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
+    <ul className='flex flex-wrap gap-2 mt-3 mb-8'>
       {categoryList.map((categoryItem) => (
         <li
           key={categoryItem}
           className={`${
-            category === categoryItem
-              ? 'bg-indigo text-yellow font-extrabold'
-              : 'bg-box'
-          } border rounded-full hover:bg-yellow hover:text-indigo transition`}
+            category === categoryItem ? 'bg-indigo text-light-yellow' : 'bg-box'
+          } border rounded-full hover:bg-light-yellow hover:text-indigo transition`}
         >
           <button
             onClick={() => onCategoryClick(categoryItem)}
-            className='px-3 text-sm transition'
+            className='px-3 py-1 text-sm transition'
           >
-            {categoryItem}{' '}
+            {categoryItem}
             <span
               className={`${
                 category === categoryItem ? 'text-white' : 'text-slate'
-              } pl-1 text-xs`}
+              } pl-1.5 text-[13px]`}
             >
               {numOfCategoryPosts(categoryItem)}
             </span>

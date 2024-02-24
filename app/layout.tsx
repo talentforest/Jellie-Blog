@@ -4,10 +4,6 @@ import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
 import GoogleAnalytics from '@/components/common/google-analytics';
-import dynamic from 'next/dynamic';
-const ThemeProvider = dynamic(() => import('@/components/layout/providers'), {
-  ssr: false,
-});
 
 export const metadata = {
   title: {
@@ -23,6 +19,20 @@ const locus_sangsang = localFont({
   display: 'swap',
 });
 
+const kingSejongs = localFont({
+  src: [
+    {
+      path: './font/KingSejongInstitute_Bold.ttf',
+      weight: '700',
+    },
+    {
+      path: './font/KingSejongInstitute_Regular.ttf',
+      weight: '400',
+    },
+  ],
+  variable: '--font-kingSejongs',
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -31,20 +41,20 @@ export default function RootLayout({
   const GA_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
 
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       {GA_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_ID} />}
 
       <body
-        className={`${locus_sangsang.className} bg-bg text-text overscroll-none`}
+        className={`${kingSejongs.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
       >
-        <ThemeProvider>
-          <Header />
-          <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
-            {children}
-            <ScrollToTopBtn />
-          </main>
-          <Footer />
-        </ThemeProvider>
+        <Header />
+
+        <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
+          {children}
+          <ScrollToTopBtn />
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
