@@ -12,15 +12,19 @@ export default async function Home() {
   return (
     <>
       <Introduction />
-      <section className='mb-12 min-h-[250px]'>
+
+      <section className='mb-16 min-h-[300px]'>
         <h2 className='mx-4 md:mx-0'>Featured Post</h2>
+
         <CarouselBox config={{ centerMode: true, showDots: true }}>
           {featuredPost.map((post) => (
-            <PostBox key={post.path} post={post} sm />
+            <PostBox key={post.path} post={post} />
           ))}
         </CarouselBox>
       </section>
+
       <CookieBanner />
+
       <CategorizedPostsSection allPosts={allPosts} />
     </>
   );

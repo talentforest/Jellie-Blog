@@ -18,6 +18,7 @@ export default function GiscusComments() {
       reactionsEnabled='1'
       emitMetadata='0'
       inputPosition='top'
+      loading='lazy'
       theme={resolvedTheme === 'dark' ? 'dark' : 'light'}
       lang='ko'
     />

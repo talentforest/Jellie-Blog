@@ -4,7 +4,7 @@
 @layer base {
   :root {
     --bg: #f5f5f5;
-    --text: #333;
+    --text: #222;
     --indigo: #4f46e5;
     --yellow: #eab308;
     --light-yellow: #ffd969;
@@ -13,8 +13,9 @@
     --slate: #64748b;
     --white: #fff;
     --black: #000;
-    --gray: #e0e0e0;
+    --gray: #dedede;
     --box: #fff;
+    --hoverbox: #fcfcfc;
   }
   :root[class='dark'] {
     --bg: #111;
@@ -27,15 +28,10 @@
     --slate: #94a3b8;
     --white: #fff;
     --black: #000;
-    --gray: #444;
-    --box: #222;
+    --gray: #333;
+    --box: #262626;
+    --hoverbox: #333;
   }
-}
-
-@font-face {
-  font-family: 'locus_sangsang';
-  font-weight: 500;
-  src: url('/fonts/locus_sangsang.ttf') format('truetype');
 }
 
 html {
@@ -47,11 +43,6 @@ html {
   body::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
-  }
-  body,
-  button,
-  input {
-    font-family: 'locus_sangsang';
   }
 }
 

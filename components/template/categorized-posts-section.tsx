@@ -18,6 +18,7 @@ interface Props {
 export default function CategorizedPostsSection({ allPosts }: Props) {
   const [category, setCategory] = useState('All' as CategoryType);
   const [sortBy, setSortBy] = useState<SortBy>('latest');
+
   const filteredPosts = allPosts.filter((post) => post.category === category);
 
   const sortByDate = (posts: Post[]) => {
@@ -32,27 +33,29 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
     category === 'All' ? sortByDate(allPosts) : sortByDate(filteredPosts);
 
   return (
-    <section className='mx-4 my-8 md:my-4 md:mx-0 min-h-[50vh]'>
+    <section className='mx-4 mt-4 mb-8 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
       <CategoriesBox
         category={category}
         setCategory={setCategory}
         allPosts={allPosts}
       />
-      <div className='relative mt-10 mb-2 flex items-center justify-between gap-1'>
+
+      <div className='relative mt-10 mb-2 pr-2 pl-1 flex items-center justify-between gap-1'>
         <h3 className='flex items-center gap-1'>
-          <AiFillTag className='text-yellow' />
+          <AiFillTag className='text-yellow w-5 h-5 mb-0.5' />
           {category}
         </h3>
         <MdKeyboardArrowRight className='h-5 w-5' />
         <span className='flex-1'>{showingPosts?.length || 0}개의 포스트</span>
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
-      <ul className='flex flex-col space-y-3 md:grid md:grid-cols-2 md:gap-2 md:space-y-0 lg:grid-cols-3'>
+
+      <ul className='flex flex-col space-y-3  md:gap-2 md:space-y-0 lg:grid-cols-3'>
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>
-              <PostBox post={post} />
+              <PostBox post={post} contentPreview arrowPosition='right' />
             </li>
           ))
         ) : (

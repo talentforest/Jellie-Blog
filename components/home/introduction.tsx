@@ -15,8 +15,8 @@ export default function Introduction() {
       />
       <div className='flex-1'>
         <h3 className='font-semibold mb-2'>🌼 Jellie 🌼</h3>
-        <p className='text-sm mb-4'>
-          매일 기록하며 성장하는 프론트엔드 개발자 젤리입니다.
+        <p className='text-sm mb-4 tracking-wide'>
+          재미있는 프로젝트를 만들며 성장하는 프론트엔드 개발자 젤리입니다.
         </p>
         <div className='flex space-x-2'>
           <a
