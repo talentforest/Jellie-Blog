@@ -3,7 +3,6 @@ import localFont from 'next/font/local';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
-import GoogleAnalytics from '@/components/common/google-analytics';
 
 export const metadata = {
   title: {
@@ -42,8 +41,6 @@ export default function RootLayout({
 
   return (
     <html lang='en' suppressHydrationWarning>
-      {GA_ID && <GoogleAnalytics GA_MEASUREMENT_ID={GA_ID} />}
-
       <body
         className={`${kingSejongs.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
       >
