@@ -37,8 +37,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const GA_ID = process.env.NEXT_PUBLIC_ANALYTICS_ID;
-
   return (
     <html lang='en' suppressHydrationWarning>
       <body

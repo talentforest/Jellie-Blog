@@ -2,7 +2,6 @@ import Introduction from '@/components/home/introduction';
 import CarouselBox from '@/components/common/carousel-box';
 import PostBox from '@/components/common/post-box';
 import CategorizedPostsSection from '@/components/template/categorized-posts-section';
-import CookieBanner from '@/components/common/cookie-banner';
 import { getAllPosts, getFeaturedPosts } from '@/service/posts';
 
 export default async function Home() {
@@ -22,8 +21,6 @@ export default async function Home() {
           ))}
         </CarouselBox>
       </section>
-
-      <CookieBanner />
 
       <CategorizedPostsSection allPosts={allPosts} />
     </>
