@@ -18,12 +18,12 @@
       {
         "id": 1,
         "category": "next.js",
-        "title": "Next.js 13버전은 어떻게 바뀌었을까?",
+        "title": "Next.js 13은 어떻게 바뀌었을까?",
         "date": "2023-04-01",
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
         "featured": true,
-        "description": "Next.js 13버전, Beta와 Stable 기능들을 살펴보자"
+        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등"
       }
     ]
   },
