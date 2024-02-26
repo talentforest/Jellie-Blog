@@ -23,7 +23,17 @@
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
         "featured": true,
-        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등"
+        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자"
+      },
+      {
+        "id": 2,
+        "category": "next.js",
+        "title": "Next.js 14은 어떻게 바뀌었을까?",
+        "description": "메타데이터 설정 방식과 기타 등등",
+        "path": "nextjs-14",
+        "date": "2024-02-26",
+        "thumbnail": "nextjs-14.jpeg",
+        "featured": false
       }
     ]
   },
