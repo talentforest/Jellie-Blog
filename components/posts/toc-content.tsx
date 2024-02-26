@@ -28,7 +28,7 @@ export default function TocContent({ headingEls, activeId }: Props) {
             <a
               href={`#${el.id}`}
               className={`${
-                el.id === activeId ? 'border-l-4 border-indigo px-3 bg-box' : ''
+                el.id === activeId ? 'border-l-4 border-indigo px-2 bg-bg' : ''
               } block py-0.5 w-fit cursor-pointer transition-all duration-75`}
             >
               {el.innerHTML}

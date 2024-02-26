@@ -106,7 +106,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='font-king text-teal text-xl mb-2'
+            className='font-king text-teal text-[22px] mb-2'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -115,7 +115,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='font-king text-slate my-2 text-lg'
+            className='font-king text-slate mb-2 text-lg'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -128,7 +128,7 @@ export default function MarkdownViewer({ content }: Props) {
         blockquote: ({ node, className, children, ...props }) => (
           <blockquote
             {...props}
-            className='text-text bg-box mt-1 mb-3 pt-4 pb-3 border-l-0 rounded-xl [&>p::before]:hidden [&>p]:my-0 not-italic'
+            className='text-text bg-box mt-1 mb-3 pt-4 pb-3 px-4 border-l-0 rounded-xl [&>p::before]:hidden [&>p]:my-0 not-italic'
           >
             <span className='float-left not-italic mr-2 text-lg'>💡</span>{' '}
             {children}

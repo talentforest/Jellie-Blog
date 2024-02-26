@@ -7,6 +7,7 @@ import ArrowCircle from './arrow-circle';
 import TimeToReadBox from './time-to-read-box';
 import DateBox from './date-box';
 import CategoryBox from './category-box';
+import MarkdownViewer from '../posts/markdown-viewer';
 
 interface PostBoxProps {
   post: Post;
@@ -61,8 +62,10 @@ export default function PostBox({
         {contentPreview && (
           <p className='flex-1 text-sm tracking-wide leading-6 mt-2 mb-5 text-slate group-hover:text-text'>
             {content
-              .slice(0, 200)
-              .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '')}
+
+              .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '')
+              .replace(/\[.*?\]\(.*?\)/g, '')
+              .slice(0, 200)}
             ...
           </p>
         )}
