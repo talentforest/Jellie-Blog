@@ -41,7 +41,6 @@ export default function PostBox({
   ) : (
     <Link
       href={`/posts/${path}`}
-      scroll={false}
       className='relative flex justify-between items-center h-full bg-box group hover:-translate-y-0.5 border border-gray hover:border-2 hover:border-light-yellow transition cursor-pointer rounded-xl px-3.5 py-3 select-none hover:bg-hoverbox'
     >
       {arrowPosition === 'left' && <ArrowCircle direction='prev' />}
@@ -57,7 +56,7 @@ export default function PostBox({
           {title}
         </h2>
 
-        <h3 className='text-sm my-2 text-teal leading-6 '>{description}</h3>
+        <h3 className='text-[15px] my-2 text-teal leading-6 '>{description}</h3>
 
         {contentPreview && (
           <p className='flex-1 text-sm tracking-wide leading-6 mt-2 mb-5 text-slate group-hover:text-text'>

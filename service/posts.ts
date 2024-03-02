@@ -2,14 +2,14 @@ import path from 'path';
 import { promises as fs } from 'fs';
 import { readFile } from 'fs/promises';
 import { cache } from 'react';
-import { CategoryType } from '@/components/common/categories-box';
+import { Category } from '@/components/common/categories-box';
 
 export interface Post {
   id: number;
   title: string;
   date: string;
   description: string;
-  category: CategoryType;
+  category: Category;
   path: string;
   featured: boolean;
   thumbnail?: string;
@@ -45,7 +45,9 @@ export const getAllPosts = cache(async (): Promise<Post[]> => {
 
 export async function getFeaturedPosts(): Promise<Post[]> {
   const allPosts = await getAllPosts();
-  const featuredPost = allPosts.filter((post: Post) => post.featured === true);
+  const featuredPost = allPosts
+    .filter((post: Post) => post.featured === true)
+    .reverse();
   return featuredPost;
 }
 

@@ -168,7 +168,7 @@ import { useState } from 'react';
 import CategoriesBox from '../common/categories-box';
 
 export default function CategorizedPostsSection({ allPosts }: Props) {
-  const [category, setCategory] = useState('All' as CategoryType);
+  const [category, setCategory] = useState('All' as Category);
 
   return <CategoriesBox category={category} setCategory={setCategory} />;
 }

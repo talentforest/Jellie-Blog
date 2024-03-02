@@ -15,19 +15,21 @@ interface Props {
 }
 
 export default function PostHeader({ contents }: Props) {
-  const { path, category, date, title, thumbnail, readingTime } = contents;
+  const { category, date, title, thumbnail, readingTime } = contents;
 
   return (
     <header className='w-full bg-box rounded-b-3xl mb-3 pb-3 relative flex flex-col items-start'>
-      {path && (
+      {thumbnail && title && category ? (
         <Image
           src={`/images/${category}/${thumbnail}`}
-          alt={`${title} Post Thumbnail'`}
+          alt={`${title} Post Thumbnail`}
           width={500}
           height={500}
           priority
-          className='w-full h-80 lg:h-80 object-cover self-center opacity-75'
+          className='w-full rounded-t-xl h-80 lg:h-80 object-cover self-center'
         />
+      ) : (
+        <></>
       )}
 
       <ul className='flex space-x-3 m-4 mt-10'>
@@ -41,8 +43,7 @@ export default function PostHeader({ contents }: Props) {
       <span className='p-5 text-sm text-slate leading-6 tracking-wide'>
         저의 글을 읽어주셔서 감사합니다.
         <br />
-        피드백은 언제나 감사합니다. 혹시 잘못된 부분을 발견하셨다면 언제든지
-        이야기해주세요 😊
+        피드백은 언제나 감사합니다! 언제든지 코멘트 남겨주세요.😊
       </span>
     </header>
   );

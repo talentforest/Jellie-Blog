@@ -5,7 +5,7 @@ interface Props {
 
 export default function TocContent({ headingEls, activeId }: Props) {
   return (
-    <nav className='border border-box p-4 rounded-lg bg-hoverbox w-full md:w-[25%] h-fit top-10 right-0 sticky'>
+    <nav className='font-king font-bold sticky top-7 right-0 w-full md:max-h-[90vh] md:overflow-scroll md:scrollbar-hide md:w-56 z-10 transition p-3.5 rounded-xl bg-hoverbox h-fit'>
       <h1 className='font-king text-base font-bold text-indigo'>TOC</h1>
 
       <ul className='mt-3 flex flex-col space-y-2.5'>

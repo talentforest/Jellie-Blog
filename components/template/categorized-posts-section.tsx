@@ -1,13 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Post } from '@/service/posts';
 import { AiFillTag } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
 import SortBtn from '../posts/sort-btn';
-import CategoriesBox, { CategoryType } from '../common/categories-box';
+import CategoriesBox, { Category } from '../common/categories-box';
+import { sortByDate } from '@/util/sortByDate';
 
 export type SortBy = 'latest' | 'oldest';
 
@@ -16,35 +17,31 @@ interface Props {
 }
 
 export default function CategorizedPostsSection({ allPosts }: Props) {
-  const [category, setCategory] = useState('All' as CategoryType);
+  const [currCategory, setCurrCategory] = useState('All' as Category);
   const [sortBy, setSortBy] = useState<SortBy>('latest');
 
-  const filteredPosts = allPosts.filter((post) => post.category === category);
-
-  const sortByDate = (posts: Post[]) => {
-    const sortedPosts = posts.sort(
-      (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-    );
-    if (sortBy === 'latest') return sortedPosts.reverse();
-    if (sortBy === 'oldest') return sortedPosts;
-  };
+  const filteredPosts = allPosts.filter(
+    (post) => post.category === currCategory
+  );
 
   const showingPosts =
-    category === 'All' ? sortByDate(allPosts) : sortByDate(filteredPosts);
+    currCategory === 'All'
+      ? sortByDate(allPosts, 'latest')
+      : sortByDate(filteredPosts, 'latest');
 
   return (
     <section className='mx-4 mt-4 mb-8 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
       <CategoriesBox
-        category={category}
-        setCategory={setCategory}
+        currCategory={currCategory}
+        setCurrCategory={setCurrCategory}
         allPosts={allPosts}
       />
 
       <div className='relative mt-10 mb-2 pr-2 pl-1 flex items-center justify-between gap-1'>
         <h3 className='flex items-center gap-1'>
           <AiFillTag className='text-yellow w-5 h-5 mb-0.5' />
-          {category}
+          {currCategory}
         </h3>
         <MdKeyboardArrowRight className='h-5 w-5' />
         <span className='flex-1'>{showingPosts?.length || 0}개의 포스트</span>

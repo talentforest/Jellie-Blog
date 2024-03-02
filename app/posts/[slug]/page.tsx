@@ -3,6 +3,7 @@ import Toc from '@/components/posts/toc';
 import ProgressBar from '@/components/posts/progress-bar';
 import PostHeader from '@/components/posts/post-header';
 import MarkdownViewer from '@/components/posts/markdown-viewer';
+import GiscusComments from '@/components/posts/giscus-comments';
 import { getFeaturedPosts, getPost } from '@/service/posts';
 import { Metadata } from 'next';
 
@@ -52,7 +53,11 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
         </article>
       </section>
 
-      <section className='mt-14 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
+      <section className='px-4 md:px-0'>
+        <GiscusComments />
+      </section>
+
+      <section className='mt-12 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
         <h4 className='font-king font-bold text-slate'>다른 포스트 보기</h4>
         {prev && <PostBox post={prev} arrowPosition='left' />}
         {next && <PostBox post={next} arrowPosition='right' />}
