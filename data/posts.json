@@ -157,6 +157,16 @@
         "thumbnail": "atomic-design-flow.png",
         "featured": false,
         "description": "컴포넌트를 어떻게 구분해야할까?"
+      },
+      {
+        "id": 2,
+        "category": "developments",
+        "title": "MPA와 SPA, 다양한 웹페이지 렌더링 방식 이해하기",
+        "date": "2024-02-22",
+        "path": "webpage-rendering-method",
+        "thumbnail": "atomic-design-flow.png",
+        "featured": true,
+        "description": "MPA, SPA 개념부터 CSR, SSR, SSG, ISR, 하이브리드 렌더링 이제는 정확히 알고 적재적소에 적용하자"
       }
     ]
   }
