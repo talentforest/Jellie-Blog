@@ -164,9 +164,19 @@
         "title": "MPA와 SPA, 다양한 웹페이지 렌더링 방식 이해하기",
         "date": "2024-02-22",
         "path": "webpage-rendering-method",
-        "thumbnail": "atomic-design-flow.png",
+        "thumbnail": "",
         "featured": true,
         "description": "MPA, SPA 개념부터 CSR, SSR, SSG, ISR, 하이브리드 렌더링 이제는 정확히 알고 적재적소에 적용하자"
+      },
+      {
+        "id": 3,
+        "category": "developments",
+        "title": "함수형 프로그래밍의 데이터, 계산, 액션에 대해 이해하기",
+        "description": "책 <함수형 코딩>: chaper 1, 2, 3, 4, 5",
+        "date": "2024-01-15",
+        "path": "functional-programming-1",
+        "thumbnail": "functional-programming/functional-programming.png",
+        "featured": true
       }
     ]
   }
