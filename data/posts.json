@@ -177,6 +177,16 @@
         "path": "functional-programming-1",
         "thumbnail": "functional-programming/functional-programming.png",
         "featured": true
+      },
+      {
+        "id": 4,
+        "category": "developments",
+        "title": "브라우저의 구성 요소와 렌더링 과정 이해하기",
+        "description": "프론트엔드에서 중요한 것을 뽑으라면 브라우저가 아닐까?",
+        "date": "2024-03-01",
+        "path": "browser-rendering-process",
+        "thumbnail": "functional-programming/functional-programming.png",
+        "featured": false
       }
     ]
   }
