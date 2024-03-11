@@ -95,6 +95,16 @@
         "thumbnail": "react-18.png",
         "featured": false,
         "description": "React 프로젝트를 측정하고, 최적화하는 방법"
+      },
+      {
+        "id": 5,
+        "category": "react",
+        "title": "React의 Virtual DOM과 렌더링 방식 이해하기",
+        "date": "2024-02-09",
+        "path": "react-virtual-dom-and-rendering",
+        "thumbnail": "virtual-dom.png",
+        "featured": false,
+        "description": "React는 어떻게 렌더링하고 화면을 업데이트할까?"
       }
     ]
   },
