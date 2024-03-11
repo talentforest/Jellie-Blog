@@ -207,6 +207,16 @@
         "path": "functional-programming-2",
         "thumbnail": "functional-programming/functional-programming.png",
         "featured": false
+      },
+      {
+        "id": 6,
+        "category": "developments",
+        "title": "대체 어떤 파일 구조가 가장 효율적인지에 대한 고찰 (+아토믹 디자인)",
+        "description": "그동안 적용한 파일 구조에 대해 생각",
+        "date": "2024-01-25",
+        "path": "consideration-of-file-structure",
+        "thumbnail": "file-structure.png",
+        "featured": false
       }
     ]
   }
