@@ -32,21 +32,21 @@ export default async function AboutPage() {
         <ul className='border border-slate bg-box divide-y-[1px] divide-slate rounded-lg flex flex-col justify-center text-sm'>
           {contactList.map((contact) => (
             <li key={contact.name} className='flex items-center'>
-              <span className='font-king w-20 h-8 border-r border-slate flex items-center justify-start text-xs mx-2.5 my-0.5'>
+              <span className='font-king w-20 h-8 border-r border-slate flex items-center justify-start text-xs pl-2'>
                 {contact.name}
               </span>
 
               {contact.name === 'EMAIL' ? (
-                <span className='font-king'>{contact.item}</span>
+                <span className='font-king pl-1'>{contact.item}</span>
               ) : (
                 <a
-                  className='font-king text-slate flex items-center gap-1'
+                  className='font-king text-slate flex items-center gap-1 pl-1'
                   target='_blank'
                   title={`Jellie의 ${contact.name.toLowerCase()} 페이지`}
                   href={contact.item}
                 >
-                  {contact.item.slice(8)}
                   <RiLink className='w-3 h-3' />
+                  {contact.item.slice(8)}
                 </a>
               )}
             </li>

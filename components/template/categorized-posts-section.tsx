@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { Post } from '@/service/posts';
 import { AiFillTag } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { sortByDate } from '@/util/sortByDate';
 import EmptyBox from '../common/empty-box';
 import PostBox from '../common/post-box';
 import SortBtn from '../posts/sort-btn';
 import CategoriesBox, { Category } from '../common/categories-box';
-import { sortByDate } from '@/util/sortByDate';
 
 export type SortBy = 'latest' | 'oldest';
 
@@ -24,10 +24,10 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
     (post) => post.category === currCategory
   );
 
-  const showingPosts =
-    currCategory === 'All'
-      ? sortByDate(allPosts, 'latest')
-      : sortByDate(filteredPosts, 'latest');
+  const showingPosts = sortByDate(
+    currCategory === 'All' ? allPosts : filteredPosts,
+    'latest'
+  );
 
   return (
     <section className='mx-4 mt-4 mb-8 md:my-4 md:mx-0 min-h-[50vh]'>
@@ -48,7 +48,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
 
-      <ul className='flex flex-col space-y-3  md:gap-2 md:space-y-0 lg:grid-cols-3'>
+      <ul className='flex flex-col space-y-3'>
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>

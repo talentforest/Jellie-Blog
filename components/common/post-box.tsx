@@ -36,8 +36,15 @@ export default function PostBox({
     setLoading(false);
   }, []);
 
+  const preview = content
+    .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '')
+    .replace(/\[.*?\]\(.*?\)/g, '')
+    .slice(0, 200);
+
   return loading ? (
-    <span className='text-white'>loading...</span>
+    <div className='relative h-64 flex justify-center items-center bg-box group hover:-translate-y-0.5 border border-gray hover:border-2 hover:border-light-yellow transition cursor-pointer rounded-xl px-3.5 py-3 select-none hover:bg-hoverbox'>
+      <span className='text-slate'>loading...</span>
+    </div>
   ) : (
     <Link
       href={`/posts/${path}`}
@@ -56,16 +63,11 @@ export default function PostBox({
           {title}
         </h2>
 
-        <h3 className='text-[15px] my-2 text-teal leading-6 '>{description}</h3>
+        <h3 className='my-2 text-teal leading-6 '>{description}</h3>
 
         {contentPreview && (
           <p className='flex-1 text-sm tracking-wide leading-6 mt-2 mb-5 text-slate group-hover:text-text'>
-            {content
-
-              .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '')
-              .replace(/\[.*?\]\(.*?\)/g, '')
-              .slice(0, 200)}
-            ...
+            {preview} ...
           </p>
         )}
 

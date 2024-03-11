@@ -1,5 +1,8 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import { FaCode } from 'react-icons/fa6';
+import { AiFillTool } from 'react-icons/ai';
+import { MdOutlineWeb } from 'react-icons/md';
 
 interface Props {
   selected?: boolean;
@@ -15,31 +18,29 @@ export default function CategoryBox({
   return (
     <div
       className={`${
-        selected ? 'bg-indigo' : 'bg-box'
-      } group-hover:bg-light-yellow border border-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-0.5 pt-1 md:pb-1 md:pt-1.5`}
+        selected ? 'bg-indigo' : 'bg-hoverbox'
+      } group-hover:bg-light-yellow border border-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
       <span
         className={`group-hover:text-indigo text-sm ${
-          selected ? 'text-yellow' : 'text-slate'
+          selected ? 'text-yellow' : 'text-text'
         } items-center flex gap-1`}
       >
         {category === 'All' ? (
           ''
-        ) : category === 'web' ? (
-          '🌐'
         ) : category === 'side-projects' ? (
-          '👀'
+          <MdOutlineWeb />
         ) : category === 'library' ? (
-          '🗂️'
+          <AiFillTool />
         ) : category === 'developments' ? (
-          '💡'
+          <FaCode />
         ) : (
           <Image
             src={`/icon/${category}.svg`}
             alt={`${category} icon`}
-            width={14}
-            height={14}
-            className='rounded-full mb-[3px]'
+            width={0}
+            height={0}
+            className='rounded-full mb-[2px] w-3.5 h-auto'
           />
         )}
         {'  '}

@@ -3,11 +3,7 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import {
-  oneLight,
-  vscDarkPlus,
-} from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { useTheme } from 'next-themes';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MdContentPaste } from 'react-icons/md';
 import { RiLink } from 'react-icons/ri';
 import remarkGfm from 'remark-gfm';
@@ -19,8 +15,6 @@ interface Props {
 }
 
 export default function MarkdownViewer({ content }: Props) {
-  const { theme } = useTheme();
-
   const copyCodeBlock = (code: string) => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(code).catch(() => {
@@ -31,7 +25,7 @@ export default function MarkdownViewer({ content }: Props) {
 
   return (
     <ReactMarkdown
-      className='prose overscroll-auto w-full md:w-[72%] shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[72%] shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -47,10 +41,11 @@ export default function MarkdownViewer({ content }: Props) {
               >
                 <MdContentPaste className='h-5 w-5' />
               </button>
+
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag='div'
-                style={theme === 'light' ? oneLight : vscDarkPlus}
+                style={oneDark}
                 customStyle={{
                   margin: 0,
                   paddingTop: 15,
@@ -96,7 +91,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         img: (image) => (
           <Image
-            className='max-h-80 w-auto object-cover mt-1 mb-2 rounded-md'
+            className='max-h-80 w-auto object-cover mt-1 mb-4 rounded-md'
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
@@ -105,7 +100,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='[&:first-child]:border-indigo font-king text-yellow mt-16 mb-3 text-[28px]'
+            className='[&:first-child]:border-indigo font-king text-yellow mt-16 mb-1 text-[28px]'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -113,7 +108,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='font-king text-slate text-[22px] mt-10 mb-4'
+            className='font-king text-slate text-[22px] mt-6 mb-2'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -130,12 +125,12 @@ export default function MarkdownViewer({ content }: Props) {
           </h4>
         ),
         p: ({ node, className, ...props }) => (
-          <p {...props} className='mt-3 mb-5 tracking-[0.02em]' />
+          <p {...props} className='mt-3 mb-5 tracking-[0.02em] ' />
         ),
         blockquote: ({ node, className, children, ...props }) => (
           <blockquote
             {...props}
-            className='text-text bg-box mt-1 px-4 py-3 mb-3 border-0 rounded-xl [&>ol]:my-0 [&>ul]:my-0 [&>ol>li:last-child]:mb-0 [&>ul>li:last-child]:mb-0 [&>p::before]:hidden [&>p]:my-0 [&>p]:py-0.5 not-italic'
+            className='text-text bg-box mt-2 px-4 py-3 mb-3 border-0 rounded-xl [&>ol]:my-0 [&>ul]:my-0 [&>ol>li:last-child]:mb-0 [&>ul>li:last-child]:mb-0 [&>p::before]:hidden [&>p]:my-0 [&>p]:py-0.5 not-italic'
           >
             <span className='float-left mr-2 text-lg mt-0.5'>💡</span>
             {children}
@@ -164,13 +159,17 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         ol: ({ children, ordered, ...props }) => (
           <ol
-            className='marker:text-text marker:font-bold mt-2 mb-4'
+            className='marker:text-text marker:font-bold mt-1 mb-4'
             {...props}
           >
             {children}
           </ol>
         ),
-        ul: ({ children }) => <ul className='mt-0 mb-1.5 pl-5'>{children}</ul>,
+        ul: ({ children }) => (
+          <ul className='marker:text-text marker:font-bold mt-1 mb-4 pl-5'>
+            {children}
+          </ul>
+        ),
         hr: ({ children }) => <hr className='my-3 border-gray'>{children}</hr>,
       }}
     >

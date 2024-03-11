@@ -18,7 +18,7 @@ export default function PostHeader({ contents }: Props) {
   const { category, date, title, thumbnail, readingTime } = contents;
 
   return (
-    <header className='w-full bg-box rounded-b-3xl mb-3 pb-3 relative flex flex-col items-start'>
+    <>
       {thumbnail && title && category ? (
         <Image
           src={`/images/${category}/${thumbnail}`}
@@ -26,25 +26,29 @@ export default function PostHeader({ contents }: Props) {
           width={500}
           height={500}
           priority
-          className='w-full rounded-t-xl h-80 lg:h-80 object-cover self-center'
+          className='w-full h-80 lg:h-80 object-cover self-center'
         />
       ) : (
         <></>
       )}
 
-      <ul className='flex space-x-3 m-4 mt-10'>
+      <header className='w-full bg-box rounded-b-3xl mb-3 px-4 py-8 relative flex flex-col items-start'>
+        <div className='flex flex-wrap gap-3 mb-4'>
+          <DateBox date={date} />
+          <TimeToReadBox readingTime={readingTime || 0} />
+        </div>
+
         <CategoryBox category={category} />
-        <DateBox date={date} />
-        <TimeToReadBox readingTime={readingTime || 0} />
-      </ul>
+        <h1 className='text-3xl font-king font-bold leading-10 mb-6 mt-2'>
+          {title}
+        </h1>
 
-      <h1 className='text-3xl font-king font-bold leading-10 mx-5'>{title}</h1>
-
-      <span className='p-5 text-sm text-slate leading-6 tracking-wide'>
-        저의 글을 읽어주셔서 감사합니다.
-        <br />
-        피드백은 언제나 감사합니다! 언제든지 코멘트 남겨주세요.😊
-      </span>
-    </header>
+        <span className='text-sm text-slate leading-6 tracking-wide'>
+          저의 글을 읽어주셔서 감사합니다.
+          <br />
+          피드백은 언제나 감사합니다! 언제든지 코멘트 남겨주세요.😊
+        </span>
+      </header>
+    </>
   );
 }

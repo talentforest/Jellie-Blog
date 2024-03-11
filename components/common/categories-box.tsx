@@ -9,7 +9,6 @@ export type Category =
   | 'typescript'
   | 'javascript'
   | 'tailwindcss'
-  | 'web'
   | 'developments'
   | 'side-projects'
   | 'library';
@@ -21,7 +20,6 @@ const categoryList: Category[] = [
   'typescript',
   'javascript',
   'tailwindcss',
-  'web',
   'developments',
   'side-projects',
   'library',

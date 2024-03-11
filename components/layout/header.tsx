@@ -33,9 +33,7 @@ export default function Header() {
         </ul>
       </nav>
 
-      <Providers>
-        <ThemeMode />
-      </Providers>
+      <ThemeMode />
     </header>
   );
 }

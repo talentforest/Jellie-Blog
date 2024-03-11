@@ -3,6 +3,7 @@ import localFont from 'next/font/local';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
+import Providers from '@/components/layout/providers';
 
 export const metadata = {
   title: {
@@ -42,14 +43,16 @@ export default function RootLayout({
       <body
         className={`${kingSejongs.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
       >
-        <Header />
+        <Providers>
+          <Header />
 
-        <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
-          {children}
-          <ScrollToTopBtn />
-        </main>
+          <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
+            {children}
+            <ScrollToTopBtn />
+          </main>
 
-        <Footer />
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
