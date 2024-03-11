@@ -9,6 +9,7 @@ import { RiLink } from 'react-icons/ri';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface Props {
   content: string;
@@ -25,7 +26,7 @@ export default function MarkdownViewer({ content }: Props) {
 
   return (
     <ReactMarkdown
-      className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[72%] shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[70%] md:mr-6 shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -45,7 +46,7 @@ export default function MarkdownViewer({ content }: Props) {
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag='div'
-                style={oneDark}
+                style={vscDarkPlus}
                 customStyle={{
                   margin: 0,
                   paddingTop: 15,

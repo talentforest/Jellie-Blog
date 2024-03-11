@@ -41,13 +41,13 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
 
   return (
     <>
-      <section className='px-4 md:px-0'>
+      <section>
         <article>
           <ProgressBar />
           <PostHeader
             contents={{ path, title, date, category, thumbnail, readingTime }}
           />
-          <div className='mt-16 flex relative space-x-8'>
+          <div className='mt-16 flex relative'>
             <MarkdownViewer content={content} />
             <Toc />
           </div>
