@@ -1,18 +1,12 @@
 import { RxNotionLogo } from 'react-icons/rx';
 import { FaGithub } from 'react-icons/fa';
-import Image from 'next/image';
+import Avatar from '../common/avatar';
 
 export default function Introduction() {
   return (
     <section className='w-full my-12 px-4 md:px-0 flex justify-between items-center space-x-4'>
-      <Image
-        src='/images/about/avatar.png'
-        alt='avatar'
-        width={200}
-        height={200}
-        priority
-        className='w-32 h-32 object-cover rounded-full shadow-sm shadow-slate flex justify-center items-center'
-      />
+      <Avatar />
+
       <div className='flex-1'>
         <h3 className='font-semibold mb-2'>🌼 Jellie 🌼</h3>
         <p className='text-sm mb-4 tracking-wide'>

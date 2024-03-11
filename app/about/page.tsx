@@ -2,8 +2,8 @@ import { getAllProjects, getContactData } from '@/service/about';
 import { MdPermContactCalendar } from 'react-icons/md';
 import { MdViewSidebar } from 'react-icons/md';
 import { RiLink } from 'react-icons/ri';
-import Image from 'next/image';
 import ProjectItem from '@/components/about/project-item';
+import Avatar from '@/components/common/avatar';
 
 export const metadata = {
   title: 'About',
@@ -19,15 +19,8 @@ export default async function AboutPage() {
   return (
     <>
       <section className='my-8 flex flex-col items-center'>
-        <Image
-          src='/images/about/avatar.png'
-          alt='avatar'
-          width={200}
-          height={200}
-          priority
-          className='w-32 h-32 mb-4 rounded-full shadow-sm shadow-slate flex justify-center items-center'
-        />
-        <span className='block text-xl font-bold'>Jellie</span>
+        <Avatar />
+        <span className='block text-lg font-bold mt-3'>Jellie</span>
       </section>
 
       <section className='mx-4 mt-8 md:mx-0'>

@@ -5,12 +5,13 @@ import { TbTable } from 'react-icons/tb';
 import { getIntersectionObserver } from '@/util/getIntersectionObserver';
 import TocContent from './toc-content';
 import dynamic from 'next/dynamic';
+import Modal from '../common/modal';
 const ReactResponsive = dynamic(() => import('react-responsive'), {
   ssr: false,
 });
 
-export default function TableOfContents() {
-  const [modal, setModal] = useState(false);
+export default function Toc() {
+  const [openModal, setOpenModal] = useState(false);
   const [headingEls, setHeadingEls] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
@@ -30,14 +31,12 @@ export default function TableOfContents() {
     }
   }, []);
 
-  const toggleModal = () => setModal((prev) => !prev);
+  const toggleModal = () => setOpenModal((prev) => !prev);
 
   return (
     <>
       <ReactResponsive minWidth={768}>
-        <section className='overflow-scroll scrollbar-hide h-[92vh] w-48 sticky top-5 right-0 transition py-6 px-4'>
-          <TocContent headingEls={headingEls} activeId={activeId} />
-        </section>
+        <TocContent headingEls={headingEls} activeId={activeId} />
       </ReactResponsive>
 
       <ReactResponsive maxWidth={767}>
@@ -47,17 +46,10 @@ export default function TableOfContents() {
         >
           <TbTable className='w-7 h-7' />
         </button>
-
-        {modal && (
-          <>
-            <div
-              onClick={toggleModal}
-              className='overflow-hidden transition fixed bottom-0 top-0 z-20 left-0 right-0 mx-auto w-full h-screen bg-black opacity-50'
-            />
-            <section className='overflow-scroll transition z-20 p-6 fixed inset-0 m-auto w-10/12 h-fit max-h-[75%] border-2 border-slate bg-bg rounded-xl'>
-              <TocContent headingEls={headingEls} activeId={activeId} />
-            </section>
-          </>
+        {openModal && (
+          <Modal toggleModal={toggleModal}>
+            <TocContent headingEls={headingEls} activeId={activeId} />
+          </Modal>
         )}
       </ReactResponsive>
     </>

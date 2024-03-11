@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import StackBox from '../common/stack-box';
 import { Project } from '@/service/about';
 import { FaGithub } from 'react-icons/fa';
 import { RiArticleFill, RiLink } from 'react-icons/ri';
@@ -29,12 +30,7 @@ export default function ProjectItem({
 
         <ul className='mt-1 mb-4 flex flex-wrap gap-1.5'>
           {stacks.map((stack) => (
-            <li
-              key={stack}
-              className='bg-bg px-2.5 py-0.5 border border-slate w-fit rounded-md text-sm h-fit'
-            >
-              {stack}
-            </li>
+            <StackBox key={stack} stack={stack} />
           ))}
         </ul>
 

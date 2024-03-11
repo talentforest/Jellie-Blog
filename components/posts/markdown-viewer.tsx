@@ -31,7 +31,7 @@ export default function MarkdownViewer({ content }: Props) {
 
   return (
     <ReactMarkdown
-      className='prose shadow-3xl bg-bg rounded-t-[40px] max-w-none text-text relative px-5 pt-6 pb-20 md:rounded-b-xl flex flex-col'
+      className='prose overscroll-auto w-full md:w-[72%] shadow-3xl bg-bg rounded-t-[40px] max-w-none text-text relative px-5 md:px-2 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
