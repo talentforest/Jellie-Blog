@@ -3,12 +3,13 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MdContentPaste } from 'react-icons/md';
-import { BsStars } from 'react-icons/bs';
+import { RiLink } from 'react-icons/ri';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface Props {
   content: string;
@@ -25,7 +26,7 @@ export default function MarkdownViewer({ content }: Props) {
 
   return (
     <ReactMarkdown
-      className='prose max-w-none text-text relative px-4 pt-4 pb-20 bg-box md:rounded-b-xl flex flex-col'
+      className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[70%] md:mr-6 shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -41,18 +42,25 @@ export default function MarkdownViewer({ content }: Props) {
               >
                 <MdContentPaste className='h-5 w-5' />
               </button>
+
               <SyntaxHighlighter
                 language={match[1]}
                 PreTag='div'
                 style={vscDarkPlus}
-                customStyle={{ margin: 0, paddingTop: 20, paddingBottom: 20 }}
+                customStyle={{
+                  margin: 0,
+                  paddingTop: 15,
+                  paddingBottom: 15,
+                  borderRadius: 0,
+                  borderWidth: 0,
+                }}
               >
                 {String(children).replace(/\n$/, '')}
               </SyntaxHighlighter>
             </>
           ) : (
             <code
-              className={`${className} break-all before:hidden after:hidden p-1 border border-slate bg-bg text-text rounded-md`}
+              className={`${className} before:hidden after:hidden py-1 px-1.5 border border-box bg-gray text-[13px] text-[#ff5b5b] rounded-md`}
               {...props}
             >
               {children}
@@ -60,20 +68,31 @@ export default function MarkdownViewer({ content }: Props) {
           );
         },
         table: ({ children }) => (
-          <table className='break-all mt-0'>{children}</table>
-        ),
-        th: ({ children }) => <th className='text-indigo'>{children}</th>,
-        pre: ({ children, ...props }) => (
-          <pre className='relative p-0 m-0 mb-2 z-0' {...props}>
+          <table className='break-all font-king font-[400] mt-2 mb-4 text-text bg-box rounded-md px-10'>
             {children}
-          </pre>
+          </table>
+        ),
+        th: ({ children }) => (
+          <th className='text-blue px-3 py-2'>{children}</th>
+        ),
+        tr: ({ children }) => <tr className=''>{children}</tr>,
+        td: ({ children }) => {
+          return (
+            <td
+              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
+              dangerouslySetInnerHTML={{ __html: children?.join('') }}
+            />
+          );
+        },
+        pre: ({ children }) => (
+          <pre className='relative p-0 m-0 mb-2 z-0'>{children}</pre>
         ),
         strong: ({ children }) => (
-          <strong className='text-teal font-bold'>{children}</strong>
+          <strong className='text-indigo font-bold'>{children}</strong>
         ),
         img: (image) => (
           <Image
-            className='max-h-80 w-auto object-cover my-2'
+            className='max-h-80 w-auto object-cover mt-1 mb-4 rounded-md'
             src={image.src || ''}
             alt={image.alt || ''}
             width={500}
@@ -81,31 +100,25 @@ export default function MarkdownViewer({ content }: Props) {
           />
         ),
         h2: ({ children }) => (
-          <>
-            <BsStars className='w-5 h-5 mt-8 mb-1 text-yellow' />
-            <h2
-              className='text-yellow mt-0 mb-4 text-[28px]'
-              id={String(children).replaceAll(' ', '-')}
-            >
-              {children}
-            </h2>
-          </>
+          <h2
+            className='[&:first-child]:border-indigo font-king text-yellow mt-16 mb-1 text-[28px]'
+            id={String(children).replaceAll(' ', '-')}
+          >
+            {children}
+          </h2>
         ),
         h3: ({ node, children, ...props }) => (
-          <>
-            <BsStars className='w-4 h-4 mt-5 mb-1 text-blue' />
-            <h3
-              className='text-blue mt-0 mb-4 text-[24px]'
-              {...props}
-              id={String(children).replaceAll(' ', '-')}
-            >
-              {children}
-            </h3>
-          </>
+          <h3
+            className='font-king text-slate text-[22px] mt-6 mb-2'
+            {...props}
+            id={String(children).replaceAll(' ', '-')}
+          >
+            {children}
+          </h3>
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='text-indigo mt-5 mb-0 text-base'
+            className='font-king text-slate mb-2 text-xl'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -113,41 +126,51 @@ export default function MarkdownViewer({ content }: Props) {
           </h4>
         ),
         p: ({ node, className, ...props }) => (
-          <p {...props} className='mt-1 mb-5' />
+          <p {...props} className='mt-3 mb-5 tracking-[0.02em] ' />
         ),
-        blockquote: ({ node, className, ...props }) => (
+        blockquote: ({ node, className, children, ...props }) => (
           <blockquote
-            className='text-indigo mt-1 border-l-[5px] border-teal [&>p::before]:hidden'
             {...props}
-          />
+            className='text-text bg-box mt-2 px-4 py-3 mb-3 border-0 rounded-xl [&>ol]:my-0 [&>ul]:my-0 [&>ol>li:last-child]:mb-0 [&>ul>li:last-child]:mb-0 [&>p::before]:hidden [&>p]:my-0 [&>p]:py-0.5 not-italic'
+          >
+            <span className='float-left mr-2 text-lg mt-0.5'>💡</span>
+            {children}
+          </blockquote>
         ),
         input: ({ node, className, ...props }) => (
           <input className={`${className} my-0 mr-1 mt-1 w-4 h-4`} {...props} />
         ),
-        a: ({ node, className, ...props }) => (
+        a: ({ node, className, children, ...props }) => (
           <a
-            className={`${className} text-slate font-medium`}
-            {...props}
+            className={`${className} w-fit inline-block font-mono tracking-tighter font-thin text-slate`}
             target='_blank'
-          />
+            {...props}
+          >
+            <RiLink className='text-slate mt-1.5 mr-0.5 float-left' />
+            {children}
+          </a>
         ),
         del: ({ node, className, ...props }) => (
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-indigo text-indigo marker:font-bold mt-2 mb-1'>
+          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-1.5'>
             {children}
           </li>
         ),
         ol: ({ children, ordered, ...props }) => (
           <ol
-            className='marker:text-indigo text-indigo marker:font-bold mt-2 mb-1'
+            className='marker:text-text marker:font-bold mt-1 mb-4'
             {...props}
           >
             {children}
           </ol>
         ),
-        ul: ({ children }) => <ul className='my-0 pl-5'>{children}</ul>,
+        ul: ({ children }) => (
+          <ul className='marker:text-text marker:font-bold mt-1 mb-4 pl-5'>
+            {children}
+          </ul>
+        ),
         hr: ({ children }) => <hr className='my-3 border-gray'>{children}</hr>,
       }}
     >

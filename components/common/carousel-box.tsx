@@ -15,14 +15,10 @@ interface Props {
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 3,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 768 },
     items: 2,
   },
-  mobile: {
-    breakpoint: { max: 768, min: 0 },
+  tablet: {
+    breakpoint: { max: 1024, min: 0 },
     items: 1,
   },
 };
@@ -40,7 +36,7 @@ export default function CarouselBox({ children, config }: Props) {
       containerClass='flex items-center pt-1 pb-10 mt-3 z-0'
       customTransition='transform 0.8s ease-in-out'
       itemClass='px-1 '
-      dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow '
+      dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow'
     >
       {children}
     </Carousel>

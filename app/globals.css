@@ -4,34 +4,38 @@
 @layer base {
   :root {
     --bg: #f5f5f5;
-    --text: #333;
+    --text: #222;
     --indigo: #4f46e5;
     --yellow: #eab308;
+    --light-yellow: #ffd969;
     --blue: #2563eb;
     --teal: #0d9488;
     --slate: #64748b;
     --white: #fff;
     --black: #000;
-    --gray: #e0e0e0;
+    --gray: #dedede;
     --box: #fff;
+    --hoverbox: #fcfcfc;
   }
   :root[class='dark'] {
     --bg: #111;
     --text: #fff;
     --indigo: #a481ff;
     --yellow: #eab308;
+    --light-yellow: #ffd969;
     --blue: #5b9aff;
     --teal: #14b8a6;
     --slate: #94a3b8;
     --white: #fff;
     --black: #000;
-    --gray: #444;
-    --box: #222;
+    --gray: #333;
+    --box: #262626;
+    --hoverbox: #333;
   }
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
   scroll-padding-top: 30px;
 }
 
