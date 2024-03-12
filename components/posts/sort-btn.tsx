@@ -27,7 +27,9 @@ export default function SortBtn({ sortBy, setSortBy }: Props) {
         onClick={onSortByChange}
       >
         <MdKeyboardArrowDown className='w-5 h-5' />
-        <span>{sortBy === 'latest' ? '최신순' : '오래된순'}</span>
+        <span className='text-[15px]'>
+          {sortBy === 'latest' ? '최신순' : '오래된순'}
+        </span>
       </button>
 
       {open && (
