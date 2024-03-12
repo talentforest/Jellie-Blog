@@ -8,19 +8,15 @@ TailwindCss가 3.0으로 버전이 업그레이드되기 이전에는 빌드할 
 
 Just in time compiler(JIT)는 **코드를 실시간으로 감시**하면서 클래스를 새로 작성하면 컴파일러가 그것을 찾아낸 다음 바로 CSS를 생성해주는 기능이다. 그러면서 다양한 조합의 modifier를 사용할 수 있게 되었다. 클래스를 새로 작성하면 다시 새로 생성해주고, 지우면 바로 지워지기 때문에 사용하지 않는 클래스네임이라는 것은 존재하지 않게 되었다.
 
-**TL;DR**
-
-> TailwindCss가 Just in time compiler(JIT)로 실시간으로 클래스를 감시해 클래스를 조합하고 생성하는 3.0으로 업그레이드 되면서 기존에는 되지 않았던 것들,
+> TailwindCss가 Just in time compiler(JIT)로 실시간으로 클래스를 감시해 클래스를 조합하고 생성하는 3.0으로 업그레이드 되면서 기존에는 되지 않았던 아래와 같은 기능들이 가능해졌다.
 >
 > - 다양한 조합의 modifier
 >
->   ex `dark:first:hover:bg-slate-400`
+>   ex: `dark:first:hover:bg-slate-400`
 >
 > - 유틸리티에 없는 값 적용
 >
->   ex `text-[200px]` , `bg-[url(’/vercel.svg’)]`
->
-> 가능해졌다.
+>   ex: `text-[200px]` , `bg-[url(’/vercel.svg’)]`
 
 ## TailwindCss를 Next.js에 설치하기
 
@@ -177,71 +173,75 @@ https://tailwindcss.com/docs/hover-focus-and-other-states#quick-reference
 
 ### 가상 클래스 Modifier
 
-- `hover` (&:hover)
-- `focus` (&:focus)
-- `active` (&:active)
-- `disabled` (&:disabled)
+- 대표 가상 클래스
 
-**리스트에 유용한 가상 클래스**
+  - `hover` (`&:hover`)
+  - `focus` (`&:focus`)
+  - `active` (`&:active`)
+  - `disabled` (`&:disabled`)
 
-- `first` (&:first-child)
-- `last` (&:last-child)
-- `only` (&:only-child) | 항목이 하나 남았을 때 유용할 듯.
-- `odd` (&:nth-child(odd))
-- `even` (&:nth-child(even))
-- `empty` (&:empty) | 항목에는 있지만 내용이 빈 항목일 경우 `empty:hidden` 같은 것처럼 만들 수 있다.
+- 리스트에 유용한 가상 클래스
 
-**Form에 쓰면 좋은 가상 클래스 Modifier**
+  - `first` (`&:first-child`)
+  - `last` (`&:last-child`)
+  - `only` (`&:only-child`) | 항목이 하나 남았을 때 유용할 듯.
+  - `odd` (`&:nth-child(odd)`)
+  - `even` (`&:nth-child(even)`)
+  - `empty` (`&:empty`) | 항목에는 있지만 내용이 빈 항목일 경우 `empty:hidden` 같은 것처럼 만들 수 있다.
 
-- `invalid` (&:invalid)
-  유효하지 않은 패턴인 경우, required 상태일 때 빈값일 경우도 포함
-- `valid`
-  반대로 유효하게 작성 중일 때
-- `placeholder-shown:`
-  빈값이어서 placeholder가 보일 때 보이는 스타일
-- `disabled`
+- Form에 쓰면 좋은 가상 클래스 Modifier
 
-```jsx
-// Form에 쓰면 좋은 가상 클래스 Modifier 예시
-<form>
-  <h1>프로필</h1>
-  <span>아바타</span>
-  <input
-    type='email'
-    required
-    placeholder='이메일을 입력해주세요.'
-    className='border-yellow-5 h-8 w-1/2 rounded-lg px-2 required:border-2'
-  />
-  <input
-    type='password'
-    required
-    placeholder='패스워드를 적어주세요'
-    className='border-yellow-5 h-8 w-1/2 rounded-lg px-2 required:border-2'
-  />
-  <input type='submit' value='Login' className='bg-red' />
-</form>
-```
+  - `invalid` (`&:invalid`)
+    유효하지 않은 패턴인 경우, required 상태일 때 빈값일 경우도 포함
+  - `valid`
+    반대로 유효하게 작성 중일 때
+  - `placeholder-shown:`
+    빈값이어서 placeholder가 보일 때 보이는 스타일
+  - `disabled`
 
-**Details 태그에 쓰면 좋은 가상 클래스 Modifier**
+  ```jsx
+  // Form에 쓰면 좋은 가상 클래스 Modifier 예시
+  <form>
+    <h1>프로필</h1>
+    <span>아바타</span>
+    <input
+      type='email'
+      required
+      placeholder='이메일을 입력해주세요.'
+      className='border-yellow-5 h-8 w-1/2 rounded-lg px-2 required:border-2'
+    />
+    <input
+      type='password'
+      required
+      placeholder='패스워드를 적어주세요'
+      className='border-yellow-5 h-8 w-1/2 rounded-lg px-2 required:border-2'
+    />
+    <input type='submit' value='Login' className='bg-red' />
+  </form>
+  ```
 
-- `select` (&:select-none)
+- Details 태그에 쓰면 좋은 가상 클래스 Modifier
 
-복붙이 안되도록 글자 드래깅을 막는다.
+  - `select` (&:select-none)
 
-```jsx
-<details className='select-none p-12 open:bg-indigo-400 open:text-white'>
-  <summary className='select-none'>Selection</summary>
-  <span>김밥</span>
-</details>
-```
+  복붙이 안되도록 글자 드래깅을 막는다.
 
-- `selection:bg-indigo-300`은 드래깅했을 때 색상을 바꿔준다.
+  ```jsx
+  <details className='select-none p-12 open:bg-indigo-400 open:text-white'>
+    <summary className='select-none'>Selection</summary>
+    <span>김밥</span>
+  </details>
+  ```
+
+  - `selection:bg-indigo-300`은 드래깅했을 때 색상을 바꿔준다.
 
 ### 가상 요소 Modifier
 
-- `before` (&::before)
-- `after` (&::after)
-- `placeholder` (&::placeholder)
+- 대표 가상 요소
+
+  - `before` (&::before)
+  - `after` (&::after)
+  - `placeholder` (&::placeholder)
 
 ### 반응형 Modifier
 
@@ -249,11 +249,11 @@ tailwind는 mobile를 기준으로 디자인한다.
 [https://tailwindcss.com/docs/responsive-design#overview](https://tailwindcss.com/docs/responsive-design#overview)
 | Breakpoint prefix | Minimum width | CSS |
 | ----------------- | ------------- | ---------------------------------- |
-| sm | 640px | @media (min-width: 640px) { ... } |
-| md | 768px | @media (min-width: 768px) { ... } |
-| lg | 1024px | @media (min-width: 1024px) { ... } |
-| xl | 1280px | @media (min-width: 1280px) { ... } |
-| 2xl | 1536px | @media (min-width: 1536px) { ... } |
+| sm | 640px | `@media (min-width: 640px) { ... }` |
+| md | 768px | `@media (min-width: 768px) { ... }` |
+| lg | 1024px | `@media (min-width: 1024px) { ... }` |
+| xl | 1280px | `@media (min-width: 1280px) { ... }` |
+| 2xl | 1536px | `@media (min-width: 1536px) { ... }` |
 
 ### 다크모드 Modifier
 
@@ -262,8 +262,7 @@ tailwind는 mobile를 기준으로 디자인한다.
 - dark Modifier는 개인 컴퓨터 환경 설정을 기본값으로 작동한다. 만약 환경 설정이 다크 모드로 설정되어 있다면 다크 모드가 적용된다.
 - 만약 페이지에 직접 다크모드 토글 버튼을 추가하고 싶다면 tailwind.config.js 아래와 같이 환경설정에서 설정해줘야 한다.
 
-  ```javascript
-  // tailwind.config.js
+  ```javascript:tailwind.config.js
   /** @type {import('tailwindcss').Config} */
   module.exports = {
     content: [
@@ -345,7 +344,7 @@ tailwind는 mobile를 기준으로 디자인한다.
 
 아직 tailwind에 속하지는 않았지만 아래 플러그인은 공식적으로 지원하고 있다.
 
-```javascript
+```javascript:tailwind.config.js
 module.exports = {
   // ...
   plugins: [
@@ -357,14 +356,14 @@ module.exports = {
 };
 ```
 
-**@tailwindcss/typography**
+- **@tailwindcss/typography**
 
-마크다운이나 CMS 데이터베이스 컨텐츠 블록에 빠르게 타이포그래피 스타일 클래스 세트를 적용할 수 있는 `prose` 클래스를 제공한다.
+  마크다운이나 CMS 데이터베이스 컨텐츠 블록에 빠르게 타이포그래피 스타일 클래스 세트를 적용할 수 있는 `prose` 클래스를 제공한다.
 
-**@tailwindcss/line-clamp**
+- **@tailwindcss/line-clamp**
 
-텍스트를 고정된 줄수로 잘라낼 수 있는 `line-clamp-{lines}` 클래스를 제공한다.
+  텍스트를 고정된 줄수로 잘라낼 수 있는 `line-clamp-{lines}` 클래스를 제공한다.
 
-**@tailwindcss/aspect-ratio**
+- **@tailwindcss/aspect-ratio**
 
-요소의 가로 세로 비율을 고정시킬 수 있는 `aspect-w-{n}` 클래스를 제공한다.
+  요소의 가로 세로 비율을 고정시킬 수 있는 `aspect-w-{n}` 클래스를 제공한다.

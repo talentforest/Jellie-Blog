@@ -24,14 +24,14 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
     (post) => post.category === currCategory
   );
 
-  const showingPosts = sortByDate(
-    currCategory === 'All' ? allPosts : filteredPosts,
-    'latest'
-  );
+  const matchPosts = currCategory === 'All' ? allPosts : filteredPosts;
+
+  const showingPosts = sortByDate(matchPosts, sortBy);
 
   return (
     <section className='mx-4 mt-4 mb-8 md:my-4 md:mx-0 min-h-[50vh]'>
       <h2>Categorized Posts</h2>
+
       <CategoriesBox
         currCategory={currCategory}
         setCurrCategory={setCurrCategory}

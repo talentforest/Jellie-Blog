@@ -76,12 +76,20 @@ export default function MarkdownViewer({ content }: Props) {
           <th className='text-blue px-3 py-2'>{children}</th>
         ),
         tr: ({ children }) => <tr className=''>{children}</tr>,
-        td: ({ children }) => {
-          return (
+        td: ({ children, ...props }) => {
+          return children?.includes('<li>') ? (
             <td
               className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
-              dangerouslySetInnerHTML={{ __html: children?.join('') }}
+              dangerouslySetInnerHTML={{ __html: children.join('') }}
+              {...props}
             />
+          ) : (
+            <td
+              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
+              {...props}
+            >
+              {children}
+            </td>
           );
         },
         pre: ({ children }) => (
@@ -126,7 +134,10 @@ export default function MarkdownViewer({ content }: Props) {
           </h4>
         ),
         p: ({ node, className, ...props }) => (
-          <p {...props} className='mt-3 mb-5 tracking-[0.02em] ' />
+          <p
+            {...props}
+            className='mt-3 mb-5 tracking-[0.02em] [&+ul]:mt-0 break-words'
+          />
         ),
         blockquote: ({ node, className, children, ...props }) => (
           <blockquote
@@ -142,19 +153,19 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         a: ({ node, className, children, ...props }) => (
           <a
-            className={`${className} w-fit inline-block font-mono tracking-tighter font-thin text-slate`}
+            className={`${className} inline-block font-mono tracking-tighter font-thin text-slate`}
             target='_blank'
             {...props}
           >
             <RiLink className='text-slate mt-1.5 mr-0.5 float-left' />
-            {children}
+            <span className='break-words'>{children}</span>
           </a>
         ),
         del: ({ node, className, ...props }) => (
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-1.5'>
+          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-1.5 [&>p::before]:hidden [&>p::after]:hidden'>
             {children}
           </li>
         ),
