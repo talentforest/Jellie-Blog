@@ -153,6 +153,16 @@
         "thumbnail": "jellie-blog-thumbnail.png",
         "featured": false,
         "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기."
+      },
+      {
+        "id": 4,
+        "category": "side-projects",
+        "title": "Expo 환경에서 React-Native-Iap 라이브러리 연결하기",
+        "date": "2023-11-13",
+        "path": "react-native-iap-with-expo",
+        "thumbnail": "jellie-blog-thumbnail.png",
+        "featured": false,
+        "description": "과연 Expo 환경에서도 결제 모듈 라이브러리를 적용할 수 있을까?"
       }
     ]
   },
