@@ -3,13 +3,12 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MdContentPaste } from 'react-icons/md';
 import { RiLink } from 'react-icons/ri';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface Props {
   content: string;
@@ -76,18 +75,14 @@ export default function MarkdownViewer({ content }: Props) {
           <th className='text-blue px-3 py-2'>{children}</th>
         ),
         tr: ({ children }) => <tr className=''>{children}</tr>,
-        td: ({ children, ...props }) => {
-          return children?.includes('<li>') ? (
+        td: ({ children }) => {
+          return children?.includes('<li>') || children?.includes('<br/>') ? (
             <td
               className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
               dangerouslySetInnerHTML={{ __html: children.join('') }}
-              {...props}
             />
           ) : (
-            <td
-              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
-              {...props}
-            >
+            <td className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'>
               {children}
             </td>
           );
@@ -96,7 +91,10 @@ export default function MarkdownViewer({ content }: Props) {
           <pre className='relative p-0 m-0 mb-2 z-0'>{children}</pre>
         ),
         strong: ({ children }) => (
-          <strong className='text-indigo font-bold'>{children}</strong>
+          <strong className='relative px-1 py-0.5'>
+            <span className='absolute left-0 -top-1 w-full h-full my-0.5 -skew-x-12 bg-[#3aa7eb] rounded-sm opacity-20' />
+            <span className='relative font-bold opacity-90'>{children}</span>
+          </strong>
         ),
         img: (image) => (
           <Image

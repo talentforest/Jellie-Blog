@@ -9,6 +9,10 @@ interface Props {
   config: {
     centerMode: boolean;
     showDots: boolean;
+    swipeable?: boolean;
+    infinite?: boolean;
+    autoPlay?: boolean;
+    arrows?: boolean;
   };
 }
 
@@ -24,18 +28,27 @@ const responsive = {
 };
 
 export default function CarouselBox({ children, config }: Props) {
-  const { centerMode, showDots } = config;
+  const {
+    centerMode,
+    showDots,
+    swipeable = true,
+    infinite = true,
+    autoPlay = false,
+    arrows = true,
+  } = config;
 
   return (
     <Carousel
       responsive={responsive}
-      infinite={true}
-      swipeable={true}
+      infinite={infinite}
+      autoPlay={autoPlay}
+      swipeable={swipeable}
       showDots={showDots}
       centerMode={centerMode}
-      containerClass='flex items-center pt-1 pb-10 mt-3 z-0'
+      arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
-      itemClass='px-1 '
+      containerClass='flex items-center pt-1 pb-10 mt-3 z-0'
+      itemClass='px-1'
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-yellow'
     >
       {children}

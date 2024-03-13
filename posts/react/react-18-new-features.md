@@ -10,7 +10,7 @@ React팀이 블로그에서 React 18을 발표한지도 벌써 1년이 지났다
 
 React 팀에서는 React 18에서 가장 중요한 사항으로 **Concurrency 동시성**을 들었다. 동시성은 어떤 기능이 아니라, **동시에 여러가지 UI를 렌더링**할 수 있게 만들어주는 완전히 새로운 **백그라운드 매커니즘**이다.
 
-간단히 말하면 Concurrent React는 이 Concurrency라는 매커니즘을 지원하는 새로운 React 렌더링 모델이다. 이전 렌더링 모델의 한계를 극복하고 렌더링 작업을 분할하고 우선순위를 부여해 다른 작업을 처리하는 동안에도 앱이 빠르고 반응성이 좋게 동작하도록 만들었다.
+간단히 말하면 Concurrent React는 이 Concurrency라는 매커니즘을 지원하는 새로운 React 렌더링 모델이다. 이전 렌더링 모델의 한계를 극복하고 **렌더링 작업을 분할하고 우선순위를 부여**해 다른 작업을 처리하는 동안에도 앱이 빠르고 반응성이 좋게 동작하도록 만들었다.
 
 이에 따른 주요 특성으로는
 
@@ -22,11 +22,11 @@ React 팀에서는 React 18에서 가장 중요한 사항으로 **Concurrency �
 
    화면에서 UI 섹션을 삭제한 후 나중에 이전 상태를 재사용하면서 다시 추가할 수 있다. 예를 들어 사용자가 현재 화면에서 다른 곳으로 갔다가 다시 뒤로가기를 눌렀을 때 이전 화면과 같은 상태로 복원할 수 있다.
 
-**Concurrent Features!**  
- 동시성이 지원되는 Concurrent React를 위한 **새로운 기능**을 의미한다. 그러니까 지금 이 포스트에서 다루는 기능들인 Suspense, Automatic Batching 같은 것들이 Concurrent Features이다.
+**Concurrent Features**  
+동시성이 지원되는 Concurrent React를 위한 **새로운 기능**을 의미한다. 그러니까 지금 이 포스트에서 다루는 기능들인 **Suspense, Automatic Batching** 같은 것들이 Concurrent Features이다.
 
-**Concurrent Mode?**  
- 전에 Concurrent Mode라는 용어를 봤던 것 같은데 공식문서에 없어서 따로 찾아보니 React 18이 되면서 따로 Mode 같은 것은 없어졌다고 한다. 왜냐하면 이 새로운 방식은 React 18의 기능들을 사용할 때만 활성화되기 때문이다. 이제 concurrent는 rendering과 더 자주 쓰이는 것 같다.
+- **Concurrent Mode?**  
+  전에 Concurrent Mode라는 용어를 봤던 것 같은데 공식문서에 없어서 따로 찾아보니 React 18이 되면서 따로 Mode 같은 것은 없어졌다고 한다. 왜냐하면 이 새로운 방식은 React 18의 기능들을 사용할 때만 활성화되기 때문이다. 이제 concurrent는 rendering과 더 자주 쓰이는 것 같다.
 
 참고  
 [17.reactjs.org/docs/concurrent-mode-intro.html](https://17.reactjs.org/docs/concurrent-mode-intro.html)  
@@ -102,13 +102,13 @@ React 18은 새로운 기능들이 많이 추가되었는데, 정말 '업그레�
    ![createRoot docs](/images/react/react-18-new-features/createRoot.png)
    [https://react.dev/blog/2022/03/29/react-v18#react-dom-client](https://react.dev/blog/2022/03/29/react-v18#react-dom-client)
 
-   createRoot 없이는 React 18 기능이 동작하지 않는다. 예를 들어 다음에 이어지는 이야기인 Automatic Batching이나 startTransition 기능도 이 createRoot 함수를 통해 이용 가능하다.
+   `createRoot` 없이는 React 18 기능이 동작하지 않는다. 예를 들어 다음에 이어지는 이야기인 Automatic Batching이나 `startTransition` 기능도 이 `createRoot` 함수를 통해 이용 가능하다.
 
 2. 이제 계속 DOM에 접근하지 않아도 된다.
 
    이전 Legacy인 `ReactDOM.render()`는 두번째 인자에 root를 넣는데, root를 DOM 노드를 통해 접근하기 때문에 root인 container에 변경이 없더라도 렌더링하기 위해서 계속 DOM에 접근해야 했다.
 
-   하지만 React 팀은 렌더링 과정마다 이 루트를 통과하는 것이 무의미하다고 생각하고, 새로운 API인 createRoot를 만들었다. createRoot에서는 인자로 DOM 노드를 넣어 새로운 root를 생성하고 이 새로운 root에서 render함수를 호출하기 때문에 더 이상 DOM에 접근하지 않아도 된다.
+   하지만 React 팀은 렌더링 과정마다 이 루트를 통과하는 것이 무의미하다고 생각하고, 새로운 API인 `createRoot`를 만들었다. `createRoot`에서는 인자로 DOM 노드를 넣어 새로운 root를 생성하고 이 새로운 root에서 `render` 함수를 호출하기 때문에 더 이상 DOM에 접근하지 않아도 된다.
 
    [https://react.dev/reference/react-dom/client/createRoot](https://react.dev/reference/react-dom/client/createRoot)
    [https://tech.osci.kr/2022/05/03/react-18v/](https://tech.osci.kr/2022/05/03/react-18v/)
@@ -117,16 +117,16 @@ React 18은 새로운 기능들이 많이 추가되었는데, 정말 '업그레�
 
    컴포넌트를 즉시 렌더링하지 않고 브라우저가 다른 작업을 수행할 수 있도록 할 수 있다.
 
-정리하면 ReactDOM.createRoot() 함수는 더욱 효율적이며 빠르게 렌더링하고, 최종 DOM 노드를 결정할 수 있는 방식을 제공한다.
+정리하면 `ReactDOM.createRoot()` 함수는 더욱 효율적이며 빠르게 렌더링하고, 최종 DOM 노드를 결정할 수 있는 방식을 제공한다.
 
 - **`hydrateRoot` 추가**  
-  만약 서버 렌더링되는 애플리케이션이라면 createRoot()는 작동하지 않는다. 이떄는 hydrateRoot를 사용한다.
+  만약 서버 렌더링되는 애플리케이션이라면 `createRoot()`는 작동하지 않는다. 이때는 `hydrateRoot`를 사용한다.
 
 ### 2. Automatic Batching
 
 Batching이란 "한묶음"이라는 뜻으로, 여러가지 요소를 하나로 묶는 것을 나타낸다. React에서는 성능 향상을 위해 여러 상태 업데이트를 하나의 리렌더링으로 그룹화하는 것을 뜻한다. Batching을 통해 렌더링 수를 줄일 수 있는 것이다.
 
-기존에는 **React 이벤트 핸들러** 내에서만 Batching 기능이 적용되었고, setTimeout, promises 네이티브나 기타 이벤트에서는 적용되지 않았다.
+기존에는 **React 이벤트 핸들러** 내에서만 Batching 기능이 적용되었고, `setTimeout`, `promises` 네이티브나 기타 이벤트에서는 적용되지 않았다.
 
 하지만 이제는 모든 업데이트에서 자동으로 Batching이 적용된다.
 
@@ -174,7 +174,7 @@ startTransition(() => {
 
 Suspense는 컴포넌트 트리의 일부가 아직 표시될 준비가 되지 않았을 경우 로딩 상태를 선언적으로 지정할 수 있다. 로딩 상태는 컴포넌트 안이 아니라 외부에 있고, 외부에서 로딩 상태를 컨트롤할 수 있게 되는 것이다.
 
-이제 Suspense는 클라이언트나 서버 둘 모두에서 지원된다.
+이제 `Suspense`는 클라이언트나 서버 둘 모두에서 지원된다.
 
 ```tsx
 // ✅ Comments의 렌더링이 아직 준비되지 않은 경우 컴포넌트의 로딩 상태 선언
@@ -183,14 +183,16 @@ Suspense는 컴포넌트 트리의 일부가 아직 표시될 준비가 되지 �
 </Suspense>
 ```
 
-Suspense는 transition과 결합했을 때 가장 잘 작동한다고 한다. React는 이미 표시된 콘텐츠가 transition으로 일시중단되었을 때 fallback으로 표시되는 것을 방지하고 렌더를 지연시킨다.
+`Suspense`는 transition과 결합했을 때 가장 잘 작동한다고 한다. React는 이미 표시된 콘텐츠가 transition으로 일시중단되었을 때 fallback으로 표시되는 것을 방지하고 렌더를 지연시킨다.
 
 ### 5.React Server Component
 
 말그대로 서버에서 동작하는 컴포넌트. 클라이언트가 아니라 서버에서 컴포넌트를 만들고 만든 결과를 화면에 보여준다. **서버 사이드 렌더링과 다르다.** 서버 컴포넌트의 코드는 클라이언트로 전달되지 않는다.
 
 - 장점
+
   1.  API를 통한 데이터 요청이 빈번한 컴포넌트일 경우 서버 컴포넌트로 만든다면 브라우저에서 서버에 API 요청할 필요 없이 서버에서 모두 수행되어 그 결과만 클라이언트에 보내지기 때문에 성능과 사용자 경험이 더욱 좋아진다. 클라이언트 컴포넌트에서 발생하던 client-server waterfall이 사라지는 것이다.
+
   2.  Code splitting 기법의 React.lazy을 사용하려면 사용하려는 곳에 일일이 적용해야 한다. 하지만 서버 컴포넌트는 서버 컴포넌트에 import되는 모든 클라이언트 컴포넌트를 code splitting포인트로 간주, React.lazy를 자동으로 적용하기 때문에 명시하지 않아도 된다. 서버 자체에서 미리 필요한 컴포넌트를 선택한다고 한다.
 
 ## TL;DR
@@ -202,6 +204,10 @@ React 18은 Concurrency, 동시성을 통해 여러가지 렌더링 작업을 �
 3. transition을 통해 렌더링에 우선순위를 부여할 수 있게 되었다.
 4. 아직 준비되지 않는 React 요소에 대해 **밖에서** 처리할 수 있게 되었다.
 5. 서버에서 동작하는 컴포넌트를 만들 수 있게 되었다.
+
+&nbsp;
+
+&nbsp;
 
 #### 참고
 

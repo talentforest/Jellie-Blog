@@ -9,7 +9,8 @@
         "path": "tailwindcss",
         "thumbnail": "tailwindcss.png",
         "featured": false,
-        "description": "잘 기억나지 않을 때 빠르게 살펴보자"
+        "description": "잘 기억나지 않을 때 빠르게 살펴보자",
+        "related": []
       }
     ]
   },
@@ -23,7 +24,8 @@
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
         "featured": true,
-        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자"
+        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자",
+        "related": []
       },
       {
         "id": 2,
@@ -33,7 +35,8 @@
         "path": "nextjs-14",
         "date": "2024-02-26",
         "thumbnail": "nextjs-14.jpeg",
-        "featured": false
+        "featured": false,
+        "related": []
       }
     ]
   },
@@ -49,8 +52,9 @@
         "date": "2023-04-02",
         "path": "typescript",
         "thumbnail": "typescript.png",
-        "featured": true,
-        "description": "타입스크립트에 대해 제대로 이해해보자"
+        "featured": false,
+        "description": "타입스크립트에 대해 제대로 이해해보자",
+        "related": []
       }
     ]
   },
@@ -64,7 +68,8 @@
         "path": "react-18-new-features",
         "thumbnail": "react-18.png",
         "featured": true,
-        "description": "완전히 새로워진 React 18, Server Component, Suspense 등등"
+        "description": "완전히 새로워진 React 18, Server Component, Suspense 등등",
+        "related": []
       },
       {
         "id": 2,
@@ -74,7 +79,8 @@
         "path": "react-18-hooks",
         "thumbnail": "react-18.png",
         "featured": false,
-        "description": "useId, useTransition, useDeferredValue"
+        "description": "useId, useTransition, useDeferredValue",
+        "related": []
       },
       {
         "id": 3,
@@ -83,8 +89,9 @@
         "date": "2023-04-08",
         "path": "useEffect-deep-dive",
         "thumbnail": "react-18.png",
-        "featured": true,
-        "description": "왜 되도록 useEffect를 쓰지 말아야 할까?"
+        "featured": false,
+        "description": "왜 되도록 useEffect를 쓰지 말아야 할까?",
+        "related": []
       },
       {
         "id": 4,
@@ -94,7 +101,8 @@
         "path": "react-profiler-api",
         "thumbnail": "react-18.png",
         "featured": false,
-        "description": "React 프로젝트를 측정하고, 최적화하는 방법"
+        "description": "React 프로젝트를 측정하고, 최적화하는 방법",
+        "related": []
       },
       {
         "id": 5,
@@ -104,7 +112,8 @@
         "path": "react-virtual-dom-and-rendering",
         "thumbnail": "virtual-dom.png",
         "featured": false,
-        "description": "React는 어떻게 렌더링하고 화면을 업데이트할까?"
+        "description": "React는 어떻게 렌더링하고 화면을 업데이트할까?",
+        "related": []
       }
     ]
   },
@@ -117,8 +126,9 @@
         "date": "2023-04-10",
         "path": "react-query-overview",
         "thumbnail": "react-query.png",
-        "featured": true,
-        "description": "데이터를 캐싱하고, 무한 스크롤, 페이지네이션까지 도와주는 React Query"
+        "featured": false,
+        "description": "데이터를 캐싱하고, 무한 스크롤, 페이지네이션까지 도와주는 React Query",
+        "related": []
       }
     ]
   },
@@ -132,7 +142,8 @@
         "path": "jellie-blog-construction-process",
         "thumbnail": "jellie-blog-thumbnail.png",
         "featured": true,
-        "description": "블로그를 어떤 방식으로 구축했는지 알아봅니다."
+        "description": "블로그를 어떤 방식으로 구축했는지 알아봅니다.",
+        "related": ["jellie-blog-features-1", "jellie-blog-features-2"]
       },
       {
         "id": 2,
@@ -142,7 +153,11 @@
         "path": "jellie-blog-features-1",
         "thumbnail": "jellie-blog-thumbnail.png",
         "featured": false,
-        "description": "react-markdown 라이브러리와 스크롤 이벤트를 통한 스크롤 진행률 바를 살펴보자"
+        "description": "react-markdown 라이브러리와 스크롤 이벤트를 통한 스크롤 진행률 바를 살펴보자",
+        "related": [
+          "jellie-blog-construction-process",
+          "jellie-blog-features-2"
+        ]
       },
       {
         "id": 3,
@@ -152,7 +167,11 @@
         "path": "jellie-blog-features-2",
         "thumbnail": "jellie-blog-thumbnail.png",
         "featured": false,
-        "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기."
+        "description": "Intersection Observer API를 이용해 목차(toc)를 만들어보기.",
+        "related": [
+          "jellie-blog-construction-process",
+          "jellie-blog-features-1"
+        ]
       },
       {
         "id": 4,
@@ -160,9 +179,13 @@
         "title": "Expo 환경에서 React-Native-Iap 라이브러리 연결하기",
         "date": "2023-11-13",
         "path": "react-native-iap-with-expo",
-        "thumbnail": "jellie-blog-thumbnail.png",
+        "thumbnail": "what-is-in-fridge.png",
         "featured": true,
-        "description": "과연 Expo 환경에서도 결제 모듈 라이브러리를 적용할 수 있을까?"
+        "description": "과연 Expo 환경에서도 결제 모듈 라이브러리를 적용할 수 있을까?",
+        "related": [
+          "jellie-blog-construction-process",
+          "mobile-app-launch-on-google-play-console-after-nov-13"
+        ]
       },
       {
         "id": 5,
@@ -170,9 +193,10 @@
         "title": "11월 13일 이후 플레이 콘솔 개인 개발자 계정을 개설한 자의 Google 플레이 스토어 앱 출시 과정",
         "date": "2023-11-27",
         "path": "mobile-app-launch-on-google-play-console-after-nov-13",
-        "thumbnail": "jellie-blog-thumbnail.png",
+        "thumbnail": "what-is-in-fridge.png",
         "featured": true,
-        "description": "20명 이상 테스터를 모집하고 14일 동안 테스트를 한다고?"
+        "description": "20명 이상 테스터를 모집하고 14일 동안 테스트를 한다고?",
+        "related": ["react-native-iap-with-expo"]
       }
     ]
   },
@@ -186,17 +210,19 @@
         "path": "how-to-use-atomic-design-system",
         "thumbnail": "atomic-design-flow.png",
         "featured": false,
-        "description": "컴포넌트를 어떻게 구분해야할까?"
+        "description": "컴포넌트를 어떻게 구분해야할까?",
+        "related": ["how-to-use-atomic-design-system"]
       },
       {
         "id": 2,
         "category": "developments",
         "title": "MPA와 SPA, 다양한 웹페이지 렌더링 방식 이해하기",
-        "date": "2024-02-22",
+        "date": "2023-08-03",
         "path": "webpage-rendering-method",
-        "thumbnail": "",
+        "thumbnail": "SPA_MPA.png",
         "featured": true,
-        "description": "MPA, SPA 개념부터 CSR, SSR, SSG, ISR, 하이브리드 렌더링 이제는 정확히 알고 적재적소에 적용하자"
+        "description": "MPA, SPA 개념부터 CSR, SSR, SSG, ISR, 하이브리드 렌더링 이제는 정확히 알고 적재적소에 적용하자",
+        "related": ["browser-rendering-process"]
       },
       {
         "id": 3,
@@ -206,37 +232,52 @@
         "date": "2024-01-15",
         "path": "functional-programming-1",
         "thumbnail": "functional-programming/functional-programming.png",
-        "featured": true
+        "featured": true,
+        "related": ["functional-programming-1"]
       },
       {
         "id": 4,
-        "category": "developments",
-        "title": "브라우저의 구성 요소와 렌더링 과정 이해하기",
-        "description": "프론트엔드에서 중요한 것을 뽑으라면 브라우저가 아닐까?",
-        "date": "2024-03-01",
-        "path": "browser-rendering-process",
-        "thumbnail": "functional-programming/functional-programming.png",
-        "featured": false
-      },
-      {
-        "id": 5,
         "category": "developments",
         "title": "함수형 프로그래밍의 계층형 설계 이해하기",
         "description": "책 <함수형 코딩>: chaper 8, 9",
         "date": "2024-01-17",
         "path": "functional-programming-2",
         "thumbnail": "functional-programming/functional-programming.png",
-        "featured": false
+        "featured": false,
+        "related": ["functional-programming-1"]
+      },
+      {
+        "id": 5,
+        "category": "developments",
+        "title": "대체 어떤 파일 구조가 가장 효율적인지에 대한 고찰",
+        "description": "라우트 파일 구조, 아토믹 디자인 파일 구조 등등",
+        "date": "2024-01-25",
+        "path": "consideration-of-file-structure",
+        "thumbnail": "file-structure.png",
+        "featured": false,
+        "related": ["how-to-use-atomic-design-system"]
       },
       {
         "id": 6,
         "category": "developments",
-        "title": "대체 어떤 파일 구조가 가장 효율적인지에 대한 고찰 (+아토믹 디자인)",
-        "description": "그동안 적용한 파일 구조에 대해 생각",
-        "date": "2024-01-25",
-        "path": "consideration-of-file-structure",
-        "thumbnail": "file-structure.png",
-        "featured": false
+        "title": "좋은 사용자 경험(UX) 원칙 3가지",
+        "date": "2024-01-30",
+        "path": "memorable-ux-principle",
+        "thumbnail": "사용자를-유혹하는-UX-기술-썸네일.png",
+        "featured": true,
+        "description": "책 <사용자를 유혹하는 UX의 기술>을 읽고",
+        "related": ["react-native-iap-with-expo"]
+      },
+      {
+        "id": 7,
+        "category": "developments",
+        "title": "브라우저의 구성 요소와 렌더링 과정 이해하기",
+        "description": "프론트엔드에서 중요한 것을 뽑으라면 브라우저가 아닐까?",
+        "date": "2024-03-01",
+        "path": "browser-rendering-process",
+        "thumbnail": "functional-programming/functional-programming.png",
+        "featured": false,
+        "related": ["webpage-rendering-method"]
       }
     ]
   }

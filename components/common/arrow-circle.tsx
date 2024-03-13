@@ -6,9 +6,9 @@ interface Props {
 
 export default function ArrowCircle({ direction }: Props) {
   const circleStyle =
-    'opacity-30 bg-box border-2 border-box rounded-full p-3 absolute group-hover:border-light-yellow group-hover:opacity-100';
+    'opacity-30 bg-box border-2 border-box rounded-full p-2 absolute group-hover:border-light-yellow group-hover:opacity-100';
 
-  const arrowStyle = 'w-7 h-7 text-text group-hover:text-light-yellow';
+  const arrowStyle = 'w-4 h-4 text-text group-hover:text-light-yellow';
 
   return (
     <div
