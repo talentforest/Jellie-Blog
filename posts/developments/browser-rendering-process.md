@@ -4,7 +4,7 @@
 
 ## 브라우저의 구성 요소
 
-![img](/images/developments/browser-rendering-process/browser-compartments.png)
+![img](/public/images/developments/browser-rendering-process/browser-compartments.png)
 
 브라우저에는 총 7가지의 구성 요소가 있다.
 
@@ -20,7 +20,7 @@
 
 ### 사용자 인터페이스
 
-![img](/images/developments/browser-rendering-process/browser-user-interface.png)
+![img](/public/images/developments/browser-rendering-process/browser-user-interface.png)
 
 브라우저에서 요청한 웹페이지를 제외하고 **사용자와 상호작용**하는 레이어
 
@@ -115,7 +115,7 @@
 
 사용자는 주소를 입력하면 브라우저는 URI에 맞는 리소스를 응답받는다. 그렇다면 그 리소스는 어떤 과정을 통해 화면에 보이는 걸까?
 
-![img](/images/developments/browser-rendering-process/rendering-process.png)
+![img](/public/images/developments/browser-rendering-process/rendering-process.png)
 
 > 1. HTML, CSS 파서
 > 2. 각각 DOM, CSSOM 생성 후 결합
@@ -184,7 +184,7 @@
 
 ## 렌더링 최적화하기 Critical Rendering Path 줄이기
 
-![img](/images/developments/browser-rendering-process/rendering-reprocess.png)
+![img](/public/images/developments/browser-rendering-process/rendering-reprocess.png)
 
 - 레이아웃부터 UI가 업데이트될 때
 

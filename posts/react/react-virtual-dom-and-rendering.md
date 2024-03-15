@@ -86,7 +86,7 @@ VDOM은 DOM을 복사하여 DOM의 노드들을 Fiber 노드로 변환한 트리
 
    React는 두개의 VDOM 객체를 갖고 있다.
 
-   ![두개의 VDOM](/images/react/react-virtual-dom-and-rendering/virtual-dom-1.png)
+   ![두개의 VDOM](/public/images/react/react-virtual-dom-and-rendering/virtual-dom-1.png)
 
    1. 변경사항 발생 이전 트리 구조의 VDOM
    2. 변경사항이 반영된 트리 구조의 VDOM

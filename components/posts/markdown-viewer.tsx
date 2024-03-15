@@ -99,7 +99,7 @@ export default function MarkdownViewer({ content }: Props) {
         img: (image) => (
           <Image
             className='max-h-80 w-auto object-cover mt-1 mb-4 rounded-md'
-            src={image.src || ''}
+            src={(image.src || '').slice(7)}
             alt={image.alt || ''}
             width={500}
             height={500}

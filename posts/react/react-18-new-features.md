@@ -99,7 +99,8 @@ React 18은 새로운 기능들이 많이 추가되었는데, 정말 '업그레�
 
 1. 일단 createRoot를 통해 React 18의 기능을 사용할 수 있다.
 
-   ![createRoot docs](/images/react/react-18-new-features/createRoot.png)
+   ![createRoot docs](/public/images/react/react-18-new-features/createRoot.png)
+
    [https://react.dev/blog/2022/03/29/react-v18#react-dom-client](https://react.dev/blog/2022/03/29/react-v18#react-dom-client)
 
    `createRoot` 없이는 React 18 기능이 동작하지 않는다. 예를 들어 다음에 이어지는 이야기인 Automatic Batching이나 `startTransition` 기능도 이 `createRoot` 함수를 통해 이용 가능하다.

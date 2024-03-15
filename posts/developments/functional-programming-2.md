@@ -108,7 +108,7 @@ function isInCart(cart, name) {
 
 1. 호출그래프를 통해 계층 구분해보기
 
-   ![img](/images/developments/functional-programming/call_graph.png)
+   ![호출 그래프 계층](/public/images/developments/functional-programming/call_graph.png)
 
    앞서 예시를 들었던 함수를 위와 같이 호출 그래프로 만들어볼 수 있다. 호출 그래프는 해당 함수가 내부에서 어떤 함수들을 호출하고 있는지 그래프로 표현한 것이다. `freeTieClip()`는 다음 3가지 함수들을 호출하고 있기 때문에 상위 계층에 있는 함수이다.
 
@@ -138,7 +138,7 @@ function isInCart(cart, name) {
 
      계층을 나눌 때 각 계층은 어떤 목적을 갖고 있고 이 계층들에 있는 함수들이 목적에 부합하는지 생각해야한다. 예를 들어 각 계층에 비지니스 규칙, 기본 동작 규칙, 카피 온 라이트 동작 규칙 계층 등등의 목적을 가질 수 있는데, 함수가 어떤 목적에 부합하는지 생각해보아야 한다.
 
-     ![img](/images/developments/functional-programming/call_graph_2.png)
+     ![직접 구현 호출 그래프 계층](/public/images/developments/functional-programming/call_graph_2.png)
 
      물론 보통은 위의 그래프보다 훨씬 계층도 많고 화살표도 복잡해진다.
 
@@ -152,7 +152,7 @@ function isInCart(cart, name) {
 
 앞의 직접 구현 패턴에서 모든 계층들을 적절하게 구체화해보았는데, 이제 두번째 패턴인 추상화 벽에서는 그 모든 계층들 중 세부 구현을 감추고 추상화되어 인터페이스만 제공하는 계층들을 살펴본다.
 
-![img](/images/developments/functional-programming/call_graph_3.png)
+![추상화 벽 호출 그래프](/public/images/developments/functional-programming/call_graph_3.png)
 
 추상화가 시작되는 계층을 **추상화 벽** 이라고 한다. 추상화 벽은 생각보다 낮은 계층에 있었다. 장바구니에 아이템을 추가하고 삭제하는 것부터가 추상화가 포함되어 추상화 벽 계층이었던 것이다. 사실 생각해보면 개발을 모르는 사람이 보았을 때 내부 코드를 몰라도 `add_item()`과 같은 함수 이름으로 충분히 장바구니에서의 동작을 예상할 수 있다.
 

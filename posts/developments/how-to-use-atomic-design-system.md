@@ -19,9 +19,9 @@
 
 이렇게 좋은 장점들이 많지만, 정말 중요한 건 디자인 시스템은 정말 꾸준히 모든 구성원들이 참여해 관리하고 발전해야한다는 것이다. 초기에 열심히 시스템을 만들었어도, 관리해주지 않으면 위의 장점을 가져갈 수 없고 오히려 시간 낭비한 꼴이 될 수 있다.
 
-![img](/images/developments/how-to-use-atomic-design-system/headlessui-logo.png)
+![headless logo](/public/images/developments/how-to-use-atomic-design-system/headlessui-logo.png)
 
-![img](/images/developments/how-to-use-atomic-design-system/storybook-logo.png)
+![storybook logo](/public/images/developments/how-to-use-atomic-design-system/storybook-logo.png)
 
 요즘에는 정말 많은 기업에서 디자인 시스템(ex.)을 갖추고 있고, 이를 위한 많은 UI 컴포넌트 라이브러리(ex. [headlessui](https://headlessui.com/))와 디자인 시스템을 도와주는 [StoryBook](https://storybook.js.org/)이 있다. 이렇게 좋은 도구들이 많을 때 한번 디자인 시스템을 도입하는 것도 좋을 것 같다.
 
@@ -31,10 +31,10 @@
 
 아토믹 디자인은 5단계를 통해 추상적인 가장 간단한 컴포넌트에서 구체화된 페이지에 이르게 된다.
 
-![img](/images/developments/atomic-design-flow.png)
+![아토믹 디자인 플로우](/public/images/developments/atomic-design-flow.png)
 
 1. Atoms(원자)
-   ![img](/images/developments/how-to-use-atomic-design-system/atoms-form-elements.png)
+   ![아토믹 디자인 - Atom](/public/images/developments/how-to-use-atomic-design-system/atoms-form-elements.png)
 
    - 더 이상 분해할 수 없는 기본 컴포넌트.
    - button, input, label과 같은 보통 기본 HTML element 태그
@@ -43,7 +43,7 @@
 ---
 
 2. Molecules(분자)
-   ![img](/images/developments/how-to-use-atomic-design-system/molecule-search-form.png)
+   ![아토믹 디자인 - Molecules](/public/images/developments/how-to-use-atomic-design-system/molecule-search-form.png)
 
    - 여러개의 atom을 결합한다.
    - button의 경우 form까지 이루어진 한 덩어리의 요소로 말할 수 있다.
@@ -52,7 +52,7 @@
 ---
 
 3. Organisms(유기체)
-   ![img](/images/developments/how-to-use-atomic-design-system/organism-header.png)
+   ![아토믹 디자인 - Organisms](/public/images/developments/how-to-use-atomic-design-system/organism-header.png)
 
    - Molecules 포함해 보다 더 복잡한 컨텍스트를 가지는 영역
    - 특정 컨텍스트를 갖기 때문에 여기서부터 재사용성이 낮아진다.
@@ -60,7 +60,7 @@
 ---
 
 4. Templates(템플릿)
-   ![img](/images/developments/how-to-use-atomic-design-system/template.png)
+   ![아토믹 디자인 - Templates](/public/images/developments/how-to-use-atomic-design-system/template.png)
 
    - 여러개의 organism, molecule로 구성된다.
    - 페이지의 레아이웃을 잡는 와이어 프레임으로 안에 컨텐츠가 없다고 생각하면 된다.
@@ -68,7 +68,7 @@
 ---
 
 5. Pages(페이지)
-   ![img](/images/developments/how-to-use-atomic-design-system/page.png)
+   ![아토믹 디자인 - Pages](/public/images/developments/how-to-use-atomic-design-system/page.png)
 
    - 실제 유저가 보는 화면
    - template에 콘텐츠를 담아 여러 화면을 나타낼 수 있다.

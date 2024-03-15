@@ -30,7 +30,7 @@
 
 그리고 14일동안 진행해야하기 때문에 지체없이 바로 비공개 테스트 과정을 진행했다. 그런데 비공개 테스트를 활성화하기 위해서는 앱의 모든 정보가 미리 설정, 등록되어 있어야 한다. 아마 테스터들이 실제 플레이 스토어에 들어가서 앱을 다운받기 때문에 앱에 대한 설명 페이지가 필요해서 그런 것 같다. 그렇게 앱에 대한 설명과, 스크린샷 디자인, 앱 기능 설명 등등 앱 정보 등록하는데만 하루가 꼬박 걸렸다. 등록하기 전에는 비공개 테스트를 활성화할 수 없으니 미리 스토어 정보들을 만들어 놓는 것이 좋을 것 같다.
 
-![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-1.png)
+![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-1.png)
 
 스토어 등록 정보 뿐만 아니라 위의 사진 같이 앱 정보개인정보처리방침과 앱 액세스 권한, 콘텐츠 등급, 타겟층 등등 여러가지 기타 정보를 제공해야한다. 그리고 이 모든 정보들을 제공했다면 변경사항들을 게시 개요에서 검토 요청하면 된다. 이런 부분은 플레이 콘솔에서 쉽게 따라갈 수 있도록 만들어 놓았기 때문에 문제될 건 없을 것 같다. 다만 이부분도 검토하는데 시간이 걸리기 때문에 일정이 타이트하다면 미리미리 해놓는 것을 추천한다.
 
@@ -38,7 +38,7 @@
 
 ## 3단계: 비공개 테스트 진행
 
-![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-2.png)
+![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-2.png)
 
 그리고 다시 왼쪽 Drawer 네비게이션에서 출시 → 비공개 테스트 페이지로 들어간다. 모든 스토어 등록 정보를 완성했다면 이제 비공개 테스트 버전을 생성할 수 있다고 뜬다. 서명 키는 구글에서 생성한 키를 사용한다고 눌렀다.
 
@@ -46,7 +46,7 @@
 
 - 내가 겪은 오류들
 
-  ![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-3.png)
+  ![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-3.png)
 
   오류 1.
 
@@ -78,7 +78,7 @@
 
 ### 20명의 테스터 모집
 
-![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-4.png)
+![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-4.png)
 
 그럼 이제 눈물겨운 테스터 모집을 시작할 차례다. 정말 20명을 모집해야한다는 게 믿기지가 않아서 일단 5명만 등록해놓았었는데, 비공개 테스트가 활성화되고 대시보드에서 위의 프로덕션 액세스 신청 단계를 보고 실제상황이구나 경악하며 적극적으로 모집을 시작했다. 진짜 안드로이드, 갤럭시 쓰는 지인들이란 지인들에게 모두 연락해서 진짜 온네방네 내가 앱개발했다고 떠들고 다니며 앱 한번 테스트해볼 생각 없냐고 권유했다. ~~_(⭐️보험가입/다단계/종교권유 아니에여😇⭐️)_~~
 
@@ -109,7 +109,7 @@
 
 그렇게 비공개 테스트 과정에서 테스터를 모집 완료하고 14일동안 기다리면 된다. 그럼 아래와 같이 몇일 진행되었는지가 나온다.
 
-![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-5.png)
+![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-5.png)
 
 진짜 이것도 은근 시간 많이 잡아 먹어서 미리 진행하는 게 좋을 듯 하다. 이 동안 인앱 결제를 구현하고 스토어 등록 정보도 다시 수정했다.
 
@@ -117,7 +117,7 @@
 
 ## 5단계: 드디어 프로덕션 액세스 신청
 
-![플레이 콘솔 앱 정보 상태](/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-6.png)
+![플레이 콘솔 앱 정보 상태](/public/images/side-projects/mobile-app-launch-on-google-play-console-after-nov-13/play-console-6.png)
 
 이렇게 위에서 14일동안 비공개 테스트를 완료했다면 프로덕션 신청 버튼이 활성화된다. 그러면 프로덕션 신청 버튼을 누르고 “비공개 테스트에 대한 질문 → 앱에 대한 질문 → 프로덕션 상태에 대한 질문”을 작성한다. 약간 새롭게 바뀐 정책에 대한 설문조사 같다.
 

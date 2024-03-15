@@ -101,7 +101,7 @@
 
 ### 아토믹 디자인 기준을 알아보자
 
-![img](/images/developments/atomic-design-flow.png)
+![img](/public/images/developments/atomic-design-flow.png)
 
 이보다도 간단할 수 없는데, 일단 내가 구분하고 있는 기준에 대해 작성해보았다.
 
@@ -158,11 +158,11 @@
 
   그런데 헷갈렸던 부분이 있었다. 어떤 컴포넌트는 여러개의 Atom으로 만들어졌고 고유한 특성을 가졌는데 하나의 특정 페이지에서만 사용된다. 그래서 본래는 Molecule라고 생각되었지만, 계속 특정 페이지에서만 사용된다는 점 때문에 계속 Organism으로 분류해야되는 건 아닌지 헷갈렸다.
 
-  ![독서모임 한페이지 박스 1](/images/developments/consideration-of-file-structure/molecules-1.png)
+  ![독서모임 한페이지 박스 1](/public/images/developments/consideration-of-file-structure/molecules-1.png)
 
-  ![독서모임 한페이지 박스 3](/images/developments/consideration-of-file-structure/molecules-3.png)
+  ![독서모임 한페이지 박스 3](/public/images/developments/consideration-of-file-structure/molecules-3.png)
 
-  ![독서모임 한페이지 박스 2](/images/developments/consideration-of-file-structure/molecules-2.png)
+  ![독서모임 한페이지 박스 2](/public/images/developments/consideration-of-file-structure/molecules-2.png)
 
   ```bash
   📦molecules
