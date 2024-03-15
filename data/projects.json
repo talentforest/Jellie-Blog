@@ -6,7 +6,7 @@
     "stacks": ["next.js", "typescript", "tailwindcss", "react-markdown"],
     "link": "https://talentforest.github.io/han-bookclub-app/",
     "github": "https://github.com/talentforest/han-bookclub-app",
-    "relatedPosts": "https://jellieblog.dev/posts/jellie-blog-construction-process"
+    "relatedPosts": "jellie-blog-construction-process"
   },
   {
     "name": "독서모임 한페이지 기록장",
@@ -46,7 +46,7 @@
     ],
     "link": "https://talentforest.github.io/rimflix/",
     "github": "https://github.com/talentforest/rimflix",
-    "relatedPosts": ""
+    "relatedPosts": "rimflix-optimization"
   },
   {
     "name": "기업연계프로젝트: 마케팅 랜딩페이지",
