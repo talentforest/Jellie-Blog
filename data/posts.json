@@ -278,6 +278,17 @@
         "thumbnail": "functional-programming/functional-programming.png",
         "featured": false,
         "related": ["webpage-rendering-method"]
+      },
+      {
+        "id": 8,
+        "category": "developments",
+        "title": "웹페이지 성능 측정 지표와 최적화 방법 알아보기",
+        "date": "2023-12-01",
+        "path": "webpage-optimization",
+        "thumbnail": "webpage-optimization/web-optimization.png",
+        "featured": true,
+        "description": "LCP, CLS, 이미지 최적화, throttling 등등에 대해 알아보기",
+        "related": []
       }
     ]
   }
