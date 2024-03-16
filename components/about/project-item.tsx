@@ -3,6 +3,7 @@ import StackBox from '../common/stack-box';
 import { Project } from '@/service/about';
 import { FaGithub } from 'react-icons/fa';
 import { RiArticleFill, RiLink } from 'react-icons/ri';
+import Link from 'next/link';
 
 interface Props {
   project: Project;
@@ -46,6 +47,7 @@ export default function ProjectItem({
               <span>바로가기</span>
             </a>
           )}
+
           {github.length !== 0 && (
             <a
               href={github}
@@ -57,16 +59,16 @@ export default function ProjectItem({
               <span>GitHub</span>
             </a>
           )}
+
           {relatedPosts.length !== 0 && (
-            <a
-              href={relatedPosts}
-              target='_blank'
+            <Link
+              href={`/posts/${relatedPosts}`}
               title={`프로젝트 관련 포스트`}
               className='text-slate group-hover:text-text hover:text-slate underline flex items-center gap-0.5 w-fit text-sm'
             >
               <RiArticleFill className='text-slate group-hover:text-text w-4 h-4 mr-0.5' />
               <span>관련 포스트</span>
-            </a>
+            </Link>
           )}
         </div>
       </div>

@@ -30,6 +30,21 @@ export async function generateMetadata({
   };
 }
 
+const swiperResponsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 0 },
+    items: 2,
+  },
+  mobile: {
+    breakpoint: { max: 550, min: 0 },
+    items: 1,
+  },
+};
+
 export default async function PostDetailPage({ params: { slug } }: Props) {
   const post = await getPost(slug);
   const relatedPosts = await getRelatedPosts(slug);
@@ -59,16 +74,19 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       </section>
 
       {/* 지금 읽은 포스트와 비슷한 포스트 */}
-      <section className='mt-12 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg -mx-1'>
-        <h4 className='font-king font-bold text-slate'>관련 포스트</h4>
-        <CarouselBox
-          config={{ centerMode: false, showDots: true, arrows: false }}
-        >
-          {relatedPosts.map((post) => (
-            <PostBox key={post.id} post={post} />
-          ))}
-        </CarouselBox>
-      </section>
+      {relatedPosts.length !== 0 && (
+        <section className='mt-12 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg -mx-1'>
+          <h4 className='font-king font-bold text-slate'>관련 포스트</h4>
+          <CarouselBox
+            responsive={swiperResponsive}
+            config={{ centerMode: false, arrowColor: 'light-yellow' }}
+          >
+            {relatedPosts.map((post) => (
+              <PostBox key={post.id} post={post} />
+            ))}
+          </CarouselBox>
+        </section>
+      )}
 
       <section className='mt-12 p-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
         <h4 className='font-king font-bold text-slate'>다른 포스트</h4>

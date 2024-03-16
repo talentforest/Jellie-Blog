@@ -92,8 +92,10 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         strong: ({ children }) => (
           <strong className='relative px-1 py-0.5'>
-            <span className='absolute left-0 -top-1 w-full h-full my-0.5 -skew-x-12 bg-[#3aa7eb] rounded-sm opacity-20' />
-            <span className='relative font-bold opacity-90'>{children}</span>
+            <span className='absolute left-0 -top-1 w-full h-full my-0.5 -skew-x-6 bg-[#3aa7eb] rounded-sm opacity-20' />
+            <span className='relative font-bold opacity-90 text-[#2f479d]'>
+              {children}
+            </span>
           </strong>
         ),
         img: (image) => (

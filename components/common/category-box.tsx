@@ -22,8 +22,8 @@ export default function CategoryBox({
       } group-hover:opacity-100 border border-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
       <span
-        className={`group-hover:text-indigo text-sm ${
-          selected ? 'text-yellow' : 'text-text'
+        className={`text-sm ${
+          selected ? 'text-yellow' : 'text-text group-hover:text-indigo'
         } items-center flex gap-1`}
       >
         {category === 'All' ? (
