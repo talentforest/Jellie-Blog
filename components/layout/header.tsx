@@ -18,7 +18,7 @@ export default function Header() {
     <header
       className={`top-0 z-10 text-text w-full px-4 md:px-20 lg:px-40 mx-auto h-12 md:h-14 flex justify-between items-center bg-bg border-b border-gray `}
     >
-      <h1 className=''>
+      <h1>
         <Link href='/'>Jellie Blog</Link>
       </h1>
 

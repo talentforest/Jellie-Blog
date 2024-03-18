@@ -75,8 +75,8 @@ export default function CarouselBox({ children, config, responsive }: Props) {
       }
       arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
-      containerClass='flex items-center min-h-80 pt-1 pb-10 mt-3 z-0'
-      itemClass='px-1'
+      containerClass='min-h-80 pt-4 pb-10'
+      itemClass='px-1.5'
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-light-yellow'
     >
       {children}

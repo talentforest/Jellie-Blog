@@ -23,6 +23,9 @@ export default function MarkdownViewer({ content }: Props) {
     }
   };
 
+  const commonHighLightStyle =
+    'inline-block -skew-x-[16deg] align-middle w-1.5 h-[17px] px-0.5 bg-[#c5defcd2] mb-[1px]';
+
   return (
     <ReactMarkdown
       className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[70%] md:mr-6 shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
@@ -74,7 +77,7 @@ export default function MarkdownViewer({ content }: Props) {
         th: ({ children }) => (
           <th className='text-blue px-3 py-2'>{children}</th>
         ),
-        tr: ({ children }) => <tr className=''>{children}</tr>,
+        tr: ({ children }) => <tr>{children}</tr>,
         td: ({ children }) => {
           return children?.includes('<li>') || children?.includes('<br/>') ? (
             <td
@@ -91,11 +94,14 @@ export default function MarkdownViewer({ content }: Props) {
           <pre className='relative p-0 m-0 mb-2 z-0'>{children}</pre>
         ),
         strong: ({ children }) => (
-          <strong className='relative px-1 py-0.5'>
-            <span className='absolute left-0 -top-1 w-full h-full my-0.5 -skew-x-6 bg-[#3aa7eb] rounded-sm opacity-20' />
-            <span className='relative font-bold opacity-90 text-[#2f479d]'>
+          <strong className='relative'>
+            <span className={`${commonHighLightStyle} -mr-0.5`} />
+            <span className='font-bold align-middle opacity-90 text-blue pl-0.5 pr-1.5 bg-[#c5defcd2]'>
               {children}
             </span>
+            <span
+              className={`${commonHighLightStyle} -ml-1 mr-0.5 bg-[#b1d1f8de]`}
+            />
           </strong>
         ),
         img: (image) => (
