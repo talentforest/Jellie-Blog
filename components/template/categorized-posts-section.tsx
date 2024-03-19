@@ -52,7 +52,12 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>
-              <PostBox post={post} contentPreview direction='next' />
+              <PostBox
+                post={post}
+                contentPreview
+                direction='next'
+                imgHeight={48}
+              />
             </li>
           ))
         ) : (

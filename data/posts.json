@@ -24,7 +24,7 @@
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
         "featured": true,
-        "description": "새로운 디렉터리 app 폴더와 서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자",
+        "description": "서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자",
         "related": []
       },
       {
@@ -137,6 +137,17 @@
       {
         "id": 1,
         "category": "side-projects",
+        "title": "사이드 프로젝트: 독서모임 한페이지 기록앱 회고",
+        "date": "2022-07-22",
+        "path": "bookclub-hanpage-app-review",
+        "thumbnail": "bookclub-hanpage-app-review/bookclub-hanpage.png",
+        "featured": false,
+        "description": "현재 참여하고 있는 독서모임을 위한 앱으로, 개발 과정에서의 좌충우돌에 대해 작성해봅니다.",
+        "related": []
+      },
+      {
+        "id": 2,
+        "category": "side-projects",
         "title": "젤리 블로그 구축 과정(with Next.js 13)",
         "date": "2023-04-13",
         "path": "jellie-blog-construction-process",
@@ -146,7 +157,7 @@
         "related": ["jellie-blog-features-1", "jellie-blog-features-2"]
       },
       {
-        "id": 2,
+        "id": 3,
         "category": "side-projects",
         "title": "젤리 블로그 기능 1: Markdown문서 렌더링과 스크롤 진행률 바 만들기",
         "date": "2023-04-14",
@@ -160,7 +171,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": 4,
         "category": "side-projects",
         "title": "젤리 블로그 기능 2: 목차(toc) 만들기",
         "date": "2023-04-14",
@@ -174,7 +185,7 @@
         ]
       },
       {
-        "id": 4,
+        "id": 5,
         "category": "side-projects",
         "title": "Expo 환경에서 React-Native-Iap 라이브러리 연결하기",
         "date": "2023-11-13",
@@ -182,15 +193,12 @@
         "thumbnail": "what-is-in-fridge.png",
         "featured": true,
         "description": "과연 Expo 환경에서도 결제 모듈 라이브러리를 적용할 수 있을까?",
-        "related": [
-          "jellie-blog-construction-process",
-          "mobile-app-launch-on-google-play-console-after-nov-13"
-        ]
+        "related": ["mobile-app-launch-on-google-play-console-after-nov-13"]
       },
       {
-        "id": 5,
+        "id": 6,
         "category": "side-projects",
-        "title": "11월 13일 이후 플레이 콘솔 개인 개발자 계정을 개설한 자의 Google 플레이 스토어 앱 출시 과정",
+        "title": "11월 이후 구글 플레이 콘솔 계정을 개설한 사람의 스토어 앱 출시 과정",
         "date": "2023-11-27",
         "path": "mobile-app-launch-on-google-play-console-after-nov-13",
         "thumbnail": "what-is-in-fridge.png",
@@ -199,15 +207,26 @@
         "related": ["react-native-iap-with-expo"]
       },
       {
-        "id": 6,
+        "id": 7,
         "category": "side-projects",
         "title": "림플릭스 영화 정보 사이트 성능 최적화 + 모바일 터치 이벤트 적용하기",
         "date": "2023-12-04",
         "path": "rimflix-optimization",
         "thumbnail": "rimflix.png",
-        "featured": true,
+        "featured": false,
         "description": "프로젝트를 진행하며 성능 개선과 사용자 경험을 위해 적용한 것들을 작성해봅니다.",
         "related": ["webpage-optimization"]
+      },
+      {
+        "id": 8,
+        "category": "side-projects",
+        "title": "2년째 서비스를 잘 운영중인 독서모임 한페이지 기록앱 회고",
+        "date": "2024-03-12",
+        "path": "bookclub-hanpage-app-review-2",
+        "thumbnail": "bookclub-hanpage-app-review/bookclub-hanpage.png",
+        "featured": true,
+        "description": "2022년 중순에 출시한 서비스는 어떻게 업데이트하고 있을까?",
+        "related": []
       }
     ]
   },
@@ -232,19 +251,19 @@
         "path": "webpage-rendering-method",
         "thumbnail": "SPA_MPA.png",
         "featured": true,
-        "description": "MPA, SPA 개념부터 CSR, SSR, SSG, ISR, 하이브리드 렌더링 이제는 정확히 알고 적재적소에 적용하자",
+        "description": "CSR, SSR, SSG, ISR, 하이브리드 렌더링 이해하기",
         "related": ["browser-rendering-process"]
       },
       {
         "id": 3,
         "category": "developments",
-        "title": "함수형 프로그래밍의 데이터, 계산, 액션에 대해 이해하기",
+        "title": "프로그래밍의 데이터, 계산, 액션에 대해 이해하기",
         "description": "책 <함수형 코딩>: chaper 1, 2, 3, 4, 5",
         "date": "2024-01-15",
         "path": "functional-programming-1",
         "thumbnail": "functional-programming/functional-programming.png",
         "featured": true,
-        "related": ["functional-programming-1"]
+        "related": ["functional-programming-2"]
       },
       {
         "id": 4,
@@ -297,7 +316,7 @@
         "date": "2023-12-01",
         "path": "webpage-optimization",
         "thumbnail": "webpage-optimization/performance.png",
-        "featured": true,
+        "featured": false,
         "description": "LCP, CLS, 이미지 최적화, throttling 등등에 대해 알아보기",
         "related": ["rimflix-optimization"]
       }

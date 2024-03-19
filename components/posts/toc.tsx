@@ -36,7 +36,7 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
+        className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
       >
         <FaChevronUp fontSize={12} />
         <h1 className='font-king text-sm md:text-base font-bold text-slate'>
@@ -61,7 +61,7 @@ export default function Toc() {
 
       {/* 태블릿 스크린 이상 */}
       <nav
-        className={`hidden md:sticky top-8 ml-2 md:block z-10 md:w-52 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
+        className={`hidden md:sticky top-8 md:block z-10 md:w-48 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
         <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
           목차

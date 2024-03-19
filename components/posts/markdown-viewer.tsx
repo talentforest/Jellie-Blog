@@ -62,7 +62,7 @@ export default function MarkdownViewer({ content }: Props) {
             </>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden py-1 px-1.5 border border-box bg-gray text-[13px] text-[#ff5b5b] rounded-md`}
+              className={`${className} before:hidden after:hidden py-1 px-1.5 border border-box bg-light-gray text-[13px] text-[#ff5b5b] rounded-md`}
               {...props}
             >
               {children}
@@ -188,7 +188,9 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </ul>
         ),
-        hr: ({ children }) => <hr className='my-3 border-gray'>{children}</hr>,
+        hr: ({ children }) => (
+          <hr className='my-3 border-light-gray'>{children}</hr>
+        ),
       }}
     >
       {content}

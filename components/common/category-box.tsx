@@ -20,7 +20,7 @@ export default function CategoryBox({
     <div
       className={`categorybox ${
         selected ? 'bg-indigo' : 'bg-hoverbox'
-      } group-hover:opacity-100 border border-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
+      } group-hover:opacity-100 border border-light-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
       {category === 'All' ? (
         ''

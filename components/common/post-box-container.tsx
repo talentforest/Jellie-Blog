@@ -33,14 +33,14 @@ export default function PostBoxContainer({
 
   return loading ? (
     <div
-      className={`relative h-${imgHeight} flex justify-center items-center bg-box transition rounded-xl px-3.5 py-3`}
+      className={`relative h-${imgHeight} flex justify-center items-center bg-box transition rounded-2xl px-3.5 py-3`}
     >
       <span className='text-slate'>loading...</span>
     </div>
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`${categoryBoxStyle} group hover:-translate-y-2 hover:border-2 hover:border-light-yellow hover:rounded-2xl transition relative w-full h-full flex flex-col shadow-md shadow-gray rounded-xl`}
+      className={`${categoryBoxStyle} group hover:-translate-y-2 hover:border-2 hover:border-light-yellow hover:rounded-2xl rounded-2xl transition relative w-full h-full flex flex-col shadow-md shadow-light-gray`}
     >
       <Image
         src={`/images/${category}/${thumbnail}`}
@@ -48,13 +48,13 @@ export default function PostBoxContainer({
         width={300}
         height={200}
         priority
-        className={`w-full h-${imgHeight} rounded-t-xl object-cover`}
+        className={`w-full h-${imgHeight} rounded-t-2xl object-cover`}
       />
 
       <CategoryBox category={category} />
 
       <article
-        className={`flex-1 border border-gray rounded-xl px-3.5 py-3 -mt-3 relative rounded-t-2xl bg-box`}
+        className={`flex-1 border border-light-gray rounded-2xl px-3.5 py-3 -mt-3 relative bg-box`}
       >
         {children}
       </article>

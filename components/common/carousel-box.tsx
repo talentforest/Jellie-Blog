@@ -63,16 +63,6 @@ export default function CarouselBox({ children, config, responsive }: Props) {
       swipeable={swipeable}
       showDots={showDots}
       centerMode={centerMode}
-      customLeftArrow={
-        <button className={`${arrowCircleStyle} left-4`}>
-          <FaChevronLeft className={arrowStyle} />
-        </button>
-      }
-      customRightArrow={
-        <button className={`${arrowCircleStyle} right-4`}>
-          <FaChevronRight className={arrowStyle} />
-        </button>
-      }
       arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
       containerClass='min-h-80 pt-4 pb-10'

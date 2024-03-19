@@ -2,6 +2,7 @@ import Image from 'next/image';
 import DateBox from '../common/date-box';
 import TimeToReadBox from '../common/time-to-read-box';
 import CategoryBox from '../common/category-box';
+import ProgressBar from './progress-bar';
 
 interface Props {
   contents: {
@@ -31,6 +32,8 @@ export default function PostHeader({ contents }: Props) {
       ) : (
         <></>
       )}
+
+      <ProgressBar />
 
       <header className='w-full bg-box rounded-b-3xl mb-3 px-4 py-8 relative flex flex-col items-start'>
         <div className='flex flex-wrap gap-3 mb-4'>

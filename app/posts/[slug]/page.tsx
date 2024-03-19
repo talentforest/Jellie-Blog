@@ -7,7 +7,6 @@ import {
 import { Metadata } from 'next';
 import PostBox from '@/components/common/post-box';
 import Toc from '@/components/posts/toc';
-import ProgressBar from '@/components/posts/progress-bar';
 import PostHeader from '@/components/posts/post-header';
 import MarkdownViewer from '@/components/posts/markdown-viewer';
 import GiscusComments from '@/components/posts/giscus-comments';
@@ -59,7 +58,6 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
     <>
       <section>
         <article>
-          <ProgressBar />
           <PostHeader
             contents={{ path, title, date, category, thumbnail, readingTime }}
           />

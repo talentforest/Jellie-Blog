@@ -17,7 +17,7 @@ export default function PostBox({
   post,
   direction,
   contentPreview = false,
-  imgHeight = 48,
+  imgHeight = 40,
 }: PostBoxProps) {
   const {
     title,
