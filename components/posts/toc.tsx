@@ -61,7 +61,7 @@ export default function Toc() {
 
       {/* 태블릿 스크린 이상 */}
       <nav
-        className={`hidden md:sticky top-8 md:block z-10 md:w-48 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
+        className={`hidden md:sticky top-8 md:block z-10 md:w-60 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
         <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
           목차

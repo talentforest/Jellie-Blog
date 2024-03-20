@@ -40,7 +40,7 @@ export default function PostBoxContainer({
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`${categoryBoxStyle} group hover:-translate-y-2 hover:border-2 hover:border-light-yellow hover:rounded-2xl rounded-2xl transition relative w-full h-full flex flex-col shadow-md shadow-light-gray`}
+      className={`${categoryBoxStyle} group hover:-translate-y-2 hover:border-2 border-light-yellow rounded-2xl transition relative w-full h-full flex flex-col shadow-md shadow-light-gray`}
     >
       <Image
         src={`/images/${category}/${thumbnail}`}

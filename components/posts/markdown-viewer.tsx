@@ -74,18 +74,16 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </table>
         ),
-        th: ({ children }) => (
-          <th className='text-blue px-3 py-2'>{children}</th>
-        ),
+        th: ({ children }) => <th className='text-blue p-2'>{children}</th>,
         tr: ({ children }) => <tr>{children}</tr>,
         td: ({ children }) => {
           return children?.includes('<li>') || children?.includes('<br/>') ? (
             <td
-              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
+              className='p-2 leading-7 text-[14px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
               dangerouslySetInnerHTML={{ __html: children.join('') }}
             />
           ) : (
-            <td className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'>
+            <td className='p-2 leading-7 text-[14px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'>
               {children}
             </td>
           );
@@ -106,7 +104,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         img: (image) => (
           <Image
-            className='max-h-80 w-auto object-cover mt-1 mb-4 rounded-md'
+            className='max-h-80 md:max-h-[450px] w-auto object-cover mt-1 mb-4 rounded-md'
             src={(image.src || '').slice(7)}
             alt={image.alt || ''}
             width={500}
@@ -171,7 +169,7 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-1.5 [&>p::before]:hidden [&>p::after]:hidden'>
+          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-2 [&>p::before]:hidden [&>p::after]:hidden'>
             {children}
           </li>
         ),
@@ -184,7 +182,7 @@ export default function MarkdownViewer({ content }: Props) {
           </ol>
         ),
         ul: ({ children }) => (
-          <ul className='marker:text-text marker:font-bold mt-1 mb-4 pl-5'>
+          <ul className='marker:text-text marker:font-bold mt-1 mb-3 pl-5'>
             {children}
           </ul>
         ),

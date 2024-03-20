@@ -61,7 +61,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           <PostHeader
             contents={{ path, title, date, category, thumbnail, readingTime }}
           />
-          <div className='mt-16 flex relative'>
+          <div className='mt-16 flex relative justify-between'>
             <MarkdownViewer content={content} />
             <Toc />
           </div>
