@@ -24,7 +24,7 @@ export default function MarkdownViewer({ content }: Props) {
   };
 
   const commonHighLightStyle =
-    'inline-block -skew-x-[16deg] align-middle w-1.5 h-[17px] px-0.5 bg-[#c5defcd2] mb-[1px]';
+    'inline-block -skew-x-[12deg] align-middle w-1.5 h-[17px] px-0.5 mb-[1px]';
 
   return (
     <ReactMarkdown
@@ -93,12 +93,14 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         strong: ({ children }) => (
           <strong className='relative'>
-            <span className={`${commonHighLightStyle} -mr-0.5`} />
-            <span className='font-bold align-middle opacity-90 text-blue pl-0.5 pr-1.5 bg-[#c5defcd2]'>
+            <span
+              className={`${commonHighLightStyle} -mr-0.5 bg-[#dcecffd2]`}
+            />
+            <span className='font-bold align-middle opacity-90 text-blue pl-0.5 pr-1.5 bg-[#dcecffd2]'>
               {children}
             </span>
             <span
-              className={`${commonHighLightStyle} -ml-1 mr-0.5 bg-[#b1d1f8de]`}
+              className={`${commonHighLightStyle} -ml-1 mr-0.5 bg-gradient-to-tr from-[#dcecffd2] to-[#b1d1f8de]`}
             />
           </strong>
         ),

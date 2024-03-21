@@ -140,10 +140,10 @@
         "title": "사이드 프로젝트: 독서모임 한페이지 기록앱 회고",
         "date": "2022-07-22",
         "path": "bookclub-hanpage-app-review",
-        "thumbnail": "bookclub-hanpage-app-review/bookclub-hanpage.png",
+        "thumbnail": "bookclub-hanpage-app-review/2022독서모임.png",
         "featured": false,
-        "description": "현재 참여하고 있는 독서모임을 위한 앱으로, 개발 과정에서의 좌충우돌에 대해 작성해봅니다.",
-        "related": []
+        "description": "현재 참여중인 독서모임을 위해 만든 서비스에 대한 기획 과정, 디자인 과정, 개발 과정에 대해 회고해봅니다.",
+        "related": ["bookclub-hanpage-app-review-2"]
       },
       {
         "id": 2,
@@ -220,13 +220,13 @@
       {
         "id": 8,
         "category": "side-projects",
-        "title": "2년째 서비스를 잘 운영중인 독서모임 한페이지 기록앱 회고",
+        "title": "2년째 무탈히 서비스 운영중인 독서모임 한페이지 기록앱 회고",
         "date": "2024-03-12",
         "path": "bookclub-hanpage-app-review-2",
         "thumbnail": "bookclub-hanpage-app-review/bookclub-hanpage.png",
         "featured": true,
-        "description": "2022년 중순에 출시한 서비스는 어떻게 업데이트하고 있을까?",
-        "related": []
+        "description": "2년동안 어떻게 업데이트했을까?",
+        "related": ["bookclub-hanpage-app-review"]
       }
     ]
   },
