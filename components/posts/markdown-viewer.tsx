@@ -3,13 +3,12 @@
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { MdContentPaste } from 'react-icons/md';
 import { RiLink } from 'react-icons/ri';
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 interface Props {
   content: string;
@@ -23,6 +22,9 @@ export default function MarkdownViewer({ content }: Props) {
       });
     }
   };
+
+  const commonHighLightStyle =
+    'inline-block -skew-x-[12deg] align-middle w-1.5 h-[17px] px-0.5 mb-[1px]';
 
   return (
     <ReactMarkdown
@@ -60,7 +62,7 @@ export default function MarkdownViewer({ content }: Props) {
             </>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden py-1 px-1.5 border border-box bg-gray text-[13px] text-[#ff5b5b] rounded-md`}
+              className={`${className} before:hidden after:hidden py-1 px-1.5 border border-box bg-light-gray text-[13px] text-[#ff5b5b] rounded-md`}
               {...props}
             >
               {children}
@@ -72,22 +74,16 @@ export default function MarkdownViewer({ content }: Props) {
             {children}
           </table>
         ),
-        th: ({ children }) => (
-          <th className='text-blue px-3 py-2'>{children}</th>
-        ),
-        tr: ({ children }) => <tr className=''>{children}</tr>,
-        td: ({ children, ...props }) => {
-          return children?.includes('<li>') ? (
+        th: ({ children }) => <th className='text-blue p-2'>{children}</th>,
+        tr: ({ children }) => <tr>{children}</tr>,
+        td: ({ children }) => {
+          return children?.includes('<li>') || children?.includes('<br/>') ? (
             <td
-              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
+              className='p-2 leading-7 text-[14px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
               dangerouslySetInnerHTML={{ __html: children.join('') }}
-              {...props}
             />
           ) : (
-            <td
-              className='px-3 py-2 leading-7 text-[15px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'
-              {...props}
-            >
+            <td className='p-2 leading-7 text-[14px] [&>ul]:my-0 [&>ul]:pl-4 [&>ul>li]:my-1.5 [&>ul>li]:pl-1'>
               {children}
             </td>
           );
@@ -96,12 +92,22 @@ export default function MarkdownViewer({ content }: Props) {
           <pre className='relative p-0 m-0 mb-2 z-0'>{children}</pre>
         ),
         strong: ({ children }) => (
-          <strong className='text-indigo font-bold'>{children}</strong>
+          <strong className='relative'>
+            <span
+              className={`${commonHighLightStyle} -mr-0.5 bg-[#dcecffd2]`}
+            />
+            <span className='font-bold align-middle opacity-90 text-blue pl-0.5 pr-1.5 bg-[#dcecffd2]'>
+              {children}
+            </span>
+            <span
+              className={`${commonHighLightStyle} -ml-1 mr-0.5 bg-gradient-to-tr from-[#dcecffd2] to-[#b1d1f8de]`}
+            />
+          </strong>
         ),
         img: (image) => (
           <Image
-            className='max-h-80 w-auto object-cover mt-1 mb-4 rounded-md'
-            src={image.src || ''}
+            className='max-h-80 md:max-h-[450px] w-auto object-cover mt-1 mb-4 rounded-md'
+            src={(image.src || '').slice(7)}
             alt={image.alt || ''}
             width={500}
             height={500}
@@ -165,7 +171,7 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-1.5 [&>p::before]:hidden [&>p::after]:hidden'>
+          <li className='marker:text-text marker:font-bold my-1.5 [&>a]:my-0 [&>p]:my-2 [&>p::before]:hidden [&>p::after]:hidden'>
             {children}
           </li>
         ),
@@ -178,11 +184,13 @@ export default function MarkdownViewer({ content }: Props) {
           </ol>
         ),
         ul: ({ children }) => (
-          <ul className='marker:text-text marker:font-bold mt-1 mb-4 pl-5'>
+          <ul className='marker:text-text marker:font-bold mt-1 mb-3 pl-5'>
             {children}
           </ul>
         ),
-        hr: ({ children }) => <hr className='my-3 border-gray'>{children}</hr>,
+        hr: ({ children }) => (
+          <hr className='my-3 border-light-gray'>{children}</hr>
+        ),
       }}
     >
       {content}

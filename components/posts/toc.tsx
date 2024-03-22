@@ -36,33 +36,32 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
+        className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
       >
         <FaChevronUp fontSize={12} />
         <h1 className='font-king text-sm md:text-base font-bold text-slate'>
           목차
         </h1>
       </button>
-      {openToc && (
-        <Modal toggleModal={toggleToc}>
-          <nav
-            className={`z-10 w-[65vw] max-w-[80vw] overflow-scroll scrollbar-hide transition p-4 h-fit rounded-xl max-h-[90vh] md:hidden`}
-          >
-            <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
-              목차
-            </h1>
-            <ul className='flex flex-col space-y-2.5'>
-              {headingEls.map((el) => (
-                <TocElement key={el.id} element={el} activeId={activeId} />
-              ))}
-            </ul>
-          </nav>
-        </Modal>
-      )}
+
+      <Modal openToc={openToc} toggleModal={toggleToc}>
+        <nav
+          className={`z-10 overflow-scroll scrollbar-hide transition p-4 h-fit rounded-xl max-h-[90vh]`}
+        >
+          <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
+            목차
+          </h1>
+          <ul className='flex flex-col space-y-2.5'>
+            {headingEls.map((el) => (
+              <TocElement key={el.id} element={el} activeId={activeId} />
+            ))}
+          </ul>
+        </nav>
+      </Modal>
 
       {/* 태블릿 스크린 이상 */}
       <nav
-        className={`hidden md:sticky top-8 ml-2 md:block z-10 md:w-56 overflow-scroll scrollbar-hide transition h-fit rounded-xl max-h-[90vh]`}
+        className={`hidden md:sticky top-8 md:block z-10 md:w-60 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
         <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
           목차

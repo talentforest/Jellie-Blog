@@ -190,8 +190,10 @@ export default function CategoriesBox({ category, setCategory }) {
 
 위의 코드에서 `<CategoriesBox />`에 전달받는 `setCategory`에 위와 같은 경고 표시가 나타나게 되는데요. 이유는 이미 부모 컴포넌트에 `'use client'`가 선언되었기 때문입니다. `'use client'` 선언은 서버 컴포넌트와 클라이언트 컴포넌트 사이의 경계를 나타낼 때에만 작성하는 것이기 때문이라고 합니다.
 
-![img](/images/side-projects/jellie-blog-construction-process/use-client.png)
-![img](/images/side-projects/jellie-blog-construction-process/client-server-component.png)
+![use client](/public/images/side-projects/jellie-blog-construction-process/use-client.png)
+
+![client-server-component](/public/images/side-projects/jellie-blog-construction-process/client-server-component.png)
+
 서버와 클라이언트가 구분되는 경계에서 한 번만 정의하면 해당 클라이언트 컴포넌트로 import한 모든 모듈이 클라이언트 구성요소로 간주된다고 합니다. 따라서 클라이언트 컴포넌트의 하위 컴포넌트인 `<CategoriesBox/>`에 또 `'use client'`를 작성할 필요가 없었습니다. 지워주니 경고도 사라졌네요. 서버와 클라이언트의 경계인지 잘 생각하면서 `'use client'`를 사용해야 할 것 같습니다.
 
 3. `<Link />`로 다른 페이지 이동 시 이전 페이지의 스크롤 위치 그대로 이동되는 버그가 있었습니다.

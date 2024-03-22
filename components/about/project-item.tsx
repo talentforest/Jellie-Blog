@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import StackBox from '../common/stack-box';
+import Link from 'next/link';
 import { Project } from '@/service/about';
 import { FaGithub } from 'react-icons/fa';
 import { RiArticleFill, RiLink } from 'react-icons/ri';
@@ -12,7 +13,7 @@ export default function ProjectItem({
   project: { name, path, description, stacks, link, github, relatedPosts },
 }: Props) {
   return (
-    <li className='hover:-translate-y-1.5 group hover:border-indigo overflow-hidden transition rounded-xl bg-box border-2 border-gray flex flex-col shadow-md'>
+    <li className='hover:-translate-y-1.5 group hover:border-indigo overflow-hidden transition rounded-2xl bg-box border-2 border-light-gray flex flex-col shadow-md'>
       <Image
         src={`/images/about/${path}`}
         alt='프로젝트: 냉장고에 뭐가 있지 썸네일'
@@ -22,7 +23,7 @@ export default function ProjectItem({
         className='w-full opacity-60 group-hover:opacity-100 h-48 object-cover'
       />
 
-      <div className='px-3 py-2'>
+      <div className='px-3 py-2 -mt-4 rounded-2xl bg-box relative'>
         <h5 className='group-hover:text-indigo font-bold mb-1.5 flex items-center text-lg font-king'>
           # {name}
         </h5>
@@ -46,6 +47,7 @@ export default function ProjectItem({
               <span>바로가기</span>
             </a>
           )}
+
           {github.length !== 0 && (
             <a
               href={github}
@@ -57,16 +59,16 @@ export default function ProjectItem({
               <span>GitHub</span>
             </a>
           )}
+
           {relatedPosts.length !== 0 && (
-            <a
-              href={relatedPosts}
-              target='_blank'
+            <Link
+              href={`/posts/${relatedPosts}`}
               title={`프로젝트 관련 포스트`}
               className='text-slate group-hover:text-text hover:text-slate underline flex items-center gap-0.5 w-fit text-sm'
             >
               <RiArticleFill className='text-slate group-hover:text-text w-4 h-4 mr-0.5' />
               <span>관련 포스트</span>
-            </a>
+            </Link>
           )}
         </div>
       </div>

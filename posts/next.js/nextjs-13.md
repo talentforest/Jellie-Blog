@@ -5,7 +5,7 @@
 
 ## Next.js 13 변경사항
 
-![img](/images/next.js/nextjs-13/beta-stable.png)
+![beta와 stable 안내](/public/images/next.js/nextjs-13/beta-stable.png)
 
 ~~먼저 주의할 점은 Next.js 13으로 바뀌었지만 아직 어떤 기능들은 **Beta버전**이라는 것이다. 아래 표의 Beta 기능 참고~~
 
@@ -26,7 +26,7 @@
 npx create-next-app@latest --experimental-app --typescript
 ```
 
-![img](/images/next.js/nextjs-13/terminal.png)
+![터미널](/public/images/next.js/nextjs-13/terminal.png)
 
 프로젝트 이름과 ESlint 설정한다.
 
@@ -37,7 +37,9 @@ npx create-next-app@latest --experimental-app --typescript
   절대경로와 모듈 path 명을 설정할 때 설정한다.
 
 - 설치한 next.js 13 폴더 구조
-  ![img](/images/next.js/nextjs-13/initial-structure.png)
+
+  ![Next.js 초기 폴더 구조](/public/images/next.js/nextjs-13/initial-structure.png)
+
   그럼 이런식으로 프로젝트 초기 구조가 나온다. 13 버전으로 갓 출시가 되었을 때 app이랑 pages가 둘다 같이 있었던 것을 보았던 것 같은데 이제는 app 폴더만 존재한다. 기존 page폴더에 있던 api 폴더는 이제 app폴더 안으로 옮겨져 있다. app으로 변경되었다고 이제 page 폴더를 사용할 수 없는 건 아니고 물론 page 폴더로 프로젝트를 하고 싶은 경우 page로 설정할 수도 있지만 app 폴더를 사용할 것을 권장하고 있다.
 
   [App Router](https://nextjs.org/docs/app/building-your-application/routing#the-app-router)
@@ -134,7 +136,7 @@ export function generateStaticParams() {
 
 - 그럼 `<div>{params.slug}</div>` 이 params도 미리 받아와서 정적 페이지로 만들어둔다.
 
-![img](/images/next.js/nextjs-13/dynamic-route.png)
+![dynamic route](/public/images/next.js/nextjs-13/dynamic-route.png)
 
 - `[]` 안에 이름이 있는 폴더라면 라우팅에 영향을 주지 않아 url에 이름이 들어가지 않는다.
 
@@ -142,7 +144,7 @@ export function generateStaticParams() {
 
 > 12 버전은 페이지 단위로 렌더링 방식을 규정하는 것에 반해, 13 버전은 **컴포넌트 단위**로 렌더링 방식을 규정한다.
 
-![img](/images/next.js/nextjs-13/server-component.png)
+![서버 컴포넌트](/public/images/next.js/nextjs-13/server-component.png)
 전체 페이지에서 상태 변화해야하는 클라이언트 컴포넌트를 구분한 모습이다.
 
 - app에서 클라이언트 컴포넌트로 만들고 싶다면 파일 맨 위에 `‘use client’`를 선언한다.
@@ -191,7 +193,7 @@ export const metadata = {
 layout.tsx는 **\_document.tsx, \_app.tsx와 layout.tsx**을 하나로 합친 것이다. `<html>`, `<head>`, `<body>` 가 들어가 있다.
 
 - 개별 라우팅 페이지별로 layout을 만들수도 있다.
-  ![img](/images/next.js/nextjs-13/dynamic-route.png)
+  ![layout](/public/images/next.js/nextjs-13/dynamic-route.png)
   - 라우팅 폴더 내에 layout 파일을 넣는다.
 
 ### not-found 페이지

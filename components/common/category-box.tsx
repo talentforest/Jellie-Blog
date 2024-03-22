@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { FaCode } from 'react-icons/fa6';
 import { AiFillTool } from 'react-icons/ai';
 import { MdOutlineWeb } from 'react-icons/md';
+import StackIcon from './stack-icon';
 
 interface Props {
   selected?: boolean;
@@ -17,33 +18,27 @@ export default function CategoryBox({
 }: Props) {
   return (
     <div
-      className={`${
+      className={`categorybox ${
         selected ? 'bg-indigo' : 'bg-hoverbox'
-      } group-hover:bg-light-yellow border border-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
+      } group-hover:opacity-100 border border-light-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
+      {category === 'All' ? (
+        ''
+      ) : category === 'side-projects' ? (
+        <MdOutlineWeb className='text-[#c59562]' />
+      ) : category === 'library' ? (
+        <AiFillTool className='text-[#c0ffdd]' />
+      ) : category === 'developments' ? (
+        <FaCode className='text-[#ff4d4d]' />
+      ) : (
+        <StackIcon stack={category} />
+      )}
+
       <span
-        className={`group-hover:text-indigo text-sm ${
-          selected ? 'text-yellow' : 'text-text'
+        className={`text-sm ml-0.5 ${
+          selected ? 'text-yellow' : 'text-text group-hover:text-indigo'
         } items-center flex gap-1`}
       >
-        {category === 'All' ? (
-          ''
-        ) : category === 'side-projects' ? (
-          <MdOutlineWeb />
-        ) : category === 'library' ? (
-          <AiFillTool />
-        ) : category === 'developments' ? (
-          <FaCode />
-        ) : (
-          <Image
-            src={`/icon/${category}.svg`}
-            alt={`${category} icon`}
-            width={0}
-            height={0}
-            className='rounded-full mb-[2px] w-3.5 h-auto'
-          />
-        )}
-        {'  '}
         {category}
       </span>
 

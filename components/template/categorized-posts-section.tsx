@@ -38,7 +38,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         allPosts={allPosts}
       />
 
-      <div className='relative mt-10 mb-2 pr-2 pl-1 flex items-center justify-between gap-1'>
+      <div className='relative mt-10 mb-4 pr-2 pl-1 flex items-center justify-between gap-1'>
         <h3 className='flex items-center gap-1'>
           <AiFillTag className='text-yellow w-5 h-5 mb-0.5' />
           {currCategory}
@@ -48,11 +48,16 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
 
-      <ul className='flex flex-col space-y-3'>
+      <ul className='flex flex-col gap-3.5 md:grid grid-cols-2'>
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>
-              <PostBox post={post} contentPreview arrowPosition='right' />
+              <PostBox
+                post={post}
+                contentPreview
+                direction='next'
+                imgHeight={48}
+              />
             </li>
           ))
         ) : (

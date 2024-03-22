@@ -4,9 +4,9 @@
     "path": "jellie-blog.png",
     "description": "개인 블로그를 만들기 위해 시작한 프로젝트입니다.",
     "stacks": ["next.js", "typescript", "tailwindcss", "react-markdown"],
-    "link": "https://talentforest.github.io/han-bookclub-app/",
-    "github": "https://github.com/talentforest/han-bookclub-app",
-    "relatedPosts": "https://jellieblog.dev/posts/jellie-blog-construction-process"
+    "link": "",
+    "github": "https://github.com/talentforest/jellie-blog",
+    "relatedPosts": "jellie-blog-construction-process"
   },
   {
     "name": "독서모임 한페이지 기록장",
@@ -21,7 +21,7 @@
     ],
     "link": "https://talentforest.github.io/han-bookclub-app/",
     "github": "https://github.com/talentforest/han-bookclub-app",
-    "relatedPosts": ""
+    "relatedPosts": "bookclub-hanpage-app-review"
   },
   {
     "name": "냉장고에 뭐가 있지?",
@@ -46,12 +46,12 @@
     ],
     "link": "https://talentforest.github.io/rimflix/",
     "github": "https://github.com/talentforest/rimflix",
-    "relatedPosts": ""
+    "relatedPosts": "rimflix-optimization"
   },
   {
-    "name": "기업연계프로젝트: 마케팅 랜딩페이지",
+    "name": "기업연계프로젝트: 세이블 마케팅 랜딩페이지",
     "path": "savle.png",
-    "description": "UXUI 디자이너 2명과 프론트엔드 개발자 5명이 함께 만든 기업연계프로젝트입니다.",
+    "description": "UXUI 디자이너 2명, 프론트엔드 개발자 5명이 함께 만든 기업연계프로젝트입니다.",
     "stacks": ["next.js", "sass", "swr"],
     "link": "https://with-savle.vercel.app/",
     "github": "",
@@ -60,7 +60,7 @@
   {
     "name": "Hacker News",
     "path": "해커뉴스.png",
-    "description": "UXUI 디자이너와 함께 만든 해커뉴스 리디자인 페이지입니다.",
+    "description": "UXUI 디자이너와 협업한 해커뉴스 리디자인 페이지입니다.",
     "stacks": ["react", "styled-components", "axios"],
     "link": "https://hacker-news-mini-project.vercel.app/",
     "github": "https://github.com/talentforest/hackernews-with-react",

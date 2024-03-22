@@ -1,12 +1,8 @@
 [
   { "name": "GITHUB", "item": "https://github.com/talentforest" },
   {
-    "name": "BLOG(현재)",
+    "name": "BLOG",
     "item": "https://jellieblog.dev/"
-  },
-  {
-    "name": "BLOG(이전)",
-    "item": "https://velog.io/@forest0501"
   },
   { "name": "EMAIL", "item": "talentforest0501@gmail.com" }
 ]

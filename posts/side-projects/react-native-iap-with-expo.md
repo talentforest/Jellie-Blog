@@ -50,7 +50,7 @@ expo react native 환경에서 인앱 결제를 구현한 블로그 글이나 �
 
    나는 앱을 출시하려면 최소한 ‘비공개 테스트’를 거쳐야한다고 한다고 해서 내부테스트 없이 그냥 바로 비공개 테스트를 진행했고, 요구하는 조건들을 입력하고 수정했다.
 
-   ![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-1.png)
+   ![react-native-iap-with-expo](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-1.png)
 
    위에 보이듯이 12개 종류의 정보를 입력하고도, 2개의 스토어 등록 기본 정보도 작성해야한다.🤪  모든 필요한 정보를 다 작성하고 비공개 테스트 검토 요청이 완료되면 이제 인앱 상품을 생성할 수 있는 조건이 만족된 것이다.
 
@@ -62,7 +62,7 @@ expo react native 환경에서 인앱 결제를 구현한 블로그 글이나 �
 
 이런식으로 Google Play Console 내 자신의 앱 대시보드로 들어가서 왼쪽 Drawer 하단을 보면 인앱상품이 나온다. 여기에 들어가면 아래와 같은 화면이 나온다.
 
-![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-2.png)
+![react-native-iap-with-expo](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-2.png)
 
 여기에서 상품 만들기 버튼을 누르고 제품 ID, 상품 세부정보, 가격, 세금 준수 프로그램 같은 항목을 작성하면 된다. 그리고 이 제품 ID로 인앱 결제 정보를 호출하게 된다고 한다.
 
@@ -131,7 +131,7 @@ expo react native 환경에서 인앱 결제를 구현한 블로그 글이나 �
 
    > 혹시 몰라 이야기하지만 주의할 점은 development build를 해야한다. production build가 아니다.
 
-   ![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-3.png)
+   ![react-native-iap-with-expo](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-3.png)
 
    그렇다면, development build를 마쳤다고 생각하고, expo 홈페이지나 터미널에서 해당 빌드 상세 페이지로 들어간다. 그럼 apk를 다운받을 수 있는 QR 코드가 나오는데, 실제 테스트할 기기에서 이 QR 코드를 찍고 다운로드 받으면 된다. 그럼 내 기기에 파일로 다운받은 apk를 설치하면 된다.
 
@@ -170,7 +170,7 @@ expo react native 환경에서 인앱 결제를 구현한 블로그 글이나 �
 
 ## 결제 버튼 기능 만들기
 
-![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-4.png)
+![react-native-iap-flow](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-4.png)
 
 위의 로직은 react-native-iap 라이브러리에서 보여주는 구매 흐름 로직이다. 나는 백엔드가 없기 때문에 파란색 박스 표시를 한 부분인 구매 요청까지만 하고, 구글 측에서 알아서 처리해서 결제성공 / 결제실패 결과를 보내주면 그 결과를 사용자에게 적절하게 보여주면 될 것 같다.
 
@@ -299,13 +299,13 @@ Google is indicating that we have some issue connecting to payment.
 ...
 ```
 
-![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-5.png)
+![react-native-iap-error](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-5.png)
 
-![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-6.png)
+![react-native-iap-error](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-6.png)
 
 “Google is indicating that we have some issue connecting to payment.” 와 같은 에러가 나는 것은 라이선스 테스트를 제대로 등록하지 않았기 때문이다.
 
-![react-native-iap-with-expo](/images/side-projects/react-native-iap-with-expo/react-native-iap-7.png)
+![playconsole-license-test](/public/images/side-projects/react-native-iap-with-expo/react-native-iap-7.png)
 
 원래는 위의 플레이 콘솔에서 라이선트 테스트 페이지에 들어가서 내 이메일을 등록하기만 하면 됐다는데 나는 **"라이선스 테스트를 사용하여 Play Intergrity API를 테스트할 수 없습니다."** 라는 안내 표시가 뜬다. 하지만 이 부분은 인앱 결제 통합을 테스트하는 것과 별로 상관이 없는 것 같아서 테스터들을 등록하고 LICENSED라는 응답을 받도록 설정했다.
 

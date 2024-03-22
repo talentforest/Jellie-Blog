@@ -12,12 +12,13 @@ export interface Post {
   category: Category;
   path: string;
   featured: boolean;
-  thumbnail?: string;
   content: string;
   readingTime: number;
+  related: string[];
+  thumbnail?: string;
 }
 
-export interface PostData extends Post {
+export interface PostData {
   next?: Post | null;
   prev?: Post | null;
 }
@@ -51,15 +52,45 @@ export async function getFeaturedPosts(): Promise<Post[]> {
   return featuredPost;
 }
 
-export async function getPost(fileName: string): Promise<PostData> {
+export async function getPost(fileName: string): Promise<Post> {
   const allPosts = await getAllPosts();
   const post = allPosts.find((post) => post.path === fileName);
+
   if (!post)
     throw new Error(`${fileName}에 해당하는 포스트를 찾을 수 없습니다.`);
-  const index = allPosts.indexOf(post);
-  const prev = index > 0 ? allPosts[index - 1] : null;
-  const next = index < allPosts.length ? allPosts[index + 1] : null;
-  return { ...post, next, prev };
+
+  return { ...post };
+}
+
+export async function getRelatedPosts(fileName: string): Promise<Post[]> {
+  const allPosts = await getAllPosts();
+  const currPost = await getPost(fileName);
+  const relatedPosts = allPosts.filter((post) =>
+    currPost.related.includes(post.path)
+  );
+  return relatedPosts;
+}
+
+export async function getPrevNextPost(fileName: string): Promise<PostData> {
+  const allPosts = await getAllPosts();
+  const currPost = await getPost(fileName);
+
+  const filterRelatedPosts = allPosts.filter(
+    (post) => !currPost.related.includes(post.path)
+  );
+
+  const currIndex = filterRelatedPosts.findIndex(
+    (post) => post.path === currPost.path
+  );
+
+  const prevIndex = currIndex - 1;
+  const nextIndex = currIndex + 1;
+  const postLength = filterRelatedPosts.length;
+
+  const prev = prevIndex >= 0 ? filterRelatedPosts[prevIndex] : null;
+  const next = nextIndex < postLength ? filterRelatedPosts[nextIndex] : null;
+
+  return { next, prev };
 }
 
 const calcReadingTime = (content: string) => {
