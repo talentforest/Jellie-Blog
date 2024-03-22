@@ -290,13 +290,13 @@
       {
         "id": 6,
         "category": "developments",
-        "title": "좋은 사용자 경험(UX) 원칙 3가지",
+        "title": "프론트엔드 개발자가 알아두면 좋은 UX 디자인 원칙 5가지",
         "date": "2024-01-30",
         "path": "memorable-ux-principle",
         "thumbnail": "사용자를-유혹하는-UX-기술-썸네일.png",
         "featured": true,
         "description": "책 <사용자를 유혹하는 UX의 기술>을 읽고",
-        "related": ["react-native-iap-with-expo"]
+        "related": []
       },
       {
         "id": 7,
