@@ -21,27 +21,21 @@ export default function PostPrevNextBox({ post, direction }: PostBoxProps) {
   return (
     <PostBoxContainer post={post} imgHeight={28}>
       <header
-        className={`justify-between flex items-center ${
-          direction === 'prev' ? '' : 'flex-row-reverse'
-        }`}
+        className={`flex justify-between items-center 
+        ${direction === 'prev' ? '' : 'flex-row-reverse'}`}
       >
         {direction && <ChevronArrowText text='포스트' direction={direction} />}
       </header>
 
-      <section
-        className={`flex flex-col ${direction === 'prev' ? '' : 'items-end'}`}
+      <h2
+        className={`flex-1 mt-2.5 mb-3 min-h-10 text-base font-king font-bold group-hover:text-yellow 
+        ${direction === 'prev' ? '' : 'text-end'}`}
       >
-        <h2
-          className={`mt-2.5 mb-3 min-h-10 text-base font-king font-bold group-hover:text-yellow ${
-            direction === 'prev' ? 'text-end' : ''
-          }`}
-        >
-          {title}
-        </h2>
-      </section>
+        {title}
+      </h2>
 
       <footer
-        className={`flex gap-3 ${direction === 'prev' ? 'justify-end' : ''}`}
+        className={`flex gap-3 ${direction === 'prev' ? '' : 'justify-end'}`}
       >
         <DateBox date={date} />
         <TimeToReadBox readingTime={readingTime} />

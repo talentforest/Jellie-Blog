@@ -90,8 +90,18 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       {/* 이전 다음 포스트 */}
       <section className='mt-12 px-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
         <h4 className='font-king font-bold text-slate'>다른 포스트</h4>
-        {prev && <PostPrevNextBox post={prev} direction='prev' />}
-        {next && <PostPrevNextBox post={next} direction='next' />}
+        <ul className='flex flex-col gap-3.5 md:grid grid-cols-2'>
+          {prev && (
+            <li>
+              <PostPrevNextBox post={prev} direction='prev' />
+            </li>
+          )}
+          {next && (
+            <li>
+              <PostPrevNextBox post={next} direction='next' />
+            </li>
+          )}
+        </ul>
       </section>
     </>
   );

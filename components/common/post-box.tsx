@@ -44,14 +44,16 @@ export default function PostBox({
       </div>
 
       <h2
-        className={`mt-3 text-[${contentPreview ? '18px' : '16px'}]
+        className={`flex-1 mt-2 text-[${contentPreview ? '18px' : '17px'}]
         font-king font-bold group-hover:text-yellow `}
       >
         {title}
       </h2>
 
       <h3
-        className={`mt-3 text-teal text-[${contentPreview ? '16px' : '15px'}]`}
+        className={`mt-3 flex-1 text-teal text-[${
+          contentPreview ? '16px' : '15px'
+        }]`}
       >
         {description}
       </h3>

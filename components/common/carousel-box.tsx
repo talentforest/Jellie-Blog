@@ -51,10 +51,6 @@ export default function CarouselBox({ children, config, responsive }: Props) {
     arrowColor = 'gray',
   } = config;
 
-  const arrowCircleStyle = `bg-${arrowColor} opacity-60 absolute top-[43%] rounded-full w-12 h-12 flex items-center justify-center cursor-pointer`;
-
-  const arrowStyle = 'text-lg text-text';
-
   return (
     <Carousel
       responsive={responsive || defaultResponsive}
@@ -65,7 +61,7 @@ export default function CarouselBox({ children, config, responsive }: Props) {
       centerMode={centerMode}
       arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
-      containerClass='min-h-80 pt-4 pb-10'
+      containerClass='min-h-20 pt-4 pb-16'
       itemClass='px-1.5'
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-light-yellow'
     >

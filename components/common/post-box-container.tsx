@@ -54,7 +54,7 @@ export default function PostBoxContainer({
       <CategoryBox category={category} />
 
       <article
-        className={`flex-1 border border-light-gray rounded-2xl px-3.5 py-3 -mt-3 relative bg-box`}
+        className={`flex flex-col justify-between h-full border border-light-gray rounded-2xl px-3.5 py-3 -mt-3 relative bg-box`}
       >
         {children}
       </article>
