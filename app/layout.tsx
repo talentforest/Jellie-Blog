@@ -15,22 +15,14 @@ export const metadata = {
 };
 
 const locus_sangsang = localFont({
-  src: './font/locus_sangsang.ttf',
+  src: './font/locus_sangsang.otf',
   display: 'swap',
 });
 
-const kingSejongs = localFont({
-  src: [
-    {
-      path: './font/KingSejongInstitute_Bold.ttf',
-      weight: '700',
-    },
-    {
-      path: './font/KingSejongInstitute_Regular.ttf',
-      weight: '400',
-    },
-  ],
-  variable: '--font-kingSejongs',
+const king_sejong = localFont({
+  src: './font/KingSejongInstitute_Regular.ttf',
+  display: 'swap',
+  variable: '--font-king-sejong',
 });
 
 export default function RootLayout({
@@ -41,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang='en' suppressHydrationWarning>
       <body
-        className={`${kingSejongs.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
+        className={`${king_sejong.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
       >
         <Providers>
           <Header />

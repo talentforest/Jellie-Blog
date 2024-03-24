@@ -18,7 +18,7 @@ export default function CategoryBox({
 }: Props) {
   return (
     <div
-      className={`categorybox ${
+      className={`self-start max-w-full max-h-8 ${
         selected ? 'bg-indigo' : 'bg-hoverbox'
       } group-hover:opacity-100 border border-light-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
@@ -36,7 +36,7 @@ export default function CategoryBox({
 
       <span
         className={`text-sm ml-0.5 ${
-          selected ? 'text-yellow' : 'text-text group-hover:text-indigo'
+          selected ? 'text-yellow' : 'text-gray group-hover:text-indigo'
         } items-center flex gap-1`}
       >
         {category}

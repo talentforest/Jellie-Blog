@@ -30,7 +30,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
 
   return (
     <section className='mx-4 mt-4 mb-8 md:my-4 md:mx-0 min-h-[50vh]'>
-      <h2>Categorized Posts</h2>
+      <h2>포스트 카테고리</h2>
 
       <CategoriesBox
         currCategory={currCategory}
@@ -48,16 +48,11 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
 
-      <ul className='flex flex-col gap-3.5 md:grid grid-cols-2'>
+      <ul className='flex flex-col gap-3.5'>
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>
-              <PostBox
-                post={post}
-                contentPreview
-                direction='next'
-                imgHeight={48}
-              />
+              <PostBox post={post} contentPreview direction='next' />
             </li>
           ))
         ) : (

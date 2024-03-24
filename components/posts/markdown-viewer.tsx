@@ -23,9 +23,6 @@ export default function MarkdownViewer({ content }: Props) {
     }
   };
 
-  const commonHighLightStyle =
-    'inline-block -skew-x-[12deg] align-middle w-1.5 h-[17px] px-0.5 mb-[1px]';
-
   return (
     <ReactMarkdown
       className='[&>*:first-child]:mt-0 prose overscroll-auto w-full md:w-[70%] md:mr-6 shadow-3xl bg-bg max-w-none text-text relative px-5 md:px-0 pb-20 flex flex-col'
@@ -70,7 +67,7 @@ export default function MarkdownViewer({ content }: Props) {
           );
         },
         table: ({ children }) => (
-          <table className='break-all font-king font-[400] mt-2 mb-4 text-text bg-box rounded-md px-10'>
+          <table className='break-all font-king mt-2 mb-4 text-text bg-box rounded-md px-10'>
             {children}
           </table>
         ),
@@ -93,15 +90,9 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         strong: ({ children }) => (
           <strong className='relative'>
-            <span
-              className={`${commonHighLightStyle} -mr-0.5 bg-[#dcecffd2]`}
-            />
-            <span className='font-bold align-middle opacity-90 text-blue pl-0.5 pr-1.5 bg-[#dcecffd2]'>
+            <span className='relative font-bold align-middle text-blue pl-1 pr-1.5 pb-[0.5px] bg-[#489afd1d]'>
               {children}
             </span>
-            <span
-              className={`${commonHighLightStyle} -ml-1 mr-0.5 bg-gradient-to-tr from-[#dcecffd2] to-[#b1d1f8de]`}
-            />
           </strong>
         ),
         img: (image) => (
@@ -115,7 +106,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='[&:first-child]:border-indigo font-king text-yellow mt-16 mb-1 text-[28px]'
+            className='[&:first-child]:border-indigo font-bold text-yellow mt-16 mb-1 text-[28px]'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -123,7 +114,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='font-king text-slate text-[22px] mt-6 mb-2'
+            className='text-slate text-[22px] font-bold mt-6 mb-2'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -132,7 +123,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='font-king text-slate mb-2 text-xl'
+            className='text-slate font-bold mb-2 text-xl'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >

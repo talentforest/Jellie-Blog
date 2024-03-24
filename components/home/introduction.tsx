@@ -37,7 +37,7 @@ export default function Introduction({
   const iconCommonStyle = 'text-gray w-5 h-5 mr-1';
 
   const dataBoxCommonStyle =
-    'group w-64 cursor-pointer hover:-translate-y-0.5 transition flex items-center px-2 py-1 bg-light-gray rounded-lg';
+    'border border-light-gray hover:border-light-yellow group w-64 cursor-pointer hover:-translate-y-0.5 transition flex items-center px-2 py-1 bg-box rounded-lg';
 
   const titleCommonStyle = 'flex-1 text-[13px] text-light-blue mt-0.5 mr-3';
 
@@ -62,8 +62,8 @@ export default function Introduction({
       <Avatar />
 
       <div className='mt-4 flex-1 items-center justify-center flex flex-col md:ml-5 md:items-start'>
-        <h3 className='font-semibold mb-3'>🌼 Jellie 🌼</h3>
-        <p className='text-[15px] leading-6 mb-4 w-60 tracking-wide text-center md:text-start md:w-full'>
+        <h3 className='font-semibold'>🌼 Jellie 🌼</h3>
+        <p className='text-[15px] leading-6 m-4 tracking-wide text-center md:text-start'>
           개발을 통해 재미있는 프로젝트를 만들며 성장하는 프론트엔드 개발자
           젤리입니다. {introduction}
         </p>

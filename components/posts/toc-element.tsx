@@ -25,7 +25,7 @@ export default function TocElement({ element, activeId }: Props) {
           element.id === activeId
             ? 'border-l-4 border-light-gray px-2 bg-bg leading-[18px]'
             : 'leading-5'
-        } font-king font-bold block w-fit cursor-pointer transition-all duration-75`}
+        } font-bold block w-fit cursor-pointer transition-all duration-75`}
       >
         {element.innerHTML}
       </a>
