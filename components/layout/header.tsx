@@ -9,8 +9,8 @@ export default function Header() {
   const pathname = usePathname();
 
   const markCurrPageStyle = (currPage: string) => {
-    return `text-sm md:text-base transition ${
-      pathname.includes(currPage) ? 'text-indigo' : ''
+    return `text-sm md:text-[15px] font-bold transition ${
+      pathname.includes(currPage) ? 'text-indigo' : 'text-gray'
     }`;
   };
 
@@ -26,13 +26,13 @@ export default function Header() {
 
       <nav className='flex-1 flex items-center justify-end mx-4'>
         <ul className='flex justify-between space-x-4 md:space-x-8'>
-          <li className={`${markCurrPageStyle('/posts')}`}>
-            <Link className='text-[15px]' href='/posts'>
+          <li>
+            <Link className={`${markCurrPageStyle('/posts')}`} href='/posts'>
               Post
             </Link>
           </li>
-          <li className={`${markCurrPageStyle('/about')}`}>
-            <Link className='text-[15px]' href='/about'>
+          <li>
+            <Link className={`${markCurrPageStyle('/about')}`} href='/about'>
               About
             </Link>
           </li>

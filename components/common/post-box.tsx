@@ -39,7 +39,7 @@ export default function PostBox({
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`w-full h-full overflow-hidden relative flex flex-col md:flex-row group hover:-translate-y-2 hover:border-2 border-light-yellow rounded-2xl transition shadow-md shadow-light-gray`}
+      className={`w-full h-full overflow-hidden relative flex flex-col md:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-2xl transition shadow-md shadow-light-gray`}
     >
       {thumbnail ? (
         <Image
@@ -76,7 +76,7 @@ export default function PostBox({
           </p>
         )}
 
-        <ul className={`flex flex-wrap gap-2 flex-col md:flex-row`}>
+        <ul className={`flex flex-wrap gap-2 md:flex-row`}>
           <DateItem date={date} />
           <TimeToReadItem readingTime={readingTime} />
         </ul>

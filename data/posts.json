@@ -23,7 +23,7 @@
         "date": "2023-04-01",
         "path": "nextjs-13",
         "thumbnail": "nextjs-13.png",
-        "featured": true,
+        "featured": false,
         "description": "서버 컴포넌트와 클라이언트 컴포넌트의 구분, 데이터 fetching 방식 등등을 알아보자",
         "related": []
       },
@@ -41,7 +41,19 @@
     ]
   },
   {
-    "javascript": []
+    "javascript": [
+      {
+        "id": 1,
+        "category": "javascript",
+        "title": "자바스크립트는 어떻게 동작하는가",
+        "date": "2024-03-23",
+        "path": "how-javascript-works",
+        "thumbnail": "how-javascript-works/자바스크립트_동작_원리.png",
+        "featured": false,
+        "description": "싱글 스레드, Stack, Queue, 이벤트 루프, 비동기 동작 방식 등",
+        "related": []
+      }
+    ]
   },
   {
     "typescript": [
@@ -67,7 +79,7 @@
         "date": "2023-04-03",
         "path": "react-18-new-features",
         "thumbnail": "react-18.png",
-        "featured": true,
+        "featured": false,
         "description": "완전히 새로워진 React 18, Server Component, Suspense 등등",
         "related": []
       },
@@ -152,7 +164,7 @@
         "date": "2023-04-13",
         "path": "jellie-blog-construction-process",
         "thumbnail": "jellie-blog-thumbnail.png",
-        "featured": true,
+        "featured": false,
         "description": "블로그를 어떤 방식으로 구축했는지 알아봅니다.",
         "related": ["jellie-blog-features-1", "jellie-blog-features-2"]
       },
@@ -187,7 +199,7 @@
       {
         "id": 5,
         "category": "side-projects",
-        "title": "Expo 환경에서 React-Native-Iap 라이브러리 연결하기",
+        "title": "Expo 환경에서 결제모듈 라이브러리 연결하기",
         "date": "2023-11-13",
         "path": "react-native-iap-with-expo",
         "thumbnail": "what-is-in-fridge.png",
@@ -250,7 +262,7 @@
         "date": "2023-08-03",
         "path": "webpage-rendering-method",
         "thumbnail": "SPA_MPA.png",
-        "featured": true,
+        "featured": false,
         "description": "CSR, SSR, SSG, ISR, 하이브리드 렌더링 이해하기",
         "related": ["browser-rendering-process"]
       },
