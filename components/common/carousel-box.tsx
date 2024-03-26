@@ -1,7 +1,6 @@
 'use client';
 
 import { ReactNode } from 'react';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
@@ -11,15 +10,15 @@ type ResponsiveSetting = {
 };
 
 type Responsive = {
-  desktop: ResponsiveSetting;
-  tablet: ResponsiveSetting;
+  desktop?: ResponsiveSetting;
+  tablet?: ResponsiveSetting;
+  mobile?: ResponsiveSetting;
 };
 
 interface Props {
   children: ReactNode;
   responsive?: Responsive;
   config: {
-    arrowColor?: 'light-yellow' | 'gray';
     centerMode: boolean;
     showDots?: boolean;
     swipeable?: boolean;
@@ -31,11 +30,11 @@ interface Props {
 
 const defaultResponsive: Responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1400 },
     items: 2,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 0 },
+    breakpoint: { max: 1400, min: 0 },
     items: 1,
   },
 };
@@ -48,7 +47,6 @@ export default function CarouselBox({ children, config, responsive }: Props) {
     infinite = true,
     autoPlay = false,
     arrows = true,
-    arrowColor = 'gray',
   } = config;
 
   return (
@@ -61,7 +59,7 @@ export default function CarouselBox({ children, config, responsive }: Props) {
       centerMode={centerMode}
       arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
-      containerClass='min-h-20 pt-4 pb-16'
+      containerClass='min-h-20 pt-4 pb-12'
       itemClass='px-1.5'
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-light-yellow'
     >

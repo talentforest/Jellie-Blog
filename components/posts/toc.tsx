@@ -39,16 +39,14 @@ export default function Toc() {
         className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
       >
         <FaChevronUp fontSize={12} />
-        <h1 className='font-king text-sm md:text-base font-bold text-slate'>
-          목차
-        </h1>
+        <h1 className='text-sm md:text-base font-bold text-slate'>목차</h1>
       </button>
 
       <Modal openToc={openToc} toggleModal={toggleToc}>
         <nav
           className={`z-10 overflow-scroll scrollbar-hide transition p-4 h-fit rounded-xl max-h-[90vh]`}
         >
-          <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
+          <h1 className='mb-4 text-sm md:text-base font-bold text-indigo'>
             목차
           </h1>
           <ul className='flex flex-col space-y-2.5'>
@@ -63,7 +61,7 @@ export default function Toc() {
       <nav
         className={`hidden md:sticky top-8 md:block z-10 md:w-60 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
-        <h1 className='font-king mb-4 text-sm md:text-base font-bold text-indigo'>
+        <h1 className='mb-4 text-sm md:text-base font-bold text-indigo'>
           목차
         </h1>
         <ul className='flex flex-col space-y-2.5'>

@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import DateBox from '../common/date-box';
-import TimeToReadBox from '../common/time-to-read-box';
+import DateItem from '../common/date-item';
+import TimeToReadItem from '../common/time-to-read-item';
 import CategoryBox from '../common/category-box';
 import ProgressBar from './progress-bar';
 
@@ -37,14 +37,12 @@ export default function PostHeader({ contents }: Props) {
 
       <header className='w-full bg-box rounded-b-3xl mb-3 px-4 py-8 relative flex flex-col items-start'>
         <div className='flex flex-wrap gap-3 mb-4'>
-          <DateBox date={date} />
-          <TimeToReadBox readingTime={readingTime || 0} />
+          <DateItem date={date} />
+          <TimeToReadItem readingTime={readingTime || 0} />
         </div>
 
         <CategoryBox category={category} />
-        <h1 className='text-3xl font-king font-bold leading-10 mb-6 mt-2'>
-          {title}
-        </h1>
+        <h1 className='text-3xl font-bold leading-10 mb-6 mt-3'>{title}</h1>
 
         <span className='text-sm text-slate leading-6 tracking-wide'>
           저의 글을 읽어주셔서 감사합니다.

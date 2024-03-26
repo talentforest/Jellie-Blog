@@ -24,15 +24,15 @@ export default function ThemeMode() {
       {!mounted ? (
         <AiOutlineLoading3Quarters className='w-4 h-4 animate-spin' />
       ) : theme === 'system' ? (
-        <button onClick={() => onModifyClick('dark')}>
+        <button onClick={() => onModifyClick('dark')} className='pb-0.5'>
           <MdSettingsBrightness className={modeIconStyle} />
         </button>
       ) : theme === 'dark' ? (
-        <button onClick={() => onModifyClick('light')}>
+        <button onClick={() => onModifyClick('light')} className='pb-0.5'>
           <MdNightlight className={modeIconStyle} />
         </button>
       ) : theme === 'light' ? (
-        <button onClick={() => onModifyClick('system')}>
+        <button onClick={() => onModifyClick('system')} className='pb-0.5'>
           <MdSunny className={modeIconStyle} />
         </button>
       ) : (

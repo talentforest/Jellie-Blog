@@ -1,6 +1,6 @@
 [
   {
-    "name": "Jellie Blog",
+    "name": "젤리 기술블로그",
     "path": "jellie-blog.png",
     "description": "개인 블로그를 만들기 위해 시작한 프로젝트입니다.",
     "stacks": ["next.js", "typescript", "tailwindcss", "react-markdown"],

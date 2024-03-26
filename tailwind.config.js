@@ -23,7 +23,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        king: ['var(--font-kingSejongs)'],
+        king: ['var(--font-king-sejong)'],
       },
       keyframes: {
         slideup: {

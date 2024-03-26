@@ -32,11 +32,7 @@ export async function generateMetadata({
 
 const swiperResponsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 2,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 0 },
+    breakpoint: { max: 3000, min: 550 },
     items: 2,
   },
   mobile: {
@@ -75,13 +71,13 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       {/* 지금 읽은 포스트와 비슷한 포스트 */}
       {relatedPosts.length !== 0 && (
         <section className='mt-12 px-4 md:px-0 flex flex-col text-lg bg-bg -mx-1'>
-          <h4 className='font-king font-bold text-slate ml-1'>관련 포스트</h4>
+          <h4 className='font-bold text-slate ml-1'>관련 포스트</h4>
           <CarouselBox
             responsive={swiperResponsive}
-            config={{ centerMode: false, arrowColor: 'light-yellow' }}
+            config={{ centerMode: false }}
           >
             {relatedPosts.map((post) => (
-              <PostBox key={post.id} post={post} imgHeight={36} />
+              <PostBox key={post.id} post={post} />
             ))}
           </CarouselBox>
         </section>
@@ -89,15 +85,15 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
 
       {/* 이전 다음 포스트 */}
       <section className='mt-12 px-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
-        <h4 className='font-king font-bold text-slate'>다른 포스트</h4>
-        <ul className='flex flex-col gap-3.5 md:grid grid-cols-2'>
+        <h4 className='font-bold text-slate'>다른 포스트</h4>
+        <ul className='flex flex-col gap-3.5'>
           {prev && (
-            <li>
+            <li className='self-start'>
               <PostPrevNextBox post={prev} direction='prev' />
             </li>
           )}
           {next && (
-            <li>
+            <li className='self-end'>
               <PostPrevNextBox post={next} direction='next' />
             </li>
           )}

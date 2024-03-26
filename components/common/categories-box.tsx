@@ -1,5 +1,4 @@
 import { Post } from '@/service/posts';
-import Image from 'next/image';
 import CategoryBox from './category-box';
 
 export type Category =
