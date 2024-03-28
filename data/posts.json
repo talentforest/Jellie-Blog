@@ -134,7 +134,7 @@
       {
         "id": 1,
         "category": "library",
-        "title": "서버에서 가져오는 데이터 관리를 도와주는 React Query!",
+        "title": "서버에서 가져오는 데이터 관리를 도와주는 React Query를 알아보자",
         "date": "2023-04-10",
         "path": "react-query-overview",
         "thumbnail": "react-query.png",
