@@ -45,7 +45,7 @@
       {
         "id": 1,
         "category": "javascript",
-        "title": "자바스크립트는 어떻게 동작하는가",
+        "title": "자바스크립트의 동작 원리 이해하기",
         "date": "2024-03-23",
         "path": "how-javascript-works",
         "thumbnail": "how-javascript-works/자바스크립트_동작_원리.png",
@@ -243,6 +243,43 @@
     ]
   },
   {
+    "web": [
+      {
+        "id": 1,
+        "category": "web",
+        "title": "MPA와 SPA, 다양한 웹페이지 렌더링 방식 이해하기",
+        "date": "2023-08-03",
+        "path": "webpage-rendering-method",
+        "thumbnail": "SPA_MPA.png",
+        "featured": false,
+        "description": "CSR, SSR, SSG, ISR, 하이브리드 렌더링 이해하기",
+        "related": ["browser-rendering-process"]
+      },
+      {
+        "id": 2,
+        "category": "web",
+        "title": "브라우저의 구성 요소와 렌더링 과정 이해하기",
+        "description": "프론트엔드에서 중요한 것을 뽑으라면 브라우저가 아닐까?",
+        "date": "2024-03-01",
+        "path": "browser-rendering-process",
+        "thumbnail": "browser-rendering-process/browser-compartments.png",
+        "featured": false,
+        "related": []
+      },
+      {
+        "id": 3,
+        "category": "web",
+        "title": "웹페이지 성능 측정 지표와 최적화 방법 알아보기",
+        "date": "2023-12-01",
+        "path": "webpage-optimization",
+        "thumbnail": "webpage-optimization/performance.png",
+        "featured": false,
+        "description": "LCP, CLS, 이미지 최적화, throttling 등등에 대해 알아보기",
+        "related": ["rimflix-optimization"]
+      }
+    ]
+  },
+  {
     "development": [
       {
         "id": 1,
@@ -255,19 +292,9 @@
         "description": "컴포넌트를 어떻게 구분해야할까?",
         "related": ["how-to-use-atomic-design-system"]
       },
+
       {
         "id": 2,
-        "category": "developments",
-        "title": "MPA와 SPA, 다양한 웹페이지 렌더링 방식 이해하기",
-        "date": "2023-08-03",
-        "path": "webpage-rendering-method",
-        "thumbnail": "SPA_MPA.png",
-        "featured": false,
-        "description": "CSR, SSR, SSG, ISR, 하이브리드 렌더링 이해하기",
-        "related": ["browser-rendering-process"]
-      },
-      {
-        "id": 3,
         "category": "developments",
         "title": "프로그래밍의 데이터, 계산, 액션에 대해 이해하기",
         "description": "책 <함수형 코딩>: chaper 1, 2, 3, 4, 5",
@@ -278,7 +305,7 @@
         "related": ["functional-programming-2"]
       },
       {
-        "id": 4,
+        "id": 3,
         "category": "developments",
         "title": "함수형 프로그래밍의 계층형 설계 이해하기",
         "description": "책 <함수형 코딩>: chaper 8, 9",
@@ -289,7 +316,7 @@
         "related": ["functional-programming-1"]
       },
       {
-        "id": 5,
+        "id": 4,
         "category": "developments",
         "title": "대체 어떤 파일 구조가 가장 효율적인지에 대한 고찰",
         "description": "라우트 파일 구조, 아토믹 디자인 파일 구조 등등",
@@ -300,7 +327,7 @@
         "related": ["how-to-use-atomic-design-system"]
       },
       {
-        "id": 6,
+        "id": 5,
         "category": "developments",
         "title": "프론트엔드 개발자가 알아두면 좋은 UX 디자인 원칙 5가지",
         "date": "2024-01-30",
@@ -309,28 +336,6 @@
         "featured": true,
         "description": "책 <사용자를 유혹하는 UX의 기술>을 읽고",
         "related": []
-      },
-      {
-        "id": 7,
-        "category": "developments",
-        "title": "브라우저의 구성 요소와 렌더링 과정 이해하기",
-        "description": "프론트엔드에서 중요한 것을 뽑으라면 브라우저가 아닐까?",
-        "date": "2024-03-01",
-        "path": "browser-rendering-process",
-        "thumbnail": "functional-programming/functional-programming.png",
-        "featured": false,
-        "related": ["webpage-rendering-method"]
-      },
-      {
-        "id": 8,
-        "category": "developments",
-        "title": "웹페이지 성능 측정 지표와 최적화 방법 알아보기",
-        "date": "2023-12-01",
-        "path": "webpage-optimization",
-        "thumbnail": "webpage-optimization/performance.png",
-        "featured": false,
-        "description": "LCP, CLS, 이미지 최적화, throttling 등등에 대해 알아보기",
-        "related": ["rimflix-optimization"]
       }
     ]
   }

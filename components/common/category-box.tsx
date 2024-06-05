@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { FaCode } from 'react-icons/fa6';
+import { FaCode, FaFire } from 'react-icons/fa6';
 import { AiFillTool } from 'react-icons/ai';
 import { MdOutlineWeb } from 'react-icons/md';
 import StackIcon from './stack-icon';
@@ -25,11 +25,13 @@ export default function CategoryBox({
       {category === 'All' ? (
         ''
       ) : category === 'side-projects' ? (
-        <MdOutlineWeb className='text-[#c59562]' />
+        <FaFire className='text-[#ff5d5d]' />
       ) : category === 'library' ? (
-        <AiFillTool className='text-[#c0ffdd]' />
+        <AiFillTool className='text-[#468f68]' />
       ) : category === 'developments' ? (
-        <FaCode className='text-[#ff4d4d]' />
+        <FaCode className='text-[#e3674b]' />
+      ) : category === 'web' ? (
+        <MdOutlineWeb className='text-[#6c92f2]' />
       ) : (
         <StackIcon stack={category} />
       )}

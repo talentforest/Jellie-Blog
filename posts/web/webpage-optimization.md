@@ -10,7 +10,7 @@
 
 - Pagespeed Insights [바로가기](https://pagespeed.web.dev/)
 
-  ![pagespeed insights](/public/images/developments/webpage-optimization/web-optimization-1.png)
+  ![pagespeed insights](/public/images/web/webpage-optimization/web-optimization-1.png)
 
   구글에서 제공하는 무료 도구로 개발자들이 가장 많이 사용한다고 한다.
 
