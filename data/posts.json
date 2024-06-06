@@ -276,6 +276,17 @@
         "featured": false,
         "description": "LCP, CLS, 이미지 최적화, throttling 등등에 대해 알아보기",
         "related": ["rimflix-optimization"]
+      },
+      {
+        "id": 4,
+        "category": "web",
+        "title": "Manifest와 서비스 워커로 PWA 완성하기",
+        "date": "2024-06-05",
+        "path": "completing-pwa-with-manifest-and-service-worker",
+        "thumbnail": "completing-pwa-with-manifest-and-service-worker/pwa.png",
+        "featured": true,
+        "description": "PWA의 필수 구성 요소인 manifest 파일과 서비스 워커에 대해 대해 알아보자",
+        "related": []
       }
     ]
   },
