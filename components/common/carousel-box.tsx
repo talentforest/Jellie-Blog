@@ -30,11 +30,11 @@ interface Props {
 
 const defaultResponsive: Responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1400 },
+    breakpoint: { max: 3000, min: 1500 },
     items: 2,
   },
   tablet: {
-    breakpoint: { max: 1400, min: 0 },
+    breakpoint: { max: 1500, min: 0 },
     items: 1,
   },
 };

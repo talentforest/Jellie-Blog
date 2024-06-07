@@ -39,7 +39,7 @@ export default function PostBox({
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`w-full h-full overflow-hidden relative flex flex-col md:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-2xl transition shadow-md shadow-light-gray`}
+      className={`w-full h-full overflow-hidden relative flex flex-col md:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-3xl transition shadow-md shadow-light-gray`}
     >
       {thumbnail ? (
         <Image
@@ -63,15 +63,15 @@ export default function PostBox({
       >
         <CategoryBox category={category} />
         <h2
-          className={`mt-2.5 mb-3 ${
+          className={`mt-2.5 mb-3 font-bold leading-6 ${
             contentPreview ? '' : 'flex-1'
-          } text-[17px] tracking-wide font-bold group-hover:text-yellow`}
+          } text-[15px] group-hover:text-yellow`}
         >
           {title}
         </h2>
 
         {contentPreview && (
-          <p className='flex-1 text-sm tracking-wide mb-2.5 leading-6 text-slate group-hover:text-text'>
+          <p className='flex-1 text-sm mb-2.5 leading-6 text-slate group-hover:text-text'>
             {preview} ...
           </p>
         )}

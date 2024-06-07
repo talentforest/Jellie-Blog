@@ -19,10 +19,24 @@ const locus_sangsang = localFont({
   display: 'swap',
 });
 
-const king_sejong = localFont({
-  src: './font/KingSejongInstitute_Regular.ttf',
-  display: 'swap',
-  variable: '--font-king-sejong',
+const scdream = localFont({
+  src: [
+    {
+      path: './font/SCDream4.otf',
+      weight: '400',
+      style: 'thin',
+    },
+    {
+      path: './font/SCDream5.otf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: './font/SCDream6.otf',
+      weight: '700',
+      style: 'bold',
+    },
+  ],
 });
 
 export default function RootLayout({
@@ -32,13 +46,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body
-        className={`${king_sejong.variable} ${locus_sangsang.className} bg-bg text-text overscroll-none`}
-      >
+      <body className={`${scdream.className} bg-bg text-text overscroll-none`}>
         <Providers>
           <Header />
 
-          <main className='relative md:px-20 lg:px-40 mx-auto pb-28 selection:bg-[rgb(186,200,255)]'>
+          <main className='relative md:w-[75%] lg:w-[60%] mx-auto md:px-4 pb-28 selection:bg-[rgb(186,200,255)]'>
             {children}
             <ScrollToTopBtn />
           </main>
