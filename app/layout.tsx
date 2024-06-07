@@ -14,11 +14,6 @@ export const metadata = {
   icons: '/favicon.ico',
 };
 
-const locus_sangsang = localFont({
-  src: './font/locus_sangsang.otf',
-  display: 'swap',
-});
-
 const scdream = localFont({
   src: [
     {

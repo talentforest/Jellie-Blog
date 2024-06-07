@@ -22,9 +22,6 @@ module.exports = {
       transparent: 'transparent',
     },
     extend: {
-      fontFamily: {
-        king: ['var(--font-king-sejong)'],
-      },
       keyframes: {
         slideup: {
           '0%': { transform: 'translateY(20px)', opacity: 0 },

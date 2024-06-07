@@ -67,7 +67,7 @@ export default function MarkdownViewer({ content }: Props) {
           );
         },
         table: ({ children }) => (
-          <table className='break-all font-king mt-2 mb-4 text-text bg-box rounded-md px-10'>
+          <table className='break-all mt-2 mb-4 text-text bg-box rounded-md px-10'>
             {children}
           </table>
         ),
