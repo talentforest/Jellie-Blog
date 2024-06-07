@@ -36,17 +36,17 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='fixed bottom-3 right-3 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center md:hidden'
+        className='fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center lg:hidden'
       >
         <FaChevronUp fontSize={12} />
-        <h1 className='text-sm md:text-base font-bold text-slate'>목차</h1>
+        <h1 className='text-sm md:text-base text-slate'>목차</h1>
       </button>
 
       <Modal openToc={openToc} toggleModal={toggleToc}>
         <nav
           className={`z-10 overflow-scroll scrollbar-hide transition p-4 h-fit rounded-xl max-h-[90vh]`}
         >
-          <h1 className='mb-4 text-sm md:text-base font-bold text-indigo'>
+          <h1 className='mb-4 font-bold text-md md:text-base text-gray'>
             목차
           </h1>
           <ul className='flex flex-col space-y-2.5'>
@@ -57,13 +57,11 @@ export default function Toc() {
         </nav>
       </Modal>
 
-      {/* 태블릿 스크린 이상 */}
+      {/* 데스크탑 스크린 이상 */}
       <nav
-        className={`hidden md:sticky top-8 md:block z-10 md:w-60 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
+        className={`hidden z-10 mt-10 px-2 pl-4 lg:block lg:sticky top-24 -mr-52 w-52 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
-        <h1 className='mb-4 text-sm md:text-base font-bold text-indigo'>
-          목차
-        </h1>
+        <h1 className='mb-4 font-bold text-sm text-gray'>목차</h1>
         <ul className='flex flex-col space-y-2.5'>
           {headingEls.map((el) => (
             <TocElement key={el.id} element={el} activeId={activeId} />

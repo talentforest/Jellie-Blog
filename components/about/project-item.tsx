@@ -24,7 +24,7 @@ export default function ProjectItem({
       />
 
       <div className='p-3 -mt-4 rounded-2xl bg-box relative flex flex-col'>
-        <h5 className='group-hover:text-indigo font-bold mb-1.5 flex items-center text-lg'>
+        <h5 className='group-hover:text-indigo mb-1.5 flex items-center text-lg'>
           # {name}
         </h5>
         <p className='py-2 text-base text-teal leading-6'>{description}</p>

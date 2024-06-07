@@ -7,7 +7,7 @@ export const metadata = {
   description: 'Jellie의 기술 블로그입니다.',
 };
 
-const HEADING_STYLE = 'font-bold text-lg flex items-center text-gray';
+const HEADING_STYLE = 'text-lg flex items-center text-gray';
 
 export default async function AboutPage() {
   const projectList = await getAllProjects();

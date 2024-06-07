@@ -17,12 +17,12 @@ export default function ThemeMode() {
   const onModifyClick = (theme: string) => setTheme(theme);
 
   const modeIconStyle =
-    'hover:text-indigo hover:scale-105 transition text-yellow w-5 h-5 cursor-pointer';
+    'hover:text-indigo hover:scale-105 transition text-yellow w-5 h-5 md:w-6 md:h-6 cursor-pointer';
 
   return (
     <>
       {!mounted ? (
-        <AiOutlineLoading3Quarters className='w-4 h-4 animate-spin' />
+        <AiOutlineLoading3Quarters className='w-5 h-5 animate-spin' />
       ) : theme === 'system' ? (
         <button onClick={() => onModifyClick('dark')} className='pb-0.5'>
           <MdSettingsBrightness className={modeIconStyle} />
