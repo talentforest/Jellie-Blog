@@ -286,7 +286,20 @@
         "thumbnail": "completing-pwa-with-manifest-and-service-worker/pwa.png",
         "featured": true,
         "description": "PWA의 필수 구성 요소인 manifest 파일과 서비스 워커에 대해 대해 알아보자",
-        "related": []
+        "related": [
+          "how-to-implement-push-notifications-with-fcm-and-firebase-functions"
+        ]
+      },
+      {
+        "id": 5,
+        "category": "web",
+        "title": "FCM과 Firebase Functions으로 PWA 웹에서 푸시 알림 기능 구현하기",
+        "date": "2024-06-06",
+        "path": "how-to-implement-push-notifications-with-fcm-and-firebase-functions",
+        "thumbnail": "how-to-implement-push-notifications-with-fcm-and-firebase-functions/fcm.png",
+        "featured": false,
+        "description": "독서모임 한페이지 기록앱에서 푸시 알림을 어떻게 구현했을까?",
+        "related": ["completing-pwa-with-manifest-and-service-worker"]
       }
     ]
   },
