@@ -64,8 +64,9 @@ export default function Introduction({
       <div className='mt-4 flex-1 items-center justify-center flex flex-col md:ml-5 md:items-start'>
         <h3 className='font-normal'>🌼 젤리 🌼</h3>
         <p className='text-[15px] leading-6 m-4 tracking-wide text-center md:text-start'>
-          개발을 통해 재미있는 프로젝트를 만들며 성장하는 프론트엔드 개발자
-          젤리입니다. {introduction}
+          사이드 프로젝트를 통해 성장하는 프론트엔드 개발자 젤리입니다. 소통을
+          최우선의 가치로 두고 있습니다.
+          {introduction}
         </p>
 
         {extraData && (

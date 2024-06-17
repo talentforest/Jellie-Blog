@@ -19,7 +19,7 @@ export default function CategoryBox({
   return (
     <div
       className={`self-start max-w-full max-h-8 ${
-        selected ? 'bg-indigo' : 'bg-hoverbox'
+        selected ? 'bg-indigo font-bold' : 'bg-box'
       } group-hover:opacity-100 border border-light-gray rounded-full text-sm pr-3 items-center flex gap-1 pl-2.5 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
     >
       {category === 'All' ? (

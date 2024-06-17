@@ -17,7 +17,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-10 text-text w-full h-14 md:h-[65px] bg-box border-b border-light-gray`}
+      className={`sticky top-0 z-[1001] text-text w-full h-14 md:h-[65px] bg-box border-b border-light-gray`}
     >
       <div className='md:w-[75%] lg:w-[60%] px-4 h-full mx-auto flex justify-between items-center'>
         <h1>

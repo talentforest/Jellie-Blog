@@ -4,62 +4,34 @@ import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
 import { MdContentPaste } from 'react-icons/md';
-import { RiLink } from 'react-icons/ri';
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
+import { useState } from 'react';
+import { FaCircleCheck } from 'react-icons/fa6';
+import CodeBlock from './code-block';
 
 interface Props {
   content: string;
 }
 
 export default function MarkdownViewer({ content }: Props) {
-  const copyCodeBlock = (code: string) => {
-    if (navigator.clipboard) {
-      navigator.clipboard.writeText(code).catch(() => {
-        alert('복사를 다시 시도해주세요.');
-      });
-    }
-  };
-
   return (
     <ReactMarkdown
-      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-8 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
         code({ node, inline, className, children, ...props }: CodeProps) {
           const match = /language-(\w+)/.exec(className || '');
           return !inline && match ? (
-            <>
-              <button
-                onClick={() => {
-                  copyCodeBlock(String(children).replace(/\n$/, ''));
-                }}
-                className='z-10 absolute right-2 bottom-2 text-slate hover:text-white transition'
-              >
-                <MdContentPaste className='h-5 w-5' />
-              </button>
-
-              <SyntaxHighlighter
-                language={match[1]}
-                PreTag='div'
-                style={vscDarkPlus}
-                customStyle={{
-                  margin: 0,
-                  paddingTop: 15,
-                  paddingBottom: 15,
-                  borderRadius: 0,
-                  borderWidth: 0,
-                }}
-              >
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            </>
+            <CodeBlock language={match[1]}>
+              {String(children).replace(/\n$/, '')}
+            </CodeBlock>
           ) : (
             <code
-              className={`${className} before:hidden after:hidden py-1 px-1.5  bg-light-gray text-sm text-[#ff5b5b] rounded-[5px]`}
+              className={`before:hidden after:hidden py-1 px-1.5 bg-light-gray text-sm text-[#ff5b5b] rounded-[5px]`}
               {...props}
             >
               {children}
@@ -106,7 +78,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='[&:first-child]:border-indigo text-indigo mt-16 mb-0 text-[25px]'
+            className='[&+*]:mt-3 text-[28px] text-indigo mt-16 mb-0'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -114,7 +86,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='text-[22px] text-blue mt-8 mb-0'
+            className='[&+*]:mt-3 text-[22px] text-light-indigo mt-8 mb-0'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -123,7 +95,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='text-[18px] text-light-blue mt-3 mb-0'
+            className='[&+*]:mt-3 text-[18px] text-light-blue mt-3 mb-0'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >
@@ -161,20 +133,20 @@ export default function MarkdownViewer({ content }: Props) {
           <del className={`${className} text-slate`} {...props} />
         ),
         li: ({ children }) => (
-          <li className='marker:text-text mt-1.5 mb-5 [&>a]:my-0 [&>p]:my-2 [&>p::before]:hidden [&>p::after]:hidden'>
+          <li className='marker:text-text mt-1.5 mb-3.5 [&>a]:my-0 [&>p]:my-2 [&>p::before]:hidden [&>p::after]:hidden'>
             {children}
           </li>
         ),
         ol: ({ children, ordered, ...props }) => (
-          <ol className='marker:text-text mt-1 mb-4' {...props}>
+          <ol className='marker:text-text mt-2 mb-0' {...props}>
             {children}
           </ol>
         ),
         ul: ({ children }) => (
-          <ul className='marker:text-text mt-1 mb-4 pl-5'>{children}</ul>
+          <ul className='marker:text-text mt-2 mb-0 pl-5'>{children}</ul>
         ),
         hr: ({ children }) => (
-          <hr className='my-3 border-light-gray'>{children}</hr>
+          <hr className='my-5 border-light-gray'>{children}</hr>
         ),
       }}
     >
