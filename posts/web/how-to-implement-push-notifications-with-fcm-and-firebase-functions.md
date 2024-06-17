@@ -345,7 +345,7 @@ npm run dev
 
 그럼 이제 본격적으로 푸시 알림을 보낼 서버 함수를 만들어보자. 현재 나의 설치한 버전은 다음과 같다.
 
-```json:server/functions
+```json:server/functions/package.json
 "dependencies": {
   "firebase-admin": "^12.1.0",
   "firebase-functions": "^5.0.0"
@@ -645,7 +645,7 @@ export const sendMulticast = httpsCallable<FcmMulticastData, CallableResult>(
 
      실제로 테스트를 해보면서 비활성화된 토큰들이 발생했고 전송 실패 결과가 떴다. 클라이언트에서는 토큰을 배열에 추가만 하기 때문에 시간이 지날수록 유효하지 않은 토큰들은 계속 쌓일 것이었다. 그래서 어떻게 할지 고민하다가 일단 알림을 보내고 실패 결과가 뜬 토큰들은 문서에서 삭제하기로 했다.
 
-     ```javascript:server/functions/index.ts
+     ```javascript:server/functions/src/index.ts
      // 생략...
 
      try {
