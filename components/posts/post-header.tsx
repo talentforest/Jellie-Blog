@@ -2,7 +2,6 @@ import Image from 'next/image';
 import DateItem from '../common/date-item';
 import TimeToReadItem from '../common/time-to-read-item';
 import CategoryBox from '../common/category-box';
-import ProgressBar from './progress-bar';
 
 interface Props {
   contents: {
@@ -20,7 +19,7 @@ export default function PostHeader({ contents }: Props) {
 
   return (
     <>
-      <header className='w-full sticky top-0 rounded-b-[30px] mb-5 px-5 md:px-8 py-8 md:pt-20 md:pb-14 flex flex-col items-start'>
+      <header className='w-full sticky top-16 md:top-[78px] rounded-b-[30px] mb-5 px-5 md:px-8 py-8 md:pt-20 md:pb-14 flex flex-col items-start'>
         {thumbnail && title && category ? (
           <Image
             src={`/images/${category}/${thumbnail}`}
