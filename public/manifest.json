@@ -1,0 +1,22 @@
+{
+  "name": "Jellie Blog",
+  "short_name": "Jellie Blog",
+  "theme_color": "#e3e3e3",
+  "background_color": "#e3e3e3",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "description": "젤리의 기술 블로그",
+  "icons": [
+    {
+      "src": "/images/jeliies.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/jeliies.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

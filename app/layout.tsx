@@ -41,6 +41,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
+      <link rel='manifest' href='/manifest.json' />
+      <link rel='apple-touch-icon' href='/images/jellies.png' />
       <body className={`${scdream.className} bg-bg text-text overscroll-none`}>
         <Providers>
           <Header />
