@@ -27,7 +27,7 @@ export default function PostHeader({ contents }: Props) {
             layout='fill' // fill layout to cover the header
             objectFit='cover'
             priority
-            className='brightness-100 opacity-20 rounded-b-[30px] -z-10'
+            className='brightness-100 opacity-20 rounded-b-[30px]'
           />
         ) : (
           <></>

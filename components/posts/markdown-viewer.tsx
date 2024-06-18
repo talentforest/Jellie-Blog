@@ -1,15 +1,10 @@
 'use client';
 
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { CodeProps } from 'react-markdown/lib/ast-to-react';
-import { MdContentPaste } from 'react-icons/md';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import remarkGfm from 'remark-gfm';
 import Image from 'next/image';
 import rehypeCodeTitles from 'rehype-code-titles';
-import { useState } from 'react';
-import { FaCircleCheck } from 'react-icons/fa6';
 import CodeBlock from './code-block';
 
 interface Props {
@@ -19,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
+      className='border [&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -38,6 +33,9 @@ export default function MarkdownViewer({ content }: Props) {
             </code>
           );
         },
+        pre: ({ children }) => (
+          <pre className='relative p-0 m-0 mb-2'>{children}</pre>
+        ),
         table: ({ children }) => (
           <table className='break-all mt-2 mb-4 text-text bg-box rounded-md px-10'>
             {children}
@@ -57,9 +55,6 @@ export default function MarkdownViewer({ content }: Props) {
             </td>
           );
         },
-        pre: ({ children }) => (
-          <pre className='relative p-0 m-0 mb-2 z-0'>{children}</pre>
-        ),
         strong: ({ children }) => (
           <strong className='relative'>
             <span className='relative align-middle text-blue px-0.5 pb-[0.5px] bg-[#489afd1d]'>
