@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='border [&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -34,7 +34,7 @@ export default function MarkdownViewer({ content }: Props) {
           );
         },
         pre: ({ children }) => (
-          <pre className='relative p-0 m-0 mb-2'>{children}</pre>
+          <pre className='relative p-0 m-0 mb-4'>{children}</pre>
         ),
         table: ({ children }) => (
           <table className='break-all mt-2 mb-4 text-text bg-box rounded-md px-10'>
@@ -81,7 +81,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h3: ({ node, children, ...props }) => (
           <h3
-            className='[&+*]:mt-3 text-[22px] text-light-indigo mt-8 mb-0'
+            className='[&+*]:mt-3 text-[23px] text-sky-blue mt-10 mb-0'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >

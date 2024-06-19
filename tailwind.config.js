@@ -6,7 +6,7 @@ module.exports = {
       bg: 'var(--bg)',
       text: 'var(--text)',
       indigo: 'var(--indigo)',
-      'light-indigo': 'var(--indigo)',
+      'sky-blue': 'var(--sky-blue)',
       yellow: 'var(--yellow)',
       'light-blue': 'var(--light-blue)',
       'light-yellow': 'var(--light-yellow)',

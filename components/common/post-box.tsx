@@ -32,7 +32,7 @@ export default function PostBox({
   const preview = content
     .replace(/#|##|###|####|#####|######|\*|_|`|>|:|---|---|\|/g, '')
     .replace(/\[.*?\]\(.*?\)/g, '')
-    .slice(0, 150);
+    .slice(0, 120);
 
   return loading ? (
     <Loading />
@@ -48,7 +48,7 @@ export default function PostBox({
           width={300}
           height={200}
           priority
-          className={`w-full md:w-1/3 max-h-56 md:max-h-none object-cover border rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none`}
+          className={`w-full md:w-1/3 max-h-56 md:max-h-none object-cover`}
         />
       ) : (
         <div

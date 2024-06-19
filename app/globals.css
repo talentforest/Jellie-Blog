@@ -5,11 +5,11 @@
   :root {
     --bg: #fcfcfc;
     --text: #222;
-    --indigo: #4f46e5;
-    --light-indigo: #9077ff;
+    --indigo: #6159f6;
     --yellow: #eab308;
     --light-yellow: #ffd969;
-    --light-blue: #3aa7eb;
+    --sky-blue: #5982e2;
+    --light-blue: #56beff;
     --blue: #2563eb;
     --teal: #0d9470;
     --white: #fff;
@@ -25,9 +25,9 @@
     --bg: #111;
     --text: #fff;
     --indigo: #a481ff;
-    --light-indigo: #c1b4ff;
     --yellow: #eab308;
     --light-yellow: #ffd969;
+    --sky-blue: #7a9ff5;
     --light-blue: #9edaff;
     --blue: #2776f4;
     --teal: #14b8a6;
