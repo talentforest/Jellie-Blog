@@ -297,9 +297,20 @@
         "date": "2024-06-06",
         "path": "how-to-implement-push-notifications-with-fcm-and-firebase-functions",
         "thumbnail": "how-to-implement-push-notifications-with-fcm-and-firebase-functions/fcm.png",
-        "featured": false,
+        "featured": true,
         "description": "독서모임 한페이지 기록앱에서 푸시 알림을 어떻게 구현했을까?",
         "related": ["completing-pwa-with-manifest-and-service-worker"]
+      },
+      {
+        "id": 6,
+        "category": "web",
+        "title": "웹 접근성 가이드: 한국형 웹 접근성의 새로운 지침과 웹 접근성을 높이는 방법 알아보기",
+        "date": "2024-06-18",
+        "path": "web-accessibility-guide-creating-web-for-all-users",
+        "thumbnail": "web-accessibility/web-accessibility.png",
+        "featured": false,
+        "description": "웹 접근성은 왜 중요하고 어떻게 높일 수 있을까?",
+        "related": []
       }
     ]
   },
