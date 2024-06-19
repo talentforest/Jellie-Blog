@@ -71,7 +71,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
 
       {/* 지금 읽은 포스트와 비슷한 포스트 */}
       {relatedPosts.length !== 0 && (
-        <section className='mt-12 px-4 md:px-0 flex flex-col text-lg bg-bg'>
+        <section className='mt-16 px-4 md:px-0 flex flex-col text-lg bg-bg'>
           <h4 className='text-slate ml-1'>관련 포스트</h4>
           <CarouselBox
             responsive={swiperResponsive}
@@ -85,7 +85,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
       )}
 
       {/* 이전 다음 포스트 */}
-      <section className='mt-12 px-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
+      <section className='mt-28 px-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
         <h4 className='text-slate'>다른 포스트</h4>
         <ul className='flex flex-col gap-3.5'>
           {prev && (
