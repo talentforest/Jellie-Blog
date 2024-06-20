@@ -16,7 +16,7 @@ export default async function AboutPage() {
     <>
       <Introduction
         extraData
-        introduction='이 블로그에서는 개발에 대해 공부한 것들과, 사이드 프로젝트를 개발하면서
+        introduction='블로그에서는 개발에 대해 공부한 것들과, 사이드 프로젝트를 개발하면서
           느꼈던 점들에 대해 작성하고 있습니다.'
       />
 

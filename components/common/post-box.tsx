@@ -59,7 +59,7 @@ export default function PostBox({
       )}
 
       <div
-        className={`flex rounded-t-2xl md:rounded-none flex-col px-3.5 py-3 -mt-5 md:mt-0 relative bg-box flex-1`}
+        className={`flex rounded-t-2xl md:rounded-none flex-col px-2.5 py-3 -mt-5 md:mt-0 relative bg-box flex-1`}
       >
         <CategoryBox category={category} />
         <h2
