@@ -1,6 +1,7 @@
-import { getAllProjects } from '@/service/about';
+import { getAllProjects, getPersonalDataList } from '@/service/about';
 import ProjectItem from '@/components/about/project-item';
 import Introduction from '@/components/home/introduction';
+import PersonalDataItem from '@/components/about/personal-data-item';
 
 export const metadata = {
   title: 'About',
@@ -11,14 +12,17 @@ const HEADING_STYLE = 'text-lg flex items-center text-gray';
 
 export default async function AboutPage() {
   const projectList = await getAllProjects();
+  const personalDataList = await getPersonalDataList();
 
   return (
     <>
-      <Introduction
-        extraData
-        introduction='블로그에서는 개발에 대해 공부한 것들과, 사이드 프로젝트를 개발하면서
-          느꼈던 점들에 대해 작성하고 있습니다.'
-      />
+      <Introduction />
+
+      <ul className='relative flex flex-col items-center justify-center gap-2 pl-1 mt-4'>
+        {personalDataList.map(({ type, title, link }) => (
+          <PersonalDataItem key={type} type={type} title={title} link={link} />
+        ))}
+      </ul>
 
       <section className='mx-4 mt-14 mb-8 md:mx-0'>
         <header className='flex mb-2 px-2 justify-between items-center'>

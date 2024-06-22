@@ -1,8 +1,17 @@
 [
-  { "name": "GITHUB", "item": "https://github.com/talentforest" },
   {
-    "name": "BLOG",
-    "item": "https://jellieblog.dev/"
+    "type": "Email",
+    "title": "Jellie의 이메일",
+    "link": "talentforest0501@gmail.com"
   },
-  { "name": "EMAIL", "item": "talentforest0501@gmail.com" }
+  {
+    "type": "GitHub",
+    "title": "Jellie의 깃헙 바로가기",
+    "link": "https://github.com/talentforest"
+  },
+  {
+    "type": "Blog",
+    "title": "Jellie의 기술블로그 바로가기",
+    "link": "https://jellieblog.dev/"
+  }
 ]
