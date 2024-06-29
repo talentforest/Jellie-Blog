@@ -2,26 +2,25 @@ import { ReactNode } from 'react';
 
 interface Props {
   children: ReactNode;
-  openToc: boolean;
+  openModal: boolean;
   toggleModal: () => void;
 }
 
-export default function Modal({ openToc, children, toggleModal }: Props) {
-  const isVisibleClassName = openToc ? '' : 'hidden';
-
+export default function Modal({ openModal, children, toggleModal }: Props) {
   return (
-    <>
+    <div className={`${openModal ? '' : 'hidden'} z-[1002] fixed inset-0 `}>
       {/* 오버레이 */}
       <div
         onClick={toggleModal}
-        className={`lg:hidden cursor-pointer ${isVisibleClassName} overflow-hidden transition fixed bottom-0 top-0 z-[1002] left-0 right-0 mx-auto w-full h-screen bg-black opacity-50`}
+        className={`cursor-pointer overflow-hidden transition w-full h-screen bg-black opacity-80`}
       />
+
       {/* 모달 */}
       <div
-        className={`lg:hidden ${isVisibleClassName} overflow-scroll scrollbar-hide z-[1002] fixed inset-0 m-auto h-fit w-[80%] md:w-[50%] max-h-[85%] border-2 border-slate bg-bg rounded-xl transition animate-[slideup_300ms]`}
+        className={`rounded-md overflow-scroll scrollbar-hide fixed inset-y-0 inset-x-4 m-auto w-fit h-fit max-h-[78%] transition animate-[slideup_300ms]`}
       >
         {children}
       </div>
-    </>
+    </div>
   );
 }

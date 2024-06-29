@@ -26,6 +26,8 @@ interface Props {
     autoPlay?: boolean;
     arrows?: boolean;
   };
+  containerClass?: string;
+  itemClass?: string;
 }
 
 const defaultResponsive: Responsive = {
@@ -39,7 +41,13 @@ const defaultResponsive: Responsive = {
   },
 };
 
-export default function CarouselBox({ children, config, responsive }: Props) {
+export default function CarouselBox({
+  children,
+  config,
+  responsive,
+  containerClass,
+  itemClass,
+}: Props) {
   const {
     centerMode,
     showDots = true,
@@ -59,8 +67,8 @@ export default function CarouselBox({ children, config, responsive }: Props) {
       centerMode={centerMode}
       arrows={arrows}
       customTransition='transform 0.8s ease-in-out'
-      containerClass='min-h-20 pt-4 pb-12'
-      itemClass='px-1.5'
+      containerClass={containerClass}
+      itemClass={itemClass}
       dotListClass='[&>.react-multi-carousel-dot--active>button]:bg-light-yellow'
     >
       {children}

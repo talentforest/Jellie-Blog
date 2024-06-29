@@ -5,7 +5,7 @@ interface Props {
   height?: number;
 }
 
-export default function Avatar({ width = 120, height = 120 }: Props) {
+export default function Avatar({ width = 140, height = 140 }: Props) {
   return (
     <Image
       src='/images/about/avatar.png'

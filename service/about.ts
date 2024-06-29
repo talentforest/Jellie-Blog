@@ -2,13 +2,17 @@ import path from 'path';
 import { promises as fs } from 'fs';
 
 export interface Project {
+  group: string[];
   name: string;
   path: string;
+  status: '배포 완료' | '서비스 운영중';
   description: string;
   stacks: string[];
   link: string;
   github: string;
-  relatedPosts: string;
+  relatedPostPaths: string[];
+  startDate: string;
+  endDate: string;
 }
 
 export interface PersonalData {
