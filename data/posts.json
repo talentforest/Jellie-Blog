@@ -52,6 +52,17 @@
         "featured": false,
         "description": "싱글 스레드, Stack, Queue, 이벤트 루프, 비동기 동작 방식 등",
         "related": []
+      },
+      {
+        "id": 2,
+        "category": "javascript",
+        "title": "지역별로 시간대, 통화 기호, 상대적인 시간 등을 자동으로 변경하고 싶다면? 자바스크립트의 Intl API 활용법 알아보기",
+        "date": "2024-06-28",
+        "path": "learn-how-to-use-javascript-intl-api-for-internationalization",
+        "thumbnail": "learn-how-to-use-javascript-intl-api-for-internationalization/javascript-intl-api.png",
+        "featured": false,
+        "description": "Intl를 활용하여 어떻게 시간과 이름, 장소에 대한 국제화를 하는지 알아보자.",
+        "related": []
       }
     ]
   },
