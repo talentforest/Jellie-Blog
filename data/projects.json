@@ -6,7 +6,7 @@
     "status": "서비스 운영중",
     "startDate": "2022-05-25",
     "endDate": "",
-    "description": "독서모임 한페이지를 위한 서비스 어플리케이션입니다. 독서모임 관리를 위한 여러가지 기능들을 제공하고 있습니다.",
+    "description": "독서모임 한페이지를 위한 서비스 어플리케이션입니다. 독서모임의 효율적인 관리를 위해 모임 관련 정보나 발제문 등록, 불참 설정, 챌린지 등 여러가지 기능들을 제공하고 있으며 현재 운영중입니다.",
     "stacks": [
       "pwa",
       "react",
@@ -17,29 +17,44 @@
     ],
     "link": "https://talentforest.github.io/han-bookclub-app/",
     "github": "https://github.com/talentforest/han-bookclub-app",
-    "relatedPostPaths": ["bookclub-hanpage-app-review"]
+    "images": [
+      "bookclub_hanpage.png",
+      "bookclub_hanpage_3.png",
+      "bookclub_hanpage_2.png"
+    ],
+    "relatedPostPaths": [
+      "bookclub-hanpage-app-review",
+      "bookclub-hanpage-app-review-2",
+      "how-to-implement-push-notifications-with-fcm-and-firebase-functions"
+    ]
   },
   {
     "group": ["1인 개발"],
     "name": "젤리 기술블로그",
     "path": "jellie_blog.png",
+    "images": ["jellie_blog.png"],
     "status": "서비스 운영중",
     "startDate": "2023-05-21",
     "endDate": "",
-    "description": "개발과 관련된 글들을 작성하기 위해 만든 개인 기술블로그입니다. 블로그를 위한 여러가지 기능들을 개발했습니다.",
+    "description": "Next.js로 만든 정적 블로그로 개발과 관련된 글들을 작성하고 있습니다.",
     "stacks": ["next.js", "typescript", "tailwindcss", "react-markdown"],
     "link": "",
     "github": "https://github.com/talentforest/jellie-blog",
-    "relatedPostPaths": ["jellie-blog-construction-process"]
+    "relatedPostPaths": [
+      "jellie-blog-construction-process",
+      "jellie-blog-features-2",
+      "jellie-blog-features-1"
+    ]
   },
   {
     "group": ["1인 개발"],
     "name": "냉장고에 뭐가 있지",
     "path": "what_is_in_the_fridge.png",
-    "status": "서비스 운영중",
+    "images": ["what_is_in_the_fridge.png"],
+    "status": "구글 플레이스토어 출시",
     "startDate": "2023-08-31",
     "endDate": "2023-11-20",
-    "description": "구글 플레이스토어에 출시한 냉장고 관리 서비스 앱입니다. 냉장고 내부를 시각화하여 갖고 있는 식재료 상태를 한눈에 파악할 수 있습니다.",
+    "description": "자취생들을 위한 냉장고 관리 서비스 앱입니다. 일반 냉장고 내부를 시각화하여 갖고 있는 식재료 상태를 한눈에 파악하고 관리할 수 있으며 내가 자주 먹는 식료품, 장보기 목록을 작성할 수 있습니다.",
     "stacks": [
       "react-native",
       "expo",
@@ -47,14 +62,18 @@
       "tailwindcss",
       "redux-toolkit"
     ],
-    "link": "https://what-is-in-the-fridge-fawn.vercel.app/",
-    "github": "https://github.com/talentforest/what-is-in-the-fridge",
-    "relatedPostPaths": []
+    "link": "https://play.google.com/store/apps/details?id=com.ellie0501.whatisinmyfridge",
+    "github": "https://github.com/talentforest/what-is-in-the-fridge_free",
+    "relatedPostPaths": [
+      "react-native-iap-with-expo",
+      "mobile-app-launch-on-google-play-console-after-nov-13"
+    ]
   },
   {
     "group": ["1인 개발"],
     "name": "림플릭스",
     "path": "rimflix.png",
+    "images": ["rimflix.png"],
     "status": "배포 완료",
     "startDate": "2022-07-26",
     "endDate": "2023-05-03",
@@ -76,10 +95,11 @@
     "group": ["프론트엔드 5명", "UXUI 디자이너 2명"],
     "name": "기업연계프로젝트: 세이블 마케팅 랜딩페이지",
     "path": "savle.png",
+    "images": ["savle.png"],
     "status": "배포 완료",
     "startDate": "2022-01-27",
     "endDate": "2022-02-23",
-    "description": "실제 기업 서비스로 활용된 프로젝트입니다. 서비스 기획부터 개발까지 모두 참여하여 저축계산기, 고민해결소 목표 공유와 같은 저축 관련 기능들을 개발했습니다.",
+    "description": "실제 기업 서비스로 활용된 프로젝트입니다. 서비스 기획부터 개발까지 모두 참여하여 저축 관련 마케팅 서비스를 개발했습니다. 저는 고민해결소 페이지를 전담하여 개발했습니다.",
     "stacks": ["next.js", "sass", "swr"],
     "link": "https://with-savle.vercel.app/",
     "github": "",
@@ -89,6 +109,7 @@
     "group": ["프론트엔드 1명", "UXUI 디자이너 1명"],
     "name": "뉴 해커 뉴스",
     "path": "해커뉴스.png",
+    "images": ["해커뉴스.png"],
     "status": "배포 완료",
     "startDate": "2022-01-27",
     "endDate": "2022-02-02",

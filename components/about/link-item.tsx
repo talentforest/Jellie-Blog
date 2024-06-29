@@ -19,7 +19,10 @@ export default function LinkItem({ href, path, linkTitle, name }: Props) {
           title={linkTitle}
           className='leading-3 text-gray hover:text-medium-gray underline'
         >
-          <RiArticleFill fontSize={14} className='inline w-4 h-4 mb-0.5' />
+          <RiArticleFill
+            fontSize={14}
+            className='inline w-4 h-4 mb-0.5 mr-0.5'
+          />
           <span className='text-sm'>{name}</span>
         </Link>
       )}
