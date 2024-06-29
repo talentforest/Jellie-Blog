@@ -1,11 +1,8 @@
 'use client';
 
 import { Project } from '@/service/about';
-import { FaGithub, FaSearch } from 'react-icons/fa';
-import { RiArticleFill, RiLink } from 'react-icons/ri';
+import { FaSearch } from 'react-icons/fa';
 import { Post } from '@/service/posts';
-import { getTimeTaken } from '@/util/getTimeTaken';
-import { AiFillCalendar } from 'react-icons/ai';
 import { useState } from 'react';
 import Modal from '../common/modal';
 import Image from 'next/image';
@@ -25,6 +22,7 @@ export default function ProjectItem({
     group,
     name,
     path,
+    images,
     status,
     description,
     stacks,
@@ -68,7 +66,9 @@ export default function ProjectItem({
               className={`inline-block border px-2 pt-1 pb-0.5 text-gray text-xs rounded-full ${
                 status === '서비스 운영중'
                   ? 'text-teal bg-light-teal'
-                  : 'text-yellow bg-lightest-yellow'
+                  : status === '배포 완료'
+                  ? 'text-yellow bg-lightest-yellow'
+                  : 'text-sky-blue bg-lightest-blue'
               }`}
             >
               {status}
@@ -103,48 +103,31 @@ export default function ProjectItem({
 
       {openModal && (
         <Modal openModal={openModal} toggleModal={toggleModal}>
-          <div className='rounded-lg w-[90vw] md:w-[60vw] lg:w-[72vw] flex flex-col lg:flex-row gap-3 lg:gap-2 relative'>
-            <div className='h-fit flex flex-col gap-2 md:min-w-[200px]'>
-              {/* 모바일, 태블릿 이미지 */}
-              <div className='lg:hidden'>
-                <CarouselBox
-                  config={{
-                    centerMode: false,
-                    showDots: false,
-                    swipeable: false,
-                    infinite: false,
-                    autoPlay: false,
-                    arrows: true,
-                  }}
-                  itemClass='px-1'
-                >
-                  {[1, 2, 3].map((image) => (
-                    <Image
-                      key={image}
-                      src={`/images/about/${path}`}
-                      alt='프로젝트: 냉장고에 뭐가 있지 썸네일'
-                      width={400}
-                      height={300}
-                      priority
-                      className='w-full rounded-md object-cover transition'
-                    />
-                  ))}
-                </CarouselBox>
-              </div>
-
-              {/* 데스크탑 이미지 */}
-              {[1, 2, 3].map((image) => (
-                <div key={image} className='relative hidden lg:block'>
+          <div className='rounded-lg w-[90vw] md:w-[60vw] lg:w-[60vw] flex flex-col gap-3 lg:gap-2 relative'>
+            <div className='relative h-fit flex flex-col gap-2 md:min-w-[200px]'>
+              <CarouselBox
+                config={{
+                  centerMode: false,
+                  showDots: false,
+                  swipeable: false,
+                  infinite: false,
+                  autoPlay: false,
+                  arrows: true,
+                }}
+                itemClass='px-1'
+              >
+                {images.map((image) => (
                   <Image
-                    src={`/images/about/${path}`}
+                    key={image}
+                    src={`/images/about/${image}`}
                     alt='프로젝트: 냉장고에 뭐가 있지 썸네일'
-                    width={500}
-                    height={400}
+                    width={400}
+                    height={300}
                     priority
-                    className='max-w-[400px] max-h-[170px] md:rounded-md w-full object-cover transition shadow-md shadow-light-gray'
+                    className='w-full h-full rounded-md object-fill transition'
                   />
-                </div>
-              ))}
+                ))}
+              </CarouselBox>
             </div>
 
             <div className='mx-1 px-4 pt-5 pb-8 flex flex-col  bg-box rounded-md'>
@@ -158,7 +141,9 @@ export default function ProjectItem({
                   className={`inline-block border px-2 pt-1 pb-0.5 text-gray text-xs rounded-full ${
                     status === '서비스 운영중'
                       ? 'text-teal bg-light-teal'
-                      : 'text-yellow bg-lightest-yellow'
+                      : status === '배포 완료'
+                      ? 'text-yellow bg-lightest-yellow'
+                      : 'text-sky-blue bg-lightest-blue'
                   }`}
                 >
                   {status}
@@ -205,14 +190,16 @@ export default function ProjectItem({
               {relatedPostPaths.length !== 0 && (
                 <>
                   <DetailTitle title='관련 포스트' />
-                  {relatedPostPaths.map((path) => (
-                    <LinkItem
-                      key={path}
-                      path={path}
-                      linkTitle='사이드 프로젝트 관련 포스트'
-                      name={findPostTitle(path) || '포스트'}
-                    />
-                  ))}
+                  <div className='flex flex-col gap-2'>
+                    {relatedPostPaths.map((path) => (
+                      <LinkItem
+                        key={path}
+                        path={path}
+                        linkTitle='사이드 프로젝트 관련 포스트'
+                        name={findPostTitle(path) || '포스트'}
+                      />
+                    ))}
+                  </div>
                 </>
               )}
             </div>

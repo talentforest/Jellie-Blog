@@ -5,7 +5,8 @@ export interface Project {
   group: string[];
   name: string;
   path: string;
-  status: '배포 완료' | '서비스 운영중';
+  images: string[];
+  status: '배포 완료' | '서비스 운영중' | '구글 플레이스토어 출시';
   description: string;
   stacks: string[];
   link: string;
