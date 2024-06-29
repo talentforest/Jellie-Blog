@@ -11,6 +11,8 @@ export default function Toc() {
   const [headingEls, setHeadingEls] = useState<Element[]>([]);
   const [activeId, setActiveId] = useState<string>('');
 
+  new Intl.NumberFormat();
+
   useEffect(() => {
     const article = document.querySelector('article');
 
@@ -36,16 +38,14 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center lg:hidden'
+        className=' fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center lg:hidden'
       >
         <FaChevronUp fontSize={12} />
         <h1 className='text-sm md:text-base text-slate'>목차</h1>
       </button>
 
-      <Modal openToc={openToc} toggleModal={toggleToc}>
-        <nav
-          className={`z-10 overflow-scroll scrollbar-hide transition p-4 h-fit rounded-xl max-h-[90vh]`}
-        >
+      <Modal openModal={openToc} toggleModal={toggleToc}>
+        <nav className={`p-4 bg-box rounded-lg`}>
           <h1 className='mb-4 font-bold text-md md:text-base text-gray'>
             목차
           </h1>

@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-teal max-w-none text-text px-5 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 bg-bg rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl max-w-none text-text px-5 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
@@ -37,7 +37,7 @@ export default function MarkdownViewer({ content }: Props) {
           <pre className='relative p-0 m-0 mb-4'>{children}</pre>
         ),
         table: ({ children }) => (
-          <table className='break-all mt-2 mb-4 text-text bg-box rounded-md px-10'>
+          <table className='break-all mt-2 mb-4 text-text bg-lightest-gray rounded-md px-10'>
             {children}
           </table>
         ),
@@ -106,7 +106,7 @@ export default function MarkdownViewer({ content }: Props) {
         blockquote: ({ node, className, children, ...props }) => (
           <blockquote
             {...props}
-            className='text-text bg-box mt-2 px-4 py-3 mb-3 border-0 rounded-xl [&>ol]:my-0 [&>ul]:my-0 [&>ol>li:last-child]:mb-0 [&>ul>li:last-child]:mb-0 [&>p::before]:hidden [&>p]:my-0 [&>p]:py-0.5 not-italic'
+            className='text-text bg-light-gray mt-2 px-4 py-3 mb-3 border-0 rounded-xl [&>ol]:my-0 [&>ul]:my-0 [&>ol>li:last-child]:mb-0 [&>ul>li:last-child]:mb-0 [&>p::before]:hidden [&>p]:my-0 [&>p]:py-0.5 not-italic'
           >
             <span className='float-left mr-2 text-lg mt-0.5'>💡</span>
             {children}
