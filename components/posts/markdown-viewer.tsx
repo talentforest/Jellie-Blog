@@ -14,7 +14,7 @@ interface Props {
 export default function MarkdownViewer({ content }: Props) {
   return (
     <ReactMarkdown
-      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-bg max-w-none text-text relative px-5 pb-20 flex flex-col'
+      className='[&>*:first-child]:mt-0 rounded-t-3xl pt-12 prose overscroll-auto w-full shadow-3xl bg-teal max-w-none text-text px-5 pb-20 flex flex-col'
       remarkPlugins={[remarkGfm]}
       rehypePlugins={[rehypeCodeTitles]}
       components={{
