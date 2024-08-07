@@ -47,7 +47,7 @@ export default function RootLayout({
         <Providers>
           <Header />
 
-          <main className='relative md:w-[75%] lg:w-[60%] mx-auto md:px-4 pb-28 selection:bg-[rgb(186,200,255)]'>
+          <main className='relative mx-auto md:px-10 lg:px-12 pb-28 selection:bg-[rgb(186,200,255)]'>
             {children}
             <ScrollToTopBtn />
           </main>

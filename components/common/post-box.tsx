@@ -39,7 +39,7 @@ export default function PostBox({
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`w-full h-full overflow-hidden relative flex flex-col md:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-3xl transition shadow-md shadow-light-gray`}
+      className={`w-full h-full overflow-hidden relative flex flex-col lg:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-3xl transition shadow-md shadow-light-gray`}
     >
       {thumbnail ? (
         <Image
@@ -48,38 +48,38 @@ export default function PostBox({
           width={300}
           height={200}
           priority
-          className={`w-full md:w-1/3 max-h-56 md:max-h-none object-cover`}
+          className={`w-full lg:w-1/3 h-40 lg:h-full lg:max-h-none object-cover`}
         />
       ) : (
         <div
-          className={`w-full md:w-1/3 h-40 flex justify-center items-center text-medium-gray`}
+          className={`w-full lg:w-1/3 h-40 flex justify-center items-center text-medium-gray`}
         >
           이미지가 없습니다
         </div>
       )}
 
       <div
-        className={`flex rounded-t-2xl md:rounded-none flex-col px-2.5 py-3 -mt-5 md:mt-0 relative bg-box flex-1`}
+        className={`flex rounded-t-3xl lg:rounded-none flex-col p-4 -mt-5 lg:mt-0 relative bg-box flex-1`}
       >
         <CategoryBox category={category} />
         <h2
-          className={`mt-2.5 mb-3 font-bold leading-6 ${
+          className={`mt-3.5 font-bold leading-6 ${
             contentPreview ? '' : 'flex-1'
-          } text-[15px] group-hover:text-yellow`}
+          } text-base group-hover:text-yellow`}
         >
           {title}
         </h2>
 
+        <ul className={`flex flex-wrap gap-x-4 gap-y-1.5 mt-3 lg:flex-row`}>
+          <TimeToReadItem readingTime={readingTime} />
+          <DateItem date={date} />
+        </ul>
+
         {contentPreview && (
-          <p className='flex-1 text-sm mb-2.5 leading-6 text-slate group-hover:text-text'>
+          <p className='flex-1 text-sm mt-2.5 leading-6 text-slate group-hover:text-text'>
             {preview} ...
           </p>
         )}
-
-        <ul className={`flex flex-wrap gap-2 md:flex-row`}>
-          <DateItem date={date} />
-          <TimeToReadItem readingTime={readingTime} />
-        </ul>
       </div>
 
       {direction === 'next' && <ArrowCircle direction='next' />}

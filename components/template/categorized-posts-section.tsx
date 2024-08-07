@@ -48,7 +48,7 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
 
-      <ul className='flex flex-col gap-4 md:gap-5'>
+      <ul className='flex flex-col gap-6 md:grid grid-cols-2'>
         {!!showingPosts?.length ? (
           showingPosts?.map((post) => (
             <li key={post.path}>

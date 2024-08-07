@@ -19,7 +19,7 @@ export default function Header() {
     <header
       className={`sticky top-0 z-[1001] text-text w-full h-14 md:h-[65px] bg-box border-b border-light-gray`}
     >
-      <div className='md:w-[75%] lg:w-[60%] px-4 h-full mx-auto flex justify-between items-center'>
+      <div className='px-4 md:px-10 lg:px-12 h-full mx-auto flex justify-between items-center'>
         <h1>
           <Link href='/' className='text-text flex items-center'>
             <Image
@@ -29,7 +29,7 @@ export default function Header() {
               height={30}
               priority
             />
-            <span className='text-sm md:text-base pl-1'>BLOG</span>
+            <span className='text-sm md:text-base pl-1'>DEV BLOG</span>
           </Link>
         </h1>
 

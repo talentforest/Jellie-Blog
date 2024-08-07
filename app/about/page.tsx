@@ -1,10 +1,10 @@
 import { getAllProjects, getPersonalDataList } from '@/service/about';
 import { AiFillTag } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { getAllPosts } from '@/service/posts';
 import ProjectItem from '@/components/about/project-item';
 import Introduction from '@/components/home/introduction';
 import PersonalDataItem from '@/components/about/personal-data-item';
-import { getAllPosts } from '@/service/posts';
 
 export const metadata = {
   title: 'About',

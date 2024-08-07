@@ -12,13 +12,13 @@ export default async function Home() {
     <>
       <Introduction />
 
-      <section className='mb-16 min-h-[300px]'>
+      <section className='mb-16 min-h-[300px] mt-10 md:mt-16'>
         <h2 className='mx-4 md:mx-0'>포스트 골라보기</h2>
 
         <CarouselBox
           config={{ centerMode: true }}
-          containerClass='min-h-20 pt-4 pb-12'
-          itemClass='px-1.5'
+          containerClass='min-h-20 pt-4 md:-mx-10 lg:-mx-12 pb-12'
+          itemClass='px-1.5 md:px-2'
         >
           {featuredPost.map((post) => (
             <PostBox key={post.path} post={post} />
