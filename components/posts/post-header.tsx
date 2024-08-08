@@ -19,7 +19,7 @@ export default function PostHeader({ contents }: Props) {
 
   return (
     <>
-      <header className='w-full sticky top-16 md:top-[78px] rounded-b-[30px] mb-5'>
+      <header className='relative w-full'>
         {thumbnail && title && category ? (
           <div className='absolute w-full h-full'>
             <Image
@@ -28,14 +28,14 @@ export default function PostHeader({ contents }: Props) {
               priority
               width={500}
               height={300}
-              className='object-cover w-full h-full brightness-70 opacity-20 rounded-b-[30px]'
+              className='object-cover w-full h-full brightness-100 opacity-40'
             />
           </div>
         ) : (
           <></>
         )}
 
-        <div className='flex flex-col items-start px-5 md:px-8 py-8 md:pt-20 md:pb-14'>
+        <div className='relative flex flex-col items-start px-5 md:px-8 py-8 md:pt-20 md:pb-14'>
           <CategoryBox category={category} />
           <h1 className='text-3xl font-bold leading-10 mb-10 mt-3'>{title}</h1>
 
