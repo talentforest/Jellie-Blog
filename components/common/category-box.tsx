@@ -19,8 +19,8 @@ export default function CategoryBox({
   return (
     <div
       className={`self-start max-w-full max-h-8 overflow-hidden ${
-        selected ? 'bg-indigo font-bold' : 'bg-[#373737]'
-      } group-hover:opacity-100 border border-light-gray rounded-full text-[15px] items-center flex gap-1 px-2 pb-1 pt-1.5 md:pb-1 md:pt-1.5`}
+        selected ? 'bg-indigo font-bold' : 'bg-light-box'
+      } group-hover:opacity-100 border border-light-gray rounded-full items-center flex gap-1 px-3 pb-1.5 pt-2 md:pb-1 md:pt-1.5`}
     >
       {category === 'All' ? (
         ''
@@ -41,7 +41,7 @@ export default function CategoryBox({
       )}
 
       <span
-        className={`text-sm whitespace-nowrap ${
+        className={`text-[15px] whitespace-nowrap ${
           selected
             ? 'text-yellow'
             : 'text-text group-hover:text-indigo group-hover:font-bold'

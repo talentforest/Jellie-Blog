@@ -1,6 +1,7 @@
 import { RiArticleFill, RiLink } from 'react-icons/ri';
 import { FaGithub } from 'react-icons/fa6';
 import Link from 'next/link';
+import React from 'react';
 
 interface Props {
   path?: string;
@@ -23,7 +24,7 @@ export default function LinkItem({ href, path, linkTitle, name }: Props) {
             fontSize={14}
             className='inline w-4 h-4 mb-0.5 mr-0.5'
           />
-          <span className='text-sm'>{name}</span>
+          <Name name={name} />
         </Link>
       )}
 
@@ -46,3 +47,7 @@ export default function LinkItem({ href, path, linkTitle, name }: Props) {
     </>
   );
 }
+
+const Name = ({ name }: { name: string }) => {
+  return <span className='text-sm'>{name}</span>;
+};

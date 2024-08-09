@@ -59,7 +59,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           contents={{ path, title, date, category, thumbnail, readingTime }}
         />
 
-        <div className='relative flex justify-center'>
+        <div className='relative flex justify-center lg:flex'>
           <MarkdownViewer content={content} />
           <Toc />
         </div>
@@ -86,7 +86,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
 
       {/* 이전 다음 포스트 */}
       <section className='mt-28 px-4 md:px-0 flex flex-col space-y-3 text-lg bg-bg'>
-        <h4 className='text-slate'>다른 포스트</h4>
+        <h4 className='font-bold'>다른 포스트</h4>
         <ul className='flex flex-col gap-3.5'>
           {prev && (
             <li className='self-start'>

@@ -39,7 +39,7 @@ export default function PostBox({
   ) : (
     <Link
       href={`/posts/${path}`}
-      className={`w-full h-full overflow-hidden relative flex flex-col lg:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-3xl transition shadow-md shadow-light-gray`}
+      className={`w-full h-full overflow-hidden relative flex flex-col lg:flex-row group hover:-translate-y-1 hover:border-2 border-light-yellow rounded-3xl transition shadow-lg shadow-light-gray`}
     >
       {thumbnail ? (
         <Image
@@ -48,7 +48,7 @@ export default function PostBox({
           width={300}
           height={200}
           priority
-          className={`w-full lg:w-1/3 h-40 lg:h-full lg:max-h-none object-cover`}
+          className={`w-full lg:w-1/3 min-h-40 lg:h-full lg:max-h-none object-cover`}
         />
       ) : (
         <div
@@ -59,7 +59,7 @@ export default function PostBox({
       )}
 
       <div
-        className={`flex rounded-t-3xl lg:rounded-none flex-col p-4 -mt-5 lg:mt-0 relative bg-box flex-1`}
+        className={`flex rounded-t-3xl lg:rounded-none flex-col px-3 py-4 -mt-5 lg:mt-0 relative bg-box flex-1`}
       >
         <CategoryBox category={category} />
         <h2

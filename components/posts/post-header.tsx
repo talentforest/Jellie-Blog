@@ -28,18 +28,18 @@ export default function PostHeader({ contents }: Props) {
               priority
               width={500}
               height={300}
-              className='object-cover w-full h-full brightness-100 opacity-40'
+              className='object-cover w-full h-full opacity-30 rounded-b-md'
             />
           </div>
         ) : (
           <></>
         )}
 
-        <div className='relative flex flex-col items-start px-5 md:px-8 py-8 md:pt-20 md:pb-14'>
+        <div className='relative flex flex-col items-start px-5 md:px-8 py-8 md:pt-20 md:pb-8'>
           <CategoryBox category={category} />
           <h1 className='text-3xl font-bold leading-10 mb-10 mt-3'>{title}</h1>
 
-          <div className='flex flex-wrap gap-3 mb-8'>
+          <div className='flex flex-wrap gap-3 mb-16'>
             <DateItem date={date} />
             <TimeToReadItem readingTime={readingTime || 0} />
           </div>

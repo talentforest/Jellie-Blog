@@ -26,7 +26,7 @@ export default function MarkdownViewer({ content }: Props) {
             </CodeBlock>
           ) : (
             <code
-              className={`before:hidden after:hidden py-1 px-1.5 bg-light-gray text-sm text-[#ff5b5b] rounded-[5px]`}
+              className={`before:hidden after:hidden py-1 px-1.5 mr-0.5 bg-light-gray text-[0.9em] text-[#ff5b5b] rounded-[5px]`}
               {...props}
             >
               {children}
@@ -73,7 +73,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h2: ({ children }) => (
           <h2
-            className='[&+*]:mt-3 text-[28px] text-indigo mt-16 mb-0'
+            className='[&+*]:mt-3 text-[30px] text-indigo mt-16 mb-0'
             id={String(children).replaceAll(' ', '-')}
           >
             {children}
@@ -90,7 +90,7 @@ export default function MarkdownViewer({ content }: Props) {
         ),
         h4: ({ node, children, ...props }) => (
           <h4
-            className='[&+*]:mt-3 text-[18px] text-light-blue mt-3 mb-0'
+            className='[&+*]:mt-3 text-[20px] text-light-blue mt-3 mb-0'
             {...props}
             id={String(children).replaceAll(' ', '-')}
           >

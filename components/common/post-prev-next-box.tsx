@@ -27,7 +27,7 @@ export default function PostPrevNextBox({ post, direction }: PostBoxProps) {
       href={`/posts/${path}`}
       className={`${
         direction === 'next' ? 'flex-row-reverse' : ''
-      } w-full md:w-[60vw] shadow-lg h-40 overflow-hidden relative flex group hover:-translate-y-2 hover:border-2 border-light-yellow rounded-2xl transition`}
+      } w-full md:w-[60vw] shadow-lg overflow-hidden relative flex group hover:-translate-y-2 hover:border-2 border-light-yellow rounded-2xl transition`}
     >
       <div
         className={`${

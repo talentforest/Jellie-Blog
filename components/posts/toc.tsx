@@ -59,7 +59,7 @@ export default function Toc() {
 
       {/* 데스크탑 스크린 이상 */}
       <nav
-        className={`hidden z-10 mt-10 px-2 ml-6 lg:block lg:sticky top-24 -mr-56 w-48 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
+        className={`hidden lg:block sticky top-24 z-10 mt-10 px-2 pb-20 ml-12 w-64 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
         <h1 className='mb-4 font-bold text-sm text-gray'>목차</h1>
         <ul className='flex flex-col space-y-2.5'>

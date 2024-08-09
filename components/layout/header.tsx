@@ -3,14 +3,13 @@
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import ThemeMode from './theme-mode';
-import Providers from './providers';
 import Image from 'next/image';
 
 export default function Header() {
   const pathname = usePathname();
 
   const markCurrPageStyle = (currPage: string) => {
-    return `text-sm md:text-base transition ${
+    return `text-[15px] md:text-base transition ${
       pathname.includes(currPage) ? 'text-indigo' : 'text-gray'
     }`;
   };
