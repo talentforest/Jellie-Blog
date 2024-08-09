@@ -137,6 +137,17 @@
         "featured": false,
         "description": "React는 어떻게 렌더링하고 화면을 업데이트할까?",
         "related": []
+      },
+      {
+        "id": 6,
+        "category": "react",
+        "title": "React에서 컴포넌트를 작성할 때 표현식과 선언식 중 어떤 것을 써야할까?",
+        "date": "2024-08-08",
+        "path": "comparing-two-ways-to-write-react-components",
+        "thumbnail": "two-ways-to-write-react-components.png",
+        "featured": false,
+        "description": "선언식 vs 표현식",
+        "related": []
       }
     ]
   },
