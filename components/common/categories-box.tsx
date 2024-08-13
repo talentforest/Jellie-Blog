@@ -45,7 +45,7 @@ export default function CategoriesBox({
   };
 
   return (
-    <ul className='flex flex-wrap gap-1.5 mt-3 mb-8'>
+    <ul className='flex flex-wrap gap-2 mt-3 mb-8'>
       {categoryList.map((category) => (
         <li key={category} className='group'>
           <button onClick={() => onCategoryClick(category)}>

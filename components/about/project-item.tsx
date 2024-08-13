@@ -3,7 +3,7 @@
 import { Project } from '@/service/about';
 import { FaSearch } from 'react-icons/fa';
 import { Post } from '@/service/posts';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Modal from '../common/modal';
 import Image from 'next/image';
 import StackBox from '../common/stack-box';

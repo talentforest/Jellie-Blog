@@ -1,6 +1,5 @@
 import './globals.css';
 import localFont from 'next/font/local';
-import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
 import ScrollToTopBtn from '@/components/layout/scroll-to-top-btn';
 import Providers from '@/components/layout/providers';
@@ -51,8 +50,6 @@ export default function RootLayout({
             {children}
             <ScrollToTopBtn />
           </main>
-
-          <Footer />
         </Providers>
       </body>
     </html>

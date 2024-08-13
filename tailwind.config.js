@@ -20,6 +20,7 @@ module.exports = {
       'light-gray': 'var(--light-gray)',
       'medium-gray': 'var(--medium-gray)',
       gray: 'var(--gray)',
+      'light-box': 'var(--light-box)',
       black: 'var(--black)',
       box: 'var(--box)',
       hoverbox: 'var(--hoverbox)',

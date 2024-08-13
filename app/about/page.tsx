@@ -23,7 +23,7 @@ export default async function AboutPage() {
   return (
     <>
       <Introduction>
-        <ul className='relative flex flex-col items-center justify-center gap-2'>
+        <ul className='mt-4 relative flex flex-col items-center justify-center gap-2'>
           {personalDataList.map(({ type, title, link }) => (
             <PersonalDataItem
               key={type}

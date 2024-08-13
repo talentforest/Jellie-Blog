@@ -29,17 +29,9 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
   const showingPosts = sortByDate(matchPosts, sortBy);
 
   return (
-    <section className='mx-4 my-8 md:mx-0 min-h-[50vh]'>
-      <h2>포스트 카테고리</h2>
-
-      <CategoriesBox
-        currCategory={currCategory}
-        setCurrCategory={setCurrCategory}
-        allPosts={allPosts}
-      />
-
-      <div className='relative mt-14 mb-4 pr-2 pl-1 flex items-center justify-between gap-1'>
-        <h3 className='flex items-center gap-1'>
+    <section className='mx-4 my-6 md:mx-0 min-h-[50vh]'>
+      <div className='relative mb-4 pr-2 pl-1 flex items-center justify-between gap-1'>
+        <h3 className='flex items-center gap-1 font-semibold'>
           <AiFillTag className='text-yellow w-5 h-5 mb-0.5' />
           {currCategory}
         </h3>
@@ -47,6 +39,12 @@ export default function CategorizedPostsSection({ allPosts }: Props) {
         <span className='flex-1'>{showingPosts?.length || 0}개의 포스트</span>
         <SortBtn sortBy={sortBy} setSortBy={setSortBy} />
       </div>
+
+      <CategoriesBox
+        currCategory={currCategory}
+        setCurrCategory={setCurrCategory}
+        allPosts={allPosts}
+      />
 
       <ul className='flex flex-col gap-6 md:grid grid-cols-2'>
         {!!showingPosts?.length ? (

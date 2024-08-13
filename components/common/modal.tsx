@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 
 interface Props {
   children: ReactNode;
@@ -7,12 +7,24 @@ interface Props {
 }
 
 export default function Modal({ openModal, children, toggleModal }: Props) {
+  useEffect(() => {
+    if (openModal) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [openModal]);
+
   return (
     <div className={`${openModal ? '' : 'hidden'} z-[1002] fixed inset-0 `}>
       {/* 오버레이 */}
       <div
         onClick={toggleModal}
-        className={`cursor-pointer overflow-hidden transition w-full h-screen bg-black opacity-80`}
+        className={`cursor-pointer overflow-hidden transition w-full h-screen bg-black opacity-90`}
       />
 
       {/* 모달 */}
