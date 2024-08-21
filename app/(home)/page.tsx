@@ -17,7 +17,7 @@ export default async function Home() {
 
         <CarouselBox
           config={{ centerMode: true }}
-          containerClass='min-h-20 pt-4 md:-mx-10 lg:-mx-12 pb-12'
+          containerClass='min-h-96 lg:min-h-40 pt-4 md:-mx-10 lg:-mx-12 pb-12'
           itemClass='px-2 md:px-2'
         >
           {featuredPost.map((post) => (

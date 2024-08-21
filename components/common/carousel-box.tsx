@@ -3,6 +3,7 @@
 import { ReactNode } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import SkeletonBox from './skeleton-box';
 
 type ResponsiveSetting = {
   breakpoint: { max: number; min: number };
@@ -63,6 +64,7 @@ export default function CarouselBox({
 
   return (
     <Carousel
+      ssr={false}
       responsive={responsive || defaultResponsive}
       infinite={infinite}
       autoPlay={autoPlay}

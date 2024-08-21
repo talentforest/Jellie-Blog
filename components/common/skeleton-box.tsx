@@ -1,6 +1,8 @@
-export default function Loading({ height = 40 }: { height?: number }) {
+export default function SkeletonBox({ height = 40 }: { height?: number }) {
   return (
-    <div className={`h-${height} bg-box shadow rounded-2xl p-4 w-full mx-auto`}>
+    <div
+      className={`h-${height} border bg-box shadow rounded-2xl p-4 w-full mx-auto`}
+    >
       <div className='animate-pulse flex space-x-4 h-full'>
         <div className='rounded-xl bg-light-gray w-1/3'></div>
 

@@ -37,7 +37,7 @@ export default function PostHeader({ contents }: Props) {
 
         <div className='relative flex flex-col items-start px-5 md:px-8 py-8 md:pt-20 md:pb-8'>
           <CategoryBox category={category} />
-          <h1 className='text-3xl font-bold leading-10 mb-10 mt-3'>{title}</h1>
+          <h1 className='text-3xl font-bold leading-10 my-3'>{title}</h1>
 
           <div className='flex flex-wrap gap-3 mb-16'>
             <DateItem date={date} />

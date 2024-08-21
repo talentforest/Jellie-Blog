@@ -8,7 +8,7 @@ import Image from 'next/image';
 import CategoryBox from './category-box';
 import DateItem from './date-item';
 import TimeToReadItem from './time-to-read-item';
-import Loading from './loading';
+import SkeletonBox from './skeleton-box';
 
 interface PostBoxProps {
   post: Post;
@@ -35,7 +35,7 @@ export default function PostBox({
     .slice(0, 120);
 
   return loading ? (
-    <Loading />
+    <SkeletonBox />
   ) : (
     <Link
       href={`/posts/${path}`}
