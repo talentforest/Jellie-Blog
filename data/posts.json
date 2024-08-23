@@ -174,6 +174,17 @@
         "featured": false,
         "description": "데이터를 캐싱하고, 무한 스크롤, 페이지네이션까지 도와주는 React Query",
         "related": []
+      },
+      {
+        "id": 2,
+        "category": "library",
+        "title": "ESLint, Prettier, Husky로 팀 프로젝트 협업하기 (+Typescript)",
+        "date": "2024-08-13",
+        "path": "setting-eslint-prettier-husky",
+        "thumbnail": "setting-eslint-prettier-husky.png",
+        "featured": false,
+        "description": "eslint와 prettier, husky의 설정 자세히 알아보기",
+        "related": []
       }
     ]
   },
@@ -186,7 +197,7 @@
         "date": "2022-07-22",
         "path": "bookclub-hanpage-app-review",
         "thumbnail": "bookclub-hanpage-app-review/2022독서모임.png",
-        "featured": false,
+        "featured": true,
         "description": "현재 참여중인 독서모임을 위해 만든 서비스에 대한 기획 과정, 디자인 과정, 개발 과정에 대해 회고해봅니다.",
         "related": ["bookclub-hanpage-app-review-2"]
       },
@@ -269,7 +280,7 @@
         "date": "2024-03-12",
         "path": "bookclub-hanpage-app-review-2",
         "thumbnail": "bookclub-hanpage-app-review/bookclub-hanpage.png",
-        "featured": true,
+        "featured": false,
         "description": "2년동안 어떻게 업데이트했을까?",
         "related": ["bookclub-hanpage-app-review"]
       }
@@ -401,7 +412,7 @@
         "date": "2024-01-30",
         "path": "memorable-ux-principle",
         "thumbnail": "good-ux-technique.png",
-        "featured": true,
+        "featured": false,
         "description": "책 <사용자를 유혹하는 UX의 기술>을 읽고",
         "related": []
       }
