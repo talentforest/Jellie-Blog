@@ -38,7 +38,7 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full border border-light-gray gap-1 w-14 h-14 flex flex-col justify-center items-center lg:hidden'
+        className='lg:hidden fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full gap-1 w-14 h-14 flex flex-col justify-center items-center '
       >
         <FaChevronUp fontSize={12} />
         <h1 className='text-sm md:text-base text-slate'>목차</h1>
@@ -59,9 +59,9 @@ export default function Toc() {
 
       {/* 데스크탑 스크린 이상 */}
       <nav
-        className={`hidden lg:block sticky top-24 z-10 mt-10 px-2 pb-20 ml-12 w-64 overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
+        className={`hidden lg:block sticky top-24 z-10 mt-10 px-2 pb-20 ml-12 w-[22%] overflow-scroll scrollbar-hide transition h-fit max-h-[90vh]`}
       >
-        <h1 className='mb-4 font-bold text-sm text-gray'>목차</h1>
+        <h1 className='mb-4 font-bold text-sm text-text'>📒목차</h1>
         <ul className='flex flex-col space-y-2.5'>
           {headingEls.map((el) => (
             <TocElement key={el.id} element={el} activeId={activeId} />

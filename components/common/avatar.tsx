@@ -13,7 +13,7 @@ export default function Avatar({ width = 160, height = 160 }: Props) {
       width={width}
       height={height}
       priority
-      className='border border-light-gray bg-box object-cover rounded-full shadow-sm justify-center items-center'
+      className='border border-light-gray bg-box object-cover rounded-full shadow-lg justify-center items-center'
     />
   );
 }

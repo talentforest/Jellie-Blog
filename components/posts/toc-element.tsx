@@ -13,10 +13,10 @@ export default function TocElement({ element, activeId }: Props) {
         element.nodeName === 'H1'
           ? 'text-base text-text'
           : element.nodeName === 'H2'
-          ? 'text-gray text-[13px]'
+          ? 'text-text text-[13px]'
           : element.nodeName === 'H3'
-          ? 'text-medium-gray text-[12px]'
-          : 'text-slate text-[12px]'
+          ? 'text-gray text-[12px]'
+          : 'text-gray text-[12px]'
       }`}
     >
       <a

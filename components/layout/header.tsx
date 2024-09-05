@@ -9,7 +9,7 @@ export default function Header() {
   const pathname = usePathname();
 
   const markCurrPageStyle = (currPage: string) => {
-    return `text-[15px] md:text-base transition ${
+    return `text-[15px] md:text-base transition hover:text-text ${
       pathname.includes(currPage) ? 'text-indigo' : 'text-gray'
     }`;
   };

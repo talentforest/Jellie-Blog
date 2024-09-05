@@ -59,7 +59,7 @@ export default async function PostDetailPage({ params: { slug } }: Props) {
           contents={{ path, title, date, category, thumbnail, readingTime }}
         />
 
-        <div className='relative flex justify-center lg:flex'>
+        <div className='relative w-full lg:flex justify-between'>
           <MarkdownViewer content={content} />
           <Toc />
         </div>
