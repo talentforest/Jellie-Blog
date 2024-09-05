@@ -11,6 +11,17 @@
         "featured": false,
         "description": "잘 기억나지 않을 때 빠르게 살펴보자",
         "related": []
+      },
+      {
+        "id": 2,
+        "category": "tailwindcss",
+        "title": "TailwindCss로 아코디언 애니메이션 구현하기 (+CSS 코드 추가)",
+        "date": "2024-09-04",
+        "path": "create-accordion-animation-with-tailwindcss",
+        "thumbnail": "create-accordion-animation-with-tailwindcss/create-accordion-animation-with-tailwindcss.png",
+        "featured": false,
+        "description": "CSS만으로 아코디언 애니메이션을 구현할 수 있다!",
+        "related": []
       }
     ]
   },
@@ -179,7 +190,7 @@
         "id": 2,
         "category": "library",
         "title": "ESLint, Prettier, Husky로 팀 프로젝트 협업하기 (+Typescript)",
-        "date": "2024-08-13",
+        "date": "2024-08-23",
         "path": "setting-eslint-prettier-husky",
         "thumbnail": "setting-eslint-prettier-husky.png",
         "featured": false,
