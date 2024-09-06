@@ -26,6 +26,21 @@
     ]
   },
   {
+    "css": [
+      {
+        "id": 1,
+        "category": "css",
+        "title": "정확한 너비값이 없을 때 스크롤과 말줄임 표시 구현하기",
+        "date": "2024-09-06",
+        "path": "create-scrollbar-without-an-exact-width-value",
+        "thumbnail": "create-scrollbar-without-an-exact-width-value.png",
+        "featured": false,
+        "description": "헷갈리는 css 스타일들",
+        "related": []
+      }
+    ]
+  },
+  {
     "next.js": [
       {
         "id": 1,
