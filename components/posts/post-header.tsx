@@ -21,14 +21,14 @@ export default function PostHeader({ contents }: Props) {
     <>
       <header className='relative w-full mb-10'>
         {thumbnail && title && category ? (
-          <div className='absolute w-full h-full mt-4 border border-light-gray shadow-xl rounded-xl'>
+          <div className='absolute w-full h-full mt-4 border border-light-gray shadow-xl md:rounded-2xl'>
             <Image
               src={`/images/${category}/${thumbnail}`}
               alt={`${title} Post Thumbnail`}
               priority
               width={500}
               height={300}
-              className='object-cover w-full h-full opacity-30 rounded-xl'
+              className='object-cover w-full h-full opacity-20 rounded-xl'
             />
           </div>
         ) : (

@@ -38,7 +38,7 @@ export default function Toc() {
       <button
         type='button'
         onClick={toggleToc}
-        className='lg:hidden fixed bottom-3 right-3 md:bottom-10 md:right-10 bg-box z-10 rounded-full gap-1 w-14 h-14 flex flex-col justify-center items-center '
+        className='lg:hidden shadow-xl fixed bottom-6 right-6 md:bottom-10 md:right-10 bg-lightest-yellow z-10 rounded-full gap-1 w-14 h-14 flex flex-col justify-center items-center '
       >
         <FaChevronUp fontSize={12} />
         <h1 className='text-sm md:text-base text-slate'>목차</h1>

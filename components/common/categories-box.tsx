@@ -11,7 +11,8 @@ export type Category =
   | 'developments'
   | 'web'
   | 'side-projects'
-  | 'library';
+  | 'library'
+  | 'css';
 
 const categoryList: Category[] = [
   'All',
@@ -24,6 +25,7 @@ const categoryList: Category[] = [
   'developments',
   'side-projects',
   'library',
+  'css',
 ];
 
 interface Props {

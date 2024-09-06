@@ -15,6 +15,7 @@ import {
   SiJavascript,
   SiPwa,
   SiExpo,
+  SiCss3,
 } from 'react-icons/si';
 
 export default function StackIcon({ stack }: { stack: string }) {
@@ -52,6 +53,8 @@ export default function StackIcon({ stack }: { stack: string }) {
         <SiJavascript fontSize={14} className='text-[#FFCA28]' />
       ) : stack === 'pwa' ? (
         <SiPwa fontSize={14} className='text-[##5A0FC8]' />
+      ) : stack === 'css' ? (
+        <SiCss3 fontSize={14} className='text-[#1572B6]' />
       ) : (
         <></>
       )}
